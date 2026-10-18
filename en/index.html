@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nodvard Deck: a dashboard for your homelab</title>
+<meta name="description" content="Nodvard Deck shows your servers, Proxmox, Docker containers and backups in one web interface. Self-hosted and free for personal use.">
+<link rel="canonical" href="https://nodvard.com/en/">
+<link rel="alternate" hreflang="de" href="https://nodvard.com/">
+<link rel="alternate" hreflang="en" href="https://nodvard.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://nodvard.com/">
+<meta name="theme-color" content="#1a1b1e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nodvard Deck">
+<meta property="og:title" content="Nodvard Deck: a dashboard for your homelab">
+<meta property="og:description" content="Nodvard Deck shows your servers, Proxmox, Docker containers and backups in one web interface. Self-hosted and free for personal use.">
+<meta property="og:url" content="https://nodvard.com/en/">
+<meta property="og:image" content="https://nodvard.com/assets/og.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#inhalt">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
+    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <a class="lang" href="../" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a>
+  </div>
+</header>
+<main id="inhalt">
+<section class="hero">
+  <div class="wrap">
+    <a class="news" href="features.html#docker"><span class="news-tag">New in 0.10</span><span>Docker stacks and moving from Portainer</span></a>
+    <h1>Your homelab on one page.</h1>
+    <p class="lead">Nodvard Deck shows your servers, Proxmox, Docker containers and backups in one web interface. It runs in your home and is free for personal use.</p>
+    <div class="btns">
+      <a class="btn btn-main" href="get-started.html">Get started</a>
+      <a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Discord</a>
+    </div>
+    <a class="hero-cmd" href="#install"><code><span aria-hidden="true">$ </span>docker compose up -d</code><span>How to install it</span></a>
+  </div>
+  <div class="bleed">
+    <picture>
+      <source media="(max-width: 600px)" srcset="../assets/img/uebersicht-handy.webp" width="1400" height="1240">
+      <img src="../assets/img/uebersicht-1280.webp" srcset="../assets/img/uebersicht-1280.webp 1280w, ../assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) calc(50vw + 560px), 100vw" width="2560" height="1600" alt="The Nodvard Deck overview with sample data: three servers and six guests with their load, running containers, backups, unread notifications and one action waiting for approval.">
+    </picture>
+  </div>
+  <div class="wrap"><p class="caption">The overview with sample data. Beta, runs in Docker on a Raspberry Pi 4 or 5 and on any x86-64 machine. The interface is in German for now.</p></div>
+</section>
+
+<section class="section" aria-labelledby="can">
+  <div class="wrap">
+    <h2 id="can">What Deck does</h2>
+    <p class="intro">Changes go through approvals: Deck suggests, you confirm. You decide what may run without asking.</p>
+
+    <div class="show">
+      <figure><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1072" loading="lazy" alt="The Stacks tab: Compose projects of one server with status, folder and buttons to edit, apply, update and move over from Portainer."></figure>
+      <div class="show-text">
+        <h3>Docker with stacks <span class="beta beta-new">New</span></h3>
+        <p>All containers on your servers on one page. Edit Compose stacks as text or in a form, update them with a way back and move them over from Portainer. The volumes with your data stay.</p>
+        <a href="features.html#docker">More about Docker</a>
+      </div>
+    </div>
+    <div class="show">
+      <figure><img src="../assets/img/server-1040.webp" srcset="../assets/img/server-1040.webp 1040w, ../assets/img/server.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1472" loading="lazy" alt="The page of a Proxmox node: access, CPU, RAM, uptime and the load history."></figure>
+      <div class="show-text">
+        <h3>Servers and Proxmox</h3>
+        <p>Every server gets its own page with load, services and pending updates. Start and stop VMs and LXC on Proxmox right here, the console runs in your browser. Proxmox is optional.</p>
+        <a href="features.html#server">More about servers</a>
+      </div>
+    </div>
+    <div class="show">
+      <figure><img src="../assets/img/shield-1040.webp" srcset="../assets/img/shield-1040.webp 1040w, ../assets/img/shield.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1472" loading="lazy" alt="The Nodvard Shield overview: protection score, protected servers, open threats, quarantine and what needs attention."></figure>
+      <div class="show-text">
+        <h3>Nodvard Shield</h3>
+        <p>Virus scans with ClamAV, hardening checks with Lynis, pending security updates and unusual logins. Shield shows what it finds. You decide what happens next.</p>
+        <a href="features.html#shield">More about Shield</a>
+      </div>
+    </div>
+
+    <h3 class="sub">Also included</h3>
+    <div class="list">
+      <div><h4><a href="features.html#backups">Backups</a></h4><p>All Proxmox backups at a glance. Deck warns you when one is missing or has failed.</p></div>
+      <div><h4><a href="features.html#apps">Apps</a></h4><p>A start page with tiles for your services. Deck finds containers with a web interface on its own.</p></div>
+      <div><h4><a href="features.html#integrationen">Integrations</a></h4><p>Uptime Kuma, Home Assistant, Plex, Jellyfin, Synology and more as tiles in Deck. Many of them still in beta.</p></div>
+      <div><h4><a href="features.html#tresor">Vault</a></h4><p>Passwords, API tokens and SSH keys are stored encrypted in Deck. Deck can create a separate key for each server.</p></div>
+      <div><h4><a href="features.html#meldungen">Notifications</a></h4><p>One list for everything that needs your attention. Sent to your phone via ntfy, Telegram, Discord and others if you like.</p></div>
+      <div><h4><a href="features.html#freigaben">Approvals and accounts</a></h4><p>Roles, two-factor sign-in and a log that lists every action.</p></div>
+    </div>
+    <p class="more"><a href="features.html">All features in detail</a></p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="dock">
+  <div class="wrap split">
+    <div>
+      <h2 id="dock">Nodvard Dock <span class="beta">Beta</span></h2>
+      <p class="intro">Only want to manage your containers? Nodvard Dock is Deck with just the Docker part, as its own lean image. It is also meant for anyone moving away from Portainer CE. It arrives with version 0.11.0.</p>
+      <p class="more"><a href="dock.html">More about Nodvard Dock</a></p>
+    </div>
+    <figure>
+      <img src="../assets/img/docker-1040.webp" srcset="../assets/img/docker-1040.webp 1040w, ../assets/img/docker.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1152" loading="lazy" alt="The Docker page with the containers of one server, their status and buttons for restart, stop, console and logs.">
+      <figcaption>The Docker part, with sample data. This is what Nodvard Dock is made of.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="install" aria-labelledby="install-h">
+  <div class="wrap">
+    <h2 id="install-h">Installed with three commands</h2>
+    <p class="intro">You need a machine with Docker and Docker Compose. Nothing is built, the ready-made image comes from GitHub.</p>
+    <div class="cmd">
+      <div class="cmd-head"><span>In a terminal, with Docker Compose</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-start">Copy</button></div>
+      <pre><code id="cmd-start">mkdir ~/nodvard-deck &amp;&amp; cd ~/nodvard-deck
+curl -fsSL -o compose.yml https://raw.githubusercontent.com/nodvard/deck/main/deploy/compose.standalone.yml
+docker compose up -d</code></pre>
+    </div>
+    <p class="intro">Then open <code>http://&lt;your-server&gt;:8080</code> in your browser. <code>docker compose logs nodvard-deck</code> shows the setup code.</p>
+    <p class="more"><a href="get-started.html">All ways, including Portainer, Synology and Unraid</a></p>
+  </div>
+</section>
+
+<section class="poster" aria-labelledby="cost">
+  <div class="wrap">
+    <h2 id="cost">Free for personal use.</h2>
+    <ul class="facts">
+      <li>No account with Nodvard</li>
+      <li>No subscription, no ads</li>
+      <li>Source code you can read</li>
+    </ul>
+    <p>Using it in a company needs permission. <a href="license.html">The license in plain words</a></p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="people">
+  <div class="wrap">
+    <h2 id="people">Questions, ideas, bugs</h2>
+    <p class="intro">Discord is the quickest place for questions. Bugs and wishes go to GitHub. Nodvard Deck is made by Nico Benks and runs around the clock in a real homelab.</p>
+    <div class="btns">
+      <a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Discord</a>
+      <a class="btn btn-alt" href="https://github.com/nodvard/deck">GitHub</a>
+      <a class="btn btn-alt" href="https://github.com/nodvard/deck/discussions">Discussions</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck is made by Nico Benks.</p><p>Free for personal use, the source code is public.</p></div>
+    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div></nav>
+  </div>
+</footer>
+<script src="../assets/copy.js" defer></script>
+</body>
+</html>

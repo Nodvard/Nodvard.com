@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Funktionen | Nodvard Deck</title>
+<meta name="description" content="Was Nodvard Deck kann: Server und Proxmox, Docker mit Stacks, Nodvard Shield, Backups, Apps, Integrationen, Tresor und Meldungen.">
+<link rel="canonical" href="https://nodvard.com/funktionen.html">
+<link rel="alternate" hreflang="de" href="https://nodvard.com/funktionen.html">
+<link rel="alternate" hreflang="en" href="https://nodvard.com/en/features.html">
+<link rel="alternate" hreflang="x-default" href="https://nodvard.com/funktionen.html">
+<meta name="theme-color" content="#1a1b1e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nodvard Deck">
+<meta property="og:title" content="Funktionen">
+<meta property="og:description" content="Was Nodvard Deck kann: Server und Proxmox, Docker mit Stacks, Nodvard Shield, Backups, Apps, Integrationen, Tresor und Meldungen.">
+<meta property="og:url" content="https://nodvard.com/funktionen.html">
+<meta property="og:image" content="https://nodvard.com/assets/og.png">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
+    <nav aria-label="Hauptmenü"><ul class="nav"><li><a href="funktionen.html" aria-current="page">Funktionen</a></li><li><a href="dock.html">Dock</a></li><li><a href="loslegen.html">Loslegen</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <a class="lang" href="en/features.html" hreflang="en" lang="en" title="Read this page in English">English</a>
+  </div>
+</header>
+<main id="inhalt">
+<div class="wrap">
+  <header class="page-head">
+    <h1>Funktionen</h1>
+    <p class="lead">Was Nodvard Deck heute kann. Teile, die noch nicht so gründlich erprobt sind wie der Rest, tragen das Schild Beta.</p>
+  </header>
+
+  <section class="feature" id="server" aria-labelledby="h-server">
+    <div class="body">
+      <h2 id="h-server">Server und Proxmox</h2>
+      <p>Jeder Server bekommt eine eigene Seite mit Zustand, Auslastung und Aktionen. Einen Server richtest du in der Oberfläche ein, auch mit Benutzer und Passwort. Ein Terminal brauchst du dafür nicht.</p>
+      <ul class="points">
+        <li>CPU, RAM, Platten und Laufzeit live</li>
+        <li>Betriebssystem, fehlgeschlagene Dienste und offene Updates per SSH</li>
+        <li>Terminal und Dateimanager im Browser</li>
+        <li>Proxmox: Knoten, VMs und LXC starten und stoppen, Konsole im Browser, Snapshots, Hardware und Speicher</li>
+        <li>Festplatten-Zustand, ZFS und Temperatur der Proxmox-Knoten</li>
+      </ul>
+      <p>Proxmox ist kein Muss. Ein Raspberry Pi, ein NAS oder ein paar Docker-Hosts reichen.</p>
+    </div>
+    <figure>
+      <img src="assets/img/server-1040.webp" srcset="assets/img/server-1040.webp 1040w, assets/img/server.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1472" loading="lazy" alt="Die Seite eines Proxmox-Knotens in Nodvard Deck: Zugang, CPU, RAM, Laufzeit und der Verlauf der Auslastung.">
+      <figcaption>Seite eines Proxmox-Knotens, mit Beispieldaten.</figcaption>
+    </figure>
+  </section>
+
+  <section class="feature" id="docker" aria-labelledby="h-docker">
+    <div class="body">
+      <h2 id="h-docker">Docker</h2>
+      <p>Alle Container deiner Server auf einer Seite, mit Zustand, Logs und Konsole. Stacks aus Compose-Dateien siehst und bedienst du als Ganzes.</p>
+      <ul class="points">
+        <li>Starten, stoppen, neu starten, Logs mit Suche, Konsole und Details</li>
+        <li>Image-Updates finden und einspielen. Das alte Image bleibt als Sicherung. Startet der neue Container nicht, geht Deck von selbst zurück, außer bei Datenbanken.</li>
+        <li>Compose-Dateien als Text oder im Formular bearbeiten. Vor dem Speichern prüft Docker Compose die Datei auf dem Server.</li>
+        <li>Neue Stacks anlegen, auch aus Vorlagen für Uptime Kuma, Vaultwarden, Nginx Proxy Manager und Gitea</li>
+        <li>Ganze Stacks aktualisieren und zurück zur vorigen Version, auf Wunsch mit Sicherung der Volumes vorher</li>
+        <li>Umzug aus Portainer: Deck übernimmt Compose-Datei und Variablen, die Volumes mit deinen Daten bleiben</li>
+        <li>Images, Volumes und Netze aufräumen</li>
+      </ul>
+    </div>
+    <figure>
+      <img src="assets/img/stacks-1040.webp" srcset="assets/img/stacks-1040.webp 1040w, assets/img/stacks.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1072" loading="lazy" alt="Der Reiter Stacks in Nodvard Deck: Compose-Projekte eines Servers mit Zustand, Ordner und Knöpfen zum Ansehen, Bearbeiten, Anwenden, Aktualisieren und Übernehmen aus Portainer.">
+      <figcaption>Der Reiter Stacks, mit Beispieldaten.</figcaption>
+    </figure>
+  </section>
+
+  <section class="feature" id="shield" aria-labelledby="h-shield">
+    <div class="body">
+      <h2 id="h-shield">Nodvard Shield</h2>
+      <p>Shield prüft deine Linux-Server und zeigt, was es findet. Was danach passiert, entscheidest du.</p>
+      <ul class="points">
+        <li>Virenscan mit ClamAV als Schnellscan, Tiefenscan oder nach Zeitplan, mit Quarantäne</li>
+        <li>Härtungs-Check mit Lynis</li>
+        <li>Update-Zentrale mit den offenen Sicherheitsupdates je Server</li>
+        <li>Einbruchschutz: ungewöhnliche SSH-Logins, Fail2ban und offene Ports</li>
+        <li>Datei-Wächter für wichtige Systemdateien</li>
+        <li>Morgen-Briefing mit dem Stand der Nacht</li>
+        <li>Auf Wunsch eine KI-Wache für abgestürzte Container, mit deinem eigenen Ollama</li>
+      </ul>
+      <p>Am meisten sieht Shield, wenn Deck auf dem Server sudo-Rechte hat.</p>
+    </div>
+    <figure>
+      <img src="assets/img/shield-1040.webp" srcset="assets/img/shield-1040.webp 1040w, assets/img/shield.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1472" loading="lazy" alt="Die Übersicht von Nodvard Shield: Schutzwert, geschützte Server, offene Bedrohungen, Quarantäne, Härtung und was Aufmerksamkeit braucht.">
+      <figcaption>Die Übersicht von Shield, mit Beispieldaten.</figcaption>
+    </figure>
+  </section>
+
+  <section class="feature" id="backups" aria-labelledby="h-backups">
+    <div class="body">
+      <h2 id="h-backups">Backups</h2>
+      <p>Deck zeigt, ob deine Backups wirklich laufen, und sichert sich auch selbst.</p>
+      <ul class="points">
+        <li>Alle Proxmox-Backups auf einen Blick, mit Warnung bei fehlenden oder fehlgeschlagenen</li>
+        <li>Backup-Jobs anlegen und bearbeiten</li>
+        <li>Einen Gast aus dem Backup als Kopie wiederherstellen, das Original bleibt unberührt</li>
+        <li>Vor dem Update eines Stacks auf Wunsch die Docker-Volumes sichern</li>
+        <li>Vor jedem Update von Deck eine Kopie der eigenen Datenbank, dazu eine Sicherung zum Herunterladen und Wiederherstellen</li>
+      </ul>
+    </div>
+    <figure>
+      <img src="assets/img/backups-1040.webp" srcset="assets/img/backups-1040.webp 1040w, assets/img/backups.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1472" loading="lazy" alt="Die Seite Proxmox-Backups: ein Gast ohne Backup-Job, die Backup-Jobs mit Zeitplan, letztem Lauf und vorhandenen Sicherungen, ein fehlgeschlagener Lauf.">
+      <figcaption>Die Seite Proxmox-Backups, mit Beispieldaten.</figcaption>
+    </figure>
+  </section>
+
+  <section class="feature" id="apps" aria-labelledby="h-apps">
+    <div class="body">
+      <h2 id="h-apps">Apps</h2>
+      <p>Eine Startseite für die Dienste in deinem Netz. Jede App ist eine Kachel mit Adresse und Symbol, sortiert in Ordnern.</p>
+      <ul class="points">
+        <li>Container mit Weboberfläche findet Deck auf deinen Docker-Servern von selbst</li>
+        <li>Eigene Apps fügst du mit Adresse und Symbol hinzu</li>
+        <li>Die Reihenfolge änderst du per Ziehen oder über das Menü der Kachel</li>
+      </ul>
+    </div>
+    <figure>
+      <img src="assets/img/apps-1040.webp" srcset="assets/img/apps-1040.webp 1040w, assets/img/apps.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="992" loading="lazy" alt="Die Seite Apps in Nodvard Deck: Kacheln für Drucker, Router, Pi-hole, Home Assistant, ein Synology NAS und Monitoring, in Ordnern sortiert.">
+      <figcaption>Die Seite Apps, mit Beispieldaten.</figcaption>
+    </figure>
+  </section>
+
+  <section class="feature text-only" id="integrationen" aria-labelledby="h-integrationen">
+    <div class="body">
+      <h2 id="h-integrationen">Integrationen</h2>
+      <p>Deck holt Zustand und Zahlen aus deinen Diensten und zeigt sie als Kachel und eigene Seite. Die meisten lesen nur und ändern nichts.</p>
+      <ul class="tags" aria-label="Integrationen">
+        <li>Uptime Kuma <span class="beta">Beta</span></li>
+        <li>Home Assistant <span class="beta">Beta</span></li>
+        <li>Plex <span class="beta">Beta</span></li>
+        <li>Jellyfin <span class="beta">Beta</span></li>
+        <li>qBittorrent <span class="beta">Beta</span></li>
+        <li>Synology DSM <span class="beta">Beta</span></li>
+        <li>Pi-hole <span class="beta">Beta</span></li>
+        <li>Nginx Proxy Manager <span class="beta">Beta</span></li>
+        <li>Nextcloud</li>
+        <li>ntfy</li>
+      </ul>
+      <p>Dazu kommen weitere Module: Skripte für einen oder viele Server, auch nach Zeitplan; Dokumente mit Texterkennung und Volltextsuche; ein Inventar mit Garantie-Erinnerung; Gameserver <span class="beta">Beta</span>. Jedes Modul schaltest du einzeln an oder aus.</p>
+    </div>
+  </section>
+
+  <section class="feature text-only" id="tresor" aria-labelledby="h-tresor">
+    <div class="body">
+      <h2 id="h-tresor">Tresor</h2>
+      <p>Zugangsdaten für Server und Dienste liegen verschlüsselt im Tresor von Deck.</p>
+      <ul class="points">
+        <li>Passwörter, API-Tokens und SSH-Schlüssel an einem Ort</li>
+        <li>Auf Wunsch erzeugt Deck für jeden Server einen eigenen SSH-Schlüssel. Der geheime Teil bleibt im Tresor.</li>
+        <li>Geheime Werte in Skripten holt Deck erst beim Ausführen aus dem Tresor</li>
+        <li>Jedes Modul kommt nur an die Zugangsdaten, für die es freigegeben ist</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="feature" id="meldungen" aria-labelledby="h-meldungen">
+    <div class="body">
+      <h2 id="h-meldungen">Meldungen</h2>
+      <p>Alles, was deine Aufmerksamkeit braucht, landet in einer Liste: volle Platten, fehlgeschlagene Backups, offene Updates und Funde von Shield.</p>
+      <ul class="points">
+        <li>Push aufs Handy über ntfy, Telegram, Discord, Gotify, Pushover, Matrix, Slack, Mattermost oder eine eigene Apprise-API</li>
+        <li>Für jeden Kanal eine eigene Mindest-Stufe</li>
+        <li>Deck lässt sich als App auf den Startbildschirm des Handys legen</li>
+      </ul>
+    </div>
+    <figure>
+      <img src="assets/img/meldungen-1040.webp" srcset="assets/img/meldungen-1040.webp 1040w, assets/img/meldungen.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="992" loading="lazy" alt="Die Seite Meldungen in Nodvard Deck: eine kritische Meldung zu vollem Speicher, Warnungen zu Logins und Updates und ein erfolgreiches Backup.">
+      <figcaption>Die Seite Meldungen, mit Beispieldaten.</figcaption>
+    </figure>
+  </section>
+
+  <section class="feature text-only" id="freigaben" aria-labelledby="h-freigaben">
+    <div class="body">
+      <h2 id="h-freigaben">Freigaben und Konten</h2>
+      <p>Alles, was etwas verändert, ist in Deck eine Aktion mit Risikostufe. Deck schlägt vor, du bestätigst. Was ohne Rückfrage laufen darf, legst du selbst fest, etwa mit einer Sperrliste oder einem Wartungsfenster.</p>
+      <ul class="points">
+        <li>Jede Aktion steht im Protokoll</li>
+        <li>Benutzer mit Rollen und Rechten</li>
+        <li>Anmeldung mit Zwei-Faktor-Code aus einer App</li>
+        <li>Name, Logo und Farben von Deck sind Einstellungen</li>
+      </ul>
+    </div>
+  </section>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck wird entwickelt von Nico Benks.</p><p>Für private Nutzung kostenlos, der Quellcode ist einsehbar.</p></div>
+    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div></nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nodvard Dock | Nodvard Deck</title>
+<meta name="description" content="Nodvard Dock ist Nodvard Deck mit nur dem Docker-Teil: Container, Stacks, Logs und Image-Updates, als eigenes, schlankes Image. Beta.">
+<link rel="canonical" href="https://nodvard.com/dock.html">
+<link rel="alternate" hreflang="de" href="https://nodvard.com/dock.html">
+<link rel="alternate" hreflang="en" href="https://nodvard.com/en/dock.html">
+<link rel="alternate" hreflang="x-default" href="https://nodvard.com/dock.html">
+<meta name="theme-color" content="#1a1b1e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nodvard Deck">
+<meta property="og:title" content="Nodvard Dock">
+<meta property="og:description" content="Nodvard Dock ist Nodvard Deck mit nur dem Docker-Teil: Container, Stacks, Logs und Image-Updates, als eigenes, schlankes Image. Beta.">
+<meta property="og:url" content="https://nodvard.com/dock.html">
+<meta property="og:image" content="https://nodvard.com/assets/og.png">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
+    <nav aria-label="Hauptmenü"><ul class="nav"><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html" aria-current="page">Dock</a></li><li><a href="loslegen.html">Loslegen</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <a class="lang" href="en/dock.html" hreflang="en" lang="en" title="Read this page in English">English</a>
+  </div>
+</header>
+<main id="inhalt">
+<div class="wrap">
+  <header class="page-head">
+    <h1>Nodvard Dock <span class="beta">Beta</span></h1>
+    <p class="lead">Container-Verwaltung für Docker, schlicht und auf Deutsch. Für alle, die ihre Container auf ein paar Servern im Blick behalten wollen, auch für Umsteiger von Portainer CE.</p>
+  </header>
+
+  <div class="box">
+    <p><strong>Erscheint mit Version 0.11.0.</strong> Bis dahin steckt derselbe Docker-Teil in Nodvard Deck. Dock ist Deck mit nur dem Modul Docker: derselbe Code, nur weniger drin.</p>
+  </div>
+
+  <div class="prose">
+    <h2>Was Dock kann</h2>
+    <ul>
+      <li><strong>Container</strong> aller Server auf einer Seite: Zustand, Starten, Stoppen, Neustarten, gestoppte Container löschen, Konsole und Details.</li>
+      <li><strong>Logs</strong> mit Zeitraum, Suche und Download.</li>
+      <li><strong>Image-Updates</strong> finden und bei Compose-Diensten einspielen. Das alte Image bleibt als Sicherung. Stürzt der neue Container beim Start ab, geht es von selbst zurück, außer bei Datenbanken.</li>
+      <li><strong>Stacks</strong> sehen, übernehmen und bearbeiten, als Text oder im Formular. Neue Stacks legst du je Server in einem Ordner an, auch aus einer Vorlage.</li>
+      <li><strong>Ganze Stacks aktualisieren</strong> mit „Zurück zur vorigen Version“. Auf Wunsch sichert Dock vorher die Volumes und prüft, ob genug Platz da ist.</li>
+      <li><strong>Images, Volumes und Netze</strong> auflisten und aufräumen.</li>
+      <li><strong>Freigabe und Protokoll:</strong> Jede Änderung ist eine Aktion mit Risikostufe. Was ohne Rückfrage durchläuft, bestimmt der Inhaber.</li>
+    </ul>
+
+    <h2>Umsteigen von Portainer</h2>
+    <p>Stacks, die Portainer angelegt hat, ziehen in einen eigenen Ordner um. Dock holt Compose-Datei und Variablen aus dem Speicher von Portainer und rollt den Stack dort unter demselben Namen neu aus. Die Volumes mit deinen Daten bleiben. Passt etwas nicht, zieht Dock nicht um und nennt den Grund.</p>
+
+    <h2>Noch nicht dabei</h2>
+    <p>Volume-Sicherungen über die Oberfläche zurückspielen und das Anmelden bei privaten Registries. Das kommt mit den nächsten Beta-Ständen.</p>
+
+    <h2>Installieren</h2>
+    <p>Du brauchst einen Rechner mit Docker und Docker Compose, etwa einen Raspberry Pi 4 oder 5 mit 64-Bit-System oder einen x86-64-Rechner. Die Befehle klappen, sobald Version 0.11.0 erschienen ist.</p>
+  <div class="cmd">
+    <div class="cmd-head"><span>Im Terminal, mit Docker Compose</span><span class="sr" role="status"></span><button type="button" data-done="Kopiert" hidden data-copy="cmd-dock">Kopieren</button></div>
+    <pre><code id="cmd-dock">mkdir ~/nodvard-dock &amp;&amp; cd ~/nodvard-dock
+curl -fsSL -o compose.yml https://raw.githubusercontent.com/nodvard/deck/main/deploy/nodvard-dock/compose.yml
+docker compose up -d</code></pre>
+  </div>
+    <p>Danach öffnest du <code>http://&lt;dein-server&gt;:8080</code>. Den Einrichtungscode zeigt <code>docker compose logs nodvard-dock</code>. Mehr steht in der <a href="https://github.com/nodvard/deck/blob/main/deploy/nodvard-dock/README.md">Anleitung zu Nodvard Dock</a>.</p>
+  </div>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck wird entwickelt von Nico Benks.</p><p>Für private Nutzung kostenlos, der Quellcode ist einsehbar.</p></div>
+    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div></nav>
+  </div>
+</footer>
+<script src="assets/copy.js" defer></script>
+</body>
+</html>

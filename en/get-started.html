@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Get started | Nodvard Deck</title>
+<meta name="description" content="How to install Nodvard Deck with Docker Compose, on a Raspberry Pi, with Portainer or on a NAS such as Synology, Unraid or TrueNAS.">
+<link rel="canonical" href="https://nodvard.com/en/get-started.html">
+<link rel="alternate" hreflang="de" href="https://nodvard.com/loslegen.html">
+<link rel="alternate" hreflang="en" href="https://nodvard.com/en/get-started.html">
+<link rel="alternate" hreflang="x-default" href="https://nodvard.com/loslegen.html">
+<meta name="theme-color" content="#1a1b1e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nodvard Deck">
+<meta property="og:title" content="Get started">
+<meta property="og:description" content="How to install Nodvard Deck with Docker Compose, on a Raspberry Pi, with Portainer or on a NAS such as Synology, Unraid or TrueNAS.">
+<meta property="og:url" content="https://nodvard.com/en/get-started.html">
+<meta property="og:image" content="https://nodvard.com/assets/og.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#inhalt">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
+    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="get-started.html" aria-current="page">Get started</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <a class="lang" href="../loslegen.html" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a>
+  </div>
+</header>
+<main id="inhalt">
+<div class="wrap">
+  <header class="page-head">
+    <h1>Get started</h1>
+    <p class="lead">Nodvard Deck runs in Docker, on a Raspberry Pi 4 or 5 just like on any x86-64 machine. Nothing is built, the ready-made image comes from GitHub. The interface is in German for now.</p>
+  </header>
+
+  <ol class="steps">
+    <li><strong>Have Docker and Docker Compose ready.</strong> A Raspberry Pi needs a 64-bit system.</li>
+    <li><strong>Get Deck and start it.</strong>
+      <div class="cmd">
+        <div class="cmd-head"><span>In a terminal</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-install">Copy</button></div>
+        <pre><code id="cmd-install">mkdir ~/nodvard-deck &amp;&amp; cd ~/nodvard-deck
+curl -fsSL -o compose.yml https://raw.githubusercontent.com/nodvard/deck/main/deploy/compose.standalone.yml
+docker compose up -d</code></pre>
+      </div>
+      <p>On Windows, these commands are for WSL or Git Bash. In PowerShell, write <code>curl.exe</code> instead of <code>curl</code> and run the commands one by one.</p>
+    </li>
+    <li><strong>Open it in your browser:</strong> <code>http://&lt;your-server&gt;:8080</code>. Deck asks for a setup code. <code>docker compose logs nodvard-deck</code> in the same folder shows it, the line starts with “Einrichtungscode”.</li>
+    <li><strong>Follow the assistant.</strong> It guides you through your account and the first server. If you just want to look around, fill Deck with sample data and delete it later with one click.</li>
+  </ol>
+
+  <div class="prose">
+    <h2>Port already in use?</h2>
+    <p>Put a file <code>.env</code> next to <code>compose.yml</code> with the line <code>NODVARD_DECK_PORT=8081</code> and run <code>docker compose up -d</code> again. Deck is then on port 8081.</p>
+
+    <h2>Updating</h2>
+    <p>In the same folder, run <code>docker compose pull &amp;&amp; docker compose up -d</code>. Your data is kept. Before every update that changes the database, Deck makes a copy of it.</p>
+
+    <h2>Other ways</h2>
+    <p>Each way is described step by step in the README:</p>
+    <ul>
+      <li>Portainer, from the repository or with the web editor</li>
+      <li>Raspberry Pi with all commands</li>
+      <li>A single <code>docker run</code> command, Podman or Dockge</li>
+      <li>NAS: Synology, UGREEN, QNAP, Unraid, TrueNAS SCALE, OpenMediaVault, ZimaOS and CasaOS</li>
+      <li>Proxmox and Docker Desktop</li>
+    </ul>
+    <p class="more"><a href="https://github.com/nodvard/deck/blob/main/README.en.md#getting-started">All ways in the README</a></p>
+  </div>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck is made by Nico Benks.</p><p>Free for personal use, the source code is public.</p></div>
+    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div></nav>
+  </div>
+</footer>
+<script src="../assets/copy.js" defer></script>
+</body>
+</html>

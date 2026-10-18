@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://nodvard.com/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/funktionen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/funktionen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/features.html"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/en/features.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/funktionen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/features.html"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/dock.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/dock.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/dock.html"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/en/dock.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/dock.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/dock.html"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/loslegen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/loslegen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/get-started.html"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/en/get-started.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/loslegen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/get-started.html"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/community.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/community.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/community.html"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/en/community.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/community.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/community.html"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/lizenz.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/lizenz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/license.html"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/en/license.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/lizenz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/license.html"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/datenschutz.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/impressum.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/imprint.html"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/en/imprint.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/imprint.html"/>
+  </url>
+</urlset>
