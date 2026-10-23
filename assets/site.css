@@ -95,9 +95,9 @@ code, pre { font-family: var(--mono); }
 .hero .lead { margin-top: 22px; font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem); line-height: 1.55; color: var(--soft); max-width: 40em; }
 .hero .btns { margin-top: 30px; }
 .hero .note { margin-top: 18px; font-size: 0.9375rem; color: var(--muted); }
-.bleed { margin-top: 56px; padding-left: max(var(--gutter), calc((100% - var(--page)) / 2)); overflow: hidden; }
+.bleed { margin-top: 56px; padding-left: max(var(--gutter), calc((100% - var(--page)) / 2)); padding-right: max(var(--gutter-r), calc((100% - var(--page)) / 2)); overflow: hidden; }
 .bleed picture, .bleed img { display: block; width: 100%; }
-.bleed img { border: 1px solid var(--line-strong); border-right: 0; border-radius: var(--radius-lg) 0 0 var(--radius-lg); background: var(--side); }
+.bleed img { border: 1px solid var(--line-strong); border-radius: var(--radius-lg); background: var(--side); }
 .caption { margin-top: 10px; font-size: 0.875rem; color: var(--muted); }
 .bleed + .wrap .caption { margin-top: 10px; }
 
