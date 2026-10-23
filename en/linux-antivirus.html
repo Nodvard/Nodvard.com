@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Central antivirus for Linux servers | Nodvard Deck</title>
+<meta name="description" content="Nodvard Shield scans your Linux servers with ClamAV, shows findings and quarantine in one place and checks hardening, updates and logins.">
+<link rel="canonical" href="https://nodvard.com/en/linux-antivirus.html">
+<link rel="alternate" hreflang="de" href="https://nodvard.com/linux-virenschutz.html">
+<link rel="alternate" hreflang="en" href="https://nodvard.com/en/linux-antivirus.html">
+<link rel="alternate" hreflang="x-default" href="https://nodvard.com/linux-virenschutz.html">
+<meta name="theme-color" content="#1a1b1e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nodvard Deck">
+<meta property="og:title" content="Central antivirus for Linux servers | Nodvard Deck">
+<meta property="og:description" content="Nodvard Shield scans your Linux servers with ClamAV, shows findings and quarantine in one place and checks hardening, updates and logins.">
+<meta property="og:url" content="https://nodvard.com/en/linux-antivirus.html">
+<meta property="og:image" content="https://nodvard.com/assets/og/virenschutz-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nodvard Deck with sample data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Central antivirus for Linux servers | Nodvard Deck">
+<meta name="twitter:description" content="Nodvard Shield scans your Linux servers with ClamAV, shows findings and quarantine in one place and checks hardening, updates and logins.">
+<meta name="twitter:image" content="https://nodvard.com/assets/og/virenschutz-en.jpg">
+<meta property="og:locale" content="en_US">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#inhalt">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
+    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <a class="lang" href="../linux-virenschutz.html" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a>
+  </div>
+</header>
+<main id="inhalt">
+<div class="wrap">
+  <header class="page-head">
+    <h1>Antivirus for your Linux servers, in one place</h1>
+    <p class="lead">Nodvard Shield runs ClamAV on your servers, collects the findings and shows what to do. On top come a hardening check, pending security updates and a look at unusual logins. Shield is part of Nodvard Deck, whose interface is in German for now.</p>
+    <div class="btns"><a class="btn btn-main" href="get-started.html">Get started</a><a class="btn btn-alt" href="features.html#shield">Shield at a glance</a></div>
+  </header>
+
+  <figure class="wide">
+    <img src="../assets/img/shield-1040.webp" srcset="../assets/img/shield-1040.webp 1040w, ../assets/img/shield.webp 2080w" sizes="(min-width: 1152px) 1040px, 100vw" width="2080" height="1472" fetchpriority="high" alt="The Nodvard Shield overview: protection score, protected servers, open threats, quarantine, hardening and what needs attention.">
+    <figcaption>The Shield overview, with sample data.</figcaption>
+  </figure>
+
+  <div class="prose">
+    <h2>What Shield does</h2>
+    <ul>
+      <li><strong>Virus scans with ClamAV</strong> as a quick scan, deep scan or on a schedule, for all servers from one place.</li>
+      <li><strong>Real-time watcher</strong> that regularly checks new and changed files in typical folders such as <code>/tmp</code> or <code>/home</code>, every 10 minutes by default.</li>
+      <li><strong>Quarantine:</strong> by default, Shield moves findings to quarantine right away, and that can be undone. If you turn this off, findings wait for your decision.</li>
+      <li><strong>Hardening check</strong> with Lynis, with the hints in plain words.</li>
+      <li><strong>Update center</strong> with the pending security updates for each server.</li>
+      <li><strong>Intrusion checks:</strong> unusual SSH logins, Fail2ban and newly opened ports. For programs such as a game server, you add port ranges of your own.</li>
+      <li><strong>File watcher</strong> for important system files.</li>
+      <li><strong>Morning briefing</strong> with what happened overnight, sent to your phone if you like.</li>
+      <li>An optional <strong>AI watch</strong> for crashed containers, using your own Ollama.</li>
+    </ul>
+
+    <h2>What Shield does not promise</h2>
+    <p>No scanner finds everything, ClamAV included. Shield shows what is going on on your servers and suggests what you can do. You decide how much happens automatically.</p>
+
+    <h2>What you need</h2>
+    <p>Linux servers that Nodvard Deck can reach over SSH. Shield sees the most when Deck has sudo rights there. Without them, the SSH log, Fail2ban and the processes behind open ports can only be read in part.</p>
+    <p>Findings and warnings end up in the <a href="features.html#meldungen">notifications</a> and, if you like, on your phone via ntfy, Telegram, Discord or other channels.</p>
+  </div>
+</div>
+
+<section class="section cta" aria-labelledby="cta">
+  <div class="wrap">
+    <h2 id="cta">Shield comes with Deck</h2>
+    <p class="intro">Install Nodvard Deck and turn on the Nodvard Shield module. Free for personal use.</p>
+    <div class="btns"><a class="btn btn-main" href="get-started.html">Get started</a><a class="btn btn-alt" href="faq.html">FAQ</a></div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck is made by Nico Benks.</p><p>Free for personal use, the source code is public.</p></div>
+    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="portainer-alternative.html">Portainer alternative</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
+  </div>
+</footer>
+
+</body>
+</html>

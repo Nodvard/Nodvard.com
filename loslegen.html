@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Loslegen | Nodvard Deck</title>
+<title>Nodvard Deck installieren mit Docker Compose</title>
 <meta name="description" content="So installierst du Nodvard Deck mit Docker Compose, auf dem Raspberry Pi, mit Portainer oder auf einem NAS wie Synology, Unraid oder TrueNAS.">
 <link rel="canonical" href="https://nodvard.com/loslegen.html">
 <link rel="alternate" hreflang="de" href="https://nodvard.com/loslegen.html">
@@ -12,12 +12,18 @@
 <meta name="theme-color" content="#1a1b1e">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nodvard Deck">
-<meta property="og:title" content="Loslegen">
+<meta property="og:title" content="Nodvard Deck installieren mit Docker Compose">
 <meta property="og:description" content="So installierst du Nodvard Deck mit Docker Compose, auf dem Raspberry Pi, mit Portainer oder auf einem NAS wie Synology, Unraid oder TrueNAS.">
 <meta property="og:url" content="https://nodvard.com/loslegen.html">
-<meta property="og:image" content="https://nodvard.com/assets/og.png">
-<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://nodvard.com/assets/og/loslegen-de.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nodvard Deck mit Beispieldaten">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nodvard Deck installieren mit Docker Compose">
+<meta name="twitter:description" content="So installierst du Nodvard Deck mit Docker Compose, auf dem Raspberry Pi, mit Portainer oder auf einem NAS wie Synology, Unraid oder TrueNAS.">
+<meta name="twitter:image" content="https://nodvard.com/assets/og/loslegen-de.jpg">
+<meta property="og:locale" content="de_DE">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
@@ -62,6 +68,9 @@ docker compose up -d</code></pre>
     <h2>Aktualisieren</h2>
     <p>Im selben Ordner <code>docker compose pull &amp;&amp; docker compose up -d</code>. Deine Daten bleiben erhalten. Vor jedem Update, das die Datenbank umbaut, legt Deck selbst eine Kopie an.</p>
 
+    <h2>Nach der Installation</h2>
+    <p>Richte als Erstes die Sicherung ein, am besten auf ein NAS: <a href="sicherung-nas-nfs.html">Sicherungen auf ein NAS oder NFS</a>. Antworten zu Lizenz, Daten und Raspberry Pi stehen in den <a href="faq.html">häufigen Fragen</a>.</p>
+
     <h2>Andere Wege</h2>
     <p>Jeder Weg ist im README Schritt für Schritt beschrieben:</p>
     <ul>
@@ -78,7 +87,7 @@ docker compose up -d</code></pre>
 <footer class="foot">
   <div class="wrap">
     <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck wird entwickelt von Nico Benks.</p><p>Für private Nutzung kostenlos, der Quellcode ist einsehbar.</p></div>
-    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div></nav>
+    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="portainer-alternative.html">Portainer-Alternative</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
   </div>
 </footer>
 <script src="assets/copy.js" defer></script>

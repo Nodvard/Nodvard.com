@@ -249,3 +249,20 @@ h3.sub { margin-top: 80px; font-size: 1.25rem; font-weight: 700; }
 /* Funktionsseite: Bilder abwechselnd links und rechts */
 @media (min-width: 901px) { .feature:nth-of-type(even):not(.text-only) { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } .feature:nth-of-type(even):not(.text-only) figure { order: -1; } }
 @media (min-width: 901px) { .show:nth-of-type(even) { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); } }
+
+/* Suchseiten (Homelab-Dashboard, Portainer-Alternative, Proxmox und Docker, Virenschutz, FAQ, Anleitungen) */
+.page-head .btns { margin-top: 28px; }
+figure.wide { margin: 40px 0 0; }
+figure.wide img { border: 1px solid var(--line-strong); border-radius: var(--radius-lg); background: var(--side); }
+figure.wide figcaption { margin-top: 10px; font-size: 0.875rem; color: var(--muted); }
+figure.wide + .prose { padding-top: 24px; }
+.show h2 { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); line-height: 1.12; letter-spacing: -0.015em; font-weight: 750; font-stretch: 118%; }
+.show-text p + p { margin-top: 10px; }
+.note-small { font-size: 0.875rem; color: var(--muted); }
+.cta { border-top: 1px solid var(--line); }
+.faq h2 { font-size: 1.25rem; }
+.prose + .steps, .steps + .prose { margin-top: 8px; }
+.prose h3 + p { margin-top: 6px; }
+.foot-cols { grid-template-columns: repeat(4, auto); }
+@media (max-width: 1000px) { .foot .wrap { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 760px) { .foot-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

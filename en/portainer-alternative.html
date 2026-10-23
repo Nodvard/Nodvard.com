@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portainer alternative: Nodvard Dock and Deck</title>
+<meta name="description" content="Nodvard Dock manages containers and Compose stacks on several servers, with updates and a way back. Stacks from Portainer move over with one button.">
+<link rel="canonical" href="https://nodvard.com/en/portainer-alternative.html">
+<link rel="alternate" hreflang="de" href="https://nodvard.com/portainer-alternative.html">
+<link rel="alternate" hreflang="en" href="https://nodvard.com/en/portainer-alternative.html">
+<link rel="alternate" hreflang="x-default" href="https://nodvard.com/portainer-alternative.html">
+<meta name="theme-color" content="#1a1b1e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nodvard Deck">
+<meta property="og:title" content="Portainer alternative: Nodvard Dock and Deck">
+<meta property="og:description" content="Nodvard Dock manages containers and Compose stacks on several servers, with updates and a way back. Stacks from Portainer move over with one button.">
+<meta property="og:url" content="https://nodvard.com/en/portainer-alternative.html">
+<meta property="og:image" content="https://nodvard.com/assets/og/portainer-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nodvard Deck with sample data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Portainer alternative: Nodvard Dock and Deck">
+<meta name="twitter:description" content="Nodvard Dock manages containers and Compose stacks on several servers, with updates and a way back. Stacks from Portainer move over with one button.">
+<meta name="twitter:image" content="https://nodvard.com/assets/og/portainer-en.jpg">
+<meta property="og:locale" content="en_US">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#inhalt">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
+    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <a class="lang" href="../portainer-alternative.html" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a>
+  </div>
+</header>
+<main id="inhalt">
+<div class="wrap">
+  <header class="page-head">
+    <h1>A Portainer alternative for your homelab</h1>
+    <p class="lead">Looking for a simple container manager for a few servers? Nodvard Dock is exactly that: containers, stacks, logs and image updates, self-hosted and free for personal use. If you want more, Nodvard Deck comes with the same Docker part. The interface is in German for now.</p>
+    <div class="btns"><a class="btn btn-main" href="dock.html">Install Nodvard Dock</a><a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Discord</a></div>
+  </header>
+
+  <div class="show">
+    <figure><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1072" fetchpriority="high" alt="The Stacks tab: Compose projects of one server, including a stack from Portainer with the button to move it over."></figure>
+    <div class="show-text">
+      <h2>Move stacks over from Portainer</h2>
+      <p>Stacks created by Portainer move into a folder of their own with one button. Dock takes the Compose file and variables from Portainer’s storage and deploys the stack there again under the same name. The volumes with your data stay.</p>
+      <p>If something does not fit, for example because the stored file names other images than the running containers, Dock does not move the stack and tells you why.</p>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h2>What Dock does</h2>
+    <ul>
+      <li><strong>Containers</strong> of all servers on one page: status, start, stop, restart, console, details and logs with search.</li>
+      <li><strong>Stacks</strong>: edit them as text or in a form. Before saving, Docker Compose checks the file on the server, and recent versions stay in the history.</li>
+      <li><strong>New stacks</strong> in a folder on each server, also from templates for Uptime Kuma, Vaultwarden, Nginx Proxy Manager and Gitea.</li>
+      <li><strong>Image updates</strong>: find and apply them. The old image stays as a backup. If the new container does not start, it goes back on its own, except for databases.</li>
+      <li><strong>Update whole stacks</strong> and go back to the previous version, with a backup of the volumes first if you like. You can restore volume backups in the Stacks tab as well.</li>
+      <li><strong>Private registries</strong> such as ghcr.io. The password or token is stored in the vault.</li>
+      <li><strong>Images, volumes and networks</strong>: list and clean them up.</li>
+    </ul>
+
+    <h2>Several servers, no agent</h2>
+    <p>Dock talks to your Docker servers over SSH. No agent of its own runs on the servers. If you don’t want to give the account full Docker rights, use the “operate only” mode: Dock may then only call one fixed helper script via sudo, and that script checks every call itself.</p>
+
+    <h2>Approvals instead of surprises</h2>
+    <p>Every change to containers, stacks, images, volumes and networks is an action with a risk level. The owner decides what runs without asking. Everything is written to the log.</p>
+
+    <h2>Dock or Deck?</h2>
+    <p><a href="dock.html">Nodvard Dock</a> is just the container manager, as its own lean image. <a href="index.html">Nodvard Deck</a> includes the same Docker part plus Proxmox, backups, Shield, apps and notifications. It is the same code, with more or less of it included.</p>
+    <p>Dock is in beta. Feedback helps, Discord is the quickest way.</p>
+    <p class="note-small">Portainer is a trademark of its owner. Nodvard is not affiliated with it.</p>
+  </div>
+</div>
+
+<section class="section cta" aria-labelledby="cta">
+  <div class="wrap">
+    <h2 id="cta">Installed with three commands</h2>
+    <p class="intro">You need a machine with Docker and Docker Compose. The commands are on the Nodvard Dock page.</p>
+    <div class="btns"><a class="btn btn-main" href="dock.html">Go to Nodvard Dock</a><a class="btn btn-alt" href="faq.html">FAQ</a></div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck is made by Nico Benks.</p><p>Free for personal use, the source code is public.</p></div>
+    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="portainer-alternative.html">Portainer alternative</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
+  </div>
+</footer>
+
+</body>
+</html>

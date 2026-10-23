@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Virenschutz für Linux-Server zentral | Nodvard Deck</title>
+<meta name="description" content="Nodvard Shield scannt deine Linux-Server mit ClamAV, zeigt Funde und Quarantäne an einem Ort und prüft Härtung, Updates und Logins.">
+<link rel="canonical" href="https://nodvard.com/linux-virenschutz.html">
+<link rel="alternate" hreflang="de" href="https://nodvard.com/linux-virenschutz.html">
+<link rel="alternate" hreflang="en" href="https://nodvard.com/en/linux-antivirus.html">
+<link rel="alternate" hreflang="x-default" href="https://nodvard.com/linux-virenschutz.html">
+<meta name="theme-color" content="#1a1b1e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nodvard Deck">
+<meta property="og:title" content="Virenschutz für Linux-Server zentral | Nodvard Deck">
+<meta property="og:description" content="Nodvard Shield scannt deine Linux-Server mit ClamAV, zeigt Funde und Quarantäne an einem Ort und prüft Härtung, Updates und Logins.">
+<meta property="og:url" content="https://nodvard.com/linux-virenschutz.html">
+<meta property="og:image" content="https://nodvard.com/assets/og/virenschutz-de.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nodvard Deck mit Beispieldaten">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Virenschutz für Linux-Server zentral | Nodvard Deck">
+<meta name="twitter:description" content="Nodvard Shield scannt deine Linux-Server mit ClamAV, zeigt Funde und Quarantäne an einem Ort und prüft Härtung, Updates und Logins.">
+<meta name="twitter:image" content="https://nodvard.com/assets/og/virenschutz-de.jpg">
+<meta property="og:locale" content="de_DE">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
+    <nav aria-label="Hauptmenü"><ul class="nav"><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Dock</a></li><li><a href="loslegen.html">Loslegen</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <a class="lang" href="en/linux-antivirus.html" hreflang="en" lang="en" title="Read this page in English">English</a>
+  </div>
+</header>
+<main id="inhalt">
+<div class="wrap">
+  <header class="page-head">
+    <h1>Virenschutz für deine Linux-Server, an einem Ort</h1>
+    <p class="lead">Nodvard Shield steuert ClamAV auf deinen Servern, sammelt die Funde und zeigt, was zu tun ist. Dazu kommen ein Härtungs-Check, die offenen Sicherheitsupdates und ein Blick auf ungewöhnliche Logins. Shield ist ein Teil von Nodvard Deck.</p>
+    <div class="btns"><a class="btn btn-main" href="loslegen.html">Loslegen</a><a class="btn btn-alt" href="funktionen.html#shield">Shield im Überblick</a></div>
+  </header>
+
+  <figure class="wide">
+    <img src="assets/img/shield-1040.webp" srcset="assets/img/shield-1040.webp 1040w, assets/img/shield.webp 2080w" sizes="(min-width: 1152px) 1040px, 100vw" width="2080" height="1472" fetchpriority="high" alt="Die Übersicht von Nodvard Shield: Schutzwert, geschützte Server, offene Bedrohungen, Quarantäne, Härtung und was Aufmerksamkeit braucht.">
+    <figcaption>Die Übersicht von Shield, mit Beispieldaten.</figcaption>
+  </figure>
+
+  <div class="prose">
+    <h2>Was Shield macht</h2>
+    <ul>
+      <li><strong>Virenscan mit ClamAV</strong> als Schnellscan, Tiefenscan oder nach Zeitplan, für alle Server von einer Stelle aus.</li>
+      <li><strong>Echtzeit-Wächter</strong>, der neue und geänderte Dateien in typischen Ordnern wie <code>/tmp</code> oder <code>/home</code> regelmäßig prüft, standardmäßig alle 10 Minuten.</li>
+      <li><strong>Quarantäne:</strong> Funde verschiebt Shield standardmäßig sofort in die Quarantäne, und das lässt sich rückgängig machen. Schaltest du das aus, warten Funde auf deine Entscheidung.</li>
+      <li><strong>Härtungs-Check</strong> mit Lynis, mit den Hinweisen in Klartext.</li>
+      <li><strong>Update-Zentrale</strong> mit den offenen Sicherheitsupdates je Server.</li>
+      <li><strong>Einbruchschutz:</strong> ungewöhnliche SSH-Logins, Fail2ban und neue offene Ports. Für Programme wie einen Spieleserver trägst du eigene Portbereiche ein.</li>
+      <li><strong>Datei-Wächter</strong> für wichtige Systemdateien.</li>
+      <li><strong>Morgen-Briefing</strong> mit dem Stand der Nacht, auf Wunsch aufs Handy.</li>
+      <li>Auf Wunsch eine <strong>KI-Wache</strong> für abgestürzte Container, mit deinem eigenen Ollama.</li>
+    </ul>
+
+    <h2>Was Shield nicht verspricht</h2>
+    <p>Kein Scanner findet alles, auch ClamAV nicht. Shield macht sichtbar, was auf deinen Servern los ist, und schlägt vor, was du tun kannst. Wie viel automatisch passiert, legst du selbst fest.</p>
+
+    <h2>Was du brauchst</h2>
+    <p>Linux-Server, auf die Nodvard Deck per SSH kommt. Am meisten sieht Shield, wenn Deck dort sudo-Rechte hat. Ohne diese Rechte sind etwa das SSH-Protokoll, Fail2ban und die Prozesse hinter offenen Ports nur eingeschränkt lesbar.</p>
+    <p>Funde und Warnungen landen in den <a href="funktionen.html#meldungen">Meldungen</a> und auf Wunsch per ntfy, Telegram, Discord oder anderen Kanälen auf deinem Handy.</p>
+  </div>
+</div>
+
+<section class="section cta" aria-labelledby="cta">
+  <div class="wrap">
+    <h2 id="cta">Shield kommt mit Deck</h2>
+    <p class="intro">Installier Nodvard Deck und schalte das Modul Nodvard Shield ein. Für private Nutzung kostenlos.</p>
+    <div class="btns"><a class="btn btn-main" href="loslegen.html">Loslegen</a><a class="btn btn-alt" href="faq.html">Häufige Fragen</a></div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck wird entwickelt von Nico Benks.</p><p>Für private Nutzung kostenlos, der Quellcode ist einsehbar.</p></div>
+    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="portainer-alternative.html">Portainer-Alternative</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
+  </div>
+</footer>
+
+</body>
+</html>

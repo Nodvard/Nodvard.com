@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Nodvard Dock | Nodvard Deck</title>
+<title>Nodvard Dock: Docker-Verwaltung mit Stacks</title>
 <meta name="description" content="Nodvard Dock ist Nodvard Deck mit nur dem Docker-Teil: Container, Stacks, Logs und Image-Updates, als eigenes, schlankes Image. Beta.">
 <link rel="canonical" href="https://nodvard.com/dock.html">
 <link rel="alternate" hreflang="de" href="https://nodvard.com/dock.html">
@@ -12,17 +12,24 @@
 <meta name="theme-color" content="#1a1b1e">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nodvard Deck">
-<meta property="og:title" content="Nodvard Dock">
+<meta property="og:title" content="Nodvard Dock: Docker-Verwaltung mit Stacks">
 <meta property="og:description" content="Nodvard Dock ist Nodvard Deck mit nur dem Docker-Teil: Container, Stacks, Logs und Image-Updates, als eigenes, schlankes Image. Beta.">
 <meta property="og:url" content="https://nodvard.com/dock.html">
-<meta property="og:image" content="https://nodvard.com/assets/og.png">
-<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://nodvard.com/assets/og/dock-de.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nodvard Deck mit Beispieldaten">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nodvard Dock: Docker-Verwaltung mit Stacks">
+<meta name="twitter:description" content="Nodvard Dock ist Nodvard Deck mit nur dem Docker-Teil: Container, Stacks, Logs und Image-Updates, als eigenes, schlankes Image. Beta.">
+<meta name="twitter:image" content="https://nodvard.com/assets/og/dock-de.jpg">
+<meta property="og:locale" content="de_DE">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Dock","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Docker-Verwaltung","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.11.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/dock.html","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/docker.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -59,8 +66,9 @@
     <h2>Umsteigen von Portainer</h2>
     <p>Stacks, die Portainer angelegt hat, ziehen in einen eigenen Ordner um. Dock holt Compose-Datei und Variablen aus dem Speicher von Portainer und rollt den Stack dort unter demselben Namen neu aus. Die Volumes mit deinen Daten bleiben. Passt etwas nicht, zieht Dock nicht um und nennt den Grund.</p>
 
-    <h2>Noch nicht dabei</h2>
-    <p>Volume-Sicherungen über die Oberfläche zurückspielen und das Anmelden bei privaten Registries. Das kommt mit den nächsten Beta-Ständen.</p>
+    <h2>Neu in 0.11</h2>
+    <p>Volume-Sicherungen eines Stacks spielst du im Reiter Stacks unter „Sicherungen“ zurück. Private Registries wie ghcr.io trägst du in den Einstellungen ein, das Passwort oder Token liegt im Tresor. Für Server, deren Zugang nicht in der Gruppe docker sein soll, gibt es den Modus „Nur bedienen“.</p>
+    <p>Mehr zum Umstieg steht auf der Seite <a href="portainer-alternative.html">Portainer-Alternative</a>.</p>
 
     <h2>Installieren</h2>
     <p>Du brauchst einen Rechner mit Docker und Docker Compose, etwa einen Raspberry Pi 4 oder 5 mit 64-Bit-System oder einen x86-64-Rechner.</p>
@@ -77,7 +85,7 @@ docker compose up -d</code></pre>
 <footer class="foot">
   <div class="wrap">
     <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck wird entwickelt von Nico Benks.</p><p>Für private Nutzung kostenlos, der Quellcode ist einsehbar.</p></div>
-    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div></nav>
+    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="portainer-alternative.html">Portainer-Alternative</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
   </div>
 </footer>
 <script src="assets/copy.js" defer></script>

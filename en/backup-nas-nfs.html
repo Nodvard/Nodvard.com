@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Back up Nodvard Deck to a NAS or NFS share</title>
+<meta name="description" content="Step by step: Nodvard Deck backs itself up, encrypted, to a NAS or an NFS share. With the fstab line, write access for user 1000 and a test.">
+<link rel="canonical" href="https://nodvard.com/en/backup-nas-nfs.html">
+<link rel="alternate" hreflang="de" href="https://nodvard.com/sicherung-nas-nfs.html">
+<link rel="alternate" hreflang="en" href="https://nodvard.com/en/backup-nas-nfs.html">
+<link rel="alternate" hreflang="x-default" href="https://nodvard.com/sicherung-nas-nfs.html">
+<meta name="theme-color" content="#1a1b1e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nodvard Deck">
+<meta property="og:title" content="Back up Nodvard Deck to a NAS or NFS share">
+<meta property="og:description" content="Step by step: Nodvard Deck backs itself up, encrypted, to a NAS or an NFS share. With the fstab line, write access for user 1000 and a test.">
+<meta property="og:url" content="https://nodvard.com/en/backup-nas-nfs.html">
+<meta property="og:image" content="https://nodvard.com/assets/og/nas-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nodvard Deck with sample data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Back up Nodvard Deck to a NAS or NFS share">
+<meta name="twitter:description" content="Step by step: Nodvard Deck backs itself up, encrypted, to a NAS or an NFS share. With the fstab line, write access for user 1000 and a test.">
+<meta name="twitter:image" content="https://nodvard.com/assets/og/nas-en.jpg">
+<meta property="og:locale" content="en_US">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#inhalt">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
+    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <a class="lang" href="../sicherung-nas-nfs.html" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a>
+  </div>
+</header>
+<main id="inhalt">
+<div class="wrap">
+  <header class="page-head">
+    <h1>Back up to a NAS or NFS share</h1>
+    <p class="lead">Nodvard Deck backs up its own data, encrypted and on a schedule. By default, the backups go to a folder inside the data folder. That protects against mistakes, but not against a broken SD card. A folder on another drive or a NAS is better. Here is how to set it up.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Before you start</h2>
+    <p>Under Settings, System, Backup, first set a backup password (at least 12 characters). Deck then shows the recovery key <strong>once</strong>. Keep it safe: without the password and the key nobody can open the backups, not even you. That is also where you turn on automatic backups and choose how many backups to keep. The interface is in German for now.</p>
+    <p>Deck accepts only two targets: <code>/app/data/backups</code> inside the data folder, or the mounted folder <code>/backups</code> and its subfolders, such as <code>/backups/deck</code>. This always means the path <strong>inside the container</strong>, not the one on the host or the NAS.</p>
+  </div>
+
+  <ol class="steps">
+    <li><strong>Mount the NAS folder</strong> on the machine that runs Deck, for example under <code>/srv/backup/deck</code>. For NFS, as a line in <code>/etc/fstab</code>:
+      <div class="cmd">
+        <div class="cmd-head"><span>/etc/fstab</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-fstab">Copy</button></div>
+        <pre><code id="cmd-fstab">nas:/volume1/backup/deck  /srv/backup/deck  nfs  defaults,_netdev,x-systemd.before=docker.service  0  0</code></pre>
+      </div>
+      <p>The NFS share must be mounted before Docker starts. Otherwise Docker mounts the empty folder on the local disk, and the backups end up there instead of on the NAS. <code>_netdev</code> tells the system that it is a network drive, <code>x-systemd.before=docker.service</code> makes Docker wait for it.</p>
+    </li>
+    <li><strong>Give the folder to the container.</strong> Under <code>volumes:</code>, <code>compose.yml</code> already contains a prepared line. Remove the <code>#</code> in front of it and put in your path:
+      <div class="cmd">
+        <div class="cmd-head"><span>compose.yml, under volumes:</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-vol">Copy</button></div>
+        <pre><code id="cmd-vol">      - /srv/backup/deck:/backups</code></pre>
+      </div>
+      <p>Then run <code>docker compose up -d</code> in the same folder. In Portainer, edit the stack and click “Update the stack”.</p>
+    </li>
+    <li><strong>Write access for user 1000.</strong> Inside the container, Deck runs as user and group 1000. The folder on the NAS must be writable for 1000. Either run <code>chown 1000:1000</code> for the folder on the NAS, or map all access to 1000 in the NFS export: <code>all_squash,anonuid=1000,anongid=1000</code>.
+      <p>With NFS, a <code>chown</code> on the host usually does nothing, because the NAS does not let root through (<code>root_squash</code>).</p>
+    </li>
+    <li><strong>Test it</strong> before you save in the interface. <code>docker ps</code> shows the container name:
+      <div class="cmd">
+        <div class="cmd-head"><span>In a terminal</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-test">Copy</button></div>
+        <pre><code id="cmd-test">docker exec -u 1000 &lt;container&gt; sh -c 'touch /backups/.test &amp;&amp; rm /backups/.test &amp;&amp; echo ok'</code></pre>
+      </div>
+    </li>
+    <li><strong>Choose it in the interface.</strong> If you get <code>ok</code>, enter <code>/backups</code> or a subfolder as the folder under Settings, System, Backup.</li>
+  </ol>
+
+  <div class="prose">
+    <h2>If you get a message when saving</h2>
+    <p>The interface shows these messages in German. They mean:</p>
+    <h3>The folder /backups does not exist (is it mounted?)</h3>
+    <p>The line <code>- …:/backups</code> is missing or still commented out, or the container was not recreated afterwards. Run <code>docker compose up -d</code>, in Portainer “Update the stack”.</p>
+    <h3>Backups may only be written to /app/data/backups or the mounted folder /backups</h3>
+    <p>Enter the path inside the container, so <code>/backups</code> or <code>/backups/…</code>, not the path on the host such as <code>/srv/backup/…</code>.</p>
+    <h3>Nodvard Deck may not write to /backups</h3>
+    <p>Write access for 1000 is missing (step 3), or the NFS share was not mounted yet when Docker started (step 1).</p>
+
+    <h2>More</h2>
+    <p>Everything about backing up Deck, also without a NAS and by hand, is in the <a href="https://github.com/nodvard/deck/blob/main/docs/en/FIRST-SETUP.md">guide in the repository</a>. The community answers questions on <a href="https://discord.gg/gTTs7qMabt">Discord</a>.</p>
+  </div>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck is made by Nico Benks.</p><p>Free for personal use, the source code is public.</p></div>
+    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="portainer-alternative.html">Portainer alternative</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
+  </div>
+</footer>
+
+<script src="../assets/copy.js" defer></script>
+</body>
+</html>

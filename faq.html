@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Häufige Fragen zu Nodvard Deck: Lizenz, Pi, Daten</title>
+<meta name="description" content="Antworten zu Nodvard Deck: Was kostet es, sendet es Daten, was braucht es, läuft es auf dem Raspberry Pi und was unterscheidet Deck und Dock?">
+<link rel="canonical" href="https://nodvard.com/faq.html">
+<link rel="alternate" hreflang="de" href="https://nodvard.com/faq.html">
+<link rel="alternate" hreflang="en" href="https://nodvard.com/en/faq.html">
+<link rel="alternate" hreflang="x-default" href="https://nodvard.com/faq.html">
+<meta name="theme-color" content="#1a1b1e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nodvard Deck">
+<meta property="og:title" content="Häufige Fragen zu Nodvard Deck: Lizenz, Pi, Daten">
+<meta property="og:description" content="Antworten zu Nodvard Deck: Was kostet es, sendet es Daten, was braucht es, läuft es auf dem Raspberry Pi und was unterscheidet Deck und Dock?">
+<meta property="og:url" content="https://nodvard.com/faq.html">
+<meta property="og:image" content="https://nodvard.com/assets/og/faq-de.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nodvard Deck mit Beispieldaten">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Häufige Fragen zu Nodvard Deck: Lizenz, Pi, Daten">
+<meta name="twitter:description" content="Antworten zu Nodvard Deck: Was kostet es, sendet es Daten, was braucht es, läuft es auf dem Raspberry Pi und was unterscheidet Deck und Dock?">
+<meta name="twitter:image" content="https://nodvard.com/assets/og/faq-de.jpg">
+<meta property="og:locale" content="de_DE">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Was kostet Nodvard Deck?","acceptedAnswer":{"@type":"Answer","text":"Für private Nutzung nichts. Du brauchst kein Konto bei Nodvard, es gibt kein Abo und keine Werbung. Für die Nutzung in einem Unternehmen brauchst du eine Erlaubnis, frag dafür an unter kontakt@nodvard.com."}},{"@type":"Question","name":"Kann ich den Quellcode sehen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Der Quellcode liegt öffentlich auf GitHub. Nodvard Deck steht unter der PolyForm Noncommercial License 1.0.0: Du darfst es für private und andere nicht-kommerzielle Zwecke nutzen, den Code lesen und für dich anpassen. Kommerzielle Nutzung braucht eine Erlaubnis."}},{"@type":"Question","name":"Sendet Nodvard Deck Daten nach Hause?","acceptedAnswer":{"@type":"Answer","text":"Nein. Es gibt keine Telemetrie und keine Nutzungsstatistik, Deck schickt nichts an Nodvard. Von sich aus fragt es nur bei GitHub nach, ob es eine neue Version gibt. Das schaltest du unter Einstellungen, System, Updates ab. Für Image-Updates fragt Deck die Registry deiner Images, und Nachrichten an Telegram, Discord oder andere Dienste gehen nur raus, wenn du einen Kanal einrichtest."}},{"@type":"Question","name":"Was brauche ich?","acceptedAnswer":{"@type":"Answer","text":"Einen Rechner mit Docker und Docker Compose, mit 64-Bit-ARM (arm64) oder x86-64. Im Leerlauf braucht Nodvard Deck rund 100 MB Arbeitsspeicher, das Image ist knapp 400 MB groß. Deine Server erreicht Deck per SSH, einen eigenen Agenten gibt es nicht. Für manche Module legt die Einrichtung kleine Hilfsskripte auf dem Server an."}},{"@type":"Question","name":"Läuft es auf dem Raspberry Pi?","acceptedAnswer":{"@type":"Answer","text":"Ja, auf einem Raspberry Pi 4 oder 5 mit 4 GB RAM und einem 64-Bit-System. Eine SD-Karte kann kaputtgehen, deshalb hält eine USB-SSD länger, und die Sicherungen sollten nicht nur auf dem Pi liegen. Wie das geht, steht in der Anleitung Sicherungen auf ein NAS oder NFS."}},{"@type":"Question","name":"Brauche ich Proxmox?","acceptedAnswer":{"@type":"Answer","text":"Nein. Ein Raspberry Pi, ein NAS oder ein paar Docker-Hosts reichen. Proxmox kannst du jederzeit nachträglich verbinden."}},{"@type":"Question","name":"Was ist der Unterschied zwischen Deck und Dock?","acceptedAnswer":{"@type":"Answer","text":"Nodvard Dock ist nur die Container-Verwaltung für Docker, als eigenes, schlankes Image. Nodvard Deck bringt denselben Docker-Teil mit und dazu Proxmox, Backups, Shield, Apps, Integrationen und Meldungen. Es ist derselbe Code, nur unterschiedlich viel drin."}},{"@type":"Question","name":"Gibt es Nodvard Deck auf Englisch?","acceptedAnswer":{"@type":"Answer","text":"Die Oberfläche ist derzeit auf Deutsch. Die Webseite und die Anleitungen gibt es auch auf Englisch."}},{"@type":"Question","name":"Was passiert, wenn ich mich verklicke?","acceptedAnswer":{"@type":"Answer","text":"Alles, was etwas verändert, ist in Deck eine Aktion mit Risikostufe. Deck schlägt vor, du bestätigst, und jede Aktion steht im Protokoll. Was ohne Rückfrage laufen darf, legst du selbst fest. Dazu gibt es Rollen für mehrere Benutzer und die Anmeldung mit Zwei-Faktor-Code."}},{"@type":"Question","name":"Wie sichere ich Nodvard Deck?","acceptedAnswer":{"@type":"Answer","text":"Unter Einstellungen, System, Sicherung. Die Sicherungen sind mit einem Passwort verschlüsselt, das Deck selbst nicht speichert. Vor jedem Update, das die Datenbank umbaut, legt Deck außerdem eine Kopie an. Sicherungen auf ein NAS erklärt die Anleitung."}},{"@type":"Question","name":"Wie aktualisiere ich?","acceptedAnswer":{"@type":"Answer","text":"Im Ordner mit der compose.yml: docker compose pull && docker compose up -d. Deine Daten bleiben erhalten. Andere Wege, etwa mit Portainer, stehen unter Loslegen."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
+    <nav aria-label="Hauptmenü"><ul class="nav"><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Dock</a></li><li><a href="loslegen.html">Loslegen</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <a class="lang" href="en/faq.html" hreflang="en" lang="en" title="Read this page in English">English</a>
+  </div>
+</header>
+<main id="inhalt">
+<div class="wrap">
+  <header class="page-head">
+    <h1>Häufige Fragen</h1>
+    <p class="lead">Kurze Antworten zu Kosten, Daten, Voraussetzungen und dem Unterschied zwischen Deck und Dock. Fehlt etwas, frag auf <a href="https://discord.gg/gTTs7qMabt">Discord</a>.</p>
+  </header>
+
+  <div class="prose faq">
+    <h2 id="kosten">Was kostet Nodvard Deck?</h2>
+    <p>Für private Nutzung nichts. Du brauchst kein Konto bei Nodvard, es gibt kein Abo und keine Werbung. Für die Nutzung in einem Unternehmen brauchst du eine Erlaubnis, frag dafür an unter kontakt@nodvard.com.</p>
+
+    <h2 id="quellcode">Kann ich den Quellcode sehen?</h2>
+    <p>Ja. Der Quellcode liegt öffentlich auf GitHub. Nodvard Deck steht unter der PolyForm Noncommercial License 1.0.0: Du darfst es für private und andere nicht-kommerzielle Zwecke nutzen, den Code lesen und für dich anpassen. Kommerzielle Nutzung braucht eine Erlaubnis.</p>
+
+    <h2 id="daten">Sendet Nodvard Deck Daten nach Hause?</h2>
+    <p>Nein. Es gibt keine Telemetrie und keine Nutzungsstatistik, Deck schickt nichts an Nodvard. Von sich aus fragt es nur bei GitHub nach, ob es eine neue Version gibt. Das schaltest du unter Einstellungen, System, Updates ab. Für Image-Updates fragt Deck die Registry deiner Images, und Nachrichten an Telegram, Discord oder andere Dienste gehen nur raus, wenn du einen Kanal einrichtest.</p>
+
+    <h2 id="voraussetzungen">Was brauche ich?</h2>
+    <p>Einen Rechner mit Docker und Docker Compose, mit 64-Bit-ARM (arm64) oder x86-64. Im Leerlauf braucht Nodvard Deck rund 100 MB Arbeitsspeicher, das Image ist knapp 400 MB groß. Deine Server erreicht Deck per SSH, einen eigenen Agenten gibt es nicht. Für manche Module legt die Einrichtung kleine Hilfsskripte auf dem Server an.</p>
+
+    <h2 id="raspberry-pi">Läuft es auf dem Raspberry Pi?</h2>
+    <p>Ja, auf einem Raspberry Pi 4 oder 5 mit 4 GB RAM und einem 64-Bit-System. Eine SD-Karte kann kaputtgehen, deshalb hält eine USB-SSD länger, und die Sicherungen sollten nicht nur auf dem Pi liegen. Wie das geht, steht in der Anleitung <a href="sicherung-nas-nfs.html">Sicherungen auf ein NAS oder NFS</a>.</p>
+
+    <h2 id="proxmox">Brauche ich Proxmox?</h2>
+    <p>Nein. Ein Raspberry Pi, ein NAS oder ein paar Docker-Hosts reichen. Proxmox kannst du jederzeit nachträglich verbinden.</p>
+
+    <h2 id="deck-dock">Was ist der Unterschied zwischen Deck und Dock?</h2>
+    <p>Nodvard Dock ist nur die Container-Verwaltung für Docker, als eigenes, schlankes Image. Nodvard Deck bringt denselben Docker-Teil mit und dazu Proxmox, Backups, Shield, Apps, Integrationen und Meldungen. Es ist derselbe Code, nur unterschiedlich viel drin.</p>
+
+    <h2 id="englisch">Gibt es Nodvard Deck auf Englisch?</h2>
+    <p>Die Oberfläche ist derzeit auf Deutsch. Die Webseite und die Anleitungen gibt es auch auf Englisch.</p>
+
+    <h2 id="versehen">Was passiert, wenn ich mich verklicke?</h2>
+    <p>Alles, was etwas verändert, ist in Deck eine Aktion mit Risikostufe. Deck schlägt vor, du bestätigst, und jede Aktion steht im Protokoll. Was ohne Rückfrage laufen darf, legst du selbst fest. Dazu gibt es Rollen für mehrere Benutzer und die Anmeldung mit Zwei-Faktor-Code.</p>
+
+    <h2 id="sichern">Wie sichere ich Nodvard Deck?</h2>
+    <p>Unter Einstellungen, System, Sicherung. Die Sicherungen sind mit einem Passwort verschlüsselt, das Deck selbst nicht speichert. Vor jedem Update, das die Datenbank umbaut, legt Deck außerdem eine Kopie an. Sicherungen auf ein NAS erklärt die <a href="sicherung-nas-nfs.html">Anleitung</a>.</p>
+
+    <h2 id="update">Wie aktualisiere ich?</h2>
+    <p>Im Ordner mit der <code>compose.yml</code>: <code>docker compose pull &amp;&amp; docker compose up -d</code>. Deine Daten bleiben erhalten. Andere Wege, etwa mit Portainer, stehen unter <a href="loslegen.html">Loslegen</a>.</p>
+  </div>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck wird entwickelt von Nico Benks.</p><p>Für private Nutzung kostenlos, der Quellcode ist einsehbar.</p></div>
+    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="portainer-alternative.html">Portainer-Alternative</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
+  </div>
+</footer>
+
+</body>
+</html>

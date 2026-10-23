@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sicherungen auf ein NAS oder NFS | Nodvard Deck</title>
+<meta name="description" content="Schritt für Schritt: Nodvard Deck sichert sich verschlüsselt auf ein NAS oder eine NFS-Freigabe. Mit fstab-Zeile, Rechten für Nutzer 1000 und Test.">
+<link rel="canonical" href="https://nodvard.com/sicherung-nas-nfs.html">
+<link rel="alternate" hreflang="de" href="https://nodvard.com/sicherung-nas-nfs.html">
+<link rel="alternate" hreflang="en" href="https://nodvard.com/en/backup-nas-nfs.html">
+<link rel="alternate" hreflang="x-default" href="https://nodvard.com/sicherung-nas-nfs.html">
+<meta name="theme-color" content="#1a1b1e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nodvard Deck">
+<meta property="og:title" content="Sicherungen auf ein NAS oder NFS | Nodvard Deck">
+<meta property="og:description" content="Schritt für Schritt: Nodvard Deck sichert sich verschlüsselt auf ein NAS oder eine NFS-Freigabe. Mit fstab-Zeile, Rechten für Nutzer 1000 und Test.">
+<meta property="og:url" content="https://nodvard.com/sicherung-nas-nfs.html">
+<meta property="og:image" content="https://nodvard.com/assets/og/nas-de.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nodvard Deck mit Beispieldaten">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sicherungen auf ein NAS oder NFS | Nodvard Deck">
+<meta name="twitter:description" content="Schritt für Schritt: Nodvard Deck sichert sich verschlüsselt auf ein NAS oder eine NFS-Freigabe. Mit fstab-Zeile, Rechten für Nutzer 1000 und Test.">
+<meta name="twitter:image" content="https://nodvard.com/assets/og/nas-de.jpg">
+<meta property="og:locale" content="de_DE">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
+    <nav aria-label="Hauptmenü"><ul class="nav"><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Dock</a></li><li><a href="loslegen.html">Loslegen</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <a class="lang" href="en/backup-nas-nfs.html" hreflang="en" lang="en" title="Read this page in English">English</a>
+  </div>
+</header>
+<main id="inhalt">
+<div class="wrap">
+  <header class="page-head">
+    <h1>Sicherungen auf ein NAS oder NFS</h1>
+    <p class="lead">Nodvard Deck sichert seine eigenen Daten verschlüsselt und nach Zeitplan. Standard ist ein Ordner im Datenordner. Das schützt vor Fehlbedienung, aber nicht vor einer kaputten SD-Karte. Besser ist ein Ordner auf einem anderen Laufwerk oder einem NAS. So richtest du das ein.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Bevor du anfängst</h2>
+    <p>Lege unter Einstellungen, System, Sicherung zuerst ein Sicherungspasswort fest (mindestens 12 Zeichen). Danach zeigt Deck <strong>einmal</strong> den Wiederherstellungsschlüssel. Bewahre ihn gut auf: Ohne Passwort und Schlüssel kann niemand die Sicherungen öffnen, auch du nicht. Dort schaltest du auch „Automatisch sichern“ ein und wählst, wie viele Sicherungen bleiben.</p>
+    <p>Als Ziel nimmt Deck nur zwei Ordner: <code>/app/data/backups</code> im Datenordner oder den eingebundenen Ordner <code>/backups</code> samt Unterordnern, etwa <code>/backups/deck</code>. Gemeint ist immer der Pfad <strong>im Container</strong>, nicht der auf dem Rechner oder dem NAS.</p>
+  </div>
+
+  <ol class="steps">
+    <li><strong>Den Ordner vom NAS einhängen</strong>, und zwar auf dem Rechner, auf dem Deck läuft, zum Beispiel unter <code>/srv/backup/deck</code>. Bei NFS als Zeile in <code>/etc/fstab</code>:
+      <div class="cmd">
+        <div class="cmd-head"><span>/etc/fstab</span><span class="sr" role="status"></span><button type="button" data-done="Kopiert" hidden data-copy="cmd-fstab">Kopieren</button></div>
+        <pre><code id="cmd-fstab">nas:/volume1/backup/deck  /srv/backup/deck  nfs  defaults,_netdev,x-systemd.before=docker.service  0  0</code></pre>
+      </div>
+      <p>Das NFS muss eingehängt sein, bevor Docker startet. Sonst bindet Docker den leeren Ordner auf der eigenen Platte ein, und die Sicherungen landen dort statt auf dem NAS. <code>_netdev</code> sagt dem System, dass es ein Netzlaufwerk ist, <code>x-systemd.before=docker.service</code> lässt Docker darauf warten.</p>
+    </li>
+    <li><strong>Den Ordner in den Container geben.</strong> In der <code>compose.yml</code> steht unter <code>volumes:</code> schon eine vorbereitete Zeile. Nimm das <code>#</code> davor weg und trag deinen Pfad ein:
+      <div class="cmd">
+        <div class="cmd-head"><span>compose.yml, unter volumes:</span><span class="sr" role="status"></span><button type="button" data-done="Kopiert" hidden data-copy="cmd-vol">Kopieren</button></div>
+        <pre><code id="cmd-vol">      - /srv/backup/deck:/backups</code></pre>
+      </div>
+      <p>Dann im selben Ordner <code>docker compose up -d</code>. In Portainer heißt das: Stack bearbeiten und „Update the stack“.</p>
+    </li>
+    <li><strong>Schreibrechte für den Nutzer 1000.</strong> Deck läuft im Container als Nutzer und Gruppe 1000. Der Ordner auf dem NAS muss für 1000 beschreibbar sein. Entweder auf dem NAS <code>chown 1000:1000</code> für den Ordner, oder beim NFS-Export alle Zugriffe auf 1000 abbilden: <code>all_squash,anonuid=1000,anongid=1000</code>.
+      <p>Ein <code>chown</code> auf dem Rechner bringt bei NFS meist nichts, weil das NAS root nicht durchlässt (<code>root_squash</code>).</p>
+    </li>
+    <li><strong>Testen</strong>, bevor du in der Oberfläche speicherst. Den Namen des Containers zeigt <code>docker ps</code>:
+      <div class="cmd">
+        <div class="cmd-head"><span>Im Terminal</span><span class="sr" role="status"></span><button type="button" data-done="Kopiert" hidden data-copy="cmd-test">Kopieren</button></div>
+        <pre><code id="cmd-test">docker exec -u 1000 &lt;container&gt; sh -c 'touch /backups/.test &amp;&amp; rm /backups/.test &amp;&amp; echo ok'</code></pre>
+      </div>
+    </li>
+    <li><strong>In der Oberfläche wählen.</strong> Kommt <code>ok</code>, trägst du unter Einstellungen, System, Sicherung den Ordner <code>/backups</code> oder einen Unterordner ein.</li>
+  </ol>
+
+  <div class="prose">
+    <h2>Wenn beim Speichern eine Meldung kommt</h2>
+    <h3>„Der Ordner /backups existiert nicht (ist er eingebunden?).“</h3>
+    <p>Die Zeile <code>- …:/backups</code> fehlt oder ist noch auskommentiert, oder der Container wurde danach nicht neu erstellt. Führ <code>docker compose up -d</code> aus, in Portainer „Update the stack“.</p>
+    <h3>„Sicherungen dürfen nur nach /app/data/backups oder in den eingebundenen Ordner /backups geschrieben werden.“</h3>
+    <p>Trag den Pfad im Container ein, also <code>/backups</code> oder <code>/backups/…</code>, nicht den Pfad auf dem Rechner wie <code>/srv/backup/…</code>.</p>
+    <h3>„In /backups darf Nodvard Deck nicht schreiben.“</h3>
+    <p>Die Schreibrechte für 1000 fehlen (Schritt 3), oder das NFS war beim Start von Docker noch nicht eingehängt (Schritt 1).</p>
+
+    <h2>Mehr dazu</h2>
+    <p>Alles zur Sicherung von Deck, auch ohne NAS und von Hand, steht in der <a href="https://github.com/nodvard/deck/blob/main/docs/11-ERST-EINRICHTUNG.md#10-das-dashboard-selbst-sichern">Anleitung im Repository</a>. Fragen beantwortet die Community auf <a href="https://discord.gg/gTTs7qMabt">Discord</a>.</p>
+  </div>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck wird entwickelt von Nico Benks.</p><p>Für private Nutzung kostenlos, der Quellcode ist einsehbar.</p></div>
+    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="portainer-alternative.html">Portainer-Alternative</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
+  </div>
+</footer>
+
+<script src="assets/copy.js" defer></script>
+</body>
+</html>
