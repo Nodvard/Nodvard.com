@@ -266,3 +266,11 @@ figure.wide + .prose { padding-top: 24px; }
 .foot-cols { grid-template-columns: repeat(4, auto); }
 @media (max-width: 1000px) { .foot .wrap { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 760px) { .foot-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Launch-Seite Nodvard Dock */
+.kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-family: var(--display); font-stretch: 112%; font-weight: 650; color: var(--soft); }
+.kicker .beta { margin-left: 0; }
+.install { margin-top: 64px; padding: 32px; border: 1px solid var(--line-strong); border-radius: var(--radius-lg); background: var(--side); }
+.install h2 { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); line-height: 1.12; font-weight: 750; font-stretch: 118%; }
+.install .intro { margin-top: 12px; color: var(--soft); max-width: 44em; }
+@media (max-width: 700px) { .install { padding: 22px 16px; } }
