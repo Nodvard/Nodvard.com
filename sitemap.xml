@@ -127,20 +127,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nodvard.com/homelab-dashboard.html"/>
   </url>
   <url>
-    <loc>https://nodvard.com/portainer-alternative.html</loc>
-    <lastmod>2026-10-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/portainer-alternative.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/portainer-alternative.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nodvard.com/portainer-alternative.html"/>
-  </url>
-  <url>
-    <loc>https://nodvard.com/en/portainer-alternative.html</loc>
-    <lastmod>2026-10-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/portainer-alternative.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/portainer-alternative.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nodvard.com/portainer-alternative.html"/>
-  </url>
-  <url>
     <loc>https://nodvard.com/proxmox-docker-dashboard.html</loc>
     <lastmod>2026-10-24</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/proxmox-docker-dashboard.html"/>
