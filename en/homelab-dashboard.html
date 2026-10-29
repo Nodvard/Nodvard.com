@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Homelab dashboard for Proxmox and Docker | Nodvard Deck</title>
-<meta name="description" content="Nodvard Deck is a self-hosted homelab dashboard: servers, Proxmox, Docker, backups and notifications on one page. Free for personal use.">
+<title>Homelab dashboard: more than a page of tiles</title>
+<meta name="description" content="A page of tiles or server management? What a homelab dashboard like Nodvard Deck adds: Proxmox, Docker, backups and approvals.">
 <link rel="canonical" href="https://nodvard.com/en/homelab-dashboard.html">
 <link rel="alternate" hreflang="de" href="https://nodvard.com/homelab-dashboard.html">
 <link rel="alternate" hreflang="en" href="https://nodvard.com/en/homelab-dashboard.html">
@@ -12,16 +12,16 @@
 <meta name="theme-color" content="#1a1b1e">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
-<meta property="og:title" content="Homelab dashboard for Proxmox and Docker | Nodvard Deck">
-<meta property="og:description" content="Nodvard Deck is a self-hosted homelab dashboard: servers, Proxmox, Docker, backups and notifications on one page. Free for personal use.">
+<meta property="og:title" content="Homelab dashboard: more than a page of tiles">
+<meta property="og:description" content="A page of tiles or server management? What a homelab dashboard like Nodvard Deck adds: Proxmox, Docker, backups and approvals.">
 <meta property="og:url" content="https://nodvard.com/en/homelab-dashboard.html">
 <meta property="og:image" content="https://nodvard.com/assets/og/homelab-en.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Nodvard Deck with sample data">
+<meta property="og:image:alt" content="Preview image: Homelab dashboard: more than a page of tiles">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Homelab dashboard for Proxmox and Docker | Nodvard Deck">
-<meta name="twitter:description" content="Nodvard Deck is a self-hosted homelab dashboard: servers, Proxmox, Docker, backups and notifications on one page. Free for personal use.">
+<meta name="twitter:title" content="Homelab dashboard: more than a page of tiles">
+<meta name="twitter:description" content="A page of tiles or server management? What a homelab dashboard like Nodvard Deck adds: Proxmox, Docker, backups and approvals.">
 <meta name="twitter:image" content="https://nodvard.com/assets/og/homelab-en.jpg">
 <meta property="og:locale" content="en_US">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -35,14 +35,14 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
-    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
     <a class="lang" href="../homelab-dashboard.html" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a>
   </div>
 </header>
 <main id="inhalt">
 <div class="wrap">
   <header class="page-head">
-    <h1>A homelab dashboard for everything you run</h1>
+    <h1>More than a page of tiles</h1>
     <p class="lead">Nodvard Deck brings your servers, VMs, containers, backups and notifications together on one page. You see what is running, what is stuck and what you can do next. It is self-hosted in your home and free for personal use. The interface is in German for now.</p>
     <div class="btns"><a class="btn btn-main" href="get-started.html">Get started</a><a class="btn btn-alt" href="features.html">All features</a></div>
   </header>
@@ -53,6 +53,9 @@
   </figure>
 
   <div class="prose">
+    <h2>A page of tiles or server management?</h2>
+    <p>Start pages such as Homepage, Homarr, Heimdall or Dashy collect links to your services, some show numbers too. That is handy, and Deck has such a page as well: Apps. Deck goes further: it shows the state of your servers, VMs, containers and backups, and you can act, for example restart a container, apply an image update with a way back or start a backup. Every such change goes through an approval and is written to the log.</p>
+
     <h2>What the overview shows</h2>
     <p>At the top are five numbers you need every day: how many servers are online, how many containers are running, which backups had no run, how many notifications are unread and which actions are waiting for you. Below, Deck lists all servers, VMs and LXC with CPU, RAM, disk and uptime.</p>
     <p>On the right is what needs your attention right now, such as an almost full disk or a failed backup. You sort the widgets into groups, collapse each group and move them in edit mode.</p>
@@ -62,7 +65,7 @@
   </div>
 
   <div class="show">
-    <figure><img src="../assets/img/apps-1040.webp" srcset="../assets/img/apps-1040.webp 1040w, ../assets/img/apps.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="The Apps page: tiles for a router, Pi-hole, Home Assistant, a Synology NAS and monitoring, sorted into folders."></figure>
+    <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/apps-handy.webp" width="1100" height="820"><img src="../assets/img/apps-1040.webp" srcset="../assets/img/apps-1040.webp 1040w, ../assets/img/apps.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="The Apps page: tiles for a router, Pi-hole, Home Assistant, a Synology NAS and monitoring, sorted into folders."></picture></figure>
     <div class="show-text">
       <h2>A start page for your services</h2>
       <p>Under Apps, every web interface in your network is a tile, sorted into folders. Deck finds containers with a web interface on your Docker servers on its own, and you add your own apps with an address and an icon.</p>
@@ -96,7 +99,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck is made by Nico Benks.</p><p>Free for personal use, the source code is public.</p></div>
-    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="dock.html">Portainer alternative</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
+    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
   </div>
 </footer>
 

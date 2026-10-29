@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://nodvard.com/assets/og/proxmox-en.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Nodvard Deck with sample data">
+<meta property="og:image:alt" content="Preview image: Proxmox and Docker in one dashboard | Nodvard Deck">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Proxmox and Docker in one dashboard | Nodvard Deck">
 <meta name="twitter:description" content="Proxmox nodes, VMs, LXC and the Docker containers inside them in one interface: Nodvard Deck shows load, backups and updates. Self-hosted.">
@@ -35,7 +35,7 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
-    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
     <a class="lang" href="../proxmox-docker-dashboard.html" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a>
   </div>
 </header>
@@ -53,7 +53,7 @@
   </figure>
 
   <div class="show">
-    <figure><img src="../assets/img/server-1040.webp" srcset="../assets/img/server-1040.webp 1040w, ../assets/img/server.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The page of a Proxmox node: access, CPU, RAM, uptime and the load history."></figure>
+    <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/server-handy.webp" width="1100" height="980"><img src="../assets/img/server-1040.webp" srcset="../assets/img/server-1040.webp 1040w, ../assets/img/server.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The page of a Proxmox node: access, CPU, RAM, uptime and the load history."></picture></figure>
     <div class="show-text">
       <h2>Proxmox</h2>
       <p>You start and stop nodes, VMs and LXC in Deck, and the console runs in your browser. Snapshots, hardware, storage and updates are shown for each guest, plus disk health, ZFS and temperature of the nodes. You connect Proxmox in one step.</p>
@@ -61,7 +61,7 @@
     </div>
   </div>
   <div class="show">
-    <figure><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="The Stacks tab: Compose projects of one server with status and buttons to edit, apply and update."></figure>
+    <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/stacks-handy.webp" width="1100" height="820"><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="The Stacks tab: Compose projects of one server with status and buttons to edit, apply and update."></picture></figure>
     <div class="show-text">
       <h2>Docker in your guests</h2>
       <p>If Docker runs in a VM or an LXC, Deck connects over SSH and shows that guest’s containers and Compose stacks. You apply updates with a way back and edit stacks as text or in a form.</p>
@@ -69,7 +69,7 @@
     </div>
   </div>
   <div class="show">
-    <figure><img src="../assets/img/backups-1040.webp" srcset="../assets/img/backups-1040.webp 1040w, ../assets/img/backups.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The Proxmox backups page: a guest without a backup job, backup jobs with schedule and last run, one failed run."></figure>
+    <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/backups-handy.webp" width="1100" height="1000"><img src="../assets/img/backups-1040.webp" srcset="../assets/img/backups-1040.webp 1040w, ../assets/img/backups.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The Proxmox backups page: a guest without a backup job, backup jobs with schedule and last run, one failed run."></picture></figure>
     <div class="show-text">
       <h2>Proxmox backups at a glance</h2>
       <p>Deck shows all backup jobs with their last run and existing backups. If a guest has no job or a run has failed, it says so at the top. You restore a guest as a copy, the original stays untouched.</p>
@@ -94,7 +94,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck is made by Nico Benks.</p><p>Free for personal use, the source code is public.</p></div>
-    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="dock.html">Portainer alternative</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
+    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
   </div>
 </footer>
 

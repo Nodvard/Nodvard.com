@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://nodvard.com/assets/og/dock-en.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Nodvard Deck with sample data">
+<meta property="og:image:alt" content="Preview image: Portainer alternative: Nodvard Dock for Docker stacks">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Portainer alternative: Nodvard Dock for Docker stacks">
 <meta name="twitter:description" content="Nodvard Dock manages containers and Compose stacks on several servers. Stacks from Portainer move over with one click, your volumes stay.">
@@ -36,7 +36,7 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
-    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
     <a class="lang" href="../dock.html" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a>
   </div>
 </header>
@@ -46,8 +46,9 @@
     <p class="kicker"><span class="beta">Beta</span> Nodvard Dock</p>
     <h1>The Portainer alternative for your homelab</h1>
     <p class="lead">Nodvard Dock manages containers and Compose stacks on your servers. You move stacks over from Portainer with one click, and the volumes with your data stay. Self-hosted and free for personal use.</p>
-    <div class="btns"><a class="btn btn-main" href="#install">Install in 2 steps</a><a class="btn btn-alt" href="https://github.com/Nodvard/Dock">On GitHub</a></div>
+    <div class="btns"><a class="btn btn-main" href="#install">Install</a><a class="btn btn-alt" href="https://github.com/nodvard/dock">On GitHub</a></div>
   </header>
+  <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. An English interface is planned. This website and the guides are in English.</p>
 
   <div class="prose">
     <h2>Why now</h2>
@@ -55,7 +56,7 @@
   </div>
 
   <div class="show">
-    <figure><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1072" fetchpriority="high" alt="The Stacks tab with sample data: Compose projects of one server, including a stack from Portainer with the button to move it over."></figure>
+    <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/stacks-handy.webp" width="1100" height="820"><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1072" fetchpriority="high" alt="The Stacks tab with sample data: Compose projects of one server, including a stack from Portainer with the button to move it over."></picture></figure>
     <div class="show-text">
       <h2>Move over with one click</h2>
       <p>In the Stacks tab, every stack created by Portainer has a button to move it over. Dock takes the Compose file and variables from Portainer’s storage, puts them in a folder of their own and deploys the stack there again under the same name. The volumes with your data stay.</p>
@@ -69,7 +70,7 @@
       <li><strong>Containers</strong> of all servers on one page: status, start, stop, restart, delete stopped containers, console and details.</li>
       <li><strong>Logs</strong> with a time range, search and download.</li>
       <li><strong>Stacks</strong>: edit them as text or in a form. Before saving, Docker Compose checks the file on the server, and recent versions stay in the history. You create new stacks in a folder on each server, also from templates for Uptime Kuma, Vaultwarden, Nginx Proxy Manager and Gitea.</li>
-      <li><strong>Updates with a way back:</strong> the old image stays as a backup. If the new container does not start, it goes back on its own, except for databases. Whole stacks get “back to the previous version”.</li>
+      <li><strong>Updates with a way back (rollback):</strong> the old image stays as a backup. If the new container does not start, it goes back on its own, except for databases. Whole stacks get “back to the previous version”.</li>
       <li><strong>Volume backups:</strong> before an update, Dock backs up the volumes if you like and checks that there is enough space. You restore them in the Stacks tab.</li>
       <li><strong>Private registries</strong> such as ghcr.io go into the settings, and the password or token is stored in the vault.</li>
       <li><strong>Images, volumes and networks</strong>: list and clean them up.</li>
@@ -80,29 +81,37 @@
     <p>Dock talks to your Docker servers over SSH, and no agent of its own runs on them. If you don’t want to give the account full Docker rights, use the “operate only” mode: Dock may then only call one fixed helper script via sudo, and that script checks every call itself.</p>
 
     <h2>What Dock does not do</h2>
-    <p>Dock is made for Docker and Docker Compose on individual servers. It does not manage Docker Swarm or Kubernetes. The interface is in German for now. Dock is in beta, and feedback helps, Discord is the quickest way: <a href="https://discord.gg/gTTs7qMabt">discord.gg/gTTs7qMabt</a>.</p>
+    <p>Dock is made for Docker and Docker Compose on individual servers. It does not manage Docker Swarm or Kubernetes. Dock is in beta, and feedback helps, Discord is the quickest way: <a href="https://discord.gg/gTTs7qMabt">discord.gg/gTTs7qMabt</a>.</p>
   </div>
 
   <section class="install" id="install" aria-labelledby="h-install">
-    <h2 id="h-install">Installed in 2 steps</h2>
+    <h2 id="h-install">Installed with three commands</h2>
     <p class="intro">You need a machine with Docker and Docker Compose, for example a Raspberry Pi 4 or 5 with a 64-bit system or an x86-64 machine.</p>
-    <ol class="steps">
-      <li><strong>Get the Compose file.</strong>
-        <div class="cmd">
-          <div class="cmd-head"><span>In a terminal</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-dock-1">Copy</button></div>
-          <pre><code id="cmd-dock-1">mkdir ~/nodvard-dock &amp;&amp; cd ~/nodvard-dock
-curl -fsSL -o compose.yml https://raw.githubusercontent.com/nodvard/dock/main/compose.yml</code></pre>
-        </div>
-      </li>
-      <li><strong>Start it.</strong>
-        <div class="cmd">
-          <div class="cmd-head"><span>In the same folder</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-dock-2">Copy</button></div>
-          <pre><code id="cmd-dock-2">docker compose up -d</code></pre>
-        </div>
-        <p>Then open <code>http://&lt;your-server&gt;:8080</code>. <code>docker compose logs nodvard-dock</code> shows the setup code. If the port is taken, put a file <code>.env</code> next to <code>compose.yml</code> with <code>NODVARD_DOCK_PORT=8081</code>.</p>
-      </li>
-    </ol>
-    <p class="intro">Updating: in the same folder, run <code>docker compose pull &amp;&amp; docker compose up -d</code>. Your data is kept. Everything else is in the <a href="https://github.com/Nodvard/Dock">Nodvard/Dock repository</a>.</p>
+    <div class="cmd">
+      <div class="cmd-head"><span>In a terminal, with Docker Compose</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-dock">Copy</button></div>
+      <pre><code id="cmd-dock">mkdir ~/nodvard-dock &amp;&amp; cd ~/nodvard-dock
+curl -fsSL -o compose.yml https://raw.githubusercontent.com/nodvard/dock/main/compose.yml
+docker compose up -d</code></pre>
+    </div>
+    <details class="compose">
+      <summary>What is in compose.yml?</summary>
+      <p>One container, one port, one volume for the data. No Docker socket, no special privileges. The complete file is <a href="https://github.com/nodvard/dock/blob/main/compose.yml">on GitHub</a>.</p>
+      <pre><code>name: nodvard-dock
+services:
+  nodvard-dock:
+    image: ghcr.io/nodvard/dock:latest
+    restart: unless-stopped
+    ports:
+      - "${NODVARD_DOCK_PORT:-8080}:8080"
+    volumes:
+      - nodvard_dock_data:/app/data
+    healthcheck: …
+volumes:
+  nodvard_dock_data:
+    name: nodvard-dock-data</code></pre>
+    </details>
+    <p class="intro">Then open <code>http://&lt;your-server&gt;:8080</code>. <code>docker compose logs nodvard-dock</code> shows the setup code. If the port is taken, put a file <code>.env</code> next to <code>compose.yml</code> with <code>NODVARD_DOCK_PORT=8081</code>.</p>
+    <p class="intro">Updating: in the same folder, run <code>docker compose pull &amp;&amp; docker compose up -d</code>. Your data is kept. Everything else is in the <a href="https://github.com/nodvard/dock">nodvard/dock repository</a>.</p>
   </section>
 
   <div class="prose">
@@ -115,7 +124,7 @@ curl -fsSL -o compose.yml https://raw.githubusercontent.com/nodvard/dock/main/co
 <footer class="foot">
   <div class="wrap">
     <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck is made by Nico Benks.</p><p>Free for personal use, the source code is public.</p></div>
-    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="dock.html">Portainer alternative</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
+    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
   </div>
 </footer>
 

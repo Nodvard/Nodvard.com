@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://nodvard.com/assets/og/loslegen-de.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Nodvard Deck mit Beispieldaten">
+<meta property="og:image:alt" content="Vorschaubild: Nodvard Deck installieren mit Docker Compose">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nodvard Deck installieren mit Docker Compose">
 <meta name="twitter:description" content="So installierst du Nodvard Deck mit Docker Compose, auf dem Raspberry Pi, mit Portainer oder auf einem NAS wie Synology, Unraid oder TrueNAS.">
@@ -35,7 +35,7 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
-    <nav aria-label="Hauptmenü"><ul class="nav"><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Dock</a></li><li><a href="loslegen.html" aria-current="page">Loslegen</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <nav aria-label="Hauptmenü"><ul class="nav"><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Dock</a></li><li><a href="loslegen.html" aria-current="page">Loslegen</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
     <a class="lang" href="en/get-started.html" hreflang="en" lang="en" title="Read this page in English">English</a>
   </div>
 </header>
@@ -43,7 +43,7 @@
 <div class="wrap">
   <header class="page-head">
     <h1>Loslegen</h1>
-    <p class="lead">Nodvard Deck läuft in Docker, auf einem Raspberry Pi 4 oder 5 genauso wie auf jedem x86-64-Rechner. Gebaut wird nichts, das fertige Image kommt von GitHub.</p>
+    <p class="lead">Nodvard Deck läuft in Docker, auf einem Raspberry Pi 4 oder 5 genauso wie auf jedem x86-64-Rechner. Gebaut wird nichts, das fertige Image kommt von GitHub (<code>ghcr.io/nodvard/deck</code>, für arm64 und x86-64).</p>
   </header>
 
   <ol class="steps">
@@ -55,6 +55,23 @@
 curl -fsSL -o compose.yml https://raw.githubusercontent.com/nodvard/deck/main/deploy/compose.standalone.yml
 docker compose up -d</code></pre>
       </div>
+      <details class="compose">
+      <summary>Was steht in der compose.yml?</summary>
+      <p>Ein Container, ein Port, ein Volume für die Daten. Kein Docker-Socket, keine besonderen Rechte. Die vollständige Datei liegt <a href="https://github.com/nodvard/deck/blob/main/deploy/compose.standalone.yml">auf GitHub</a>.</p>
+      <pre><code>name: nodvard-deck
+services:
+  nodvard-deck:
+    image: ghcr.io/nodvard/deck:latest
+    restart: unless-stopped
+    ports:
+      - "${NODVARD_DECK_PORT:-8080}:8080"
+    volumes:
+      - nodvard_deck_data:/app/data
+    healthcheck: …
+volumes:
+  nodvard_deck_data:
+    name: nodvard-deck-data</code></pre>
+    </details>
       <p>Unter Windows sind das Befehle für WSL oder Git Bash. In PowerShell schreibst du <code>curl.exe</code> statt <code>curl</code> und führst die Befehle einzeln aus.</p>
     </li>
     <li><strong>Im Browser öffnen:</strong> <code>http://&lt;dein-server&gt;:8080</code>. Deck fragt nach einem Einrichtungscode. Den zeigt <code>docker compose logs nodvard-deck</code> im selben Ordner, die Zeile beginnt mit „Einrichtungscode“.</li>
@@ -87,7 +104,7 @@ docker compose up -d</code></pre>
 <footer class="foot">
   <div class="wrap">
     <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck wird entwickelt von Nico Benks.</p><p>Für private Nutzung kostenlos, der Quellcode ist einsehbar.</p></div>
-    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="dock.html">Portainer-Alternative</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
+    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
   </div>
 </footer>
 <script src="assets/copy.js" defer></script>

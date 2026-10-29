@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://nodvard.com/assets/og/funktionen-de.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Nodvard Deck mit Beispieldaten">
+<meta property="og:image:alt" content="Vorschaubild: Funktionen: Proxmox, Docker, Shield, Backups | Nodvard Deck">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Funktionen: Proxmox, Docker, Shield, Backups | Nodvard Deck">
 <meta name="twitter:description" content="Was Nodvard Deck kann: Server und Proxmox, Docker mit Stacks, Nodvard Shield, Backups, Apps, Integrationen, Tresor und Meldungen.">
@@ -36,7 +36,7 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
-    <nav aria-label="Hauptmenü"><ul class="nav"><li><a href="funktionen.html" aria-current="page">Funktionen</a></li><li><a href="dock.html">Dock</a></li><li><a href="loslegen.html">Loslegen</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <nav aria-label="Hauptmenü"><ul class="nav"><li><a href="funktionen.html" aria-current="page">Funktionen</a></li><li><a href="dock.html">Dock</a></li><li><a href="loslegen.html">Loslegen</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
     <a class="lang" href="en/features.html" hreflang="en" lang="en" title="Read this page in English">English</a>
   </div>
 </header>
@@ -59,10 +59,11 @@
         <li>Festplatten-Zustand, ZFS und Temperatur der Proxmox-Knoten</li>
       </ul>
       <p>Proxmox ist kein Muss. Ein Raspberry Pi, ein NAS oder ein paar Docker-Hosts reichen.</p>
+      <p><strong>Was auf deinen Servern läuft:</strong> Kein eigener Dienst und kein Agent. Deck verbindet sich per SSH. Für Aufgaben, die root brauchen, legt die Einrichtung kleine Hilfsskripte unter <code>/usr/local/lib/nodvard-deck</code> an, die Deck per sudo aufruft. Jedes prüft seine Eingaben selbst und kann nur seine festen Befehle. <a href="https://github.com/nodvard/deck/blob/main/docs/11-ERST-EINRICHTUNG.md#6-root-rechte-ohne-passwort-und-gruppe-docker">Was jedes Hilfsskript darf</a></p>
     </div>
     <figure>
-      <img src="assets/img/server-1040.webp" srcset="assets/img/server-1040.webp 1040w, assets/img/server.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Seite eines Proxmox-Knotens in Nodvard Deck: Zugang, CPU, RAM, Laufzeit und der Verlauf der Auslastung.">
-      <figcaption>Seite eines Proxmox-Knotens, mit Beispieldaten.</figcaption>
+      <picture><source media="(max-width: 600px)" srcset="assets/img/server-handy.webp" width="1100" height="980"><img src="assets/img/server-1040.webp" srcset="assets/img/server-1040.webp 1040w, assets/img/server.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Seite eines Proxmox-Knotens in Nodvard Deck: Zugang, CPU, RAM, Laufzeit und der Verlauf der Auslastung."></picture>
+      <figcaption>Ein Proxmox-Knoten: Zugang, CPU, RAM, Laufzeit und Verlauf der Auslastung.</figcaption>
     </figure>
   </section>
 
@@ -75,15 +76,15 @@
         <li>Image-Updates finden und einspielen. Das alte Image bleibt als Sicherung. Startet der neue Container nicht, geht Deck von selbst zurück, außer bei Datenbanken.</li>
         <li>Compose-Dateien als Text oder im Formular bearbeiten. Vor dem Speichern prüft Docker Compose die Datei auf dem Server.</li>
         <li>Neue Stacks anlegen, auch aus Vorlagen für Uptime Kuma, Vaultwarden, Nginx Proxy Manager und Gitea</li>
-        <li>Ganze Stacks aktualisieren und zurück zur vorigen Version, auf Wunsch mit Sicherung der Volumes vorher</li>
+        <li>Ganze Stacks aktualisieren und zurück zur vorigen Version (Rollback), auf Wunsch mit Sicherung der Volumes vorher</li>
         <li>Umzug aus Portainer: Deck übernimmt Compose-Datei und Variablen, die Volumes mit deinen Daten bleiben</li>
         <li>Images, Volumes und Netze aufräumen</li>
       </ul>
       <p><a href="dock.html">Umstieg von Portainer</a></p>
     </div>
     <figure>
-      <img src="assets/img/stacks-1040.webp" srcset="assets/img/stacks-1040.webp 1040w, assets/img/stacks.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="Der Reiter Stacks in Nodvard Deck: Compose-Projekte eines Servers mit Zustand, Ordner und Knöpfen zum Ansehen, Bearbeiten, Anwenden, Aktualisieren und Übernehmen aus Portainer.">
-      <figcaption>Der Reiter Stacks, mit Beispieldaten.</figcaption>
+      <picture><source media="(max-width: 600px)" srcset="assets/img/stacks-handy.webp" width="1100" height="820"><img src="assets/img/stacks-1040.webp" srcset="assets/img/stacks-1040.webp 1040w, assets/img/stacks.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="Der Reiter Stacks in Nodvard Deck: Compose-Projekte eines Servers mit Zustand, Ordner und Knöpfen zum Ansehen, Bearbeiten, Anwenden, Aktualisieren und Übernehmen aus Portainer."></picture>
+      <figcaption>Stacks eines Servers: bearbeiten, anwenden, aktualisieren oder aus Portainer übernehmen.</figcaption>
     </figure>
   </section>
 
@@ -98,14 +99,14 @@
         <li>Einbruchschutz: ungewöhnliche SSH-Logins, Fail2ban und offene Ports</li>
         <li>Datei-Wächter für wichtige Systemdateien</li>
         <li>Morgen-Briefing mit dem Stand der Nacht</li>
-        <li>Auf Wunsch eine KI-Wache für abgestürzte Container, mit deinem eigenen Ollama</li>
+        <li>Auf Wunsch eine Fehleranalyse für abgestürzte Container über dein eigenes Ollama</li>
       </ul>
-      <p>Am meisten sieht Shield, wenn Deck auf dem Server sudo-Rechte hat.</p>
+      <p>Fehlen ClamAV, Lynis oder Fail2ban, installiert Shield sie auf Knopfdruck, nach deiner Freigabe. Am meisten sieht Shield über sein Hilfsskript oder mit sudo-Rechten auf dem Server.</p>
       <p><a href="linux-virenschutz.html">Virenschutz für Linux-Server</a></p>
     </div>
     <figure>
-      <img src="assets/img/shield-1040.webp" srcset="assets/img/shield-1040.webp 1040w, assets/img/shield.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Übersicht von Nodvard Shield: Schutzwert, geschützte Server, offene Bedrohungen, Quarantäne, Härtung und was Aufmerksamkeit braucht.">
-      <figcaption>Die Übersicht von Shield, mit Beispieldaten.</figcaption>
+      <picture><source media="(max-width: 600px)" srcset="assets/img/shield-handy.webp" width="1100" height="1000"><img src="assets/img/shield-1040.webp" srcset="assets/img/shield-1040.webp 1040w, assets/img/shield.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Übersicht von Nodvard Shield: Schutzwert, geschützte Server, offene Bedrohungen, Quarantäne, Härtung und was Aufmerksamkeit braucht."></picture>
+      <figcaption>Shield: Schutzwert, offene Funde, Quarantäne und der nächste Schritt.</figcaption>
     </figure>
   </section>
 
@@ -116,14 +117,14 @@
       <ul class="points">
         <li>Alle Proxmox-Backups auf einen Blick, mit Warnung bei fehlenden oder fehlgeschlagenen</li>
         <li>Backup-Jobs anlegen und bearbeiten</li>
-        <li>Einen Gast aus dem Backup als Kopie wiederherstellen, das Original bleibt unberührt</li>
+        <li>Eine VM oder einen LXC aus dem Backup als Kopie wiederherstellen, das Original bleibt unberührt</li>
         <li>Vor dem Update eines Stacks auf Wunsch die Docker-Volumes sichern</li>
         <li>Vor jedem Update von Deck eine Kopie der eigenen Datenbank, dazu eine Sicherung zum Herunterladen und Wiederherstellen</li>
       </ul>
     </div>
     <figure>
-      <img src="assets/img/backups-1040.webp" srcset="assets/img/backups-1040.webp 1040w, assets/img/backups.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Seite Proxmox-Backups: ein Gast ohne Backup-Job, die Backup-Jobs mit Zeitplan, letztem Lauf und vorhandenen Sicherungen, ein fehlgeschlagener Lauf.">
-      <figcaption>Die Seite Proxmox-Backups, mit Beispieldaten.</figcaption>
+      <picture><source media="(max-width: 600px)" srcset="assets/img/backups-handy.webp" width="1100" height="1000"><img src="assets/img/backups-1040.webp" srcset="assets/img/backups-1040.webp 1040w, assets/img/backups.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Seite Proxmox-Backups: ein Gast ohne Backup-Job, die Backup-Jobs mit Zeitplan, letztem Lauf und vorhandenen Sicherungen, ein fehlgeschlagener Lauf."></picture>
+      <figcaption>Proxmox-Backups: Gäste ohne Job und fehlgeschlagene Läufe stehen oben.</figcaption>
     </figure>
   </section>
 
@@ -138,28 +139,29 @@
       </ul>
     </div>
     <figure>
-      <img src="assets/img/apps-1040.webp" srcset="assets/img/apps-1040.webp 1040w, assets/img/apps.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="Die Seite Apps in Nodvard Deck: Kacheln für Drucker, Router, Pi-hole, Home Assistant, ein Synology NAS und Monitoring, in Ordnern sortiert.">
-      <figcaption>Die Seite Apps, mit Beispieldaten.</figcaption>
+      <picture><source media="(max-width: 600px)" srcset="assets/img/apps-handy.webp" width="1100" height="820"><img src="assets/img/apps-1040.webp" srcset="assets/img/apps-1040.webp 1040w, assets/img/apps.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="Die Seite Apps in Nodvard Deck: Kacheln für Drucker, Router, Pi-hole, Home Assistant, ein Synology NAS und Monitoring, in Ordnern sortiert."></picture>
+      <figcaption>Apps: jede Weboberfläche in deinem Netz als Kachel, in Ordnern.</figcaption>
     </figure>
   </section>
 
   <section class="feature text-only" id="integrationen" aria-labelledby="h-integrationen">
     <div class="body">
       <h2 id="h-integrationen">Integrationen</h2>
-      <p>Deck holt Zustand und Zahlen aus deinen Diensten und zeigt sie als Kachel und eigene Seite. Die meisten lesen nur und ändern nichts.</p>
+      <p>Deck holt Zustand und Zahlen aus deinen Diensten und zeigt sie als Kachel und eigene Seite. Die meisten lesen nur und ändern nichts. Erprobt im Dauerbetrieb sind Nextcloud und ntfy, die übrigen sind als Beta dabei: Sie funktionieren, laufen aber noch nicht so lange.</p>
       <ul class="tags" aria-label="Integrationen">
-        <li>Uptime Kuma <span class="beta">Beta</span></li>
-        <li>Home Assistant <span class="beta">Beta</span></li>
-        <li>Plex <span class="beta">Beta</span></li>
-        <li>Jellyfin <span class="beta">Beta</span></li>
-        <li>qBittorrent <span class="beta">Beta</span></li>
-        <li>Synology DSM <span class="beta">Beta</span></li>
-        <li>Pi-hole <span class="beta">Beta</span></li>
-        <li>Nginx Proxy Manager <span class="beta">Beta</span></li>
+        <li>Uptime Kuma</li>
+        <li>Home Assistant</li>
+        <li>Plex</li>
+        <li>Jellyfin</li>
+        <li>qBittorrent</li>
+        <li>Synology DSM</li>
+        <li>Pi-hole</li>
+        <li>Nginx Proxy Manager</li>
         <li>Nextcloud</li>
         <li>ntfy</li>
       </ul>
-      <p>Dazu kommen weitere Module: Skripte für einen oder viele Server, auch nach Zeitplan; Dokumente mit Texterkennung und Volltextsuche; ein Inventar mit Garantie-Erinnerung; Gameserver <span class="beta">Beta</span>. Jedes Modul schaltest du einzeln an oder aus.</p>
+      <h3 class="sub">Zusatz-Module, wenn du sie brauchst</h3>
+      <p>Standardmäßig aus und einzeln einschaltbar: Skripte für einen oder viele Server, auch nach Zeitplan; Dokumente mit Texterkennung und Volltextsuche; ein Inventar mit Garantie-Erinnerung; Gameserver (Beta).</p>
     </div>
   </section>
 
@@ -172,7 +174,9 @@
         <li>Auf Wunsch erzeugt Deck für jeden Server einen eigenen SSH-Schlüssel. Der geheime Teil bleibt im Tresor.</li>
         <li>Geheime Werte in Skripten holt Deck erst beim Ausführen aus dem Tresor</li>
         <li>Jedes Modul kommt nur an die Zugangsdaten, für die es freigegeben ist</li>
+        <li>Verschlüsselt mit Fernet (AES-128 im CBC-Modus mit HMAC-SHA256). Der Schlüssel liegt in einer eigenen Datei im Datenordner von Deck, nie in der Datenbank.</li>
       </ul>
+      <p><a href="https://github.com/nodvard/deck/blob/main/SECURITY.md">Hinweise zum sicheren Betrieb</a> (Englisch), etwa: Deck nicht direkt ins Internet stellen, Zwei-Faktor für jedes Konto.</p>
     </div>
   </section>
 
@@ -187,8 +191,8 @@
       </ul>
     </div>
     <figure>
-      <img src="assets/img/meldungen-1040.webp" srcset="assets/img/meldungen-1040.webp 1040w, assets/img/meldungen.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="Die Seite Meldungen in Nodvard Deck: eine kritische Meldung zu vollem Speicher, Warnungen zu Logins und Updates und ein erfolgreiches Backup.">
-      <figcaption>Die Seite Meldungen, mit Beispieldaten.</figcaption>
+      <picture><source media="(max-width: 600px)" srcset="assets/img/meldungen-handy.webp" width="1100" height="820"><img src="assets/img/meldungen-1040.webp" srcset="assets/img/meldungen-1040.webp 1040w, assets/img/meldungen.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="Die Seite Meldungen in Nodvard Deck: eine kritische Meldung zu vollem Speicher, Warnungen zu Logins und Updates und ein erfolgreiches Backup."></picture>
+      <figcaption>Meldungen: kritisch, Warnung oder Hinweis, mit Quelle und Zeit.</figcaption>
     </figure>
   </section>
 
@@ -205,11 +209,18 @@
     </div>
   </section>
 </div>
+<section class="section cta" aria-labelledby="cta">
+  <div class="wrap">
+    <h2 id="cta">Probier es mit Beispieldaten aus</h2>
+    <p class="intro">Drei Befehle, dann läuft Deck. Die Beispieldaten zeigen dir alles, bevor du deine eigenen Server einträgst. Alle Bilder auf dieser Seite stammen aus diesen Beispieldaten.</p>
+    <div class="btns"><a class="btn btn-main" href="loslegen.html">Loslegen</a><a class="btn btn-alt" href="faq.html">Häufige Fragen</a></div>
+  </div>
+</section>
 </main>
 <footer class="foot">
   <div class="wrap">
     <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck wird entwickelt von Nico Benks.</p><p>Für private Nutzung kostenlos, der Quellcode ist einsehbar.</p></div>
-    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="dock.html">Portainer-Alternative</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
+    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
   </div>
 </footer>
 </body>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Homelab-Dashboard für Proxmox und Docker | Nodvard Deck</title>
-<meta name="description" content="Nodvard Deck ist ein selbst gehostetes Homelab-Dashboard: Server, Proxmox, Docker, Backups und Meldungen auf einer Seite. Privat kostenlos.">
+<title>Homelab-Dashboard: mehr als eine Kachel-Startseite</title>
+<meta name="description" content="Kachel-Startseite oder Server-Verwaltung? Was ein Homelab-Dashboard wie Nodvard Deck zusätzlich kann: Proxmox, Docker, Backups und Freigaben.">
 <link rel="canonical" href="https://nodvard.com/homelab-dashboard.html">
 <link rel="alternate" hreflang="de" href="https://nodvard.com/homelab-dashboard.html">
 <link rel="alternate" hreflang="en" href="https://nodvard.com/en/homelab-dashboard.html">
@@ -12,16 +12,16 @@
 <meta name="theme-color" content="#1a1b1e">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
-<meta property="og:title" content="Homelab-Dashboard für Proxmox und Docker | Nodvard Deck">
-<meta property="og:description" content="Nodvard Deck ist ein selbst gehostetes Homelab-Dashboard: Server, Proxmox, Docker, Backups und Meldungen auf einer Seite. Privat kostenlos.">
+<meta property="og:title" content="Homelab-Dashboard: mehr als eine Kachel-Startseite">
+<meta property="og:description" content="Kachel-Startseite oder Server-Verwaltung? Was ein Homelab-Dashboard wie Nodvard Deck zusätzlich kann: Proxmox, Docker, Backups und Freigaben.">
 <meta property="og:url" content="https://nodvard.com/homelab-dashboard.html">
 <meta property="og:image" content="https://nodvard.com/assets/og/homelab-de.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Nodvard Deck mit Beispieldaten">
+<meta property="og:image:alt" content="Vorschaubild: Homelab-Dashboard: mehr als eine Kachel-Startseite">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Homelab-Dashboard für Proxmox und Docker | Nodvard Deck">
-<meta name="twitter:description" content="Nodvard Deck ist ein selbst gehostetes Homelab-Dashboard: Server, Proxmox, Docker, Backups und Meldungen auf einer Seite. Privat kostenlos.">
+<meta name="twitter:title" content="Homelab-Dashboard: mehr als eine Kachel-Startseite">
+<meta name="twitter:description" content="Kachel-Startseite oder Server-Verwaltung? Was ein Homelab-Dashboard wie Nodvard Deck zusätzlich kann: Proxmox, Docker, Backups und Freigaben.">
 <meta name="twitter:image" content="https://nodvard.com/assets/og/homelab-de.jpg">
 <meta property="og:locale" content="de_DE">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -35,14 +35,14 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
-    <nav aria-label="Hauptmenü"><ul class="nav"><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Dock</a></li><li><a href="loslegen.html">Loslegen</a></li><li><a href="community.html">Community</a></li></ul></nav>
+    <nav aria-label="Hauptmenü"><ul class="nav"><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Dock</a></li><li><a href="loslegen.html">Loslegen</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
     <a class="lang" href="en/homelab-dashboard.html" hreflang="en" lang="en" title="Read this page in English">English</a>
   </div>
 </header>
 <main id="inhalt">
 <div class="wrap">
   <header class="page-head">
-    <h1>Ein Homelab-Dashboard für alles, was bei dir läuft</h1>
+    <h1>Mehr als eine Kachel-Startseite</h1>
     <p class="lead">Nodvard Deck sammelt deine Server, VMs, Container, Backups und Meldungen auf einer Seite. Du siehst, was läuft, was hakt und was du als Nächstes tun kannst. Es läuft selbst gehostet bei dir zu Hause und kostet für private Nutzung nichts.</p>
     <div class="btns"><a class="btn btn-main" href="loslegen.html">Loslegen</a><a class="btn btn-alt" href="funktionen.html">Alle Funktionen</a></div>
   </header>
@@ -53,6 +53,9 @@
   </figure>
 
   <div class="prose">
+    <h2>Kachel-Startseite oder Server-Verwaltung?</h2>
+    <p>Startseiten wie Homepage, Homarr, Heimdall oder Dashy sammeln Links zu deinen Diensten, manche zeigen dazu Zahlen. Das ist praktisch, und Deck hat so eine Seite auch: die Apps. Deck geht weiter: Es zeigt den Zustand deiner Server, VMs, Container und Backups, und du kannst eingreifen, etwa einen Container neu starten, ein Image-Update mit Weg zurück einspielen oder ein Backup anstoßen. Jede solche Änderung läuft über eine Freigabe und steht im Protokoll.</p>
+
     <h2>Was auf der Übersicht steht</h2>
     <p>Oben stehen fünf Zahlen, die du jeden Tag brauchst: wie viele Server online sind, wie viele Container laufen, welche Backups keinen Lauf hatten, wie viele Meldungen ungelesen sind und welche Aktionen auf dich warten. Darunter listet Deck alle Server, VMs und LXC mit CPU, RAM, Platte und Laufzeit.</p>
     <p>Rechts steht, was gerade deine Aufmerksamkeit braucht, etwa eine fast volle Platte oder ein fehlgeschlagenes Backup. Die Widgets ordnest du in Gruppen, klappst sie einzeln zu und verschiebst sie im Bearbeiten-Modus.</p>
@@ -62,7 +65,7 @@
   </div>
 
   <div class="show">
-    <figure><img src="assets/img/apps-1040.webp" srcset="assets/img/apps-1040.webp 1040w, assets/img/apps.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="Die Seite Apps: Kacheln für Router, Pi-hole, Home Assistant, ein Synology NAS und Monitoring, in Ordnern sortiert."></figure>
+    <figure><picture><source media="(max-width: 600px)" srcset="assets/img/apps-handy.webp" width="1100" height="820"><img src="assets/img/apps-1040.webp" srcset="assets/img/apps-1040.webp 1040w, assets/img/apps.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="Die Seite Apps: Kacheln für Router, Pi-hole, Home Assistant, ein Synology NAS und Monitoring, in Ordnern sortiert."></picture></figure>
     <div class="show-text">
       <h2>Eine Startseite für deine Dienste</h2>
       <p>Unter Apps liegt jede Weboberfläche aus deinem Netz als Kachel, sortiert in Ordnern. Container mit Weboberfläche findet Deck auf deinen Docker-Servern von selbst, eigene Apps fügst du mit Adresse und Symbol hinzu.</p>
@@ -96,7 +99,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck wird entwickelt von Nico Benks.</p><p>Für private Nutzung kostenlos, der Quellcode ist einsehbar.</p></div>
-    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="dock.html">Portainer-Alternative</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
+    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
   </div>
 </footer>
 
