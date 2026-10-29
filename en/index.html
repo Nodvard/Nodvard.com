@@ -47,19 +47,33 @@
     <h1>Your homelab on one page.</h1>
     <p class="lead">Nodvard Deck shows your servers, Proxmox, Docker containers and backups in one web interface. It runs in your home and is free for personal use.</p>
     <div class="btns">
-      <a class="btn btn-main" href="get-started.html">Get started</a>
+      <a class="btn btn-main" href="#install">Install with three commands</a>
       <a class="btn btn-alt" href="https://github.com/nodvard/deck">View on GitHub</a>
     </div>
     <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. An English interface is planned. This website and the guides are in English.</p>
-    <a class="hero-cmd" href="#install"><code><span aria-hidden="true">$ </span>docker compose up -d</code><span>How to install it</span></a>
   </div>
-  <div class="bleed">
-    <picture>
+  <div class="bleed ansicht" data-ansicht>
+    <div class="ansicht-tabs" role="tablist" aria-label="Views from Nodvard Deck" hidden><button type="button" role="tab" id="t-uebersicht" aria-controls="v-uebersicht" aria-selected="true">Overview</button><button type="button" role="tab" id="t-stacks" aria-controls="v-stacks" aria-selected="false" tabindex="-1">Docker stacks</button><button type="button" role="tab" id="t-server" aria-controls="v-server" aria-selected="false" tabindex="-1">Proxmox</button><button type="button" role="tab" id="t-shield" aria-controls="v-shield" aria-selected="false" tabindex="-1">Shield</button><button type="button" role="tab" id="t-apps" aria-controls="v-apps" aria-selected="false" tabindex="-1">Apps</button></div>
+    <div class="ansicht-panel" id="v-uebersicht" role="tabpanel" aria-labelledby="t-uebersicht">
+      <picture>
       <source media="(max-width: 600px)" srcset="../assets/img/uebersicht-handy.webp" width="1400" height="1240">
       <img fetchpriority="high" src="../assets/img/uebersicht-1280.webp" srcset="../assets/img/uebersicht-1280.webp 1280w, ../assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" alt="The Nodvard Deck overview with sample data: three servers and six guests with their load, running containers, backups, unread notifications and one action waiting for approval.">
     </picture>
+    </div>
+    <div class="ansicht-panel" id="v-stacks" role="tabpanel" aria-labelledby="t-stacks" hidden>
+      <picture><source media="(max-width: 600px)" srcset="../assets/img/stacks-handy.webp" width="1100" height="820"><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="The Stacks tab with sample data: Compose projects of one server with status and buttons to edit, apply and update."></picture>
+    </div>
+    <div class="ansicht-panel" id="v-server" role="tabpanel" aria-labelledby="t-server" hidden>
+      <picture><source media="(max-width: 600px)" srcset="../assets/img/server-handy.webp" width="1100" height="980"><img src="../assets/img/server-1040.webp" srcset="../assets/img/server-1040.webp 1040w, ../assets/img/server.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The page of a Proxmox node with sample data: access, CPU, RAM, uptime and load history."></picture>
+    </div>
+    <div class="ansicht-panel" id="v-shield" role="tabpanel" aria-labelledby="t-shield" hidden>
+      <picture><source media="(max-width: 600px)" srcset="../assets/img/shield-handy.webp" width="1100" height="1000"><img src="../assets/img/shield-1040.webp" srcset="../assets/img/shield-1040.webp 1040w, ../assets/img/shield.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The Nodvard Shield overview with sample data: protection score, open findings, quarantine and the next step."></picture>
+    </div>
+    <div class="ansicht-panel" id="v-apps" role="tabpanel" aria-labelledby="t-apps" hidden>
+      <picture><source media="(max-width: 600px)" srcset="../assets/img/apps-handy.webp" width="1100" height="820"><img src="../assets/img/apps-1040.webp" srcset="../assets/img/apps-1040.webp 1040w, ../assets/img/apps.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="The Apps page with sample data: tiles for the services in the network, sorted into folders."></picture>
+    </div>
   </div>
-  <div class="wrap"><p class="caption">The overview with sample data. Beta, runs in Docker on a Raspberry Pi 4 or 5 and on any x86-64 machine.</p></div>
+  <div class="wrap"><p class="caption">All views with sample data. Beta, runs in Docker on a Raspberry Pi 4 or 5 and on any x86-64 machine.</p></div>
 </section>
 
 <section class="section" aria-labelledby="can">
@@ -169,6 +183,7 @@ volumes:
   <div class="wrap">
     <h2 id="people">Questions, ideas, bugs</h2>
     <p class="intro">Discord is the quickest place for questions. Bugs and wishes go to GitHub. Nodvard Deck is made by Nico Benks and runs around the clock in a real homelab.</p>
+    <p class="intro">Every version comes with a changelog on <a href="https://github.com/nodvard/deck/releases">GitHub</a>. The code has more than 10,000 automated tests. You report a security issue privately through the <a href="https://github.com/nodvard/deck/blob/main/SECURITY.md">security policy</a>.</p>
     <div class="btns">
       <a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Discord</a>
       <a class="btn btn-alt" href="https://github.com/nodvard/deck">GitHub</a>
@@ -184,5 +199,6 @@ volumes:
   </div>
 </footer>
 <script src="../assets/copy.js" defer></script>
+<script src="../assets/ansicht.js" defer></script>
 </body>
 </html>

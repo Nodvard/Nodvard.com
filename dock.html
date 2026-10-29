@@ -79,6 +79,15 @@
     <h2>Mehrere Server, kein Agent</h2>
     <p>Dock spricht per SSH mit deinen Docker-Servern, auf den Servern läuft kein eigener Agent. Wer dem Zugang keine vollen Docker-Rechte geben will, nutzt den Modus „Nur bedienen“: Dock darf dort per sudo dann nur ein festes Hilfsskript aufrufen, das jeden Aufruf selbst prüft.</p>
 
+    
+    <h2>Dock, Portainer CE und Dockge im Überblick</h2>
+    <p>Alle drei verwalten Container mit Compose. Die Unterschiede liegen vor allem darin, wie weitere Server angebunden werden und wo die Compose-Dateien liegen.</p>
+    <div class="table-wrap"><table class="vergleich">
+      <thead><tr><th scope="col"></th><th scope="col">Nodvard Dock</th><th scope="col">Portainer CE</th><th scope="col">Dockge</th></tr></thead>
+      <tbody><tr><th scope="row">Weitere Server</th><td>per SSH, ohne Agent</td><td>Portainer Agent oder Edge Agent auf jedem Server</td><td>Dockge-Agent auf jedem weiteren Server</td></tr><tr><th scope="row">Compose-Dateien</th><td>im Ordner auf dem Server (Vorgabe <code>/opt/stacks</code>)</td><td>im Datenspeicher von Portainer</td><td>im Ordner auf dem Server (Vorgabe <code>/opt/stacks</code>)</td></tr><tr><th scope="row">Swarm und Kubernetes</th><td>nein</td><td>ja</td><td>nein</td></tr><tr><th scope="row">Umzug von Portainer</th><td>Knopf je Stack</td><td>entfällt</td><td>Datei von Hand in den Ordner legen</td></tr><tr><th scope="row">Lizenz</th><td>PolyForm Noncommercial (Quellcode einsehbar, privat kostenlos)</td><td>zlib</td><td>MIT</td></tr></tbody>
+    </table></div>
+    <p class="note-small">Stand Oktober 2026, nach den Anleitungen von <a href="https://docs.portainer.io/">Portainer</a> und <a href="https://github.com/louislam/dockge">Dockge</a>. Brauchst du Swarm oder Kubernetes, passt Portainer besser.</p>
+
     <h2>Was Dock nicht kann</h2>
     <p>Dock ist für Docker und Docker Compose auf einzelnen Servern gemacht. Docker Swarm und Kubernetes verwaltet es nicht. Die Oberfläche ist derzeit auf Deutsch. Dock ist Beta, Rückmeldungen helfen, am schnellsten auf <a href="https://discord.gg/gTTs7qMabt">Discord</a>.</p>
   </div>

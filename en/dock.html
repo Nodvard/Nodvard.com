@@ -80,6 +80,15 @@
     <h2>Several servers, no agent</h2>
     <p>Dock talks to your Docker servers over SSH, and no agent of its own runs on them. If you don’t want to give the account full Docker rights, use the “operate only” mode: Dock may then only call one fixed helper script via sudo, and that script checks every call itself.</p>
 
+    
+    <h2>Dock, Portainer CE and Dockge at a glance</h2>
+    <p>All three manage containers with Compose. The differences are mainly how further servers are connected and where the Compose files live.</p>
+    <div class="table-wrap"><table class="vergleich">
+      <thead><tr><th scope="col"></th><th scope="col">Nodvard Dock</th><th scope="col">Portainer CE</th><th scope="col">Dockge</th></tr></thead>
+      <tbody><tr><th scope="row">Further servers</th><td>over SSH, no agent</td><td>Portainer Agent or Edge Agent on each server</td><td>Dockge agent on each further server</td></tr><tr><th scope="row">Compose files</th><td>in a folder on the server (default <code>/opt/stacks</code>)</td><td>in Portainer’s data storage</td><td>in a folder on the server (default <code>/opt/stacks</code>)</td></tr><tr><th scope="row">Swarm and Kubernetes</th><td>no</td><td>yes</td><td>no</td></tr><tr><th scope="row">Moving from Portainer</th><td>one button per stack</td><td>not applicable</td><td>move the file into the folder by hand</td></tr><tr><th scope="row">License</th><td>PolyForm Noncommercial (source-available, free for personal use)</td><td>zlib</td><td>MIT</td></tr></tbody>
+    </table></div>
+    <p class="note-small">As of October 2026, based on the documentation of <a href="https://docs.portainer.io/">Portainer</a> and <a href="https://github.com/louislam/dockge">Dockge</a>. If you need Swarm or Kubernetes, Portainer is the better fit.</p>
+
     <h2>What Dock does not do</h2>
     <p>Dock is made for Docker and Docker Compose on individual servers. It does not manage Docker Swarm or Kubernetes. Dock is in beta, and feedback helps, Discord is the quickest way: <a href="https://discord.gg/gTTs7qMabt">discord.gg/gTTs7qMabt</a>.</p>
   </div>
