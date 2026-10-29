@@ -54,14 +54,14 @@
 
   <div class="prose">
     <h2>A page of tiles or server management?</h2>
-    <p>Start pages such as Homepage, Homarr, Heimdall or Dashy collect links to your services, and some show numbers too. That’s handy, and Deck has a page like that as well, called Apps. On top of that, though, you get the state of your servers, VMs, containers and backups, and you can step in right away. You restart a container, say, apply an image update that can be rolled back, or start a backup. Every such change ends up in the log.</p>
+    <p>Homepage, Homarr, Heimdall or Dashy are good at collecting links and a few numbers about your services. In Deck, the Apps page does that. For me, that alone wasn’t enough. I also wanted to see how my servers, VMs, containers and backups are doing, and step in right away: restart a container, apply an image update and roll it back if needed, or start a backup. Whatever you change is in the log afterwards.</p>
 
     <h2>What the overview shows</h2>
     <p>Right at the top are five numbers: how many servers are online, how many containers are running, which backups had no run, how many notifications are unread and which actions are waiting for you. Below, Deck lists all servers, VMs and LXC with CPU, RAM, disk and uptime.</p>
     <p>On the right is what you should take care of right now, such as an almost full disk or a failed backup. You can sort the widgets into groups, collapse them one by one and move them around in edit mode.</p>
 
     <h2>Not just looking, also acting</h2>
-    <p>If a container hangs, you restart it right here. The same goes for starting a VM or applying pending updates. Before Deck changes anything, it asks you. What may run without asking is up to you, and afterwards every action is in the log.</p>
+    <p>When a container hangs, you restart it right here. The same goes for starting a VM or applying pending updates. Before Deck changes anything, it asks you. What may run without asking is up to you, and afterwards every action is in the log.</p>
   </div>
 
   <div class="show">
@@ -78,9 +78,9 @@
     <ul>
       <li>You add a server in the interface, also with a username and password. You don’t need a terminal for it.</li>
       <li>You connect Proxmox in one step.</li>
-      <li>If you only want to have a look, take the sample data and throw it out later.</li>
-      <li>The defaults fit most setups. More options are under “Advanced”.</li>
-      <li>When something goes wrong, Deck tells you in normal words what’s up and what you can do now.</li>
+      <li>For a first look there’s sample data, which you delete later.</li>
+      <li>The defaults usually fit. More options are under “Advanced”.</li>
+      <li>When something gets stuck, the message says what’s going on and what you can do now, instead of just an error code.</li>
     </ul>
 
     <h2>What you need</h2>
@@ -91,7 +91,7 @@
 <section class="section cta" aria-labelledby="cta">
   <div class="wrap">
     <h2 id="cta">Try it with sample data</h2>
-    <p class="intro">Three commands and Deck is running. With the sample data you can look around first, before you add your own servers.</p>
+    <p class="intro">Deck installs with three commands, and the sample data shows you everything before your own servers come in.</p>
     <div class="btns"><a class="btn btn-main" href="get-started.html">Get started</a><a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Ask on Discord</a></div>
   </div>
 </section>

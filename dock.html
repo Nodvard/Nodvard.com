@@ -51,7 +51,7 @@
 
   <div class="prose">
     <h2>Warum gerade jetzt</h2>
-    <p>Portainer hat im September 2026 angekündigt, dass Portainer 3.0 ohne Community Edition erscheint. CE bleibt bei Version 2.x und bekommt dort weiter Sicherheitsupdates und Fehlerbehebungen, Neues aus 3.0 nur noch vereinzelt (<a href="https://www.portainer.io/blog/portainer-3-0-is-coming">Portainer-Blog</a>). Suchst du deshalb was Neues, kannst du deine Stacks zu Nodvard Dock mitnehmen.</p>
+    <p>Portainer hat im September 2026 angekündigt, dass Portainer 3.0 ohne Community Edition erscheint. CE bleibt bei Version 2.x und bekommt dort weiter Sicherheitsupdates und Fehlerbehebungen, Neues aus 3.0 nur noch vereinzelt (<a href="https://www.portainer.io/blog/portainer-3-0-is-coming">Portainer-Blog</a>). Wenn du deshalb nach etwas Neuem suchst, kannst du deine Stacks zu Nodvard Dock mitnehmen.</p>
   </div>
 
   <div class="show">
@@ -59,7 +59,7 @@
     <div class="show-text">
       <h2>Umziehen per Knopf</h2>
       <p>Im Reiter Stacks hat jeder Stack, den Portainer angelegt hat, den Knopf „Von Portainer übernehmen“. Dock holt sich Compose-Datei und Variablen aus dem Speicher von Portainer, legt sie in einen eigenen Ordner und startet den Stack dort unter demselben Namen neu. Die Volumes mit deinen Daten bleiben.</p>
-      <p>Passt etwas nicht, zum Beispiel weil in der gespeicherten Datei andere Images stehen als in den laufenden Containern, lässt Dock den Stack in Ruhe und sagt dir, warum.</p>
+      <p>Wenn etwas nicht passt, zum Beispiel weil in der gespeicherten Datei andere Images stehen als in den laufenden Containern, lässt Dock den Stack in Ruhe und sagt dir, warum.</p>
     </div>
   </div>
 
@@ -73,11 +73,11 @@
       <li><strong>Volume-Sicherungen:</strong> Vor einem Update sichert Dock auf Wunsch die Volumes und prüft, ob genug Platz da ist. Im Reiter Stacks spielst du sie wieder zurück.</li>
       <li><strong>Private Registries</strong> wie ghcr.io trägst du in den Einstellungen ein, das Passwort oder Token liegt im Tresor.</li>
       <li><strong>Images, Volumes und Netze</strong> auflisten und aufräumen.</li>
-      <li><strong>Freigabe und Protokoll:</strong> Jede Änderung ist eine Aktion mit Risikostufe. Was ohne Nachfrage durchläuft, legt der Inhaber fest.</li>
+      <li><strong>Freigabe und Protokoll:</strong> Bevor Dock etwas ändert, fragt es nach. Welche Aktionen ohne Rückfrage durchlaufen dürfen, stellst du als Inhaber selbst ein, und im Protokoll steht hinterher alles.</li>
     </ul>
 
     <h2>Mehrere Server, kein Agent</h2>
-    <p>Dock redet per SSH mit deinen Docker-Servern. Einen Agent musst du dort nicht installieren. Willst du dem Zugang keine vollen Docker-Rechte geben, nimm den Modus „Nur bedienen“. Dann darf Dock per sudo nur ein festes Hilfsskript aufrufen, und das prüft jeden Aufruf selbst.</p>
+    <p>Dock redet per SSH mit deinen Docker-Servern. Einen Agent musst du dort nicht installieren. Du willst dem Zugang keine vollen Docker-Rechte geben? Dann nimm den Modus „Nur bedienen“. Damit darf Dock per sudo nur ein festes Hilfsskript aufrufen, und das prüft jeden Aufruf selbst.</p>
 
     
     <h2>Dock, Portainer CE und Dockge im Vergleich</h2>
@@ -120,7 +120,7 @@ volumes:
   nodvard_dock_data:
     name: nodvard-dock-data</code></pre>
     </details>
-    <p class="intro">Dann <code>http://&lt;dein-server&gt;:8080</code> öffnen. Den Einrichtungscode zeigt <code>docker compose logs nodvard-dock</code>. Ist der Port belegt, leg neben die <code>compose.yml</code> eine Datei <code>.env</code> mit <code>NODVARD_DOCK_PORT=8081</code>.</p>
+    <p class="intro">Dann <code>http://&lt;dein-server&gt;:8080</code> öffnen. Den Einrichtungscode zeigt <code>docker compose logs nodvard-dock</code>. Wenn der Port belegt ist, leg neben die <code>compose.yml</code> eine Datei <code>.env</code> mit <code>NODVARD_DOCK_PORT=8081</code>.</p>
     <p class="intro">Aktualisieren: im selben Ordner <code>docker compose pull &amp;&amp; docker compose up -d</code>. Deine Daten bleiben erhalten. Alles Weitere steht im <a href="https://github.com/nodvard/dock">Repository nodvard/dock</a>.</p>
   </section>
 

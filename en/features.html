@@ -91,7 +91,7 @@
   <section class="feature" id="shield" aria-labelledby="h-shield">
     <div class="body">
       <h2 id="h-shield">Nodvard Shield</h2>
-      <p>Shield keeps an eye on your Linux servers and tells you what it finds. Malware goes to quarantine on its own. If you’d rather decide every time yourself, turn that off.</p>
+      <p>Shield keeps an eye on your Linux servers and tells you what it finds. By default, malware goes to quarantine on its own. You can turn that off and decide every time yourself.</p>
       <ul class="points">
         <li>Virus scans with ClamAV as a quick scan, deep scan or on a schedule, with quarantine</li>
         <li>Hardening check with Lynis</li>
@@ -101,7 +101,7 @@
         <li>Morning briefing with what happened overnight</li>
         <li>Optional error analysis for crashed containers using your own Ollama</li>
       </ul>
-      <p>If ClamAV, Lynis or Fail2ban is missing, Shield installs it with a button once you approve. With the helper script or sudo rights on the server, Shield sees the most.</p>
+      <p>ClamAV, Lynis or Fail2ban not installed yet? Shield installs them with a button once you approve. With the helper script or sudo rights on the server, Shield sees the most.</p>
       <p><a href="linux-antivirus.html">Antivirus for Linux servers</a></p>
     </div>
     <figure>
@@ -161,7 +161,7 @@
         <li>ntfy</li>
       </ul>
       <h3 class="sub">Extra modules, if you need them</h3>
-      <p>These are off at first, and you turn them on one by one. With scripts you run commands on one or many servers, also on a schedule. Documents recognizes text in scans, and you can search all of it. The inventory reminds you before a warranty runs out. Game servers are there too, as beta.</p>
+      <p>They’re all off by default, so nothing is in the way that you don’t need. You turn them on one by one: scripts for one or many servers, also on a schedule, a place for documents with text recognition and full-text search, an inventory that reminds you before a warranty ends, and game servers (beta).</p>
     </div>
   </section>
 
@@ -183,7 +183,7 @@
   <section class="feature" id="meldungen" aria-labelledby="h-meldungen">
     <div class="body">
       <h2 id="h-meldungen">Notifications</h2>
-      <p>When a disk fills up, a backup fails, updates are pending or Shield finds something, it shows up in the notifications.</p>
+      <p>The notifications collect everything you should look at, such as a full disk, a failed backup, pending updates or a finding from Shield.</p>
       <ul class="points">
         <li>Push to your phone via ntfy, Telegram, Discord, Gotify, Pushover, Matrix, Slack, Mattermost or your own Apprise API</li>
         <li>A minimum level for each channel</li>
@@ -199,7 +199,7 @@
   <section class="feature text-only" id="freigaben" aria-labelledby="h-freigaben">
     <div class="body">
       <h2 id="h-freigaben">Approvals and accounts</h2>
-      <p>Every change in Deck is an action with a risk level, and before it runs, Deck asks you. What may go through without asking is up to you, for example with a block list or a maintenance window.</p>
+      <p>Before Deck changes anything, it asks, and every action carries a level that shows how risky it is. What may go through without asking is up to you, for example with a block list or a maintenance window.</p>
       <ul class="points">
         <li>Every action is written to the log</li>
         <li>Users with roles and permissions</li>

@@ -79,7 +79,7 @@
       <figure><picture><source media="(max-width: 600px)" srcset="assets/img/docker-handy.webp" width="1100" height="900"><img src="assets/img/docker-1040.webp" srcset="assets/img/docker-1040.webp 1040w, assets/img/docker.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="Die Docker-Seite mit Beispieldaten: Container eines Servers mit Zustand und Knöpfen für Neustart, Stoppen, Konsole und Logs."></picture></figure>
       <div class="show-text">
         <h3>Docker mit Stacks <span class="beta beta-new">Neu</span></h3>
-        <p>Hier siehst du die Container von all deinen Servern zusammen. Stacks bearbeitest du direkt in Deck, als Text oder im Formular. Gefällt dir ein Update nicht, gehst du zurück zur alten Version. Und wer von Portainer kommt, nimmt seine Stacks einfach mit, die Volumes bleiben, wo sie sind.</p>
+        <p>Hier siehst du die Container von all deinen Servern zusammen. Stacks bearbeitest du direkt in Deck, als Text oder im Formular. Und wenn dir ein Update nicht gefällt, gehst du zurück zur alten Version. Deine Stacks aus Portainer nimmst du einfach mit, die Volumes bleiben, wo sie sind.</p>
         <a href="funktionen.html#docker">Mehr zu Docker</a>
       </div>
     </div>
@@ -95,7 +95,7 @@
       <figure><picture><source media="(max-width: 600px)" srcset="assets/img/shield-handy.webp" width="1100" height="1000"><img src="assets/img/shield-1040.webp" srcset="assets/img/shield-1040.webp 1040w, assets/img/shield.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Übersicht von Nodvard Shield: Schutzwert, geschützte Server, offene Bedrohungen, Quarantäne und was Aufmerksamkeit braucht."></picture></figure>
       <div class="show-text">
         <h3>Nodvard Shield</h3>
-        <p>Shield schaut regelmäßig auf deine Linux-Server. Es sucht mit ClamAV nach Schadsoftware, prüft mit Lynis die Einstellungen und meldet SSH-Logins, die nicht nach dir aussehen. Funde schiebt es erst mal in die Quarantäne, rausholen kannst du sie jederzeit.</p>
+        <p>Shield schaut regelmäßig auf deine Linux-Server. Es sucht mit ClamAV nach Schadsoftware, prüft mit Lynis die Einstellungen und meldet SSH-Logins, die nicht nach dir aussehen. Funde landen ab Werk gleich in der Quarantäne, wo du sie jederzeit wieder rausholen kannst. Wenn du das nicht willst, schaltest du es ab.</p>
         <a href="funktionen.html#shield">Mehr zu Shield</a>
       </div>
     </div>
@@ -106,7 +106,7 @@
       <div><h4><a href="funktionen.html#apps">Apps</a></h4><p>Kacheln für deine Dienste, damit du dir keine Adressen mehr merken musst. Container mit Weboberfläche findet Deck selbst.</p></div>
       <div><h4><a href="funktionen.html#integrationen">Integrationen</a></h4><p>Uptime Kuma, Home Assistant, Plex, Jellyfin, Synology und noch ein paar mehr bekommen eine Kachel in Deck. Viele davon sind noch Beta.</p></div>
       <div><h4><a href="funktionen.html#tresor">Tresor</a></h4><p>Passwörter, API-Tokens und SSH-Schlüssel speichert Deck verschlüsselt. Auf Wunsch bekommt jeder Server seinen eigenen Schlüssel.</p></div>
-      <div><h4><a href="funktionen.html#meldungen">Meldungen</a></h4><p>Stimmt irgendwo was nicht, steht es hier. Wenn du willst, auch auf dem Handy, über ntfy, Telegram, Discord oder andere.</p></div>
+      <div><h4><a href="funktionen.html#meldungen">Meldungen</a></h4><p>Hier landet alles, was irgendwo nicht stimmt. Auf Wunsch kommt es auch aufs Handy, über ntfy, Telegram, Discord oder andere.</p></div>
       <div><h4><a href="funktionen.html#freigaben">Freigaben und Konten</a></h4><p>Mehrere Benutzer mit eigenen Rollen und Anmeldung mit Zwei-Faktor. Im Protokoll siehst du, wer wann was gemacht hat.</p></div>
     </div>
     <p class="more"><a href="funktionen.html">Alles, was Deck kann, ausführlich</a></p>
@@ -171,15 +171,15 @@ volumes:
       <li>Kein Agent, nur SSH</li>
       <li>Rund 100 MB RAM im Leerlauf</li>
     </ul>
-    <p>Lizenz: PolyForm Noncommercial 1.0.0. Den Quellcode kann jeder lesen. Willst du Deck in einer Firma nutzen, frag vorher nach. <a href="lizenz.html">Die Lizenz in einfachen Worten</a></p>
+    <p>Lizenz: PolyForm Noncommercial 1.0.0. Den Quellcode kann jeder lesen. Für die Nutzung in einer Firma frag bitte vorher nach. <a href="lizenz.html">Die Lizenz in einfachen Worten</a></p>
   </div>
 </section>
 
 <section class="section" aria-labelledby="leute">
   <div class="wrap">
     <h2 id="leute">Fragen, Ideen, Fehler</h2>
-    <p class="intro">Fragen stellst du am besten auf Discord. Fehler und Wünsche gehören auf GitHub. Deck läuft übrigens rund um die Uhr in Nicos eigenem Homelab.</p>
-    <p class="intro">Zu jeder Version gibt es auf <a href="https://github.com/nodvard/deck/releases">GitHub</a> ein Änderungsprotokoll, und über 10.000 automatische Tests prüfen den Code. Hast du eine Sicherheitslücke gefunden, melde sie bitte vertraulich über die <a href="https://github.com/nodvard/deck/blob/main/SECURITY.md">Sicherheits-Richtlinie</a>.</p>
+    <p class="intro">Wenn du eine Frage hast, komm auf Discord. Fehler und Ideen kannst du als Issue auf GitHub anlegen. Ich nutze Deck selbst, bei mir läuft es rund um die Uhr im Homelab.</p>
+    <p class="intro">Zu jeder Version gibt es auf <a href="https://github.com/nodvard/deck/releases">GitHub</a> ein Änderungsprotokoll, und über 10.000 automatische Tests prüfen den Code. Eine Sicherheitslücke meldest du bitte vertraulich über die <a href="https://github.com/nodvard/deck/blob/main/SECURITY.md">Sicherheits-Richtlinie</a>.</p>
     <div class="btns">
       <a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Discord</a>
       <a class="btn btn-alt" href="https://github.com/nodvard/deck">GitHub</a>

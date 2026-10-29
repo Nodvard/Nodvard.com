@@ -60,7 +60,7 @@
     <div class="show-text">
       <h2>Move over with a button</h2>
       <p>In the Stacks tab, every stack created by Portainer has a button to move it over. Dock grabs the Compose file and variables from Portainer’s storage, puts them in a folder of their own and starts the stack there again under the same name. The volumes with your data stay.</p>
-      <p>If something doesn’t fit, for example because the stored file lists other images than the running containers, Dock leaves the stack alone and tells you why.</p>
+      <p>When something doesn’t fit, for example because the stored file lists other images than the running containers, Dock leaves the stack alone and tells you why.</p>
     </div>
   </div>
 
@@ -74,11 +74,11 @@
       <li><strong>Volume backups:</strong> before an update, Dock backs up the volumes if you like and checks that there is enough space. You restore them in the Stacks tab.</li>
       <li><strong>Private registries</strong> such as ghcr.io go into the settings, and the password or token is stored in the vault.</li>
       <li><strong>Images, volumes and networks</strong>: list and clean them up.</li>
-      <li><strong>Approval and log:</strong> every change is an action with a risk level. The owner decides what goes through without asking.</li>
+      <li><strong>Approval and log:</strong> before Dock changes anything, it asks. As the owner, you decide which actions may go through without asking, and the log shows everything afterwards.</li>
     </ul>
 
     <h2>Several servers, no agent</h2>
-    <p>Dock talks to your Docker servers over SSH. You don’t have to install an agent there. If you don’t want to give the account full Docker rights, use the “operate only” mode. Then Dock may only call one fixed helper script via sudo, and that script checks every call itself.</p>
+    <p>Dock talks to your Docker servers over SSH. You don’t have to install an agent there. Don’t want to give the account full Docker rights? Use the “operate only” mode. With it, Dock may only call one fixed helper script via sudo, and that script checks every call itself.</p>
 
     
     <h2>Dock, Portainer CE and Dockge compared</h2>

@@ -128,8 +128,6 @@ code, pre { font-family: var(--mono); }
 .cmd pre { margin: 0; padding: 16px; overflow-x: auto; font-size: 0.875rem; line-height: 1.75; color: var(--text); tab-size: 2; }
 .cmd .copied { color: var(--ok); }
 
-/* Hinweis-Kasten (z. B. Beta, Entwurf) */
-
 /* Unterseiten: Text, Funktionsabschnitte */
 .page-head { padding-block: 64px 8px; }
 .page-head h1 { font-size: clamp(2.125rem, 1.6rem + 2.2vw, 3.25rem); line-height: 1.06; letter-spacing: -0.028em; font-weight: 800; }
