@@ -114,6 +114,8 @@ services:
       - "${NODVARD_DOCK_PORT:-8080}:8080"
     volumes:
       - nodvard_dock_data:/app/data
+      # Optional: a folder for backups, for example on a NAS
+      # - ./sicherungen:/backups
     healthcheck: …
 volumes:
   nodvard_dock_data:

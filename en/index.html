@@ -50,27 +50,22 @@
       <a class="btn btn-main" href="#install">Install with three commands</a>
       <a class="btn btn-alt" href="https://github.com/nodvard/deck">View on GitHub</a>
     </div>
+    <p class="note">Just want to look around? Deck comes with sample data that you delete later with one click.</p>
     <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. An English interface is planned. This website and the guides are in English.</p>
   </div>
   <div class="bleed ansicht" data-ansicht>
-    <div class="ansicht-tabs" role="tablist" aria-label="Views from Nodvard Deck" hidden><button type="button" role="tab" id="t-uebersicht" aria-controls="v-uebersicht" aria-selected="true">Overview</button><button type="button" role="tab" id="t-stacks" aria-controls="v-stacks" aria-selected="false" tabindex="-1">Docker stacks</button><button type="button" role="tab" id="t-server" aria-controls="v-server" aria-selected="false" tabindex="-1">Proxmox</button><button type="button" role="tab" id="t-shield" aria-controls="v-shield" aria-selected="false" tabindex="-1">Shield</button><button type="button" role="tab" id="t-apps" aria-controls="v-apps" aria-selected="false" tabindex="-1">Apps</button></div>
+    <div class="ansicht-tabs" role="tablist" aria-label="Views from Nodvard Deck" hidden><button type="button" role="tab" id="t-uebersicht" aria-controls="v-uebersicht" aria-selected="true">Overview</button><button type="button" role="tab" id="t-backups" aria-controls="v-backups" aria-selected="false" tabindex="-1">Proxmox backups</button><button type="button" role="tab" id="t-meldungen" aria-controls="v-meldungen" aria-selected="false" tabindex="-1">Notifications</button><button type="button" role="tab" id="t-apps" aria-controls="v-apps" aria-selected="false" tabindex="-1">Apps</button></div>
     <div class="ansicht-panel" id="v-uebersicht" role="tabpanel" aria-labelledby="t-uebersicht">
-      <picture>
-      <source media="(max-width: 600px)" srcset="../assets/img/uebersicht-handy.webp" width="1400" height="1240">
-      <img fetchpriority="high" src="../assets/img/uebersicht-1280.webp" srcset="../assets/img/uebersicht-1280.webp 1280w, ../assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" alt="The Nodvard Deck overview with sample data: three servers and six guests with their load, running containers, backups, unread notifications and one action waiting for approval.">
-    </picture>
+      <picture><source media="(max-width: 600px)" srcset="../assets/img/uebersicht-handy.webp" width="1400" height="1240"><img src="../assets/img/uebersicht-1120.webp" srcset="../assets/img/uebersicht-1120.webp 1120w, ../assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" fetchpriority="high" alt="The Nodvard Deck overview with sample data: three servers and six guests with their load, running containers, backups, unread notifications and one action waiting for approval."></picture>
     </div>
-    <div class="ansicht-panel" id="v-stacks" role="tabpanel" aria-labelledby="t-stacks" hidden>
-      <picture><source media="(max-width: 600px)" srcset="../assets/img/stacks-handy.webp" width="1100" height="820"><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="The Stacks tab with sample data: Compose projects of one server with status and buttons to edit, apply and update."></picture>
+    <div class="ansicht-panel" id="v-backups" role="tabpanel" aria-labelledby="t-backups" hidden>
+      <picture><source media="(max-width: 600px)" srcset="../assets/img/backups-handy.webp" width="1100" height="1000"><img src="../assets/img/backups-tab-1120.webp" srcset="../assets/img/backups-tab-1120.webp 1120w, ../assets/img/backups-tab.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1300" loading="lazy" decoding="async" alt="The Proxmox backups page with sample data: a guest without a backup job, jobs with schedule and last run, one failed run."></picture>
     </div>
-    <div class="ansicht-panel" id="v-server" role="tabpanel" aria-labelledby="t-server" hidden>
-      <picture><source media="(max-width: 600px)" srcset="../assets/img/server-handy.webp" width="1100" height="980"><img src="../assets/img/server-1040.webp" srcset="../assets/img/server-1040.webp 1040w, ../assets/img/server.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The page of a Proxmox node with sample data: access, CPU, RAM, uptime and load history."></picture>
-    </div>
-    <div class="ansicht-panel" id="v-shield" role="tabpanel" aria-labelledby="t-shield" hidden>
-      <picture><source media="(max-width: 600px)" srcset="../assets/img/shield-handy.webp" width="1100" height="1000"><img src="../assets/img/shield-1040.webp" srcset="../assets/img/shield-1040.webp 1040w, ../assets/img/shield.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The Nodvard Shield overview with sample data: protection score, open findings, quarantine and the next step."></picture>
+    <div class="ansicht-panel" id="v-meldungen" role="tabpanel" aria-labelledby="t-meldungen" hidden>
+      <picture><source media="(max-width: 600px)" srcset="../assets/img/meldungen-handy.webp" width="1100" height="820"><img src="../assets/img/meldungen-tab-1120.webp" srcset="../assets/img/meldungen-tab-1120.webp 1120w, ../assets/img/meldungen-tab.webp 1587w" sizes="(min-width: 1152px) 1120px, 100vw" width="1587" height="992" loading="lazy" decoding="async" alt="The notifications page with sample data: a critical message about full storage, warnings about logins and updates, a successful backup."></picture>
     </div>
     <div class="ansicht-panel" id="v-apps" role="tabpanel" aria-labelledby="t-apps" hidden>
-      <picture><source media="(max-width: 600px)" srcset="../assets/img/apps-handy.webp" width="1100" height="820"><img src="../assets/img/apps-1040.webp" srcset="../assets/img/apps-1040.webp 1040w, ../assets/img/apps.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="The Apps page with sample data: tiles for the services in the network, sorted into folders."></picture>
+      <picture><source media="(max-width: 600px)" srcset="../assets/img/apps-handy.webp" width="1100" height="820"><img src="../assets/img/apps-tab-1120.webp" srcset="../assets/img/apps-tab-1120.webp 1120w, ../assets/img/apps-tab.webp 1587w" sizes="(min-width: 1152px) 1120px, 100vw" width="1587" height="992" loading="lazy" decoding="async" alt="The Apps page with sample data: tiles for the services in the network, sorted into folders."></picture>
     </div>
   </div>
   <div class="wrap"><p class="caption">All views with sample data. Beta, runs in Docker on a Raspberry Pi 4 or 5 and on any x86-64 machine.</p></div>
@@ -82,7 +77,7 @@
     <p class="intro">Changes go through approvals: Deck suggests, you confirm. You decide what may run without asking.</p>
 
     <div class="show">
-      <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/stacks-handy.webp" width="1100" height="820"><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="The Stacks tab: Compose projects of one server with status, folder and buttons to edit, apply, update and move over from Portainer."></picture></figure>
+      <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/docker-handy.webp" width="1100" height="900"><img src="../assets/img/docker-1040.webp" srcset="../assets/img/docker-1040.webp 1040w, ../assets/img/docker.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="The Docker page with sample data: containers of one server with status and buttons for restart, stop, console and logs."></picture></figure>
       <div class="show-text">
         <h3>Docker with stacks <span class="beta beta-new">New</span></h3>
         <p>All containers on your servers on one page. Edit Compose stacks as text or in a form, update them with a way back and move them over from Portainer. The volumes with your data stay.</p>
@@ -127,8 +122,8 @@
       <p class="more"><a href="dock.html">More about Nodvard Dock</a></p>
     </div>
     <figure>
-      <picture><source media="(max-width: 600px)" srcset="../assets/img/docker-handy.webp" width="1100" height="900"><img src="../assets/img/docker-1040.webp" srcset="../assets/img/docker-1040.webp 1040w, ../assets/img/docker.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="The Docker page with the containers of one server, their status and buttons for restart, stop, console and logs."></picture>
-      <figcaption>Containers of all servers with status, logs and console. This is the part Nodvard Dock is made of.</figcaption>
+      <picture><source media="(max-width: 600px)" srcset="../assets/img/stacks-handy.webp" width="1100" height="820"><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="The Stacks tab with sample data: Compose projects of one server, one of them from Portainer with the button to move it over."></picture>
+      <figcaption>Stacks of one server, one of them from Portainer, ready to move over. This is the part Nodvard Dock is made of.</figcaption>
     </figure>
   </div>
 </section>
@@ -155,12 +150,14 @@ services:
       - "${NODVARD_DECK_PORT:-8080}:8080"
     volumes:
       - nodvard_deck_data:/app/data
+      # Optional: a folder for backups, for example on a NAS
+      # - ./sicherungen:/backups
     healthcheck: …
 volumes:
   nodvard_deck_data:
     name: nodvard-deck-data</code></pre>
     </details>
-    <p class="intro">Then open <code>http://&lt;your-server&gt;:8080</code> in your browser. <code>docker compose logs nodvard-deck</code> shows the setup code.</p>
+    <p class="intro">Then open <code>http://&lt;your-server&gt;:8080</code> in your browser. <code>docker compose logs nodvard-deck</code> shows the setup code. The assistant then offers sample data so you can look at everything in peace.</p>
     <p class="more"><a href="get-started.html">All ways, including Portainer, Synology and Unraid</a></p>
   </div>
 </section>

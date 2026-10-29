@@ -284,3 +284,8 @@ table.vergleich { border-collapse: collapse; width: 100%; min-width: 560px; font
 .vergleich tbody th { color: var(--text); font-weight: 600; white-space: nowrap; }
 .vergleich td { color: var(--soft); }
 .vergleich td:nth-child(2) { color: var(--text); }
+
+/* Ansichten: feste Höhe, damit beim Umschalten nichts springt */
+.ansicht-panel img { aspect-ratio: 16 / 10; object-fit: cover; object-position: left top; }
+@media (max-width: 600px) { .ansicht-panel img { aspect-ratio: 1100 / 975; } }
+.hero .note { margin-top: 18px; font-size: 0.9375rem; color: var(--muted); }

@@ -67,6 +67,8 @@ services:
       - "${NODVARD_DECK_PORT:-8080}:8080"
     volumes:
       - nodvard_deck_data:/app/data
+      # Optional: Ordner für Sicherungen, etwa auf einem NAS
+      # - ./sicherungen:/backups
     healthcheck: …
 volumes:
   nodvard_deck_data:

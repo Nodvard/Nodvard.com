@@ -50,26 +50,21 @@
       <a class="btn btn-main" href="#install">In drei Befehlen installieren</a>
       <a class="btn btn-alt" href="https://github.com/nodvard/deck">Auf GitHub ansehen</a>
     </div>
+    <p class="note">Erst mal schauen? Deck bringt Beispieldaten mit, die du später mit einem Klick wieder löschst.</p>
   </div>
   <div class="bleed ansicht" data-ansicht>
-    <div class="ansicht-tabs" role="tablist" aria-label="Ansichten aus Nodvard Deck" hidden><button type="button" role="tab" id="t-uebersicht" aria-controls="v-uebersicht" aria-selected="true">Übersicht</button><button type="button" role="tab" id="t-stacks" aria-controls="v-stacks" aria-selected="false" tabindex="-1">Docker-Stacks</button><button type="button" role="tab" id="t-server" aria-controls="v-server" aria-selected="false" tabindex="-1">Proxmox</button><button type="button" role="tab" id="t-shield" aria-controls="v-shield" aria-selected="false" tabindex="-1">Shield</button><button type="button" role="tab" id="t-apps" aria-controls="v-apps" aria-selected="false" tabindex="-1">Apps</button></div>
+    <div class="ansicht-tabs" role="tablist" aria-label="Ansichten aus Nodvard Deck" hidden><button type="button" role="tab" id="t-uebersicht" aria-controls="v-uebersicht" aria-selected="true">Übersicht</button><button type="button" role="tab" id="t-backups" aria-controls="v-backups" aria-selected="false" tabindex="-1">Proxmox-Backups</button><button type="button" role="tab" id="t-meldungen" aria-controls="v-meldungen" aria-selected="false" tabindex="-1">Meldungen</button><button type="button" role="tab" id="t-apps" aria-controls="v-apps" aria-selected="false" tabindex="-1">Apps</button></div>
     <div class="ansicht-panel" id="v-uebersicht" role="tabpanel" aria-labelledby="t-uebersicht">
-      <picture>
-      <source media="(max-width: 600px)" srcset="assets/img/uebersicht-handy.webp" width="1400" height="1240">
-      <img fetchpriority="high" src="assets/img/uebersicht-1280.webp" srcset="assets/img/uebersicht-1280.webp 1280w, assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" alt="Die Übersicht von Nodvard Deck mit Beispieldaten: drei Server und sechs Gäste mit Auslastung, laufende Container, Backups, ungelesene Meldungen und eine Aktion, die auf Freigabe wartet.">
-    </picture>
+      <picture><source media="(max-width: 600px)" srcset="assets/img/uebersicht-handy.webp" width="1400" height="1240"><img src="assets/img/uebersicht-1120.webp" srcset="assets/img/uebersicht-1120.webp 1120w, assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" fetchpriority="high" alt="Die Übersicht von Nodvard Deck mit Beispieldaten: drei Server und sechs Gäste mit Auslastung, laufende Container, Backups, ungelesene Meldungen und eine Aktion, die auf Freigabe wartet."></picture>
     </div>
-    <div class="ansicht-panel" id="v-stacks" role="tabpanel" aria-labelledby="t-stacks" hidden>
-      <picture><source media="(max-width: 600px)" srcset="assets/img/stacks-handy.webp" width="1100" height="820"><img src="assets/img/stacks-1040.webp" srcset="assets/img/stacks-1040.webp 1040w, assets/img/stacks.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="Der Reiter Stacks mit Beispieldaten: Compose-Projekte eines Servers mit Zustand und Knöpfen zum Bearbeiten, Anwenden und Aktualisieren."></picture>
+    <div class="ansicht-panel" id="v-backups" role="tabpanel" aria-labelledby="t-backups" hidden>
+      <picture><source media="(max-width: 600px)" srcset="assets/img/backups-handy.webp" width="1100" height="1000"><img src="assets/img/backups-tab-1120.webp" srcset="assets/img/backups-tab-1120.webp 1120w, assets/img/backups-tab.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1300" loading="lazy" decoding="async" alt="Die Seite Proxmox-Backups mit Beispieldaten: ein Gast ohne Backup-Job, Jobs mit Zeitplan und letztem Lauf, ein fehlgeschlagener Lauf."></picture>
     </div>
-    <div class="ansicht-panel" id="v-server" role="tabpanel" aria-labelledby="t-server" hidden>
-      <picture><source media="(max-width: 600px)" srcset="assets/img/server-handy.webp" width="1100" height="980"><img src="assets/img/server-1040.webp" srcset="assets/img/server-1040.webp 1040w, assets/img/server.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Seite eines Proxmox-Knotens mit Beispieldaten: Zugang, CPU, RAM, Laufzeit und Verlauf der Auslastung."></picture>
-    </div>
-    <div class="ansicht-panel" id="v-shield" role="tabpanel" aria-labelledby="t-shield" hidden>
-      <picture><source media="(max-width: 600px)" srcset="assets/img/shield-handy.webp" width="1100" height="1000"><img src="assets/img/shield-1040.webp" srcset="assets/img/shield-1040.webp 1040w, assets/img/shield.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Übersicht von Nodvard Shield mit Beispieldaten: Schutzwert, offene Funde, Quarantäne und der nächste Schritt."></picture>
+    <div class="ansicht-panel" id="v-meldungen" role="tabpanel" aria-labelledby="t-meldungen" hidden>
+      <picture><source media="(max-width: 600px)" srcset="assets/img/meldungen-handy.webp" width="1100" height="820"><img src="assets/img/meldungen-tab-1120.webp" srcset="assets/img/meldungen-tab-1120.webp 1120w, assets/img/meldungen-tab.webp 1587w" sizes="(min-width: 1152px) 1120px, 100vw" width="1587" height="992" loading="lazy" decoding="async" alt="Die Seite Meldungen mit Beispieldaten: eine kritische Meldung zu vollem Speicher, Warnungen zu Logins und Updates, ein erfolgreiches Backup."></picture>
     </div>
     <div class="ansicht-panel" id="v-apps" role="tabpanel" aria-labelledby="t-apps" hidden>
-      <picture><source media="(max-width: 600px)" srcset="assets/img/apps-handy.webp" width="1100" height="820"><img src="assets/img/apps-1040.webp" srcset="assets/img/apps-1040.webp 1040w, assets/img/apps.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="Die Seite Apps mit Beispieldaten: Kacheln für die Dienste im Netz, in Ordnern sortiert."></picture>
+      <picture><source media="(max-width: 600px)" srcset="assets/img/apps-handy.webp" width="1100" height="820"><img src="assets/img/apps-tab-1120.webp" srcset="assets/img/apps-tab-1120.webp 1120w, assets/img/apps-tab.webp 1587w" sizes="(min-width: 1152px) 1120px, 100vw" width="1587" height="992" loading="lazy" decoding="async" alt="Die Seite Apps mit Beispieldaten: Kacheln für die Dienste im Netz, in Ordnern sortiert."></picture>
     </div>
   </div>
   <div class="wrap"><p class="caption">Alle Ansichten mit Beispieldaten. Beta, läuft mit Docker auf einem Raspberry Pi 4 oder 5 und auf jedem x86-64-Rechner.</p></div>
@@ -81,7 +76,7 @@
     <p class="intro">Änderungen laufen über Freigaben: Deck schlägt vor, du bestätigst. Was ohne Rückfrage laufen darf, legst du selbst fest.</p>
 
     <div class="show">
-      <figure><picture><source media="(max-width: 600px)" srcset="assets/img/stacks-handy.webp" width="1100" height="820"><img src="assets/img/stacks-1040.webp" srcset="assets/img/stacks-1040.webp 1040w, assets/img/stacks.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="Der Reiter Stacks: Compose-Projekte eines Servers mit Zustand, Ordner und Knöpfen zum Bearbeiten, Anwenden, Aktualisieren und Übernehmen aus Portainer."></picture></figure>
+      <figure><picture><source media="(max-width: 600px)" srcset="assets/img/docker-handy.webp" width="1100" height="900"><img src="assets/img/docker-1040.webp" srcset="assets/img/docker-1040.webp 1040w, assets/img/docker.webp 2080w" sizes="(min-width: 900px) 620px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="Die Docker-Seite mit Beispieldaten: Container eines Servers mit Zustand und Knöpfen für Neustart, Stoppen, Konsole und Logs."></picture></figure>
       <div class="show-text">
         <h3>Docker mit Stacks <span class="beta beta-new">Neu</span></h3>
         <p>Alle Container deiner Server auf einer Seite. Compose-Stacks bearbeitest du als Text oder im Formular, aktualisierst sie mit Weg zurück und holst sie aus Portainer herüber. Die Volumes mit deinen Daten bleiben.</p>
@@ -126,8 +121,8 @@
       <p class="more"><a href="dock.html">Mehr zu Nodvard Dock</a></p>
     </div>
     <figure>
-      <picture><source media="(max-width: 600px)" srcset="assets/img/docker-handy.webp" width="1100" height="900"><img src="assets/img/docker-1040.webp" srcset="assets/img/docker-1040.webp 1040w, assets/img/docker.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="Die Docker-Seite mit den Containern eines Servers, ihrem Zustand und Knöpfen für Neustart, Stoppen, Konsole und Logs."></picture>
-      <figcaption>Container aller Server mit Zustand, Logs und Konsole. Genau dieser Teil steckt in Nodvard Dock.</figcaption>
+      <picture><source media="(max-width: 600px)" srcset="assets/img/stacks-handy.webp" width="1100" height="820"><img src="assets/img/stacks-1040.webp" srcset="assets/img/stacks-1040.webp 1040w, assets/img/stacks.webp 2080w" sizes="(min-width: 900px) 640px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="Der Reiter Stacks mit Beispieldaten: Compose-Projekte eines Servers, darunter einer aus Portainer mit dem Knopf zum Übernehmen."></picture>
+      <figcaption>Stacks eines Servers, einer davon aus Portainer, bereit zum Umzug. Dieser Teil steckt in Nodvard Dock.</figcaption>
     </figure>
   </div>
 </section>
@@ -154,12 +149,14 @@ services:
       - "${NODVARD_DECK_PORT:-8080}:8080"
     volumes:
       - nodvard_deck_data:/app/data
+      # Optional: Ordner für Sicherungen, etwa auf einem NAS
+      # - ./sicherungen:/backups
     healthcheck: …
 volumes:
   nodvard_deck_data:
     name: nodvard-deck-data</code></pre>
     </details>
-    <p class="intro">Danach öffnest du <code>http://&lt;dein-server&gt;:8080</code> im Browser. Den Einrichtungscode zeigt <code>docker compose logs nodvard-deck</code>.</p>
+    <p class="intro">Danach öffnest du <code>http://&lt;dein-server&gt;:8080</code> im Browser. Den Einrichtungscode zeigt <code>docker compose logs nodvard-deck</code>. Der Assistent bietet dir danach Beispieldaten an, damit du alles in Ruhe ansehen kannst.</p>
     <p class="more"><a href="loslegen.html">Alle Wege, auch Portainer, Synology und Unraid</a></p>
   </div>
 </section>
