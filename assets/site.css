@@ -1,5 +1,5 @@
 /* nodvard.com: Farben und Radien aus dem Deck-Theme „Schlicht dunkel“ (frontend/src/styles/index.css), eigene Schriften Archivo und IBM Plex.
-   Layout: links ausgerichtete Spalte (max. 1120 px), der große Screenshot läuft rechts aus dem Bild. */
+   Layout: links ausgerichtete Spalte (max. 1120 px), der große Screenshot sitzt bündig im Raster. */
 /* Schriften liegen auf nodvard.com selbst (assets/fonts, SIL Open Font License), kein Abruf bei Dritten. */
 @font-face { font-family: "Archivo"; src: url("fonts/archivo-wdth.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
 @font-face { font-family: "IBM Plex Sans"; src: url("fonts/plex-sans-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
@@ -214,14 +214,14 @@ code, pre { font-family: var(--mono); }
 .hero-cmd:hover > span:last-child { color: var(--text); text-decoration: underline; }
 
 .show { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 28px 56px; align-items: center; margin-top: 64px; }
-.show:nth-of-type(even) figure { order: 2; }
+.show-flip figure { order: 2; }
 .show figure { margin: 0; }
 .show img { border: 1px solid var(--line-strong); border-radius: var(--radius-lg); background: var(--side); }
 .show h3 { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); line-height: 1.12; letter-spacing: -0.015em; font-weight: 750; }
 .show p { margin-top: 12px; color: var(--soft); font-size: 1.0625rem; }
 .show-text a { display: inline-block; margin-top: 16px; font-weight: 600; padding-block: 10px; margin-block: -10px; }
 .beta-new { background: var(--accent-strong); color: #fff; }
-@media (max-width: 900px) { .show { grid-template-columns: minmax(0, 1fr); margin-top: 48px; } .show:nth-of-type(even) figure { order: 0; } }
+@media (max-width: 900px) { .show { grid-template-columns: minmax(0, 1fr); margin-top: 48px; } .show-flip figure { order: 0; } }
 h3.sub { margin-top: 80px; font-size: 1.25rem; font-weight: 700; }
 .sub + .list { margin-top: 14px; }
 .list h4 { margin: 0; font-size: 1.0625rem; font-weight: 650; line-height: 1.35; }
@@ -248,7 +248,7 @@ h3.sub { margin-top: 80px; font-size: 1.25rem; font-weight: 700; }
 
 /* Funktionsseite: Bilder abwechselnd links und rechts */
 @media (min-width: 901px) { .feature:nth-of-type(even):not(.text-only) { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } .feature:nth-of-type(even):not(.text-only) figure { order: -1; } }
-@media (min-width: 901px) { .show:nth-of-type(even) { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); } }
+@media (min-width: 901px) { .show-flip { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); } }
 
 /* Suchseiten (Homelab-Dashboard, Portainer-Alternative, Proxmox und Docker, Virenschutz, FAQ, Anleitungen) */
 .page-head .btns { margin-top: 28px; }
@@ -275,7 +275,7 @@ figure.wide + .prose { padding-top: 24px; }
 .install .intro { margin-top: 12px; color: var(--soft); max-width: 44em; }
 @media (max-width: 700px) { .install { padding: 22px 16px; } }
 
-/* 0.12: Sprachhinweis, Inhalt der compose.yml, Bilder in picture */
+/* Sprachhinweis, Inhalt der compose.yml, Bilder in picture */
 .lang-note { margin-top: 22px; max-width: 44em; padding: 12px 16px; border: 1px solid var(--line-strong); border-left: 3px solid var(--accent); border-radius: var(--radius-sm); background: var(--surface); color: var(--soft); font-size: 0.9375rem; }
 .lang-note strong { color: var(--text); }
 details.compose { margin-top: 14px; max-width: 760px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--side); }
