@@ -43,7 +43,7 @@
 <div class="wrap">
   <header class="page-head">
     <h1>Get started</h1>
-    <p class="lead">Nodvard Deck runs in Docker, on a Raspberry Pi 4 or 5 just like on any x86-64 machine. Nothing is built, the ready-made image comes from GitHub (<code>ghcr.io/nodvard/deck</code>, for arm64 and x86-64).</p>
+    <p class="lead">Nodvard Deck runs in Docker, whether on a Raspberry Pi 4 or 5 or on an x86-64 machine. You don’t build anything, the ready-made image comes from GitHub (<code>ghcr.io/nodvard/deck</code>, for arm64 and x86-64).</p>
   </header>
   <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. An English interface is planned. This website and the guides are in English.</p>
 
@@ -78,7 +78,7 @@ volumes:
       <p>On Windows, these commands are for WSL or Git Bash. In PowerShell, write <code>curl.exe</code> instead of <code>curl</code> and run the commands one by one.</p>
     </li>
     <li><strong>Open it in your browser:</strong> <code>http://&lt;your-server&gt;:8080</code>. Deck asks for a setup code. <code>docker compose logs nodvard-deck</code> in the same folder shows it, the line starts with “Einrichtungscode”.</li>
-    <li><strong>Follow the assistant.</strong> It guides you through your account and the first server. If you just want to look around, fill Deck with sample data and delete it later with one click.</li>
+    <li><strong>Follow the assistant.</strong> It guides you through your account and the first server. If you only want to have a look, take the sample data and throw it out later.</li>
   </ol>
 
   <div class="prose">
@@ -89,7 +89,7 @@ volumes:
     <p>In the same folder, run <code>docker compose pull &amp;&amp; docker compose up -d</code>. Your data is kept. Before every update that changes the database, Deck makes a copy of it.</p>
 
     <h2>After installing</h2>
-    <p>Set up backups first, ideally to a NAS: <a href="backup-nas-nfs.html">Back up to a NAS or NFS share</a>. Answers about the license, data and the Raspberry Pi are in the <a href="faq.html">FAQ</a>.</p>
+    <p>The first thing you should set up is backups, ideally to a NAS: <a href="backup-nas-nfs.html">Back up to a NAS or NFS share</a>. Anything you want to know about the license, data or the Raspberry Pi is in the <a href="faq.html">FAQ</a>.</p>
 
     <h2>Other ways</h2>
     <p>Each way is described step by step in the README:</p>
@@ -106,7 +106,7 @@ volumes:
 </main>
 <footer class="foot">
   <div class="wrap">
-    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Nodvard Deck is made by Nico Benks.</p><p>Free for personal use, the source code is public.</p></div>
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a><p>Built by Nico Benks, because 14 open tabs for my homelab got to be too much.</p><p>Free for personal use, and anyone can read the source code.</p></div>
     <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
   </div>
 </footer>
