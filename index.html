@@ -29,7 +29,7 @@
 <link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab-Dashboard","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.11.1","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab-Dashboard","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.12.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -43,7 +43,7 @@
 <main id="inhalt">
 <section class="hero">
   <div class="wrap">
-    <a class="news" href="dock.html"><span class="news-tag">Neu</span><span>Weg von Portainer? Mit Nodvard Dock ziehen deine Stacks einfach um</span></a>
+    <a class="news" href="funktionen.html#docker"><span class="news-tag">Neu in 0.12</span><span>Docker-Stacks aus Git und Fail2ban-Sperren in Shield</span></a>
     <h1>Ein Dashboard für dein ganzes Homelab.</h1>
     <p class="lead">Nodvard Deck zeigt dir, was auf deinen Servern los ist, von der Proxmox-VM bis zum einzelnen Container. Ob deine Backups gelaufen sind, siehst du da auch. Du installierst es selbst, und privat zahlst du nichts.</p>
     <div class="btns">
@@ -81,7 +81,7 @@
       <figure><picture><source media="(max-width: 600px)" srcset="assets/img/docker-handy.webp" width="1100" height="900"><img src="assets/img/docker-1040.webp" srcset="assets/img/docker-1040.webp 1040w, assets/img/docker.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="Die Docker-Seite mit Beispieldaten: Container eines Servers mit Zustand und Knöpfen für Neustart, Stoppen, Konsole und Logs."></picture></figure>
       <div class="show-text">
         <h3>Docker mit Stacks <span class="beta beta-new">Neu</span></h3>
-        <p>Hier siehst du die Container von all deinen Servern zusammen. Stacks bearbeitest du direkt in Deck, als Text oder im Formular. Und wenn dir ein Update nicht gefällt, gehst du zurück zur alten Version. Deine Stacks aus Portainer nimmst du einfach mit, die Volumes bleiben, wo sie sind.</p>
+        <p>Hier siehst du die Container von all deinen Servern zusammen. Stacks bearbeitest du direkt in Deck, als Text oder im Formular, oder du holst sie aus einem Git-Repository. Und wenn dir ein Update nicht gefällt, gehst du zurück zur alten Version. Deine Stacks aus Portainer nimmst du einfach mit, die Volumes bleiben, wo sie sind.</p>
         <a href="funktionen.html#docker">Mehr zu Docker</a>
       </div>
     </div>
@@ -97,7 +97,7 @@
       <figure><picture><source media="(max-width: 600px)" srcset="assets/img/shield-handy.webp" width="1100" height="1000"><img src="assets/img/shield-1040.webp" srcset="assets/img/shield-1040.webp 1040w, assets/img/shield.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Übersicht von Nodvard Shield: Schutzwert, geschützte Server, offene Bedrohungen, Quarantäne und was Aufmerksamkeit braucht."></picture></figure>
       <div class="show-text">
         <h3>Nodvard Shield</h3>
-        <p>Shield schaut regelmäßig auf deine Linux-Server. Es sucht mit ClamAV nach Schadsoftware, prüft mit Lynis die Einstellungen und meldet SSH-Logins, die nicht nach dir aussehen. Funde landen ab Werk gleich in der Quarantäne, wo du sie jederzeit wieder rausholen kannst. Wenn du das nicht willst, schaltest du es ab.</p>
+        <p>Shield schaut regelmäßig auf deine Linux-Server. Es sucht mit ClamAV nach Schadsoftware, prüft mit Lynis die Einstellungen und meldet SSH-Logins, die nicht nach dir aussehen. Welche Adressen Fail2ban gesperrt hat, siehst du auch. Funde landen ab Werk gleich in der Quarantäne, wo du sie jederzeit wieder rausholen kannst. Wenn du das nicht willst, schaltest du es ab.</p>
         <a href="funktionen.html#shield">Mehr zu Shield</a>
       </div>
     </div>

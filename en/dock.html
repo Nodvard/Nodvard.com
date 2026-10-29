@@ -29,7 +29,7 @@
 <link rel="preload" href="../assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Dock","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Docker management","operatingSystem":"Linux (Docker, arm64 and x86-64)","softwareVersion":"0.11.1","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/en/dock.html","downloadUrl":"https://github.com/nodvard/dock","license":"https://github.com/nodvard/dock/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/stacks.webp","inLanguage":"en","author":{"@type":"Person","name":"Nico Benks"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Dock","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Docker management","operatingSystem":"Linux (Docker, arm64 and x86-64)","softwareVersion":"0.12.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/en/dock.html","downloadUrl":"https://github.com/nodvard/dock","license":"https://github.com/nodvard/dock/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/stacks.webp","inLanguage":"en","author":{"@type":"Person","name":"Nico Benks"}}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Skip to content</a>
@@ -71,6 +71,7 @@
       <li><strong>Logs</strong> with a time range, search and download.</li>
       <li><strong>Stacks</strong>: edit them as text or in a form. Before saving, Docker Compose checks the file on the server, and recent versions stay in the history. You create new stacks in a folder on each server, also from templates for Uptime Kuma, Vaultwarden, Nginx Proxy Manager and Gitea.</li>
       <li><strong>Updates with a way back (rollback):</strong> the old image stays as a backup. If the new container does not start, it goes back on its own, except for databases. Whole stacks also get a “back to the previous version” button after an update.</li>
+      <li><strong>Stacks from Git (new in 0.12):</strong> pull a state from a Git repository, see first what changes, and go back with “back to the state before”.</li>
       <li><strong>Volume backups:</strong> before an update, Dock backs up the volumes if you like and checks that there is enough space. You restore them in the Stacks tab.</li>
       <li><strong>Private registries</strong> such as ghcr.io go into the settings, and the password or token is stored in the vault.</li>
       <li><strong>Images, volumes and networks</strong>: list and clean them up.</li>
