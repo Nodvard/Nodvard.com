@@ -13,6 +13,10 @@ document.querySelectorAll("[data-ansicht]").forEach(function (box) {
     });
     if (fokus) k.focus();
   }
+  // Nach dem Laden der Seite die übrigen Ansichten im Hintergrund holen, damit das Umschalten sofort geht
+  window.addEventListener("load", function () {
+    box.querySelectorAll("[role=tabpanel][hidden] img[loading=lazy]").forEach(function (img) { img.loading = "eager"; });
+  });
   knoepfe.forEach(function (b, i) {
     b.addEventListener("click", function () { zeige(b, false); });
     b.addEventListener("keydown", function (e) {

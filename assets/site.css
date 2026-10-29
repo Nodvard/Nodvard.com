@@ -269,7 +269,7 @@ picture > img { display: block; width: 100%; }
 .show picture img, .feature picture img, .split picture img { border: 1px solid var(--line-strong); border-radius: var(--radius-lg); background: var(--side); }
 
 /* Ansichten im Kopf der Startseite */
-.ansicht-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.ansicht-tabs:not([hidden]) { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
 .ansicht-tabs button { font: inherit; font-size: 0.9375rem; font-weight: 600; color: var(--soft); background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 8px 14px; min-height: 40px; cursor: pointer; }
 .ansicht-tabs button:hover { color: var(--text); border-color: var(--muted); }
 .ansicht-tabs button[aria-selected="true"] { color: #fff; background: var(--accent-strong); border-color: var(--accent-strong); }
@@ -287,5 +287,5 @@ table.vergleich { border-collapse: collapse; width: 100%; min-width: 560px; font
 
 /* Ansichten: feste Höhe, damit beim Umschalten nichts springt */
 .ansicht-panel img { aspect-ratio: 16 / 10; object-fit: cover; object-position: left top; }
-@media (max-width: 600px) { .ansicht-panel img { aspect-ratio: 1100 / 975; } }
+@media (max-width: 600px) { .ansicht-panel img { aspect-ratio: 1100 / 820; } }
 .hero .note { margin-top: 18px; font-size: 0.9375rem; color: var(--muted); }
