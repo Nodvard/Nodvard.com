@@ -367,3 +367,41 @@ h1, h2, h3 { font-weight: 850; letter-spacing: -0.03em; }
 .bleed .vard-mini { width: 132px; border: 0; border-radius: 0; background: none; z-index: 2; }
 @media (max-width: 700px) { .bleed .vard-mini { width: 84px; } }
 @media (min-width: 1000px) { .bleed .vard-mini { width: 300px; top: -268px; } }
+
+/* Argon-Restpunkte zu Entwurf A */
+@media (max-width: 700px) { .bleed .vard-mini { display: none; } .bleed.ansicht { margin-top: 48px; } }
+@media (max-width: 640px) {
+  .table-wrap { overflow: visible; }
+  table.vergleich { min-width: 0; }
+  .vergleich thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .vergleich, .vergleich tbody, .vergleich tr, .vergleich th, .vergleich td { display: block; width: 100%; }
+  .vergleich tr { margin-bottom: 12px; padding: 14px 16px; border: 1px solid var(--line-strong); border-radius: 14px; background: var(--surface); }
+  .vergleich th, .vergleich td { padding: 0; border: 0; }
+  .vergleich tbody th { white-space: normal; font-size: 1.0625rem; margin-bottom: 8px; }
+  .vergleich td { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 10px; padding-block: 6px; border-top: 1px solid var(--line); }
+  .vergleich td::before { content: attr(data-label); color: var(--muted); font-size: 0.875rem; }
+}
+.feature-paar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 56px; border-top: 1px solid var(--line); }
+.feature-paar .feature + .feature { border-top: 0; }
+@media (max-width: 900px) { .feature-paar { grid-template-columns: minmax(0, 1fr); } .feature-paar .feature + .feature { border-top: 1px solid var(--line); } }
+@media (min-width: 901px) {
+  #integrationen .body { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 56px; grid-auto-flow: dense; align-items: start; }
+  #integrationen .body > * { grid-column: 2; margin-top: 0; }
+  #integrationen .body > h2, #integrationen .body > p:first-of-type { grid-column: 1; }
+  #integrationen .body > h2 + p { margin-top: 14px; }
+  #integrationen .body > .tags { grid-row: 1 / span 2; }
+  #integrationen .body > h3.sub { margin-top: 28px; }
+}
+@media (min-width: 901px) {
+  #integrationen .body { grid-template-rows: auto auto 1fr; }
+  #integrationen .body > h2 { grid-row: 1; }
+  #integrationen .body > p:first-of-type { grid-row: 2 / span 2; }
+  #integrationen .body > .tags { grid-row: 1 / span 2; align-self: start; }
+  #integrationen .body > h3.sub { grid-row: 3; margin-top: 24px; }
+  #integrationen .body > h3.sub + p { grid-row: 4; margin-top: 6px; }
+}
+@media (max-width: 640px) {
+  .vergleich td { display: block; position: relative; padding-left: 8.5em; }
+  .vergleich td::before { position: absolute; left: 0; top: 6px; width: 7.5em; }
+}
+@media (min-width: 901px) { #integrationen .body { grid-template-rows: auto; } }
