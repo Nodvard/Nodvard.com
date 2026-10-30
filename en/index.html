@@ -37,7 +37,7 @@
   <div class="wrap">
     <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
     <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
-    <a class="lang" href="../" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a>
+    <a class="lang" href="../" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a><a class="btn-top" href="get-started.html">Install</a>
   </div>
 </header>
 <main id="inhalt">
@@ -54,6 +54,7 @@
     <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. An English interface is planned. This website and the guides are in English.</p>
   </div>
   <div class="bleed ansicht" data-ansicht>
+    <img class="vard-mini" src="../assets/img/vard.webp" width="256" height="256" alt="" fetchpriority="low">
     <div class="ansicht-tabs" role="tablist" aria-label="Views from Nodvard Deck" hidden><button type="button" role="tab" id="t-uebersicht" aria-controls="v-uebersicht" aria-selected="true">Overview</button><button type="button" role="tab" id="t-backups" aria-controls="v-backups" aria-selected="false" tabindex="-1">Proxmox backups</button><button type="button" role="tab" id="t-meldungen" aria-controls="v-meldungen" aria-selected="false" tabindex="-1">Notifications</button><button type="button" role="tab" id="t-apps" aria-controls="v-apps" aria-selected="false" tabindex="-1">Apps</button></div>
     <div class="ansicht-panel" id="v-uebersicht" role="tabpanel" aria-labelledby="t-uebersicht">
       <picture><source media="(max-width: 600px)" srcset="../assets/img/uebersicht-handy.webp" width="1400" height="1240"><img src="../assets/img/uebersicht-1120.webp" srcset="../assets/img/uebersicht-1120.webp 1120w, ../assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" fetchpriority="high" alt="The Nodvard Deck overview with sample data: three servers and six guests with their load, running containers, backups, unread notifications and one action waiting for approval."></picture>
@@ -76,7 +77,8 @@
     <h2 id="can">What Nodvard Deck does</h2>
     <p class="intro">Before Deck changes anything on your servers, it asks you. What it may do without asking is up to you.</p>
 
-    <div class="show">
+    <div class="rack">
+    <div class="show slot">
       <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/docker-handy.webp" width="1100" height="900"><img src="../assets/img/docker-1040.webp" srcset="../assets/img/docker-1040.webp 1040w, ../assets/img/docker.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="The Docker page with sample data: containers of one server with status and buttons for restart, stop, console and logs."></picture></figure>
       <div class="show-text">
         <h3>Docker with stacks <span class="beta beta-new">New</span></h3>
@@ -84,7 +86,7 @@
         <a href="features.html#docker">More about Docker</a>
       </div>
     </div>
-    <div class="show show-flip">
+    <div class="show slot">
       <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/server-handy.webp" width="1100" height="980"><img src="../assets/img/server-1040.webp" srcset="../assets/img/server-1040.webp 1040w, ../assets/img/server.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The page of a Proxmox node: access, CPU, RAM, uptime and the load history."></picture></figure>
       <div class="show-text">
         <h3>Servers and Proxmox</h3>
@@ -92,7 +94,7 @@
         <a href="features.html#server">More about servers</a>
       </div>
     </div>
-    <div class="show">
+    <div class="show slot">
       <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/shield-handy.webp" width="1100" height="1000"><img src="../assets/img/shield-1040.webp" srcset="../assets/img/shield-1040.webp 1040w, ../assets/img/shield.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The Nodvard Shield overview: protection score, protected servers, open threats, quarantine and what needs attention."></picture></figure>
       <div class="show-text">
         <h3>Nodvard Shield</h3>
@@ -100,16 +102,16 @@
         <a href="features.html#shield">More about Shield</a>
       </div>
     </div>
-
-    <h3 class="sub">Also included</h3>
     <div class="list">
-      <div><h4><a href="features.html#backups">Backups</a></h4><p>Deck checks whether your Proxmox backups actually ran and tells you when one is missing or went wrong.</p></div>
-      <div><h4><a href="features.html#apps">Apps</a></h4><p>Tiles for your services, so you don’t have to remember addresses anymore. Deck finds containers with a web interface by itself.</p></div>
-      <div><h4><a href="features.html#integrationen">Integrations</a></h4><p>Uptime Kuma, Home Assistant, Plex, Jellyfin, Synology and a few more get a tile in Deck. Many of them are still in beta.</p></div>
-      <div><h4><a href="features.html#tresor">Vault</a></h4><p>Deck stores passwords, API tokens and SSH keys encrypted. If you like, every server gets its own key.</p></div>
-      <div><h4><a href="features.html#meldungen">Notifications</a></h4><p>Anything that’s off somewhere ends up here. It can go to your phone too, via ntfy, Telegram, Discord or others.</p></div>
-      <div><h4><a href="features.html#freigaben">Approvals and accounts</a></h4><p>Several users with their own roles, and sign-in with two-factor. The log shows who did what and when.</p></div>
+      <div class="slot"><h4><a href="features.html#backups">Backups</a></h4><p>Deck checks whether your Proxmox backups actually ran and tells you when one is missing or went wrong.</p></div>
+      <div class="slot"><h4><a href="features.html#apps">Apps</a></h4><p>Tiles for your services, so you don’t have to remember addresses anymore. Deck finds containers with a web interface by itself.</p></div>
+      <div class="slot slot-beta"><h4><a href="features.html#integrationen">Integrations</a></h4><p>Uptime Kuma, Home Assistant, Plex, Jellyfin, Synology and a few more get a tile in Deck. Many of them are still in beta.</p></div>
+      <div class="slot"><h4><a href="features.html#tresor">Vault</a></h4><p>Deck stores passwords, API tokens and SSH keys encrypted. If you like, every server gets its own key.</p></div>
+      <div class="slot"><h4><a href="features.html#meldungen">Notifications</a></h4><p>Anything that’s off somewhere ends up here. It can go to your phone too, via ntfy, Telegram, Discord or others.</p></div>
+      <div class="slot"><h4><a href="features.html#freigaben">Approvals and accounts</a></h4><p>Several users with their own roles, and sign-in with two-factor. The log shows who did what and when.</p></div>
     </div>
+    </div>
+    <p class="legende">Green light: done. Yellow light: still in beta.</p>
     <p class="more"><a href="features.html">Everything Deck does, in detail</a></p>
   </div>
 </section>
@@ -121,10 +123,7 @@
       <p class="intro">Only want to manage your containers? Then Nodvard Dock is enough. It’s the Docker part of Deck as its own small image. If you’re about to leave Portainer CE, this is for you. Dock is out since version 0.11.0.</p>
       <p class="more"><a href="dock.html">More about Nodvard Dock</a></p>
     </div>
-    <figure>
-      <picture><source media="(max-width: 600px)" srcset="../assets/img/stacks-handy.webp" width="1100" height="820"><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 640px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="The Stacks tab with sample data: Compose projects of one server, one of them from Portainer with the button to move it over."></picture>
-      <figcaption>The stacks of one server. One comes from Portainer and is ready to move. This exact part is also available on its own as Nodvard Dock.</figcaption>
-    </figure>
+    <figure class="clip-box"><video controls muted playsinline preload="none" poster="../assets/clips/dock-umzug.webp" width="540" height="960" aria-label="Clip without sound: a stack moves from Portainer to Nodvard Dock, the volumes stay."><source src="../assets/clips/dock-umzug.mp4" type="video/mp4"></video><figcaption>The move as a clip, 33 seconds, no sound.</figcaption></figure>
   </div>
 </section>
 
