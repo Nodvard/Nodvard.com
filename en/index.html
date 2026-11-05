@@ -29,7 +29,7 @@
 <link rel="preload" href="../assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab dashboard","operatingSystem":"Linux (Docker, arm64 and x86-64)","softwareVersion":"0.12.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.12.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/en/","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"en","author":{"@type":"Person","name":"Nico Benks"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab dashboard","operatingSystem":"Linux (Docker, arm64 and x86-64)","softwareVersion":"0.13.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.13.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/en/","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"en","author":{"@type":"Person","name":"Nico Benks"}}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Skip to content</a>
@@ -43,7 +43,7 @@
 <main id="inhalt">
 <section class="hero">
   <div class="wrap">
-    <a class="news" href="features.html#docker"><span class="news-tag">New in 0.12</span><span>Docker stacks from Git and Fail2ban bans in Shield</span></a>
+    <a class="news" href="features.html#docker"><span class="news-tag">New in 0.13</span><span>Docker networks, your own stack templates and cards on your phone</span></a>
     <h1>One dashboard for your whole homelab.</h1>
     <p class="lead">Nodvard Deck shows you what is going on on your servers, from the Proxmox VM down to a single container. You can also see whether your backups ran. You install it yourself, and for personal use you pay nothing.</p>
     <div class="btns">
@@ -55,7 +55,7 @@
   </div>
   <div class="bleed ansicht" data-ansicht>
     <img class="vard-mini" src="../assets/img/vard.webp" width="256" height="256" alt="" fetchpriority="low">
-    <div class="ansicht-tabs" role="tablist" aria-label="Views from Nodvard Deck" hidden><button type="button" role="tab" id="t-uebersicht" aria-controls="v-uebersicht" aria-selected="true">Overview</button><button type="button" role="tab" id="t-backups" aria-controls="v-backups" aria-selected="false" tabindex="-1">Proxmox backups</button><button type="button" role="tab" id="t-meldungen" aria-controls="v-meldungen" aria-selected="false" tabindex="-1">Notifications</button><button type="button" role="tab" id="t-apps" aria-controls="v-apps" aria-selected="false" tabindex="-1">Apps</button></div>
+    <div class="ansicht-tabs" role="tablist" aria-label="Views from Nodvard Deck" hidden><button type="button" role="tab" id="t-uebersicht" aria-controls="v-uebersicht" aria-selected="true">Overview</button><button type="button" role="tab" id="t-backups" aria-controls="v-backups" aria-selected="false" tabindex="-1">Proxmox backups</button><button type="button" role="tab" id="t-meldungen" aria-controls="v-meldungen" aria-selected="false" tabindex="-1">Notifications</button><button type="button" role="tab" id="t-apps" aria-controls="v-apps" aria-selected="false" tabindex="-1">Apps</button><button type="button" role="tab" id="t-docker" aria-controls="v-docker" aria-selected="false" tabindex="-1">Docker</button><button type="button" role="tab" id="t-shield" aria-controls="v-shield" aria-selected="false" tabindex="-1">Shield</button></div>
     <div class="ansicht-panel" id="v-uebersicht" role="tabpanel" aria-labelledby="t-uebersicht">
       <picture><source media="(max-width: 600px)" srcset="../assets/img/uebersicht-handy.webp" width="1400" height="1240"><img src="../assets/img/uebersicht-1120.webp" srcset="../assets/img/uebersicht-1120.webp 1120w, ../assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" fetchpriority="high" alt="The Nodvard Deck overview with sample data: three servers and six guests with their load, running containers, backups, unread notifications and one action waiting for approval."></picture>
     </div>
@@ -67,6 +67,12 @@
     </div>
     <div class="ansicht-panel" id="v-apps" role="tabpanel" aria-labelledby="t-apps" hidden>
       <picture><source media="(max-width: 600px)" srcset="../assets/img/apps-handy.webp" width="1100" height="820"><img src="../assets/img/apps-tab-1120.webp" srcset="../assets/img/apps-tab-1120.webp 1120w, ../assets/img/apps-tab.webp 1587w" sizes="(min-width: 1152px) 1120px, 100vw" width="1587" height="992" loading="lazy" decoding="async" alt="The Apps page with sample data: tiles for the services in the network, sorted into folders."></picture>
+    </div>
+    <div class="ansicht-panel" id="v-docker" role="tabpanel" aria-labelledby="t-docker" hidden>
+      <picture><source media="(max-width: 600px)" srcset="../assets/img/docker-handy.webp" width="1100" height="900"><img src="../assets/img/docker-1040.webp" srcset="../assets/img/docker-1040.webp 1040w, ../assets/img/docker.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="The Docker page with sample data: containers of one server with status and buttons for restart, stop, console and logs."></picture>
+    </div>
+    <div class="ansicht-panel" id="v-shield" role="tabpanel" aria-labelledby="t-shield" hidden>
+      <picture><source media="(max-width: 600px)" srcset="../assets/img/shield-handy.webp" width="1100" height="1000"><img src="../assets/img/shield-1040.webp" srcset="../assets/img/shield-1040.webp 1040w, ../assets/img/shield.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The Nodvard Shield overview with sample data: protection score, protected servers, open findings and quarantine."></picture>
     </div>
   </div>
   <div class="wrap"><p class="caption">All views with sample data. Deck is still in beta and runs in Docker on a Raspberry Pi 4 or 5 or on any x86-64 machine.</p></div>
@@ -82,7 +88,7 @@
       <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/docker-handy.webp" width="1100" height="900"><img src="../assets/img/docker-1040.webp" srcset="../assets/img/docker-1040.webp 1040w, ../assets/img/docker.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="The Docker page with sample data: containers of one server with status and buttons for restart, stop, console and logs."></picture></figure>
       <div class="show-text">
         <h3>Docker with stacks <span class="beta beta-new">New</span></h3>
-        <p>Here you see the containers from all your servers together. You edit stacks right in Deck, as text or in a form, or you pull them from a Git repository. If you don’t like an update, you go back to the old version. Your stacks from Portainer come along too, and the volumes stay where they are.</p>
+        <p>Here you see the containers from all your servers together. You edit stacks right in Deck, as text or in a form, or you pull them from a Git repository. You can create networks here too, and save your own Compose files as templates. If you don’t like an update, you go back to the old version. Your stacks from Portainer come along too, and the volumes stay where they are.</p>
         <a href="features.html#docker">More about Docker</a>
       </div>
     </div>
@@ -179,7 +185,7 @@ volumes:
   <div class="wrap">
     <h2 id="people">Questions, ideas, bugs</h2>
     <p class="intro">If you have a question, come over to Discord. Bugs and ideas can go on GitHub as an issue. I use Deck myself, it runs around the clock in my homelab.</p>
-    <p class="intro">Every version has a changelog on <a href="https://github.com/nodvard/deck/releases">GitHub</a>, for example <a href="https://github.com/nodvard/deck/releases/tag/v0.12.0">the one for version 0.12</a>. More than 10,000 automated tests check the code. Please report security issues privately through the <a href="https://github.com/nodvard/deck/blob/main/SECURITY.md">security policy</a>.</p>
+    <p class="intro">Every version has a changelog on <a href="https://github.com/nodvard/deck/releases">GitHub</a>, for example <a href="https://github.com/nodvard/deck/releases/tag/v0.13.0">the one for version 0.13</a>. More than 10,000 automated tests check the code. Please report security issues privately through the <a href="https://github.com/nodvard/deck/blob/main/SECURITY.md">security policy</a>.</p>
     <div class="btns">
       <a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Discord</a>
       <a class="btn btn-alt" href="https://github.com/nodvard/deck">GitHub</a>

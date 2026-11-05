@@ -29,7 +29,7 @@
 <link rel="preload" href="../assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab dashboard","operatingSystem":"Linux (Docker, arm64 and x86-64)","softwareVersion":"0.12.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.12.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/en/features.html","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"en","author":{"@type":"Person","name":"Nico Benks"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab dashboard","operatingSystem":"Linux (Docker, arm64 and x86-64)","softwareVersion":"0.13.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.13.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/en/features.html","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"en","author":{"@type":"Person","name":"Nico Benks"}}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Skip to content</a>
@@ -77,8 +77,13 @@
         <li>Edit Compose files as text or in a form. Before saving, Docker Compose checks the file on the server.</li>
         <li>Create new stacks, also from templates for Uptime Kuma, Vaultwarden, Nginx Proxy Manager and Gitea</li>
         <li>Update whole stacks and go back to the previous version (rollback), with a backup of the volumes first if you like</li>
-        <li><strong>New in 0.12:</strong> pull stacks straight from a Git repository. Before that, Deck shows you which files are new or would change. If you like, it backs up the volumes first, and “back to the state before” takes you back to the old state. Credentials for private repositories are stored in the vault.</li>
+        <li>Pull stacks straight from a Git repository. Before that, Deck shows you which files are new or would change. If you like, it backs up the volumes first, and “back to the state before” takes you back to the old state. Credentials for private repositories are stored in the vault.</li>
         <li>Move from Portainer. Deck takes the Compose file and variables along, and your volumes stay where they are</li>
+        <li><strong>New in 0.13:</strong> create networks, internal only if you like, and connect or disconnect containers</li>
+        <li><strong>New in 0.13:</strong> pull images by name and tag, private ones with the login under Registries</li>
+        <li><strong>New in 0.13:</strong> save your own Compose files as templates. Deck refuses fixed passwords and tokens in them</li>
+        <li><strong>New in 0.13:</strong> check stacks from Git for a new state on a schedule, with a message</li>
+        <li>Sort containers by state, status, CPU or RAM</li>
         <li>Clean up images, volumes and networks</li>
       </ul>
       <p><a href="dock.html">Switching from Portainer</a></p>
@@ -97,7 +102,7 @@
         <li>Virus scans with ClamAV as a quick scan, deep scan or on a schedule, with quarantine</li>
         <li>Hardening check with Lynis</li>
         <li>Update center with the pending security updates for each server</li>
-        <li>Intrusion checks: unusual SSH logins and open ports. <strong>New in 0.12:</strong> see the addresses Fail2ban has banned on each server, unban them or ban an address by hand</li>
+        <li>Intrusion checks: unusual SSH logins and open ports. See the addresses Fail2ban has banned on each server, unban them or ban an address by hand</li>
         <li>File watcher for important system files</li>
         <li>Morning briefing with what happened overnight</li>
         <li>Optional error analysis for crashed containers using your own Ollama</li>
@@ -189,8 +194,9 @@
         <li>Every action is written to the log</li>
         <li>Users with roles and permissions</li>
         <li>Sign-in with a two-factor code from an app</li>
-        <li><strong>New in 0.12:</strong> a brake against password guessing at sign-in, and one-click updates are only offered for versions released with a signature</li>
+        <li>A brake against password guessing at sign-in, and one-click updates are only offered for versions released with a signature</li>
         <li>You can change Deck’s name, logo and colors yourself</li>
+        <li><strong>New in 0.13:</strong> a new version of Deck tells you what it brings, such as a security update or bug fixes</li>
       </ul>
     </div>
   </section>
@@ -204,6 +210,7 @@
         <li>Push to your phone via ntfy, Telegram, Discord, Gotify, Pushover, Matrix, Slack, Mattermost or your own Apprise API</li>
         <li>A minimum level for each channel</li>
         <li>Deck can be added to your phone’s home screen as an app</li>
+        <li><strong>New in 0.13:</strong> on your phone, lists show up as cards instead of cut-off tables, for example in Docker, Shield and the notifications</li>
       </ul>
     </div>
     <figure>

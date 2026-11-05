@@ -29,7 +29,7 @@
 <link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab-Dashboard","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.12.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.12.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/funktionen.html","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab-Dashboard","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.13.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.13.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/funktionen.html","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -77,8 +77,13 @@
         <li>Compose-Dateien als Text oder im Formular bearbeiten. Vor dem Speichern prüft Docker Compose die Datei auf dem Server.</li>
         <li>Neue Stacks anlegen, auch aus Vorlagen für Uptime Kuma, Vaultwarden, Nginx Proxy Manager und Gitea</li>
         <li>Ganze Stacks aktualisieren und zurück zur vorigen Version (Rollback), auf Wunsch mit Sicherung der Volumes vorher</li>
-        <li><strong>Neu in 0.12:</strong> Stacks direkt aus einem Git-Repository holen. Vorher zeigt Deck dir, welche Dateien neu sind oder sich ändern. Auf Wunsch sichert es die Volumes, und mit „Zurück zum Stand davor“ kommst du wieder zum alten Stand. Zugänge für private Repositorys liegen im Tresor.</li>
+        <li>Stacks direkt aus einem Git-Repository holen. Vorher zeigt Deck dir, welche Dateien neu sind oder sich ändern. Auf Wunsch sichert es die Volumes, und mit „Zurück zum Stand davor“ kommst du wieder zum alten Stand. Zugänge für private Repositorys liegen im Tresor.</li>
         <li>Umzug aus Portainer. Deck nimmt Compose-Datei und Variablen mit, deine Volumes bleiben, wo sie sind</li>
+        <li><strong>Neu in 0.13:</strong> Netze anlegen, auf Wunsch nur intern, und Container verbinden oder trennen</li>
+        <li><strong>Neu in 0.13:</strong> Images per Name und Tag holen, private auch mit der Anmeldung unter Registries</li>
+        <li><strong>Neu in 0.13:</strong> Eigene Compose-Dateien als Vorlage speichern. Feste Passwörter und Tokens lehnt Deck dabei ab</li>
+        <li><strong>Neu in 0.13:</strong> Stacks aus Git nach Zeitplan auf einen neuen Stand prüfen, mit Nachricht</li>
+        <li>Container nach Zustand, Status, CPU oder RAM sortieren</li>
         <li>Images, Volumes und Netze aufräumen</li>
       </ul>
       <p><a href="dock.html">Umstieg von Portainer</a></p>
@@ -97,7 +102,7 @@
         <li>Virenscan mit ClamAV als Schnellscan, Tiefenscan oder nach Zeitplan, mit Quarantäne</li>
         <li>Härtungs-Check mit Lynis</li>
         <li>Update-Zentrale mit den offenen Sicherheitsupdates je Server</li>
-        <li>Einbruchschutz: ungewöhnliche SSH-Logins und offene Ports. <strong>Neu in 0.12:</strong> die von Fail2ban gesperrten Adressen je Server ansehen, entsperren oder eine Adresse von Hand sperren</li>
+        <li>Einbruchschutz: ungewöhnliche SSH-Logins und offene Ports. Die von Fail2ban gesperrten Adressen je Server ansehen, entsperren oder eine Adresse von Hand sperren</li>
         <li>Datei-Wächter für wichtige Systemdateien</li>
         <li>Morgen-Briefing mit dem Stand der Nacht</li>
         <li>Auf Wunsch eine Fehleranalyse für abgestürzte Container über dein eigenes Ollama</li>
@@ -189,8 +194,9 @@
         <li>Jede Aktion steht im Protokoll</li>
         <li>Benutzer mit Rollen und Rechten</li>
         <li>Anmeldung mit Zwei-Faktor-Code aus einer App</li>
-        <li><strong>Neu in 0.12:</strong> eine Bremse gegen Passwort-Raten bei der Anmeldung, und Updates per Knopf gibt es nur noch für signiert freigegebene Versionen</li>
+        <li>Eine Bremse gegen Passwort-Raten bei der Anmeldung, und Updates per Knopf gibt es nur noch für signiert freigegebene Versionen</li>
         <li>Name, Logo und Farben von Deck kannst du selbst anpassen</li>
+        <li><strong>Neu in 0.13:</strong> Bei einer neuen Version von Deck steht, was sie bringt, etwa ein Sicherheitsupdate oder Fehlerbehebungen</li>
       </ul>
     </div>
   </section>
@@ -204,6 +210,7 @@
         <li>Push aufs Handy über ntfy, Telegram, Discord, Gotify, Pushover, Matrix, Slack, Mattermost oder eine eigene Apprise-API</li>
         <li>Für jeden Kanal eine eigene Mindest-Stufe</li>
         <li>Deck lässt sich als App auf den Startbildschirm des Handys legen</li>
+        <li><strong>Neu in 0.13:</strong> Am Handy stehen Listen als Karten statt als abgeschnittene Tabellen, etwa bei Docker, Shield und den Meldungen</li>
       </ul>
     </div>
     <figure>
