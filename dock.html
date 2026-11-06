@@ -29,7 +29,7 @@
 <link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Dock","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Docker-Verwaltung","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.12.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.12.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/dock.html","downloadUrl":"https://github.com/nodvard/dock","license":"https://github.com/nodvard/dock/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/stacks.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Dock","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Docker-Verwaltung","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.13.0","releaseNotes":"https://github.com/nodvard/dock/releases/tag/v0.13.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/dock.html","downloadUrl":"https://github.com/nodvard/dock","license":"https://github.com/nodvard/dock/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/stacks.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -70,10 +70,14 @@
       <li><strong>Logs</strong> mit Zeitraum, Suche und Download.</li>
       <li><strong>Stacks</strong> als Text oder im Formular bearbeiten. Vor dem Speichern prüft Docker Compose die Datei auf dem Server, die letzten Stände bleiben im Verlauf. Neue Stacks legst du je Server in einem Ordner an, auch aus Vorlagen für Uptime Kuma, Vaultwarden, Nginx Proxy Manager und Gitea.</li>
       <li><strong>Update mit Rückweg (Rollback):</strong> Das alte Image bleibt als Sicherung. Startet der neue Container nicht, geht es von selbst zurück, außer bei Datenbanken. Auch für ganze Stacks gibt es nach einem Update den Knopf „Zurück zur vorigen Version“.</li>
-      <li><strong>Stacks aus Git (neu in 0.12):</strong> Du holst einen Stand aus einem Git-Repository, siehst vorher, was sich ändert, und kommst mit „Zurück zum Stand davor“ wieder zurück.</li>
+      <li><strong>Stacks aus Git:</strong> Du holst einen Stand aus einem Git-Repository, siehst vorher, was sich ändert, und kommst mit „Zurück zum Stand davor“ wieder zurück. Neu in 0.13: Auf Wunsch prüft Dock nach Zeitplan, ob es im Repository einen neuen Stand gibt, und schickt dir eine Nachricht. Eingespielt wird weiter nur per Klick.</li>
       <li><strong>Volume-Sicherungen:</strong> Vor einem Update sichert Dock auf Wunsch die Volumes und prüft, ob genug Platz da ist. Im Reiter Stacks spielst du sie wieder zurück.</li>
       <li><strong>Private Registries</strong> wie ghcr.io trägst du in den Einstellungen ein, das Passwort oder Token liegt im Tresor.</li>
-      <li><strong>Images, Volumes und Netze</strong> auflisten und aufräumen.</li>
+      <li><strong>Netze (neu in 0.13):</strong> Netze anlegen, auf Wunsch nur intern, und Container verbinden oder trennen. Die Rückfrage warnt, wenn ein Container danach ohne Netz wäre.</li>
+      <li><strong>Image holen (neu in 0.13):</strong> Ein Image per Name und Tag herunterladen, private mit der Anmeldung unter Registries. Klappt es nicht, steht der Grund da.</li>
+      <li><strong>Eigene Vorlagen (neu in 0.13):</strong> Eine Compose-Datei als Vorlage für neue Stacks speichern. Umgebungswerte kommen nie mit, und feste Passwörter oder Tokens lehnt Dock beim Speichern ab, soweit es sie erkennt.</li>
+      <li><strong>Images, Volumes und Netze</strong> auflisten und aufräumen, Container nach Zustand, Name, CPU oder RAM sortieren.</li>
+      <li><strong>Am Handy (neu in 0.13):</strong> Stacks, Images, Volumes und Netze stehen als Karten statt als abgeschnittene Tabellen.</li>
       <li><strong>Freigabe und Protokoll:</strong> Bevor Dock etwas ändert, fragt es nach. Welche Aktionen ohne Rückfrage durchlaufen dürfen, stellst du als Inhaber selbst ein, und im Protokoll steht hinterher alles.</li>
     </ul>
 
