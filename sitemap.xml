@@ -182,4 +182,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/backup-nas-nfs.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nodvard.com/sicherung-nas-nfs.html"/>
   </url>
+  <url>
+    <loc>https://nodvard.com/warum-nodvard-deck.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/warum-nodvard-deck.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/why-nodvard-deck.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nodvard.com/warum-nodvard-deck.html"/>
+  </url>
+  <url>
+    <loc>https://nodvard.com/en/why-nodvard-deck.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nodvard.com/warum-nodvard-deck.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nodvard.com/en/why-nodvard-deck.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nodvard.com/warum-nodvard-deck.html"/>
+  </url>
 </urlset>
