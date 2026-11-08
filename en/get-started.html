@@ -77,12 +77,17 @@ volumes:
     </details>
       <p>On Windows, these commands are for WSL or Git Bash. In PowerShell, write <code>curl.exe</code> instead of <code>curl</code> and run the commands one by one.</p>
     </li>
-    <li><strong>Open it in your browser:</strong> <code>http://&lt;your-server&gt;:8080</code>. Deck asks for a setup code. <code>docker compose logs nodvard-deck</code> in the same folder shows it, the line starts with “Einrichtungscode”.</li>
+    <li><strong>Open it in your browser:</strong> <code>http://&lt;your-server&gt;:8080</code>. Deck asks for a setup code. <code>docker compose logs nodvard-deck</code> in the same folder shows it, the line starts with “Einrichtungscode”.
+      <div class="cmd">
+        <div class="cmd-head"><span>In a terminal, in the folder with compose.yml</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-logs">Copy</button></div>
+        <pre><code id="cmd-logs">docker compose logs nodvard-deck</code></pre>
+      </div>
+      <p>Is something already using port 8080 on that machine? Then <a href="#port">change the port</a>.</p></li>
     <li><strong>Follow the assistant.</strong> It guides you through your account and the first server. If you only want to have a look, take the sample data and throw it out later.</li>
   </ol>
 
   <div class="prose">
-    <h2>Port already in use?</h2>
+    <h2 id="port">Port already in use?</h2>
     <p>Put a file <code>.env</code> next to <code>compose.yml</code> with the line <code>NODVARD_DECK_PORT=8081</code> and run <code>docker compose up -d</code> again. Deck is then on port 8081.</p>
 
     <h2>Updating</h2>
@@ -100,7 +105,7 @@ volumes:
       <li>NAS: Synology, UGREEN, QNAP, Unraid, TrueNAS SCALE, OpenMediaVault, ZimaOS and CasaOS</li>
       <li>Proxmox and Docker Desktop</li>
     </ul>
-    <p class="more"><a href="https://github.com/nodvard/deck/blob/main/README.en.md#getting-started">All ways in the README</a></p>
+    <p class="more"><a href="https://github.com/nodvard/deck/blob/main/README.en.md#quick-start-in-5-minutes">All ways in the README</a></p>
   </div>
 </div>
 </main>

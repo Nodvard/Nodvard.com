@@ -45,6 +45,7 @@
   <header class="page-head">
     <h1>Features</h1>
     <p class="lead">This is everything Nodvard Deck does today. Where it says Beta, that part hasn’t been tested as long as the rest. The interface is in German for now.</p>
+    <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. This website and the guides are in English.</p>
   </header>
 
   <section class="feature" id="server" aria-labelledby="h-server">
@@ -59,7 +60,7 @@
         <li>Disk health, ZFS and temperature of Proxmox nodes</li>
       </ul>
       <p>You don’t need Proxmox. Deck is just as happy with a Raspberry Pi, a NAS or a few Docker hosts.</p>
-      <p><strong>What ends up on your servers:</strong> no agent and no service of its own, Deck comes in over SSH. For tasks that need root, the setup puts a few small helper scripts into <code>/usr/local/lib/nodvard-deck</code>. Deck calls them via sudo. Each one can only run its fixed commands and checks what it gets by itself. <a href="https://github.com/nodvard/deck/blob/main/docs/en/FIRST-SETUP.md#6-root-rights-without-a-password-and-the-docker-group">What each helper script may do</a></p>
+      <p><strong>What ends up on your servers:</strong> no agent and no service of its own, Deck comes in over SSH. For tasks that need root, the setup puts a few small helper scripts into <code>/usr/local/lib/nodvard-deck</code>. Deck calls them via sudo. Each one can only run its fixed commands and checks what it gets by itself. <a href="https://github.com/nodvard/deck/blob/main/docs/en/FIRST-SETUP.md#f-root-rights-without-a-password-and-the-docker-group">What each helper script may do</a></p>
     </div>
     <figure>
       <picture><source media="(max-width: 600px)" srcset="../assets/img/server-handy.webp" width="1100" height="980"><img src="../assets/img/server-1040.webp" srcset="../assets/img/server-1040.webp 1040w, ../assets/img/server.webp 2080w" sizes="(min-width: 901px) 640px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The page of a Proxmox node in Nodvard Deck: access, CPU, RAM, uptime and the load history."></picture>
@@ -78,7 +79,7 @@
         <li>Create new stacks, also from templates for Uptime Kuma, Vaultwarden, Nginx Proxy Manager and Gitea</li>
         <li>Update whole stacks and go back to the previous version (rollback), with a backup of the volumes first if you like</li>
         <li>Pull stacks straight from a Git repository. Before that, Deck shows you which files are new or would change. If you like, it backs up the volumes first, and “back to the state before” takes you back to the old state. Credentials for private repositories are stored in the vault.</li>
-        <li>Move from Portainer. Deck takes the Compose file and variables along, and your volumes stay where they are</li>
+        <li>Move simple stacks from Portainer. Deck takes the Compose file and variables along, and your volumes stay where they are</li>
         <li><strong>New in 0.13:</strong> create networks, internal only if you like, and connect or disconnect containers</li>
         <li><strong>New in 0.13:</strong> pull images by name and tag, private ones with the login under Registries</li>
         <li><strong>New in 0.13:</strong> save your own Compose files as templates. Deck refuses fixed passwords and tokens in them</li>
@@ -125,7 +126,7 @@
         <li>Create and edit backup jobs</li>
         <li>Restore a VM or LXC from a backup as a copy, the original stays untouched</li>
         <li>Back up the Docker volumes before a stack update if you like</li>
-        <li>A copy of its own database before every Deck update, plus a backup to download and restore</li>
+        <li>Before every update that changes the database, Deck makes a copy of it, plus a backup to download and restore</li>
       </ul>
     </div>
     <figure>
@@ -153,16 +154,17 @@
   <section class="feature text-only" id="integrationen" aria-labelledby="h-integrationen">
     <div class="body">
       <h2 id="h-integrationen">Integrations</h2>
-      <p>Deck pulls status and numbers from your services and shows them as a tile and on a page of their own. Mostly it only reads and changes nothing. Nextcloud and ntfy have been running for a long time. The rest is beta, so it works, but hasn’t been tested as long.</p>
+      <p>Deck pulls status and numbers from your services and shows them as a tile and on a page of their own. Most of them only read and change nothing, as noted. Pi-hole and Nginx Proxy Manager also have actions that you approve. Nextcloud and ntfy have been running for a long time. The rest is beta, so it works, but hasn’t been tested as long.</p>
       <ul class="tags" aria-label="Integrations">
-        <li>Uptime Kuma</li>
-        <li>Home Assistant</li>
-        <li>Plex</li>
-        <li>Jellyfin</li>
-        <li>qBittorrent</li>
-        <li>Synology DSM</li>
+        <li>Uptime Kuma (read only)</li>
+        <li>Home Assistant (read only)</li>
+        <li>Plex (read only)</li>
+        <li>Jellyfin (read only)</li>
+        <li>qBittorrent (read only)</li>
+        <li>Synology DSM (read only)</li>
         <li>Pi-hole</li>
         <li>Nginx Proxy Manager</li>
+        <li>Vaultwarden (read only)</li>
         <li>Nextcloud</li>
         <li>ntfy</li>
       </ul>
@@ -189,12 +191,12 @@
   <section class="feature text-only" id="freigaben" aria-labelledby="h-freigaben">
     <div class="body">
       <h2 id="h-freigaben">Approvals and accounts</h2>
-      <p>Before Deck changes anything, it asks, and every action carries a level that shows how risky it is. What may go through without asking is up to you, for example with a block list or a maintenance window.</p>
+      <p>Before Deck changes anything, it asks, and every action carries a level that shows how risky it is. What may go through without asking is up to you, with automation up to a risk level or with a standing approval. Commands that should never run go on your own block list.</p>
       <ul class="points">
         <li>Every action is written to the log</li>
         <li>Users with roles and permissions</li>
         <li>Sign-in with a two-factor code from an app</li>
-        <li>A brake against password guessing at sign-in, and one-click updates are only offered for versions released with a signature</li>
+        <li>A brake against password guessing at sign-in, and one-click updates are only offered for versions released with a signature. The button needs the update helper, which you turn on on purpose with a Compose file of its own</li>
         <li>You can change Deck’s name, logo and colors yourself</li>
         <li><strong>New in 0.13:</strong> a new version of Deck tells you what it brings, such as a security update or bug fixes</li>
       </ul>

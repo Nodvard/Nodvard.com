@@ -76,12 +76,17 @@ volumes:
     </details>
       <p>Unter Windows sind das Befehle für WSL oder Git Bash. In PowerShell schreibst du <code>curl.exe</code> statt <code>curl</code> und führst die Befehle einzeln aus.</p>
     </li>
-    <li><strong>Im Browser öffnen:</strong> <code>http://&lt;dein-server&gt;:8080</code>. Deck fragt nach einem Einrichtungscode. Den zeigt <code>docker compose logs nodvard-deck</code> im selben Ordner, die Zeile beginnt mit „Einrichtungscode“.</li>
+    <li><strong>Im Browser öffnen:</strong> <code>http://&lt;dein-server&gt;:8080</code>. Deck fragt nach einem Einrichtungscode. Den zeigt <code>docker compose logs nodvard-deck</code> im selben Ordner, die Zeile beginnt mit „Einrichtungscode“.
+      <div class="cmd">
+        <div class="cmd-head"><span>Im Terminal, im Ordner mit der compose.yml</span><span class="sr" role="status"></span><button type="button" data-done="Kopiert" hidden data-copy="cmd-logs">Kopieren</button></div>
+        <pre><code id="cmd-logs">docker compose logs nodvard-deck</code></pre>
+      </div>
+      <p>Läuft auf dem Rechner schon etwas auf Port 8080? Dann <a href="#port">stell den Port um</a>.</p></li>
     <li><strong>Dem Assistenten folgen.</strong> Er führt dich durch dein Konto und den ersten Server. Wer erst mal nur schauen will, nimmt Beispieldaten und wirft sie später wieder raus.</li>
   </ol>
 
   <div class="prose">
-    <h2>Port schon belegt?</h2>
+    <h2 id="port">Port schon belegt?</h2>
     <p>Leg neben die <code>compose.yml</code> eine Datei <code>.env</code> mit der Zeile <code>NODVARD_DECK_PORT=8081</code> und führe <code>docker compose up -d</code> noch einmal aus. Deck ist dann unter Port 8081 erreichbar.</p>
 
     <h2>Aktualisieren</h2>
@@ -99,7 +104,7 @@ volumes:
       <li>NAS: Synology, UGREEN, QNAP, Unraid, TrueNAS SCALE, OpenMediaVault, ZimaOS und CasaOS</li>
       <li>Proxmox und Docker Desktop</li>
     </ul>
-    <p class="more"><a href="https://github.com/nodvard/deck#loslegen">Alle Wege im README</a></p>
+    <p class="more"><a href="https://github.com/nodvard/deck#schnellstart-in-5-minuten">Alle Wege im README</a></p>
   </div>
 </div>
 </main>

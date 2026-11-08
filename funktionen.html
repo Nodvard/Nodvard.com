@@ -59,7 +59,7 @@
         <li>Festplatten-Zustand, ZFS und Temperatur der Proxmox-Knoten</li>
       </ul>
       <p>Proxmox brauchst du nicht. Deck kommt auch mit einem Raspberry Pi, einem NAS oder ein paar Docker-Hosts klar.</p>
-      <p><strong>Was auf deinen Servern landet:</strong> Kein Agent und kein eigener Dienst, Deck kommt per SSH. Für Aufgaben, die root brauchen, legt die Einrichtung ein paar kleine Hilfsskripte unter <code>/usr/local/lib/nodvard-deck</code> an. Deck ruft sie per sudo auf. Jedes kann nur seine festen Befehle und prüft selbst, was es bekommt. <a href="https://github.com/nodvard/deck/blob/main/docs/11-ERST-EINRICHTUNG.md#6-root-rechte-ohne-passwort-und-gruppe-docker">Was jedes Hilfsskript darf</a></p>
+      <p><strong>Was auf deinen Servern landet:</strong> Kein Agent und kein eigener Dienst, Deck kommt per SSH. Für Aufgaben, die root brauchen, legt die Einrichtung ein paar kleine Hilfsskripte unter <code>/usr/local/lib/nodvard-deck</code> an. Deck ruft sie per sudo auf. Jedes kann nur seine festen Befehle und prüft selbst, was es bekommt. <a href="https://github.com/nodvard/deck/blob/main/docs/11-ERST-EINRICHTUNG.md#f-root-rechte-ohne-passwort-und-gruppe-docker">Was jedes Hilfsskript darf</a></p>
     </div>
     <figure>
       <picture><source media="(max-width: 600px)" srcset="assets/img/server-handy.webp" width="1100" height="980"><img src="assets/img/server-1040.webp" srcset="assets/img/server-1040.webp 1040w, assets/img/server.webp 2080w" sizes="(min-width: 901px) 640px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Seite eines Proxmox-Knotens in Nodvard Deck: Zugang, CPU, RAM, Laufzeit und der Verlauf der Auslastung."></picture>
@@ -78,7 +78,7 @@
         <li>Neue Stacks anlegen, auch aus Vorlagen für Uptime Kuma, Vaultwarden, Nginx Proxy Manager und Gitea</li>
         <li>Ganze Stacks aktualisieren und zurück zur vorigen Version (Rollback), auf Wunsch mit Sicherung der Volumes vorher</li>
         <li>Stacks direkt aus einem Git-Repository holen. Vorher zeigt Deck dir, welche Dateien neu sind oder sich ändern. Auf Wunsch sichert es die Volumes, und mit „Zurück zum Stand davor“ kommst du wieder zum alten Stand. Zugänge für private Repositorys liegen im Tresor.</li>
-        <li>Umzug aus Portainer. Deck nimmt Compose-Datei und Variablen mit, deine Volumes bleiben, wo sie sind</li>
+        <li>Umzug einfacher Stacks aus Portainer. Deck nimmt Compose-Datei und Variablen mit, deine Volumes bleiben, wo sie sind</li>
         <li><strong>Neu in 0.13:</strong> Netze anlegen, auf Wunsch nur intern, und Container verbinden oder trennen</li>
         <li><strong>Neu in 0.13:</strong> Images per Name und Tag holen, private auch mit der Anmeldung unter Registries</li>
         <li><strong>Neu in 0.13:</strong> Eigene Compose-Dateien als Vorlage speichern. Feste Passwörter und Tokens lehnt Deck dabei ab</li>
@@ -125,7 +125,7 @@
         <li>Backup-Jobs anlegen und bearbeiten</li>
         <li>Eine VM oder einen LXC aus dem Backup als Kopie wiederherstellen, das Original bleibt unberührt</li>
         <li>Vor dem Update eines Stacks auf Wunsch die Docker-Volumes sichern</li>
-        <li>Vor jedem Update von Deck eine Kopie der eigenen Datenbank, dazu eine Sicherung zum Herunterladen und Wiederherstellen</li>
+        <li>Vor jedem Update, das die Datenbank umbaut, legt Deck eine Kopie an, dazu eine Sicherung zum Herunterladen und Wiederherstellen</li>
       </ul>
     </div>
     <figure>
@@ -153,16 +153,17 @@
   <section class="feature text-only" id="integrationen" aria-labelledby="h-integrationen">
     <div class="body">
       <h2 id="h-integrationen">Integrationen</h2>
-      <p>Deck holt sich Zustand und Zahlen aus deinen Diensten und zeigt sie als Kachel und auf einer eigenen Seite. Meistens wird nur gelesen und nichts geändert. Nextcloud und ntfy laufen schon lange im Dauerbetrieb. Der Rest ist Beta, funktioniert also, ist aber noch nicht so lange erprobt.</p>
+      <p>Deck holt sich Zustand und Zahlen aus deinen Diensten und zeigt sie als Kachel und auf einer eigenen Seite. Die meisten lesen nur und ändern nichts, das steht dabei. Bei Pi-hole und Nginx Proxy Manager gibt es auch Aktionen, die du freigibst. Nextcloud und ntfy laufen schon lange im Dauerbetrieb. Der Rest ist Beta, funktioniert also, ist aber noch nicht so lange erprobt.</p>
       <ul class="tags" aria-label="Integrationen">
-        <li>Uptime Kuma</li>
-        <li>Home Assistant</li>
-        <li>Plex</li>
-        <li>Jellyfin</li>
-        <li>qBittorrent</li>
-        <li>Synology DSM</li>
+        <li>Uptime Kuma (nur lesend)</li>
+        <li>Home Assistant (nur lesend)</li>
+        <li>Plex (nur lesend)</li>
+        <li>Jellyfin (nur lesend)</li>
+        <li>qBittorrent (nur lesend)</li>
+        <li>Synology DSM (nur lesend)</li>
         <li>Pi-hole</li>
         <li>Nginx Proxy Manager</li>
+        <li>Vaultwarden (nur lesend)</li>
         <li>Nextcloud</li>
         <li>ntfy</li>
       </ul>
@@ -189,12 +190,12 @@
   <section class="feature text-only" id="freigaben" aria-labelledby="h-freigaben">
     <div class="body">
       <h2 id="h-freigaben">Freigaben und Konten</h2>
-      <p>Bevor Deck etwas ändert, fragt es nach, und jede Aktion trägt eine Stufe, die zeigt, wie riskant sie ist. Was ohne Rückfrage durchgehen darf, stellst du selbst ein, zum Beispiel über eine Sperrliste oder ein Wartungsfenster.</p>
+      <p>Bevor Deck etwas ändert, fragt es nach, und jede Aktion trägt eine Stufe, die zeigt, wie riskant sie ist. Was ohne Rückfrage durchgehen darf, stellst du selbst ein, mit der Automatik bis zu einer Risikostufe oder mit einer Dauerfreigabe. Befehle, die nie laufen sollen, sperrst du mit einer eigenen Sperrliste.</p>
       <ul class="points">
         <li>Jede Aktion steht im Protokoll</li>
         <li>Benutzer mit Rollen und Rechten</li>
         <li>Anmeldung mit Zwei-Faktor-Code aus einer App</li>
-        <li>Eine Bremse gegen Passwort-Raten bei der Anmeldung, und Updates per Knopf gibt es nur noch für signiert freigegebene Versionen</li>
+        <li>Eine Bremse gegen Passwort-Raten bei der Anmeldung, und Updates per Knopf gibt es nur noch für signiert freigegebene Versionen. Der Knopf braucht den Update-Helfer, den du mit einer eigenen Compose-Datei bewusst einschaltest</li>
         <li>Name, Logo und Farben von Deck kannst du selbst anpassen</li>
         <li><strong>Neu in 0.13:</strong> Bei einer neuen Version von Deck steht, was sie bringt, etwa ein Sicherheitsupdate oder Fehlerbehebungen</li>
       </ul>

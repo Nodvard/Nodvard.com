@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Portainer-Alternative: Nodvard Dock für Docker-Stacks</title>
-<meta name="description" content="Nodvard Dock verwaltet Container und Compose-Stacks auf mehreren Servern. Stacks aus Portainer ziehen per Knopf um, die Volumes bleiben.">
+<meta name="description" content="Nodvard Dock verwaltet Container und Compose-Stacks auf mehreren Servern. Einfache Stacks aus Portainer ziehen per Knopf um, die Volumes bleiben.">
 <link rel="canonical" href="https://nodvard.com/dock.html">
 <link rel="alternate" hreflang="de" href="https://nodvard.com/dock.html">
 <link rel="alternate" hreflang="en" href="https://nodvard.com/en/dock.html">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
 <meta property="og:title" content="Portainer-Alternative: Nodvard Dock für Docker-Stacks">
-<meta property="og:description" content="Nodvard Dock verwaltet Container und Compose-Stacks auf mehreren Servern. Stacks aus Portainer ziehen per Knopf um, die Volumes bleiben.">
+<meta property="og:description" content="Nodvard Dock verwaltet Container und Compose-Stacks auf mehreren Servern. Einfache Stacks aus Portainer ziehen per Knopf um, die Volumes bleiben.">
 <meta property="og:url" content="https://nodvard.com/dock.html">
 <meta property="og:image" content="https://nodvard.com/assets/og/dock-de.jpg">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <meta property="og:image:alt" content="Vorschaubild: Portainer-Alternative: Nodvard Dock für Docker-Stacks">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Portainer-Alternative: Nodvard Dock für Docker-Stacks">
-<meta name="twitter:description" content="Nodvard Dock verwaltet Container und Compose-Stacks auf mehreren Servern. Stacks aus Portainer ziehen per Knopf um, die Volumes bleiben.">
+<meta name="twitter:description" content="Nodvard Dock verwaltet Container und Compose-Stacks auf mehreren Servern. Einfache Stacks aus Portainer ziehen per Knopf um, die Volumes bleiben.">
 <meta name="twitter:image" content="https://nodvard.com/assets/og/dock-de.jpg">
 <meta property="og:locale" content="de_DE">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -45,7 +45,7 @@
   <header class="page-head">
     <p class="kicker"><span class="beta">Beta</span> Nodvard Dock</p>
     <h1>Die Alternative zu Portainer für dein Homelab</h1>
-    <p class="lead">Nodvard Dock verwaltet Container und Compose-Stacks auf deinen Servern. Deine Stacks aus Portainer holst du per Knopf rüber, und die Volumes mit deinen Daten bleiben, wo sie sind. Du hostest Dock selbst, privat kostet es nichts.</p>
+    <p class="lead">Nodvard Dock verwaltet Container und Compose-Stacks auf deinen Servern. Einfache Stacks aus Portainer holst du per Knopf rüber, und die Volumes mit deinen Daten bleiben, wo sie sind. Du hostest Dock selbst, privat kostet es nichts.</p>
     <div class="btns"><a class="btn btn-main" href="#installieren">Installieren</a><a class="btn btn-alt" href="https://github.com/nodvard/dock">Auf GitHub</a></div>
   </header>
 
@@ -60,6 +60,7 @@
       <h2>Umziehen per Knopf</h2>
       <p>Im Reiter Stacks hat jeder Stack, den Portainer angelegt hat, den Knopf „Von Portainer übernehmen“. Dock holt sich Compose-Datei und Variablen aus dem Speicher von Portainer, legt sie in einen eigenen Ordner und startet den Stack dort unter demselben Namen neu. Die Volumes mit deinen Daten bleiben.</p>
       <p>Wenn etwas nicht passt, zum Beispiel weil in der gespeicherten Datei andere Images stehen als in den laufenden Containern, lässt Dock den Stack in Ruhe und sagt dir, warum.</p>
+      <p>Der Umzug klappt für Stacks, die Portainer als eine Compose-Datei führt. Stacks aus Git, in mehreren Fassungen oder mit mehreren Dateien kann er noch nicht. Lass den Stack danach in Portainer stehen. Löschst du ihn dort oder rollst ihn neu aus, entfernt Portainer die neuen Container oder ersetzt sie durch seine alte Datei.</p>
     </div>
   </div>
 

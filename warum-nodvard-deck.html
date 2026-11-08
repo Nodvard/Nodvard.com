@@ -61,6 +61,14 @@
       <li>Jedes Modul schaltest du einzeln ein oder aus. Eigene Module schreibst du mit dem <a href="https://github.com/nodvard/deck/blob/main/docs/02-EXTENSION-API.md">dokumentierten SDK</a>.</li>
     </ul>
 
+    <h2>Brauchst du Deck oder reicht Dock?</h2>
+    <p>Dock ist derselbe Code mit nur dem Docker-Teil. Wenn du nur Container und Stacks verwalten willst, reicht es.</p>
+    <div class="table-wrap"><table class="vergleich">
+      <thead><tr><th scope="col"></th><th scope="col">Nodvard Deck</th><th scope="col">Nodvard Dock</th></tr></thead>
+      <tbody><tr><th scope="row">Container und Stacks</th><td data-label="Nodvard Deck">ja</td><td data-label="Nodvard Dock">ja</td></tr><tr><th scope="row">Proxmox und Proxmox-Backups</th><td data-label="Nodvard Deck">ja</td><td data-label="Nodvard Dock">nein</td></tr><tr><th scope="row">Shield: Virenschutz, Updates, Einbruchschutz</th><td data-label="Nodvard Deck">ja</td><td data-label="Nodvard Dock">nein</td></tr><tr><th scope="row">Apps, Integrationen und Meldungen</th><td data-label="Nodvard Deck">ja</td><td data-label="Nodvard Dock">nein</td></tr><tr><th scope="row">Module auswählen</th><td data-label="Nodvard Deck">der Assistent fragt, was du nutzen willst</td><td data-label="Nodvard Dock">feste Module, alles eingebaut</td></tr><tr><th scope="row">Update per Knopf</th><td data-label="Nodvard Deck">mit dem Update-Helfer, den du bewusst einschaltest</td><td data-label="Nodvard Dock">nein, <code>docker compose pull &amp;&amp; docker compose up -d</code></td></tr></tbody>
+    </table></div>
+    <p><a href="dock.html">Mehr zu Nodvard Dock</a></p>
+
     <h2>Zwei Abende im Homelab</h2>
     <p>Du öffnest nach Feierabend die Übersicht. Bei den Backups steht, dass ein Gast gar keinen Backup-Job hat. Auf der Seite <a href="funktionen.html#backups">Proxmox-Backups</a> legst du den fehlenden Job direkt in Deck an.</p>
     <p>Ein neuer Dienst findet seine Datenbank nicht, weil die beiden in verschiedenen Docker-Netzen hängen. Im Reiter Netze verbindest du den Container mit dem Netz der Datenbank. Wäre ein Container danach ganz ohne Netz, warnt dich die Rückfrage vorher. Mehr unter <a href="funktionen.html#docker">Docker</a>.</p>

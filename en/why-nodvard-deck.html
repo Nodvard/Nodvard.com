@@ -62,6 +62,14 @@
       <li>You turn each module on or off on its own. You can write your own modules with the <a href="https://github.com/nodvard/deck/blob/main/docs/02-EXTENSION-API.md">documented SDK</a>.</li>
     </ul>
 
+    <h2>Do you need Deck, or is Dock enough?</h2>
+    <p>Dock is the same code with only the Docker part. If you only want to manage containers and stacks, it is enough.</p>
+    <div class="table-wrap"><table class="vergleich">
+      <thead><tr><th scope="col"></th><th scope="col">Nodvard Deck</th><th scope="col">Nodvard Dock</th></tr></thead>
+      <tbody><tr><th scope="row">Containers and stacks</th><td data-label="Nodvard Deck">yes</td><td data-label="Nodvard Dock">yes</td></tr><tr><th scope="row">Proxmox and Proxmox backups</th><td data-label="Nodvard Deck">yes</td><td data-label="Nodvard Dock">no</td></tr><tr><th scope="row">Shield: antivirus, updates, intrusion checks</th><td data-label="Nodvard Deck">yes</td><td data-label="Nodvard Dock">no</td></tr><tr><th scope="row">Apps, integrations and notifications</th><td data-label="Nodvard Deck">yes</td><td data-label="Nodvard Dock">no</td></tr><tr><th scope="row">Choosing modules</th><td data-label="Nodvard Deck">the assistant asks what you want to use</td><td data-label="Nodvard Dock">fixed modules, everything built in</td></tr><tr><th scope="row">One-click update</th><td data-label="Nodvard Deck">with the update helper, which you turn on on purpose</td><td data-label="Nodvard Dock">no, <code>docker compose pull &amp;&amp; docker compose up -d</code></td></tr></tbody>
+    </table></div>
+    <p><a href="dock.html">More about Nodvard Dock</a></p>
+
     <h2>Two evenings in the homelab</h2>
     <p>You open the overview after work. The backups say that one guest has no backup job at all. On the <a href="features.html#backups">Proxmox backups</a> page you create the missing job right in Deck.</p>
     <p>A new service can’t find its database because the two sit in different Docker networks. In the Networks tab you connect the container to the database’s network. If a container would end up with no network at all, the confirmation warns you first. More under <a href="features.html#docker">Docker</a>.</p>

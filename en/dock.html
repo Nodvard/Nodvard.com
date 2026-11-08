@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Portainer alternative: Nodvard Dock for Docker stacks</title>
-<meta name="description" content="Nodvard Dock manages containers and Compose stacks on several servers. Stacks from Portainer move over with a button, your volumes stay.">
+<meta name="description" content="Nodvard Dock manages containers and Compose stacks on several servers. Simple stacks from Portainer move over with a button, your volumes stay.">
 <link rel="canonical" href="https://nodvard.com/en/dock.html">
 <link rel="alternate" hreflang="de" href="https://nodvard.com/dock.html">
 <link rel="alternate" hreflang="en" href="https://nodvard.com/en/dock.html">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
 <meta property="og:title" content="Portainer alternative: Nodvard Dock for Docker stacks">
-<meta property="og:description" content="Nodvard Dock manages containers and Compose stacks on several servers. Stacks from Portainer move over with a button, your volumes stay.">
+<meta property="og:description" content="Nodvard Dock manages containers and Compose stacks on several servers. Simple stacks from Portainer move over with a button, your volumes stay.">
 <meta property="og:url" content="https://nodvard.com/en/dock.html">
 <meta property="og:image" content="https://nodvard.com/assets/og/dock-en.jpg">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <meta property="og:image:alt" content="Preview image: Portainer alternative: Nodvard Dock for Docker stacks">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Portainer alternative: Nodvard Dock for Docker stacks">
-<meta name="twitter:description" content="Nodvard Dock manages containers and Compose stacks on several servers. Stacks from Portainer move over with a button, your volumes stay.">
+<meta name="twitter:description" content="Nodvard Dock manages containers and Compose stacks on several servers. Simple stacks from Portainer move over with a button, your volumes stay.">
 <meta name="twitter:image" content="https://nodvard.com/assets/og/dock-en.jpg">
 <meta property="og:locale" content="en_US">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -45,7 +45,7 @@
   <header class="page-head">
     <p class="kicker"><span class="beta">Beta</span> Nodvard Dock</p>
     <h1>The Portainer alternative for your homelab</h1>
-    <p class="lead">Nodvard Dock manages containers and Compose stacks on your servers. You bring your stacks over from Portainer with a button, and the volumes with your data stay where they are. You host Dock yourself, and it costs nothing for personal use.</p>
+    <p class="lead">Nodvard Dock manages containers and Compose stacks on your servers. You bring simple stacks over from Portainer with a button, and the volumes with your data stay where they are. You host Dock yourself, and it costs nothing for personal use.</p>
     <div class="btns"><a class="btn btn-main" href="#install">Install</a><a class="btn btn-alt" href="https://github.com/nodvard/dock">On GitHub</a></div>
   </header>
   <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. An English interface is planned. This website and the guides are in English.</p>
@@ -61,6 +61,7 @@
       <h2>Move over with a button</h2>
       <p>In the Stacks tab, every stack created by Portainer has a button to move it over. Dock grabs the Compose file and variables from Portainer’s storage, puts them in a folder of their own and starts the stack there again under the same name. The volumes with your data stay.</p>
       <p>When something doesn’t fit, for example because the stored file lists other images than the running containers, Dock leaves the stack alone and tells you why.</p>
+      <p>The move works for stacks that Portainer keeps as a single Compose file. Stacks from Git, in several versions or with several files are not supported yet. Leave the stack in Portainer afterwards. If you delete it there or redeploy it, Portainer removes the new containers or replaces them with its old file.</p>
     </div>
   </div>
 
