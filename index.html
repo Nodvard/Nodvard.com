@@ -9,7 +9,7 @@
 <link rel="alternate" hreflang="de" href="https://nodvard.com/">
 <link rel="alternate" hreflang="en" href="https://nodvard.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://nodvard.com/">
-<meta name="theme-color" content="#1a1b1e">
+<meta name="theme-color" content="#0c1626">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nodvard Deck">
 <meta property="og:title" content="Nodvard Deck: Homelab-Dashboard für Proxmox und Docker">
@@ -53,25 +53,25 @@
     <p class="note">Nur mal reinschauen? Beispieldaten sind dabei. Die wirfst du später wieder raus.</p>
   </div>
   <div class="bleed ansicht" data-ansicht>
-    <img class="vard-mini" src="assets/img/vard.webp" width="256" height="256" alt="" fetchpriority="low">
+    <img class="vard-mini" src="assets/img/vard.webp" width="256" height="256" alt="" loading="lazy" fetchpriority="low">
     <div class="ansicht-tabs" role="tablist" aria-label="Ansichten aus Nodvard Deck" hidden><button type="button" role="tab" id="t-uebersicht" aria-controls="v-uebersicht" aria-selected="true">Übersicht</button><button type="button" role="tab" id="t-backups" aria-controls="v-backups" aria-selected="false" tabindex="-1">Proxmox-Backups</button><button type="button" role="tab" id="t-meldungen" aria-controls="v-meldungen" aria-selected="false" tabindex="-1">Meldungen</button><button type="button" role="tab" id="t-apps" aria-controls="v-apps" aria-selected="false" tabindex="-1">Apps</button><button type="button" role="tab" id="t-docker" aria-controls="v-docker" aria-selected="false" tabindex="-1">Docker</button><button type="button" role="tab" id="t-shield" aria-controls="v-shield" aria-selected="false" tabindex="-1">Shield</button></div>
     <div class="ansicht-panel" id="v-uebersicht" role="tabpanel" aria-labelledby="t-uebersicht">
-      <picture><source media="(max-width: 600px)" srcset="assets/img/uebersicht-handy.webp" width="1400" height="1240"><img src="assets/img/uebersicht-1120.webp" srcset="assets/img/uebersicht-1120.webp 1120w, assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" fetchpriority="high" alt="Die Übersicht von Nodvard Deck mit Beispieldaten: drei Server und sechs Gäste mit Auslastung, laufende Container, Backups, ungelesene Meldungen und eine Aktion, die auf Freigabe wartet."></picture>
+      <picture><img src="assets/img/uebersicht-1120.webp" srcset="assets/img/uebersicht-1120.webp 1120w, assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" fetchpriority="high" alt="Die Übersicht von Nodvard Deck mit Beispieldaten: drei Server und sechs Gäste mit Auslastung, laufende Container, Backups, ungelesene Meldungen und eine Aktion, die auf Freigabe wartet."></picture>
     </div>
     <div class="ansicht-panel" id="v-backups" role="tabpanel" aria-labelledby="t-backups" hidden>
-      <picture><source media="(max-width: 600px)" srcset="assets/img/backups-handy.webp" width="1100" height="1000"><img src="assets/img/backups-tab-1120.webp" srcset="assets/img/backups-tab-1120.webp 1120w, assets/img/backups-tab.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1300" loading="lazy" decoding="async" alt="Die Seite Proxmox-Backups mit Beispieldaten: ein Gast ohne Backup-Job, Jobs mit Zeitplan und letztem Lauf, ein fehlgeschlagener Lauf."></picture>
+      <picture><img src="assets/img/backups-tab-1120.webp" srcset="assets/img/backups-tab-1120.webp 1120w, assets/img/backups-tab.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1300" loading="lazy" decoding="async" alt="Die Seite Proxmox-Backups mit Beispieldaten: ein Gast ohne Backup-Job, Jobs mit Zeitplan und letztem Lauf, ein fehlgeschlagener Lauf."></picture>
     </div>
     <div class="ansicht-panel" id="v-meldungen" role="tabpanel" aria-labelledby="t-meldungen" hidden>
-      <picture><source media="(max-width: 600px)" srcset="assets/img/meldungen-handy.webp" width="1100" height="820"><img src="assets/img/meldungen-tab-1120.webp" srcset="assets/img/meldungen-tab-1120.webp 1120w, assets/img/meldungen-tab.webp 1587w" sizes="(min-width: 1152px) 1120px, 100vw" width="1587" height="992" loading="lazy" decoding="async" alt="Die Seite Meldungen mit Beispieldaten: eine kritische Meldung zu vollem Speicher, Warnungen zu Logins und Updates, ein erfolgreiches Backup."></picture>
+      <picture><img src="assets/img/meldungen-1040.webp" srcset="assets/img/meldungen-1040.webp 1040w, assets/img/meldungen.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="Die Seite Meldungen mit Beispieldaten: eine kritische Meldung zu vollem Speicher, Warnungen zu Logins und Updates, ein erfolgreiches Backup."></picture>
     </div>
     <div class="ansicht-panel" id="v-apps" role="tabpanel" aria-labelledby="t-apps" hidden>
-      <picture><source media="(max-width: 600px)" srcset="assets/img/apps-handy.webp" width="1100" height="820"><img src="assets/img/apps-tab-1120.webp" srcset="assets/img/apps-tab-1120.webp 1120w, assets/img/apps-tab.webp 1587w" sizes="(min-width: 1152px) 1120px, 100vw" width="1587" height="992" loading="lazy" decoding="async" alt="Die Seite Apps mit Beispieldaten: Kacheln für die Dienste im Netz, in Ordnern sortiert."></picture>
+      <picture><img src="assets/img/apps-1040.webp" srcset="assets/img/apps-1040.webp 1040w, assets/img/apps.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="Die Seite Apps mit Beispieldaten: Kacheln für die Dienste im Netz, in Ordnern sortiert."></picture>
     </div>
     <div class="ansicht-panel" id="v-docker" role="tabpanel" aria-labelledby="t-docker" hidden>
-      <picture><source media="(max-width: 600px)" srcset="assets/img/docker-handy.webp" width="1100" height="900"><img src="assets/img/docker-1040.webp" srcset="assets/img/docker-1040.webp 1040w, assets/img/docker.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="Die Docker-Seite mit Beispieldaten: Container eines Servers mit Zustand und Knöpfen für Neustart, Stoppen, Konsole und Logs."></picture>
+      <picture><img src="assets/img/docker-1040.webp" srcset="assets/img/docker-1040.webp 1040w, assets/img/docker.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="Die Docker-Seite mit Beispieldaten: Container eines Servers mit Zustand und Knöpfen für Neustart, Stoppen, Konsole und Logs."></picture>
     </div>
     <div class="ansicht-panel" id="v-shield" role="tabpanel" aria-labelledby="t-shield" hidden>
-      <picture><source media="(max-width: 600px)" srcset="assets/img/shield-handy.webp" width="1100" height="1000"><img src="assets/img/shield-1040.webp" srcset="assets/img/shield-1040.webp 1040w, assets/img/shield.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Übersicht von Nodvard Shield mit Beispieldaten: Schutzwert, geschützte Server, offene Funde und Quarantäne."></picture>
+      <picture><img src="assets/img/shield-1040.webp" srcset="assets/img/shield-1040.webp 1040w, assets/img/shield.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Übersicht von Nodvard Shield mit Beispieldaten: Schutzwert, geschützte Server, offene Funde und Quarantäne."></picture>
     </div>
   </div>
   <div class="wrap"><p class="caption">Alle Ansichten mit Beispieldaten. Deck ist noch Beta und läuft mit Docker auf einem Raspberry Pi 4 oder 5 oder auf jedem x86-64-Rechner.</p></div>
@@ -84,7 +84,7 @@
 
     <div class="rack">
     <div class="show slot">
-      <figure><picture><source media="(max-width: 600px)" srcset="assets/img/docker-handy.webp" width="1100" height="900"><img src="assets/img/docker-1040.webp" srcset="assets/img/docker-1040.webp 1040w, assets/img/docker.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="Die Docker-Seite mit Beispieldaten: Container eines Servers mit Zustand und Knöpfen für Neustart, Stoppen, Konsole und Logs."></picture></figure>
+      <figure><picture><img src="assets/img/docker-1040.webp" srcset="assets/img/docker-1040.webp 1040w, assets/img/docker.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="Die Docker-Seite mit Beispieldaten: Container eines Servers mit Zustand und Knöpfen für Neustart, Stoppen, Konsole und Logs."></picture></figure>
       <div class="show-text">
         <h3>Docker mit Stacks <span class="beta beta-new">Neu</span></h3>
         <p>Hier siehst du die Container von all deinen Servern zusammen. Stacks bearbeitest du direkt in Deck, als Text oder im Formular, oder du holst sie aus einem Git-Repository. Netze legst du hier auch an, und eigene Compose-Dateien speicherst du als Vorlage. Und wenn dir ein Update nicht gefällt, gehst du zurück zur alten Version. Einfache Stacks aus Portainer nimmst du mit, die Volumes bleiben, wo sie sind.</p>
@@ -92,7 +92,7 @@
       </div>
     </div>
     <div class="show slot">
-      <figure><picture><source media="(max-width: 600px)" srcset="assets/img/server-handy.webp" width="1100" height="980"><img src="assets/img/server-1040.webp" srcset="assets/img/server-1040.webp 1040w, assets/img/server.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Seite eines Proxmox-Knotens: Zugang, CPU, RAM, Laufzeit und der Verlauf der Auslastung."></picture></figure>
+      <figure><picture><img src="assets/img/server-1040.webp" srcset="assets/img/server-1040.webp 1040w, assets/img/server.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Seite eines Proxmox-Knotens: Zugang, CPU, RAM, Laufzeit und der Verlauf der Auslastung."></picture></figure>
       <div class="show-text">
         <h3>Server und Proxmox</h3>
         <p>Jeder Server hat in Deck eine eigene Seite. Da steht, wie ausgelastet er ist, welche Dienste laufen und welche Updates offen sind. VMs und LXC auf Proxmox startest und stoppst du direkt hier, die Konsole gibt es im Browser. Ohne Proxmox geht es aber genauso.</p>
@@ -100,7 +100,7 @@
       </div>
     </div>
     <div class="show slot">
-      <figure><picture><source media="(max-width: 600px)" srcset="assets/img/shield-handy.webp" width="1100" height="1000"><img src="assets/img/shield-1040.webp" srcset="assets/img/shield-1040.webp 1040w, assets/img/shield.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Übersicht von Nodvard Shield: Schutzwert, geschützte Server, offene Bedrohungen, Quarantäne und was Aufmerksamkeit braucht."></picture></figure>
+      <figure><picture><img src="assets/img/shield-1040.webp" srcset="assets/img/shield-1040.webp 1040w, assets/img/shield.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Übersicht von Nodvard Shield: Schutzwert, geschützte Server, offene Bedrohungen, Quarantäne und was Aufmerksamkeit braucht."></picture></figure>
       <div class="show-text">
         <h3>Nodvard Shield</h3>
         <p>Shield schaut regelmäßig auf deine Linux-Server. Es sucht mit ClamAV nach Schadsoftware, prüft mit Lynis die Einstellungen und meldet SSH-Logins, die nicht nach dir aussehen. Welche Adressen Fail2ban gesperrt hat, siehst du auch. Funde landen ab Werk gleich in der Quarantäne, wo du sie jederzeit wieder rausholen kannst. Wenn du das nicht willst, schaltest du es ab.</p>

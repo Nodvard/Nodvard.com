@@ -9,7 +9,7 @@
 <link rel="alternate" hreflang="de" href="https://nodvard.com/proxmox-docker-dashboard.html">
 <link rel="alternate" hreflang="en" href="https://nodvard.com/en/proxmox-docker-dashboard.html">
 <link rel="alternate" hreflang="x-default" href="https://nodvard.com/proxmox-docker-dashboard.html">
-<meta name="theme-color" content="#1a1b1e">
+<meta name="theme-color" content="#0c1626">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
 <meta property="og:title" content="Proxmox and Docker in one dashboard | Nodvard Deck">
@@ -43,26 +43,26 @@
 <div class="wrap">
   <header class="page-head">
     <h1>Proxmox and Docker in one dashboard</h1>
-    <p class="lead">Your VMs and LXC run on Proxmox, and often Docker runs inside them. Nodvard Deck shows you both together, from the node to the guest to the container, with load, backups and updates. The interface is in German for now.</p>
-    <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. This website and the guides are in English.</p>
+    <p class="lead">Your VMs and LXC run on Proxmox, and often Docker runs inside them. Nodvard Deck shows you both together, from the node to the guest to the container, with load, backups and updates.</p>
+    <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. An English interface is planned. This website and the guides are in English.</p>
     <div class="btns"><a class="btn btn-main" href="get-started.html">Get started</a><a class="btn btn-alt" href="features.html">All features</a></div>
   </header>
 
   <figure class="wide">
-    <picture><source media="(max-width: 600px)" srcset="../assets/img/uebersicht-handy.webp" width="1400" height="1240"><img src="../assets/img/uebersicht-1120.webp" srcset="../assets/img/uebersicht-1120.webp 1120w, ../assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" fetchpriority="high" alt="The overview with sample data: two Proxmox nodes and a Raspberry Pi, the VMs of the nodes below them, plus running containers and backups."></picture>
+    <picture><img src="../assets/img/uebersicht-1120.webp" srcset="../assets/img/uebersicht-1120.webp 1120w, ../assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" fetchpriority="high" alt="The overview with sample data: two Proxmox nodes and a Raspberry Pi, the VMs of the nodes below them, plus running containers and backups."></picture>
     <figcaption>Nodes, VMs and LXC in one list. Sample data.</figcaption>
   </figure>
 
   <div class="show">
-    <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/server-handy.webp" width="1100" height="980"><img src="../assets/img/server-1040.webp" srcset="../assets/img/server-1040.webp 1040w, ../assets/img/server.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The page of a Proxmox node: access, CPU, RAM, uptime and the load history."></picture></figure>
+    <figure><picture><img src="../assets/img/server-1040.webp" srcset="../assets/img/server-1040.webp 1040w, ../assets/img/server.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The page of a Proxmox node: access, CPU, RAM, uptime and the load history."></picture></figure>
     <div class="show-text">
       <h2>Proxmox</h2>
-      <p>You start and stop nodes, VMs and LXC in Deck, and the console runs in your browser. Snapshots, hardware, storage and updates are shown for each guest, plus disk health, ZFS and temperature of the nodes. You connect Proxmox in one step with the password. For Docker in guests, SSH is added for each guest.</p>
+      <p>You start and stop nodes, VMs and LXC in Deck, and the console runs in your browser. Snapshots, hardware, storage and updates are shown for each guest, plus disk health, ZFS and temperature of the nodes. You connect Proxmox directly in the interface. For Docker in guests, SSH is added for each guest.</p>
       <a href="features.html#server">More about Proxmox</a>
     </div>
   </div>
   <div class="show show-flip">
-    <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/stacks-handy.webp" width="1100" height="820"><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="The Stacks tab: Compose projects of one server with status and buttons to edit, apply and update."></picture></figure>
+    <figure><picture><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="The Stacks tab: Compose projects of one server with status and buttons to edit, apply and update."></picture></figure>
     <div class="show-text">
       <h2>Docker in your guests</h2>
       <p>If Docker runs in a VM or an LXC, Deck connects over SSH and shows you that guest’s containers and Compose stacks. If an update goes wrong, you go back to the old version. You edit stacks as text or in a form.</p>
@@ -70,7 +70,7 @@
     </div>
   </div>
   <div class="show">
-    <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/backups-handy.webp" width="1100" height="1000"><img src="../assets/img/backups-1040.webp" srcset="../assets/img/backups-1040.webp 1040w, ../assets/img/backups.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The Proxmox backups page: a guest without a backup job, backup jobs with schedule and last run, one failed run."></picture></figure>
+    <figure><picture><img src="../assets/img/backups-1040.webp" srcset="../assets/img/backups-1040.webp 1040w, ../assets/img/backups.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The Proxmox backups page: a guest without a backup job, backup jobs with schedule and last run, one failed run."></picture></figure>
     <div class="show-text">
       <h2>Keep an eye on Proxmox backups</h2>
       <p>Deck shows all backup jobs with their last run and existing backups. If a guest has no job or a run has failed, it says so at the top. Restoring works as a copy, and the original stays as it is.</p>

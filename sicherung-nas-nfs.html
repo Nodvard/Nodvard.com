@@ -9,7 +9,7 @@
 <link rel="alternate" hreflang="de" href="https://nodvard.com/sicherung-nas-nfs.html">
 <link rel="alternate" hreflang="en" href="https://nodvard.com/en/backup-nas-nfs.html">
 <link rel="alternate" hreflang="x-default" href="https://nodvard.com/sicherung-nas-nfs.html">
-<meta name="theme-color" content="#1a1b1e">
+<meta name="theme-color" content="#0c1626">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
 <meta property="og:title" content="Sicherungen auf ein NAS oder NFS | Nodvard Deck">
@@ -42,7 +42,7 @@
 <main id="inhalt">
 <div class="wrap">
   <header class="page-head">
-    <h1>Sicherungen auf ein NAS oder NFS</h1>
+    <h1>Docker-Backup auf ein NAS oder NFS einrichten</h1>
     <p class="lead">Nodvard Deck sichert seine eigenen Daten verschlüsselt und nach Zeitplan. Standard ist ein Ordner im Datenordner. Das schützt vor Fehlbedienung, aber nicht vor einer kaputten SD-Karte. Besser ist ein Ordner auf einem anderen Laufwerk oder einem NAS. So richtest du das ein.</p>
   </header>
 
@@ -70,10 +70,10 @@
     <li><strong>Schreibrechte für den Nutzer 1000.</strong> Deck läuft im Container als Nutzer und Gruppe 1000. Der Ordner auf dem NAS muss für 1000 beschreibbar sein. Entweder auf dem NAS <code>chown 1000:1000</code> für den Ordner, oder beim NFS-Export alle Zugriffe auf 1000 abbilden: <code>all_squash,anonuid=1000,anongid=1000</code>.
       <p>Ein <code>chown</code> auf dem Rechner bringt bei NFS meist nichts, weil das NAS root nicht durchlässt (<code>root_squash</code>).</p>
     </li>
-    <li><strong>Testen</strong>, bevor du in der Oberfläche speicherst. Den Namen des Containers zeigt <code>docker ps</code>:
+    <li><strong>Testen</strong>, bevor du in der Oberfläche speicherst. Im selben Ordner mit der <code>compose.yml</code>:
       <div class="cmd">
         <div class="cmd-head"><span>Im Terminal</span><span class="sr" role="status"></span><button type="button" data-done="Kopiert" hidden data-copy="cmd-test">Kopieren</button></div>
-        <pre><code id="cmd-test">docker exec -u 1000 &lt;container&gt; sh -c 'touch /backups/.test &amp;&amp; rm /backups/.test &amp;&amp; echo ok'</code></pre>
+        <pre><code id="cmd-test">docker compose exec -u 1000 nodvard-deck sh -c 'touch /backups/.test &amp;&amp; rm /backups/.test &amp;&amp; echo ok'</code></pre>
       </div>
     </li>
     <li><strong>In der Oberfläche wählen.</strong> Kommt <code>ok</code>, trägst du unter Einstellungen, System, Sicherung den Ordner <code>/backups</code> oder einen Unterordner ein.</li>

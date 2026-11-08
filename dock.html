@@ -9,7 +9,7 @@
 <link rel="alternate" hreflang="de" href="https://nodvard.com/dock.html">
 <link rel="alternate" hreflang="en" href="https://nodvard.com/en/dock.html">
 <link rel="alternate" hreflang="x-default" href="https://nodvard.com/dock.html">
-<meta name="theme-color" content="#1a1b1e">
+<meta name="theme-color" content="#0c1626">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
 <meta property="og:title" content="Portainer-Alternative: Nodvard Dock für Docker-Stacks">
@@ -55,12 +55,12 @@
   </div>
 
   <div class="show">
-    <figure><picture><source media="(max-width: 600px)" srcset="assets/img/stacks-handy.webp" width="1100" height="820"><img src="assets/img/stacks-1040.webp" srcset="assets/img/stacks-1040.webp 1040w, assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1072" fetchpriority="high" alt="Der Reiter Stacks mit Beispieldaten: Compose-Projekte eines Servers, darunter ein Stack aus Portainer mit dem Knopf „Von Portainer übernehmen“."></picture></figure>
+    <figure><picture><img src="assets/img/stacks-1040.webp" srcset="assets/img/stacks-1040.webp 1040w, assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1072" fetchpriority="high" alt="Der Reiter Stacks mit Beispieldaten: zwei bereits aus Portainer übernommene Compose-Stacks mit Zustand, Pfad /opt/stacks und Knöpfen zum Bearbeiten, Anwenden und Aktualisieren."></picture></figure>
     <div class="show-text">
-      <h2>Umziehen per Knopf</h2>
+      <h2>Stacks aus Portainer per Knopf umziehen</h2>
       <p>Im Reiter Stacks hat jeder Stack, den Portainer angelegt hat, den Knopf „Von Portainer übernehmen“. Dock holt sich Compose-Datei und Variablen aus dem Speicher von Portainer, legt sie in einen eigenen Ordner und startet den Stack dort unter demselben Namen neu. Die Volumes mit deinen Daten bleiben.</p>
       <p>Wenn etwas nicht passt, zum Beispiel weil in der gespeicherten Datei andere Images stehen als in den laufenden Containern, lässt Dock den Stack in Ruhe und sagt dir, warum.</p>
-      <p>Der Umzug klappt für Stacks, die Portainer als eine Compose-Datei führt. Stacks aus Git, in mehreren Fassungen oder mit mehreren Dateien kann er noch nicht. Lass den Stack danach in Portainer stehen. Löschst du ihn dort oder rollst ihn neu aus, entfernt Portainer die neuen Container oder ersetzt sie durch seine alte Datei.</p>
+      <p>Der Umzug klappt für Stacks, die Portainer als eine Compose-Datei führt. Stacks aus Git, in mehreren Fassungen oder mit mehreren Dateien kann er noch nicht. Solange Portainer noch parallel läuft, lass den Stack dort einfach unberührt stehen. Klickst du in Portainer auf Löschen oder Rollout, entfernt Portainer sonst die laufenden Container oder überschreibt sie mit seiner alten Datei.</p>
     </div>
   </div>
 
@@ -86,7 +86,7 @@
     <p>Dock redet per SSH mit deinen Docker-Servern. Einen Agent musst du dort nicht installieren. Du willst dem Zugang keine vollen Docker-Rechte geben? Dann nimm den Modus „Nur bedienen“. Damit darf Dock per sudo nur ein festes Hilfsskript aufrufen, und das prüft jeden Aufruf selbst.</p>
 
     
-    <h2>Dock, Portainer CE und Dockge im Vergleich</h2>
+    <h2 id="vergleich">Dock, Portainer CE und Dockge im Vergleich</h2>
     <p>Alle drei verwalten Container mit Compose. Unterschiedlich ist vor allem, wie weitere Server dazukommen und wo die Compose-Dateien liegen.</p>
     <div class="table-wrap"><table class="vergleich">
       <thead><tr><th scope="col"></th><th scope="col">Nodvard Dock</th><th scope="col">Portainer CE</th><th scope="col">Dockge</th></tr></thead>

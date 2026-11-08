@@ -9,7 +9,7 @@
 <link rel="alternate" hreflang="de" href="https://nodvard.com/homelab-dashboard.html">
 <link rel="alternate" hreflang="en" href="https://nodvard.com/en/homelab-dashboard.html">
 <link rel="alternate" hreflang="x-default" href="https://nodvard.com/homelab-dashboard.html">
-<meta name="theme-color" content="#1a1b1e">
+<meta name="theme-color" content="#0c1626">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
 <meta property="og:title" content="Homelab dashboard: more than a page of tiles">
@@ -42,14 +42,14 @@
 <main id="inhalt">
 <div class="wrap">
   <header class="page-head">
-    <h1>More than a page of tiles</h1>
-    <p class="lead">Nodvard Deck puts your servers, VMs, containers, backups and notifications on one page. There you see what’s running and where something is stuck right now. You host it yourself, and it costs nothing for personal use. The interface is in German for now.</p>
-    <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. This website and the guides are in English.</p>
+    <h1>Homelab dashboard: more than a page of tiles</h1>
+    <p class="lead">Nodvard Deck puts your servers, VMs, containers, backups and notifications on one page. There you see what’s running and where something is stuck right now. You host it yourself, and it costs nothing for personal use.</p>
+    <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. An English interface is planned. This website and the guides are in English.</p>
     <div class="btns"><a class="btn btn-main" href="get-started.html">Get started</a><a class="btn btn-alt" href="features.html">All features</a></div>
   </header>
 
   <figure class="wide">
-    <picture><source media="(max-width: 600px)" srcset="../assets/img/uebersicht-handy.webp" width="1400" height="1240"><img src="../assets/img/uebersicht-1120.webp" srcset="../assets/img/uebersicht-1120.webp 1120w, ../assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" fetchpriority="high" alt="The Nodvard Deck overview with sample data: servers with their load, running containers, backups, notifications and one action waiting for approval."></picture>
+    <picture><img src="../assets/img/uebersicht-1120.webp" srcset="../assets/img/uebersicht-1120.webp 1120w, ../assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" fetchpriority="high" alt="The Nodvard Deck overview with sample data: servers with their load, running containers, backups, notifications and one action waiting for approval."></picture>
     <figcaption>The overview with sample data.</figcaption>
   </figure>
 
@@ -58,7 +58,7 @@
     <p>Homepage, Homarr, Heimdall or Dashy are good at collecting links and a few numbers about your services. In Deck, the Apps page does that. For me, that alone wasn’t enough. I also wanted to see how my servers, VMs, containers and backups are doing, and step in right away: restart a container, apply an image update and roll it back if needed, or start a backup. Whatever you change is in the log afterwards.</p>
 
     <h2>What the overview shows</h2>
-    <p>Right at the top are five numbers: how many servers are online, how many containers are running, which backups had no run, how many notifications are unread and which actions are waiting for you. Below, Deck lists all servers, VMs and LXC with CPU, RAM, disk and uptime.</p>
+    <p>Right at the top are five numbers: how many servers are online, how many containers are running, which backups had no run, how many notifications are unread and which actions are waiting for you. Below, Deck lists your servers, VMs and LXC with status and uptime.</p>
     <p>On the right is what you should take care of right now, such as an almost full disk or a failed backup. You can sort the widgets into groups, collapse them one by one and move them around in edit mode.</p>
 
     <h2>Not just looking, also acting</h2>
@@ -66,7 +66,7 @@
   </div>
 
   <div class="show">
-    <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/apps-handy.webp" width="1100" height="820"><img src="../assets/img/apps-1040.webp" srcset="../assets/img/apps-1040.webp 1040w, ../assets/img/apps.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="The Apps page: tiles for a router, Pi-hole, Home Assistant, a Synology NAS and monitoring, sorted into folders."></picture></figure>
+    <figure><picture><img src="../assets/img/apps-1040.webp" srcset="../assets/img/apps-1040.webp 1040w, ../assets/img/apps.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="The Apps page: tiles for a router, Pi-hole, Home Assistant, a Synology NAS and monitoring, sorted into folders."></picture></figure>
     <div class="show-text">
       <h2>A start page for your services</h2>
       <p>Under Apps, every web interface in your network is a tile, sorted into folders. Deck finds containers with a web interface on your Docker servers on its own, and you add your own apps with an address and an icon.</p>

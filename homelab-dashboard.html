@@ -9,7 +9,7 @@
 <link rel="alternate" hreflang="de" href="https://nodvard.com/homelab-dashboard.html">
 <link rel="alternate" hreflang="en" href="https://nodvard.com/en/homelab-dashboard.html">
 <link rel="alternate" hreflang="x-default" href="https://nodvard.com/homelab-dashboard.html">
-<meta name="theme-color" content="#1a1b1e">
+<meta name="theme-color" content="#0c1626">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
 <meta property="og:title" content="Homelab-Dashboard: mehr als eine Kachel-Startseite">
@@ -42,13 +42,13 @@
 <main id="inhalt">
 <div class="wrap">
   <header class="page-head">
-    <h1>Mehr als eine Kachel-Startseite</h1>
+    <h1>Homelab-Dashboard: mehr als eine Kachel-Startseite</h1>
     <p class="lead">Nodvard Deck holt deine Server, VMs, Container, Backups und Meldungen auf eine Seite. Da siehst du, was läuft und wo es gerade hakt. Du hostest es selbst, und privat kostet es nichts.</p>
     <div class="btns"><a class="btn btn-main" href="loslegen.html">Loslegen</a><a class="btn btn-alt" href="funktionen.html">Alle Funktionen</a></div>
   </header>
 
   <figure class="wide">
-    <picture><source media="(max-width: 600px)" srcset="assets/img/uebersicht-handy.webp" width="1400" height="1240"><img src="assets/img/uebersicht-1120.webp" srcset="assets/img/uebersicht-1120.webp 1120w, assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" fetchpriority="high" alt="Die Übersicht von Nodvard Deck mit Beispieldaten: Server mit Auslastung, laufende Container, Backups, Meldungen und eine Aktion, die auf Freigabe wartet."></picture>
+    <picture><img src="assets/img/uebersicht-1120.webp" srcset="assets/img/uebersicht-1120.webp 1120w, assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" fetchpriority="high" alt="Die Übersicht von Nodvard Deck mit Beispieldaten: Server mit Auslastung, laufende Container, Backups, Meldungen und eine Aktion, die auf Freigabe wartet."></picture>
     <figcaption>Die Übersicht mit Beispieldaten.</figcaption>
   </figure>
 
@@ -57,7 +57,7 @@
     <p>Homepage, Homarr, Heimdall oder Dashy sind gut darin, Links und ein paar Zahlen zu deinen Diensten zu sammeln. Das macht in Deck die Seite Apps. Mir hat das allein nicht gereicht. Ich wollte auch sehen, wie es meinen Servern, VMs, Containern und Backups geht, und gleich eingreifen können: einen Container neu starten, ein Image-Update einspielen und notfalls zurückdrehen oder ein Backup anstoßen. Was du dabei änderst, steht hinterher im Protokoll.</p>
 
     <h2>Was auf der Übersicht steht</h2>
-    <p>Ganz oben stehen fünf Zahlen: wie viele Server online sind, wie viele Container laufen, welche Backups keinen Lauf hatten, wie viele Meldungen ungelesen sind und welche Aktionen auf dich warten. Darunter listet Deck alle Server, VMs und LXC mit CPU, RAM, Platte und Laufzeit.</p>
+    <p>Ganz oben stehen fünf Zahlen: wie viele Server online sind, wie viele Container laufen, welche Backups keinen Lauf hatten, wie viele Meldungen ungelesen sind und welche Aktionen auf dich warten. Darunter listet Deck deine Server, VMs und LXC mit Zustand und Laufzeit auf.</p>
     <p>Rechts steht, worum du dich gerade kümmern solltest, etwa eine fast volle Platte oder ein fehlgeschlagenes Backup. Die Widgets kannst du in Gruppen ordnen, einzeln zuklappen und im Bearbeiten-Modus verschieben.</p>
 
     <h2>Nicht nur anschauen, auch eingreifen</h2>
@@ -65,7 +65,7 @@
   </div>
 
   <div class="show">
-    <figure><picture><source media="(max-width: 600px)" srcset="assets/img/apps-handy.webp" width="1100" height="820"><img src="assets/img/apps-1040.webp" srcset="assets/img/apps-1040.webp 1040w, assets/img/apps.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="Die Seite Apps: Kacheln für Router, Pi-hole, Home Assistant, ein Synology NAS und Monitoring, in Ordnern sortiert."></picture></figure>
+    <figure><picture><img src="assets/img/apps-1040.webp" srcset="assets/img/apps-1040.webp 1040w, assets/img/apps.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="Die Seite Apps: Kacheln für Router, Pi-hole, Home Assistant, ein Synology NAS und Monitoring, in Ordnern sortiert."></picture></figure>
     <div class="show-text">
       <h2>Eine Startseite für deine Dienste</h2>
       <p>Unter Apps liegt jede Weboberfläche aus deinem Netz als Kachel, sortiert in Ordnern. Container mit Weboberfläche findet Deck auf deinen Docker-Servern von selbst, eigene Apps fügst du mit Adresse und Symbol hinzu.</p>

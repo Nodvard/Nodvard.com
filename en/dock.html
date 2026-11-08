@@ -9,7 +9,7 @@
 <link rel="alternate" hreflang="de" href="https://nodvard.com/dock.html">
 <link rel="alternate" hreflang="en" href="https://nodvard.com/en/dock.html">
 <link rel="alternate" hreflang="x-default" href="https://nodvard.com/dock.html">
-<meta name="theme-color" content="#1a1b1e">
+<meta name="theme-color" content="#0c1626">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
 <meta property="og:title" content="Portainer alternative: Nodvard Dock for Docker stacks">
@@ -56,12 +56,12 @@
   </div>
 
   <div class="show">
-    <figure><picture><source media="(max-width: 600px)" srcset="../assets/img/stacks-handy.webp" width="1100" height="820"><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1072" fetchpriority="high" alt="The Stacks tab with sample data: Compose projects of one server, including a stack from Portainer with the button to move it over."></picture></figure>
+    <figure><picture><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1072" fetchpriority="high" alt="The Stacks tab with sample data: two Compose stacks already imported from Portainer, with status, path /opt/stacks and buttons to edit, apply and update."></picture></figure>
     <div class="show-text">
-      <h2>Move over with a button</h2>
+      <h2>Migrate Portainer stacks with one click</h2>
       <p>In the Stacks tab, every stack created by Portainer has a button to move it over. Dock grabs the Compose file and variables from Portainer’s storage, puts them in a folder of their own and starts the stack there again under the same name. The volumes with your data stay.</p>
       <p>When something doesn’t fit, for example because the stored file lists other images than the running containers, Dock leaves the stack alone and tells you why.</p>
-      <p>The move works for stacks that Portainer keeps as a single Compose file. Stacks from Git, in several versions or with several files are not supported yet. Leave the stack in Portainer afterwards. If you delete it there or redeploy it, Portainer removes the new containers or replaces them with its old file.</p>
+      <p>The move works for stacks that Portainer keeps as a single Compose file. Stacks from Git, in several versions or with several files are not supported yet. As long as Portainer is still running in parallel, leave the stack untouched there. If you click delete or rollout in Portainer, Portainer removes the running containers or overwrites them with its old file.</p>
     </div>
   </div>
 
@@ -87,7 +87,7 @@
     <p>Dock talks to your Docker servers over SSH. You don’t have to install an agent there. Don’t want to give the account full Docker rights? Use the “operate only” mode. With it, Dock may only call one fixed helper script via sudo, and that script checks every call itself.</p>
 
     
-    <h2>Dock, Portainer CE and Dockge compared</h2>
+    <h2 id="vergleich">Dock, Portainer CE and Dockge compared</h2>
     <p>All three manage containers with Compose. What differs is mostly how more servers are added and where the Compose files live.</p>
     <div class="table-wrap"><table class="vergleich">
       <thead><tr><th scope="col"></th><th scope="col">Nodvard Dock</th><th scope="col">Portainer CE</th><th scope="col">Dockge</th></tr></thead>
