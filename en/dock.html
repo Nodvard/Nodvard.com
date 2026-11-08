@@ -48,7 +48,7 @@
     <p class="lead">Nodvard Dock manages containers and Compose stacks on your servers. You bring simple stacks over from Portainer with a button, and the volumes with your data stay where they are. You host Dock yourself, and it costs nothing for personal use.</p>
     <div class="btns"><a class="btn btn-main" href="#install">Install</a><a class="btn btn-alt" href="https://github.com/nodvard/dock">On GitHub</a></div>
   </header>
-  <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. An English interface is planned. This website and the guides are in English.</p>
+  <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. This website and the guides are in English.</p>
 
   <div class="prose">
     <h2>Why now</h2>
@@ -58,7 +58,7 @@
   <div class="show">
     <figure><picture><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1072" fetchpriority="high" alt="The Stacks tab with sample data: two Compose stacks already imported from Portainer, with status, path /opt/stacks and buttons to edit, apply and update."></picture></figure>
     <div class="show-text">
-      <h2>Migrate Portainer stacks with one click</h2>
+      <h2>Move Portainer stacks with a button</h2>
       <p>In the Stacks tab, every stack created by Portainer has a button to move it over. Dock grabs the Compose file and variables from Portainer’s storage, puts them in a folder of their own and starts the stack there again under the same name. The volumes with your data stay.</p>
       <p>When something doesn’t fit, for example because the stored file lists other images than the running containers, Dock leaves the stack alone and tells you why.</p>
       <p>The move works for stacks that Portainer keeps as a single Compose file. Stacks from Git, in several versions or with several files are not supported yet. As long as Portainer is still running in parallel, leave the stack untouched there. If you click delete or rollout in Portainer, Portainer removes the running containers or overwrites them with its old file.</p>

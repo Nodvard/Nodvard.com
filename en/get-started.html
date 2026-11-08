@@ -45,10 +45,10 @@
     <h1>Get started</h1>
     <p class="lead">Nodvard Deck runs in Docker, whether on a Raspberry Pi 4 or 5 or on an x86-64 machine. You don’t build anything, the ready-made image comes from GitHub (<code>ghcr.io/nodvard/deck</code>, for arm64 and x86-64).</p>
   </header>
-  <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. An English interface is planned. This website and the guides are in English.</p>
+  <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. This website and the guides are in English.</p>
 
   <ol class="steps">
-    <li><strong>Have Docker and Docker Compose ready.</strong> A Raspberry Pi needs a 64-bit system. If you use Proxmox, run Deck inside a Linux VM or an LXC container with Docker, not directly on the Proxmox host.</li>
+    <li><strong>Have Docker and Docker Compose ready.</strong> A Raspberry Pi needs a 64-bit system.</li>
     <li><strong>Get Deck and start it.</strong>
       <div class="cmd">
         <div class="cmd-head"><span>In a terminal</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-install">Copy</button></div>
@@ -69,7 +69,7 @@ services:
     volumes:
       - nodvard_deck_data:/app/data
       # Optional: a folder for backups, for example on a NAS
-      # - ./backups:/backups
+      # - ./sicherungen:/backups
     healthcheck: …
 volumes:
   nodvard_deck_data:
