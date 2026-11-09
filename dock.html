@@ -50,14 +50,14 @@
   </header>
 
   <div class="prose">
-    <h2>Warum gerade jetzt</h2>
+    <h2 id="warum-jetzt">Portainer 3.0 ohne Community Edition: was das für dein Homelab bedeutet</h2>
     <p>Portainer hat im September 2026 angekündigt, dass Portainer 3.0 ohne Community Edition erscheint. CE bleibt bei Version 2.x und bekommt dort weiter Sicherheitsupdates und Fehlerbehebungen, Neues aus 3.0 nur noch vereinzelt (<a href="https://www.portainer.io/blog/portainer-3-0-is-coming">Portainer-Blog</a>). Wenn du deshalb nach etwas Neuem suchst, kannst du deine Stacks zu Nodvard Dock mitnehmen.</p>
   </div>
 
   <div class="show">
     <figure><picture><img src="assets/img/stacks-1040.webp" srcset="assets/img/stacks-1040.webp 1040w, assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1072" fetchpriority="high" alt="Der Reiter Stacks mit Beispieldaten: zwei bereits aus Portainer übernommene Compose-Stacks mit Zustand, Pfad /opt/stacks und Knöpfen zum Bearbeiten, Anwenden und Aktualisieren."></picture></figure>
     <div class="show-text">
-      <h2>Stacks aus Portainer per Knopf umziehen</h2>
+      <h2 id="umzug">Stacks aus Portainer per Knopf umziehen</h2>
       <p>Im Reiter Stacks hat jeder Stack, den Portainer angelegt hat, den Knopf „Von Portainer übernehmen“. Dock holt sich Compose-Datei und Variablen aus dem Speicher von Portainer, legt sie in einen eigenen Ordner und startet den Stack dort unter demselben Namen neu. Die Volumes mit deinen Daten bleiben.</p>
       <p>Wenn etwas nicht passt, zum Beispiel weil in der gespeicherten Datei andere Images stehen als in den laufenden Containern, lässt Dock den Stack in Ruhe und sagt dir, warum.</p>
       <p>Der Umzug klappt für Stacks, die Portainer als eine Compose-Datei führt. Stacks aus Git, in mehreren Fassungen oder mit mehreren Dateien kann er noch nicht. Solange Portainer noch parallel läuft, lass den Stack dort einfach unberührt stehen. Klickst du in Portainer auf Löschen oder Rollout, entfernt Portainer sonst die laufenden Container oder überschreibt sie mit seiner alten Datei.</p>
@@ -65,7 +65,7 @@
   </div>
 
   <div class="prose">
-    <h2>Was Dock kann</h2>
+    <h2 id="was-dock-kann">Was Dock kann</h2>
     <ul>
       <li><strong>Container</strong> aller Server auf einer Seite: Zustand, Starten, Stoppen, Neustarten, gestoppte Container löschen, Konsole und Details.</li>
       <li><strong>Logs</strong> mit Zeitraum, Suche und Download.</li>
@@ -82,7 +82,7 @@
       <li><strong>Freigabe und Protokoll:</strong> Bevor Dock etwas ändert, fragt es nach. Welche Aktionen ohne Rückfrage durchlaufen dürfen, stellst du als Inhaber selbst ein, und im Protokoll steht hinterher alles.</li>
     </ul>
 
-    <h2>Mehrere Server, kein Agent</h2>
+    <h2 id="agentenlos">Mehrere Server, kein Agent</h2>
     <p>Dock redet per SSH mit deinen Docker-Servern. Einen Agent musst du dort nicht installieren. Du willst dem Zugang keine vollen Docker-Rechte geben? Dann nimm den Modus „Nur bedienen“. Damit darf Dock per sudo nur ein festes Hilfsskript aufrufen, und das prüft jeden Aufruf selbst.</p>
 
     
@@ -90,11 +90,11 @@
     <p>Alle drei verwalten Container mit Compose. Unterschiedlich ist vor allem, wie weitere Server dazukommen und wo die Compose-Dateien liegen.</p>
     <div class="table-wrap"><table class="vergleich">
       <thead><tr><th scope="col"></th><th scope="col">Nodvard Dock</th><th scope="col">Portainer CE</th><th scope="col">Dockge</th></tr></thead>
-      <tbody><tr><th scope="row">Weitere Server</th><td data-label="Nodvard Dock">per SSH, ohne Agent</td><td data-label="Portainer CE">Portainer Agent oder Edge Agent auf jedem Server</td><td data-label="Dockge">Dockge-Agent auf jedem weiteren Server</td></tr><tr><th scope="row">Compose-Dateien</th><td data-label="Nodvard Dock">im Ordner auf dem Server (Vorgabe <code>/opt/stacks</code>)</td><td data-label="Portainer CE">im Datenspeicher von Portainer</td><td data-label="Dockge">im Ordner auf dem Server (Vorgabe <code>/opt/stacks</code>)</td></tr><tr><th scope="row">Swarm und Kubernetes</th><td data-label="Nodvard Dock">nein</td><td data-label="Portainer CE">ja</td><td data-label="Dockge">nein</td></tr><tr><th scope="row">Umzug von Portainer</th><td data-label="Nodvard Dock">Knopf je Stack</td><td data-label="Portainer CE">entfällt</td><td data-label="Dockge">Datei von Hand in den Ordner legen</td></tr><tr><th scope="row">Lizenz</th><td data-label="Nodvard Dock">PolyForm Noncommercial (Quellcode einsehbar, privat kostenlos)</td><td data-label="Portainer CE">zlib</td><td data-label="Dockge">MIT</td></tr></tbody>
+      <tbody><tr><th scope="row">Weitere Server</th><td data-label="Nodvard Dock">per SSH, ohne Agent</td><td data-label="Portainer CE">Portainer Agent oder Edge Agent auf jedem Server</td><td data-label="Dockge">Dockge-Agent auf jedem weiteren Server</td></tr><tr><th scope="row">Compose-Dateien</th><td data-label="Nodvard Dock">im Ordner auf dem Server (Vorgabe <code>/opt/stacks</code>)</td><td data-label="Portainer CE">im Datenspeicher von Portainer</td><td data-label="Dockge">im Ordner auf dem Server (Vorgabe <code>/opt/stacks</code>)</td></tr><tr><th scope="row">Swarm und Kubernetes</th><td data-label="Nodvard Dock">nein</td><td data-label="Portainer CE">ja</td><td data-label="Dockge">nein</td></tr><tr><th scope="row">Umzug von Portainer</th><td data-label="Nodvard Dock">Knopf je Stack (für einfache Compose-Dateien)</td><td data-label="Portainer CE">entfällt</td><td data-label="Dockge">Datei von Hand in den Ordner legen</td></tr><tr><th scope="row">Lizenz</th><td data-label="Nodvard Dock">PolyForm Noncommercial (Quellcode einsehbar, privat kostenlos)</td><td data-label="Portainer CE">zlib</td><td data-label="Dockge">MIT</td></tr></tbody>
     </table></div>
     <p class="note-small">Stand Oktober 2026, nach den Anleitungen von <a href="https://docs.portainer.io/">Portainer</a> und <a href="https://github.com/louislam/dockge">Dockge</a>. Brauchst du Swarm oder Kubernetes, passt Portainer besser.</p>
 
-    <h2>Was Dock nicht kann</h2>
+    <h2 id="was-dock-nicht-kann">Was Dock nicht kann</h2>
     <p>Dock ist für Docker und Docker Compose auf einzelnen Servern gedacht. Swarm und Kubernetes kann es nicht. Die Oberfläche gibt es bisher nur auf Deutsch. Und Dock ist noch Beta, also sag gern Bescheid, wenn was hakt, am schnellsten auf <a href="https://discord.gg/gTTs7qMabt">Discord</a>.</p>
   </div>
 

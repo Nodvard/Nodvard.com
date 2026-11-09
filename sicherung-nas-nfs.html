@@ -47,8 +47,8 @@
   </header>
 
   <div class="prose">
-    <h2>Bevor du anfängst</h2>
-    <p>Lege unter Einstellungen, System, Sicherung zuerst ein Sicherungspasswort fest (mindestens 12 Zeichen). Danach zeigt Deck <strong>einmal</strong> den Wiederherstellungsschlüssel. Bewahre ihn gut auf: Ohne Passwort und Schlüssel kann niemand die Sicherungen öffnen, auch du nicht. Dort schaltest du auch „Automatisch sichern“ ein und wählst, wie viele Sicherungen bleiben.</p>
+    <h2 id="vorbereitung">Bevor du anfängst</h2>
+    <p>Lege unter Einstellungen, System, Sicherung zuerst ein Sicherungspasswort fest (mindestens 12 Zeichen). Danach zeigt Deck <strong>einmal</strong> den Wiederherstellungsschlüssel. Bewahre ihn gut auf: Verlierst du sowohl das Passwort als auch diesen Schlüssel, kann niemand die Sicherungen mehr öffnen, auch du nicht. Dort schaltest du auch „Automatisch sichern“ ein und wählst, wie viele Sicherungen bleiben.</p>
     <p>Als Ziel nimmt Deck nur zwei Ordner: <code>/app/data/backups</code> im Datenordner oder den eingebundenen Ordner <code>/backups</code> samt Unterordnern, etwa <code>/backups/deck</code>. Gemeint ist immer der Pfad <strong>im Container</strong>, nicht der auf dem Rechner oder dem NAS.</p>
   </div>
 
@@ -80,7 +80,7 @@
   </ol>
 
   <div class="prose">
-    <h2>Wenn beim Speichern eine Meldung kommt</h2>
+    <h2 id="fehlersuche">Wenn beim Speichern eine Meldung kommt</h2>
     <h3>„Der Ordner /backups existiert nicht (ist er eingebunden?).“</h3>
     <p>Die Zeile <code>- …:/backups</code> fehlt oder ist noch auskommentiert, oder der Container wurde danach nicht neu erstellt. Führ <code>docker compose up -d</code> aus, in Portainer „Update the stack“.</p>
     <h3>„Sicherungen dürfen nur nach /app/data/backups oder in den eingebundenen Ordner /backups geschrieben werden.“</h3>
@@ -88,7 +88,7 @@
     <h3>„In /backups darf Nodvard Deck nicht schreiben.“</h3>
     <p>Die Schreibrechte für 1000 fehlen (Schritt 3), oder das NFS war beim Start von Docker noch nicht eingehängt (Schritt 1).</p>
 
-    <h2>Mehr dazu</h2>
+    <h2 id="mehr">Mehr dazu</h2>
     <p>Alles zur Sicherung von Deck, auch ohne NAS und von Hand, steht in der <a href="https://github.com/nodvard/deck/blob/main/docs/11-ERST-EINRICHTUNG.md#6-das-dashboard-selbst-sichern">Anleitung im Repository</a>. Fragen beantwortet die Community auf <a href="https://discord.gg/gTTs7qMabt">Discord</a>.</p>
   </div>
 </div>

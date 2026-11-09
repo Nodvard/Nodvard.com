@@ -12,15 +12,15 @@
 <meta name="theme-color" content="#0c1626">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nodvard Deck">
-<meta property="og:title" content="Install Nodvard Deck with Docker Compose">
+<meta property="og:title" content="Install Nodvard Deck: Docker Compose, Raspberry Pi, and NAS">
 <meta property="og:description" content="How to install Nodvard Deck with Docker Compose, on a Raspberry Pi, with Portainer or on a NAS such as Synology, Unraid or TrueNAS.">
 <meta property="og:url" content="https://nodvard.com/en/get-started.html">
 <meta property="og:image" content="https://nodvard.com/assets/og/loslegen-en.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Preview image: Install Nodvard Deck with Docker Compose">
+<meta property="og:image:alt" content="Preview image: Install Nodvard Deck: Docker Compose, Raspberry Pi, and NAS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Install Nodvard Deck with Docker Compose">
+<meta name="twitter:title" content="Install Nodvard Deck: Docker Compose, Raspberry Pi, and NAS">
 <meta name="twitter:description" content="How to install Nodvard Deck with Docker Compose, on a Raspberry Pi, with Portainer or on a NAS such as Synology, Unraid or TrueNAS.">
 <meta name="twitter:image" content="https://nodvard.com/assets/og/loslegen-en.jpg">
 <meta property="og:locale" content="en_US">
@@ -36,7 +36,7 @@
   <div class="wrap">
     <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
     <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="get-started.html" aria-current="page">Get started</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
-    <a class="lang" href="../loslegen.html" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a><a class="btn-top" href="get-started.html">Install</a>
+    <a class="lang" href="../loslegen.html" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a><a class="btn-top" href="#command">Install</a>
   </div>
 </header>
 <main id="inhalt">
@@ -47,7 +47,7 @@
   </header>
   <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. This website and the guides are in English.</p>
 
-  <ol class="steps">
+  <ol class="steps" id="command">
     <li><strong>Have Docker and Docker Compose ready.</strong> A Raspberry Pi needs a 64-bit system.</li>
     <li><strong>Get Deck and start it.</strong>
       <div class="cmd">
@@ -58,7 +58,7 @@ docker compose up -d</code></pre>
       </div>
       <details class="compose">
       <summary>What is in compose.yml?</summary>
-      <p>One container, one port, one volume for the data. No Docker socket, no special privileges. The complete file is <a href="https://github.com/nodvard/deck/blob/main/deploy/compose.standalone.yml">on GitHub</a>.</p>
+      <p>One container, one port, one volume for the data. The container itself needs no Docker socket and no special privileges; Deck connects to your servers later over SSH. The complete file is <a href="https://github.com/nodvard/deck/blob/main/deploy/compose.standalone.yml">on GitHub</a>.</p>
       <pre><code>name: nodvard-deck
 services:
   nodvard-deck:

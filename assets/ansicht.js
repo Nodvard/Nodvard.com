@@ -13,15 +13,6 @@ document.querySelectorAll("[data-ansicht]").forEach(function (box) {
     });
     if (fokus) k.focus();
   }
-  var vorgeladen = false;
-  function vorladen() {
-    if (vorgeladen) return;
-    vorgeladen = true;
-    box.querySelectorAll("[role=tabpanel][hidden] img[loading=lazy]").forEach(function (img) { img.loading = "eager"; });
-  }
-  tabs.addEventListener("pointerenter", vorladen, { once: true });
-  tabs.addEventListener("focusin", vorladen, { once: true });
-  tabs.addEventListener("touchstart", vorladen, { once: true, passive: true });
   knoepfe.forEach(function (b, i) {
     b.addEventListener("click", function () { zeige(b, false); });
     b.addEventListener("keydown", function (e) {

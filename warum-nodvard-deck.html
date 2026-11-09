@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Warum Nodvard Deck: für wen es gedacht ist und was nicht</title>
+<title>Warum Nodvard Deck: Homelab-Verwaltung per SSH ohne Agent</title>
 <meta name="description" content="Für wen Nodvard Deck gedacht ist, was es anders macht und was es nicht kann. Selbst gehostet, Quelltext einsehbar, privat kostenlos.">
 <link rel="canonical" href="https://nodvard.com/warum-nodvard-deck.html">
 <link rel="alternate" hreflang="de" href="https://nodvard.com/warum-nodvard-deck.html">
@@ -12,15 +12,15 @@
 <meta name="theme-color" content="#0c1626">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
-<meta property="og:title" content="Warum Nodvard Deck: für wen es gedacht ist und was nicht">
+<meta property="og:title" content="Warum Nodvard Deck: Homelab-Verwaltung per SSH ohne Agent">
 <meta property="og:description" content="Für wen Nodvard Deck gedacht ist, was es anders macht und was es nicht kann. Selbst gehostet, Quelltext einsehbar, privat kostenlos.">
 <meta property="og:url" content="https://nodvard.com/warum-nodvard-deck.html">
 <meta property="og:image" content="https://nodvard.com/assets/og/start-de.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Vorschaubild: Warum Nodvard Deck: für wen es gedacht ist und was nicht">
+<meta property="og:image:alt" content="Vorschaubild: Nodvard Deck: Homelab-Dashboard für Proxmox und Docker">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Warum Nodvard Deck: für wen es gedacht ist und was nicht">
+<meta name="twitter:title" content="Warum Nodvard Deck: Homelab-Verwaltung per SSH ohne Agent">
 <meta name="twitter:description" content="Für wen Nodvard Deck gedacht ist, was es anders macht und was es nicht kann. Selbst gehostet, Quelltext einsehbar, privat kostenlos.">
 <meta name="twitter:image" content="https://nodvard.com/assets/og/start-de.jpg">
 <meta property="og:locale" content="de_DE">
@@ -48,11 +48,11 @@
   </header>
 
   <div class="prose">
-    <h2>Für wen Deck gedacht ist</h2>
+    <h2 id="zielgruppe">Für wen Deck gedacht ist</h2>
     <p>Für dich, wenn du zu Hause ein paar Server betreibst und wissen willst, wie es ihnen geht. Das kann ein Raspberry Pi sein, eine Debian-VM, ein NAS oder ein paar Docker-Hosts. Proxmox brauchst du nicht, Deck nimmt es aber mit, wenn du es hast.</p>
     <p>Deck läuft selbst als Container in deinem Heimnetz. Von unterwegs kommst du über ein VPN dran, nicht direkt aus dem Internet. Privat kostet es nichts. Die Lizenz ist PolyForm Noncommercial, den Quelltext kann jeder lesen. Mehr dazu in der <a href="lizenz.html">Lizenz in einfachen Worten</a>.</p>
 
-    <h2>Was Deck anders macht</h2>
+    <h2 id="unterschiede">Was Deck anders macht</h2>
     <ul>
       <li>Deck redet per SSH mit deinen Servern. Dort läuft kein eigener Agent, und der Container von Deck bekommt keinen Docker-Socket.</li>
       <li>Server-Zustand, Proxmox, Docker und Backups stehen nebeneinander, statt in mehreren Oberflächen verteilt.</li>
@@ -61,24 +61,24 @@
       <li>Jedes Modul schaltest du einzeln ein oder aus. Eigene Module schreibst du mit dem <a href="https://github.com/nodvard/deck/blob/main/docs/02-EXTENSION-API.md">dokumentierten SDK</a>.</li>
     </ul>
 
-    <h2>Brauchst du Deck oder reicht Dock?</h2>
+    <h2 id="deck-oder-dock">Brauchst du Deck oder reicht Dock?</h2>
     <p>Dock ist derselbe Code mit nur dem Docker-Teil. Wenn du nur Container und Stacks verwalten willst, reicht es.</p>
     <div class="table-wrap"><table class="vergleich">
       <thead><tr><th scope="col"></th><th scope="col">Nodvard Deck</th><th scope="col">Nodvard Dock</th></tr></thead>
-      <tbody><tr><th scope="row">Container und Stacks</th><td data-label="Nodvard Deck">ja</td><td data-label="Nodvard Dock">ja</td></tr><tr><th scope="row">Proxmox und Proxmox-Backups</th><td data-label="Nodvard Deck">ja</td><td data-label="Nodvard Dock">nein</td></tr><tr><th scope="row">Shield: Virenschutz, Updates, Einbruchschutz</th><td data-label="Nodvard Deck">ja</td><td data-label="Nodvard Dock">nein</td></tr><tr><th scope="row">Apps, Integrationen und Meldungen</th><td data-label="Nodvard Deck">ja</td><td data-label="Nodvard Dock">nein</td></tr><tr><th scope="row">Module auswählen</th><td data-label="Nodvard Deck">der Assistent fragt, was du nutzen willst</td><td data-label="Nodvard Dock">feste Module, alles eingebaut</td></tr><tr><th scope="row">Update per Knopf</th><td data-label="Nodvard Deck">mit dem Update-Helfer, den du bewusst einschaltest</td><td data-label="Nodvard Dock">nein, <code>docker compose pull &amp;&amp; docker compose up -d</code></td></tr></tbody>
+      <tbody><tr><th scope="row">Container und Stacks</th><td data-label="Nodvard Deck">ja</td><td data-label="Nodvard Dock">ja</td></tr><tr><th scope="row">Proxmox und Proxmox-Backups</th><td data-label="Nodvard Deck">ja</td><td data-label="Nodvard Dock">nein</td></tr><tr><th scope="row">Shield: Virenschutz, Updates, Einbruchschutz</th><td data-label="Nodvard Deck">ja</td><td data-label="Nodvard Dock">nein</td></tr><tr><th scope="row">Apps, Integrationen und Meldungen</th><td data-label="Nodvard Deck">ja</td><td data-label="Nodvard Dock">nein</td></tr><tr><th scope="row">Module auswählen</th><td data-label="Nodvard Deck">der Assistent fragt, was du nutzen willst</td><td data-label="Nodvard Dock">nur das Docker-Modul enthalten</td></tr><tr><th scope="row">Update per Knopf</th><td data-label="Nodvard Deck">mit dem Update-Helfer, den du bewusst einschaltest</td><td data-label="Nodvard Dock">nein, <code>docker compose pull &amp;&amp; docker compose up -d</code></td></tr></tbody>
     </table></div>
     <p><a href="dock.html">Mehr zu Nodvard Dock</a></p>
 
-    <h2>Zwei Abende im Homelab</h2>
+    <h2 id="beispiele">Zwei Abende im Homelab</h2>
     <p>Du öffnest nach Feierabend die Übersicht. Bei den Backups steht, dass ein Gast gar keinen Backup-Job hat. Auf der Seite <a href="funktionen.html#backups">Proxmox-Backups</a> legst du den fehlenden Job direkt in Deck an.</p>
     <p>Ein neuer Dienst findet seine Datenbank nicht, weil die beiden in verschiedenen Docker-Netzen hängen. Im Reiter Netze verbindest du den Container mit dem Netz der Datenbank. Wäre ein Container danach ganz ohne Netz, warnt dich die Rückfrage vorher. Mehr unter <a href="funktionen.html#docker">Docker</a>.</p>
 
-    <h2>Was Deck nicht ist</h2>
+    <h2 id="grenzen">Was Deck nicht ist</h2>
     <ul>
       <li><strong>Kein Installationsprogramm:</strong> Docker und deine Anwendungen richtest du selbst ein.</li>
       <li><strong>Nichts ohne Rechte:</strong> Deck braucht einen SSH-Zugang. Manche Funktionen brauchen Root-Rechte oder die Gruppe docker, die praktisch genauso mächtig ist.</li>
       <li><strong>Kein Schutzschild:</strong> Scans, Audits und Warnungen helfen dir beim Prüfen. Sie machen einen Server aber nicht sicher und erkennen nicht jeden Angriff.</li>
-      <li><strong>Ein privates Projekt in der Beta:</strong> Deck läuft bei mir rund um die Uhr. Garantierte Verfügbarkeit oder Support rund um die Uhr gibt es trotzdem nicht, und Datenformate können sich noch ändern.</li>
+      <li><strong>Ein privates Projekt in der Beta:</strong> Deck läuft bei mir rund um die Uhr. Feste Verfügbarkeit oder Support rund um die Uhr gibt es trotzdem nicht, und Datenformate können sich noch ändern.</li>
       <li><strong>Noch nicht auf Englisch:</strong> Die Oberfläche gibt es bisher nur auf Deutsch.</li>
     </ul>
   </div>

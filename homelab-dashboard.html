@@ -53,37 +53,37 @@
   </figure>
 
   <div class="prose">
-    <h2>Kachel-Startseite oder Server-Verwaltung?</h2>
+    <h2 id="unterschiede">Unterschied zu Homepage, Homarr, Heimdall und Dashy</h2>
     <p>Homepage, Homarr, Heimdall oder Dashy sind gut darin, Links und ein paar Zahlen zu deinen Diensten zu sammeln. Das macht in Deck die Seite Apps. Mir hat das allein nicht gereicht. Ich wollte auch sehen, wie es meinen Servern, VMs, Containern und Backups geht, und gleich eingreifen können: einen Container neu starten, ein Image-Update einspielen und notfalls zurückdrehen oder ein Backup anstoßen. Was du dabei änderst, steht hinterher im Protokoll.</p>
 
-    <h2>Was auf der Übersicht steht</h2>
+    <h2 id="uebersicht">Was auf der Übersicht steht</h2>
     <p>Ganz oben stehen fünf Zahlen: wie viele Server online sind, wie viele Container laufen, welche Backups keinen Lauf hatten, wie viele Meldungen ungelesen sind und welche Aktionen auf dich warten. Darunter listet Deck deine Server, VMs und LXC mit Zustand und Laufzeit auf.</p>
     <p>Rechts steht, worum du dich gerade kümmern solltest, etwa eine fast volle Platte oder ein fehlgeschlagenes Backup. Die Widgets kannst du in Gruppen ordnen, einzeln zuklappen und im Bearbeiten-Modus verschieben.</p>
 
-    <h2>Nicht nur anschauen, auch eingreifen</h2>
+    <h2 id="eingreifen">Nicht nur anschauen, auch eingreifen</h2>
     <p>Wenn ein Container hängt, startest du ihn gleich hier neu. Genauso fährst du eine VM hoch oder spielst offene Updates ein. Bevor Deck dabei etwas verändert, fragt es dich. Was ohne Nachfrage laufen darf, stellst du selbst ein, und hinterher steht jede Aktion im Protokoll.</p>
   </div>
 
   <div class="show">
     <figure><picture><img src="assets/img/apps-1040.webp" srcset="assets/img/apps-1040.webp 1040w, assets/img/apps.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="Die Seite Apps: Kacheln für Router, Pi-hole, Home Assistant, ein Synology NAS und Monitoring, in Ordnern sortiert."></picture></figure>
     <div class="show-text">
-      <h2>Eine Startseite für deine Dienste</h2>
+      <h2 id="startseite">Eine Startseite für deine Dienste</h2>
       <p>Unter Apps liegt jede Weboberfläche aus deinem Netz als Kachel, sortiert in Ordnern. Container mit Weboberfläche findet Deck auf deinen Docker-Servern von selbst, eigene Apps fügst du mit Adresse und Symbol hinzu.</p>
       <a href="funktionen.html#apps">Mehr zu Apps</a>
     </div>
   </div>
 
   <div class="prose">
-    <h2>Für Einsteiger und für Profis</h2>
+    <h2 id="einsteiger-profis">Für Einsteiger und für Profis</h2>
     <ul>
       <li>Einen Server richtest du in der Oberfläche ein, auch mit Benutzer und Passwort. Ein Terminal brauchst du dafür nicht.</li>
-      <li>Proxmox verbindest du in einem Schritt mit dem Passwort. Für Docker in Gästen, Terminal und Virenschutz kommt je Server noch SSH dazu.</li>
+      <li>Proxmox bindest du direkt in der Oberfläche an. Für Docker in Gästen, Terminal und Virenschutz kommt je Server noch SSH dazu.</li>
       <li>Zum Reinschauen gibt es Beispieldaten, die du später wieder löschst.</li>
       <li>Die Grundeinstellungen passen meistens. Mehr Optionen liegen unter „Erweitert“.</li>
       <li>Wenn etwas klemmt, steht in der Meldung, was los ist und was du jetzt tun kannst, statt nur einem Fehlercode.</li>
     </ul>
 
-    <h2>Was du brauchst</h2>
+    <h2 id="voraussetzungen">Was du brauchst</h2>
     <p>Einen Rechner mit Docker und Docker Compose, etwa einen Raspberry Pi 4 oder 5 mit 64-Bit-System oder einen x86-64-Rechner. Im Leerlauf braucht Deck rund 100 MB Arbeitsspeicher. Proxmox brauchst du nicht, ein Pi, ein NAS oder ein paar Docker-Hosts reichen auch. Mehr dazu in den <a href="faq.html">häufigen Fragen</a>.</p>
   </div>
 </div>

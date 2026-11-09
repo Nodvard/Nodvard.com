@@ -54,7 +54,7 @@
   </figure>
 
   <div class="prose">
-    <h2>What Shield does</h2>
+    <h2 id="features">What Shield does</h2>
     <ul>
       <li><strong>Virus scans with ClamAV</strong> as a quick scan, deep scan or on a schedule, for all servers from one place.</li>
       <li><strong>Real-time watcher</strong> that regularly checks new and changed files in typical folders such as <code>/tmp</code> or <code>/home</code>, every 10 minutes by default. If you like, you switch a server to real time (ClamAV <code>clamonacc</code>) when there is enough memory, because <code>clamd</code> needs about 1 GB for it.</li>
@@ -66,10 +66,10 @@
       <li><strong>Morning briefing</strong> with what happened overnight, sent to your phone if you like.</li>
     </ul>
 
-    <h2>What Shield does not promise</h2>
+    <h2 id="limitations">What Shield does not promise</h2>
     <p>No scanner finds everything, ClamAV included. Shield shows you what’s going on on your servers and tells you what you can do. How much of it happens automatically is up to you.</p>
 
-    <h2>What you need</h2>
+    <h2 id="requirements">What you need</h2>
     <p>Linux servers that Nodvard Deck can reach over SSH. With the helper script or sudo rights, Shield sees the most. Without those rights it can only partly read things like the SSH log, Fail2ban and the processes behind open ports. When ClamAV, Lynis or Fail2ban are still missing, Shield installs them with a button. It asks you first.</p>
     <p>Findings and warnings end up in the <a href="features.html#meldungen">notifications</a> and, if you like, on your phone via ntfy, Telegram, Discord or other channels.</p>
   </div>

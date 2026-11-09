@@ -53,7 +53,7 @@
   </figure>
 
   <div class="prose">
-    <h2>Was Shield macht</h2>
+    <h2 id="was-shield-macht">Was Shield macht</h2>
     <ul>
       <li><strong>Virenscan mit ClamAV</strong> als Schnellscan, Tiefenscan oder nach Zeitplan, für alle Server von einer Stelle aus.</li>
       <li><strong>Echtzeit-Wächter</strong>, der neue und geänderte Dateien in typischen Ordnern wie <code>/tmp</code> oder <code>/home</code> regelmäßig prüft, standardmäßig alle 10 Minuten. Auf Wunsch schaltest du je Server auf Echtzeit um (ClamAV <code>clamonacc</code>), wenn genug Arbeitsspeicher da ist, denn <code>clamd</code> braucht dafür rund 1 GB.</li>
@@ -65,10 +65,10 @@
       <li><strong>Morgen-Briefing</strong> mit dem Stand der Nacht, auf Wunsch aufs Handy.</li>
     </ul>
 
-    <h2>Was Shield nicht verspricht</h2>
+    <h2 id="grenzen">Was Shield nicht verspricht</h2>
     <p>Kein Scanner findet alles, ClamAV auch nicht. Shield zeigt dir, was auf deinen Servern los ist, und sagt, was du tun kannst. Wie viel davon automatisch passiert, stellst du selbst ein.</p>
 
-    <h2>Was du brauchst</h2>
+    <h2 id="voraussetzungen">Was du brauchst</h2>
     <p>Linux-Server, auf die Nodvard Deck per SSH kommt. Mit dem Hilfsskript oder sudo-Rechten sieht Shield am meisten. Ohne diese Rechte kann es zum Beispiel das SSH-Protokoll, Fail2ban und die Prozesse hinter offenen Ports nur zum Teil lesen. Wenn ClamAV, Lynis oder Fail2ban noch fehlen, installiert Shield sie per Knopf nach. Vorher fragt es dich.</p>
     <p>Funde und Warnungen landen in den <a href="funktionen.html#meldungen">Meldungen</a> und auf Wunsch per ntfy, Telegram, Discord oder anderen Kanälen auf deinem Handy.</p>
   </div>

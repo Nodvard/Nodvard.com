@@ -55,7 +55,7 @@
   <div class="show">
     <figure><picture><img src="assets/img/server-1040.webp" srcset="assets/img/server-1040.webp 1040w, assets/img/server.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Seite eines Proxmox-Knotens: Zugang, CPU, RAM, Laufzeit und der Verlauf der Auslastung."></picture></figure>
     <div class="show-text">
-      <h2>Proxmox</h2>
+      <h2 id="proxmox">Proxmox</h2>
       <p>Knoten, VMs und LXC startest und stoppst du in Deck, die Konsole läuft im Browser. Snapshots, Hardware, Speicher und Updates siehst du je Gast, dazu Festplatten-Zustand, ZFS und Temperatur der Knoten. Proxmox bindest du direkt in der Oberfläche an. Für Docker in Gästen kommt SSH je Gast dazu.</p>
       <a href="funktionen.html#server">Mehr zu Proxmox</a>
     </div>
@@ -63,7 +63,7 @@
   <div class="show show-flip">
     <figure><picture><img src="assets/img/stacks-1040.webp" srcset="assets/img/stacks-1040.webp 1040w, assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="Der Reiter Stacks: Compose-Projekte eines Servers mit Zustand und Knöpfen zum Bearbeiten, Anwenden und Aktualisieren."></picture></figure>
     <div class="show-text">
-      <h2>Docker in deinen Gästen</h2>
+      <h2 id="docker-gaeste">Docker in deinen Gästen</h2>
       <p>Läuft Docker in einer VM oder einem LXC, verbindet sich Deck per SSH und zeigt dir Container und Compose-Stacks dieses Gasts. Und wenn ein Update schiefgeht, kommst du zurück zur alten Version. Stacks bearbeitest du als Text oder im Formular.</p>
       <a href="funktionen.html#docker">Mehr zu Docker</a>
     </div>
@@ -71,14 +71,14 @@
   <div class="show">
     <figure><picture><img src="assets/img/backups-1040.webp" srcset="assets/img/backups-1040.webp 1040w, assets/img/backups.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Seite Proxmox-Backups: ein Gast ohne Backup-Job, Backup-Jobs mit Zeitplan und letztem Lauf, ein fehlgeschlagener Lauf."></picture></figure>
     <div class="show-text">
-      <h2>Proxmox-Backups im Blick</h2>
+      <h2 id="backups">Proxmox-Backups im Blick</h2>
       <p>Deck zeigt alle Backup-Jobs mit letztem Lauf und vorhandenen Sicherungen. Fehlt für einen Gast ein Job oder ist ein Lauf fehlgeschlagen, steht das oben. Wiederherstellen geht als Kopie, das Original bleibt, wie es ist.</p>
       <a href="funktionen.html#backups">Mehr zu Backups</a>
     </div>
   </div>
 
   <div class="prose">
-    <h2>Auch ohne Proxmox</h2>
+    <h2 id="ohne-proxmox">Auch ohne Proxmox</h2>
     <p>Proxmox brauchst du nicht. Hast du nur einen Raspberry Pi, ein NAS oder ein paar Docker-Hosts, zeigt Deck eben die. Proxmox kannst du auch später noch dazunehmen.</p>
   </div>
 </div>

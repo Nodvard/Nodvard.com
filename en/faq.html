@@ -51,16 +51,16 @@
 
   <div class="prose faq">
     <h2 id="cost">What does Nodvard Deck cost?</h2>
-    <p>Nothing for personal use. You don’t need an account with Nodvard, and there’s no subscription and no advertising. If you want to use Deck in a company, you need permission. Just ask at <!--email_off--><a href="mailto:kontakt@nodvard.com">kontakt@nodvard.com</a><!--/email_off-->.</p>
+    <p>Nothing for personal use. You don’t need an account with Nodvard, and there’s no subscription and no advertising. If you want to use Deck in a company, you need permission. Read more under <a href="license.html">License</a>. Just ask at <!--email_off--><a href="mailto:kontakt@nodvard.com">kontakt@nodvard.com</a><!--/email_off-->.</p>
 
     <h2 id="source">Can I read the source code?</h2>
-    <p>Yes, it’s public on GitHub. Deck is licensed under the PolyForm Noncommercial License 1.0.0. For personal and other noncommercial purposes you may use it, read the code and adapt it for yourself. For commercial use you need permission.</p>
+    <p>Yes, it’s public on GitHub. Deck is licensed under the PolyForm Noncommercial License 1.0.0. For personal and other noncommercial purposes you may use it, read the code and adapt it for yourself. More details are on the <a href="license.html">License</a> page.</p>
 
     <h2 id="data">Does Nodvard Deck phone home?</h2>
     <p>No. Deck sends no usage data to Nodvard on its own. On its own, it only asks GitHub whether there’s a new version. You can turn that off under Settings, System, Updates. For image updates, Deck checks with the registry of your images. Messages to Telegram, Discord or other services only go out if you set up a channel for them.</p>
 
     <h2 id="requirements">What do I need?</h2>
-    <p>A machine with Docker and Docker Compose, with 64-bit ARM (arm64) or x86-64. Idle, Nodvard Deck uses about 100 MB of RAM, and the image is just under 400 MB. Deck reaches your servers over SSH. No service and no agent of its own runs on them. For tasks that need root, the setup puts small helper scripts into <code>/usr/local/lib/nodvard-deck</code>, which Deck calls via sudo. <a href="https://github.com/nodvard/deck/blob/main/docs/en/FIRST-SETUP.md#f-root-rights-without-a-password-and-the-docker-group">What each helper script may do</a>.</p>
+    <p>A machine with Docker and Docker Compose, with 64-bit ARM (arm64) or x86-64. Idle, Nodvard Deck uses about 100 MB of RAM, and the image is just under 400 MB. Deck reaches your servers over SSH, including the host machine it runs on. No service and no agent of its own runs on them. For tasks that need root, the setup puts small helper scripts into <code>/usr/local/lib/nodvard-deck</code>, which Deck calls via sudo. <a href="https://github.com/nodvard/deck/blob/main/docs/en/FIRST-SETUP.md#f-root-rights-without-a-password-and-the-docker-group">What each helper script may do</a>.</p>
 
     <h2 id="raspberry-pi">Does it run on a Raspberry Pi?</h2>
     <p>Yes, on a Raspberry Pi 4 or 5 with 4 GB of RAM and a 64-bit system. SD cards like to die. A USB SSD lasts longer, and your backups shouldn’t live only on the Pi. The guide <a href="backup-nas-nfs.html">Back up to a NAS or NFS share</a> shows how.</p>

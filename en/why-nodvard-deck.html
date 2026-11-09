@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Why Nodvard Deck: who it is for and what it is not</title>
+<title>Why Nodvard Deck: homelab management over SSH without an agent</title>
 <meta name="description" content="Who Nodvard Deck is for, what it does differently and what it cannot do. Self-hosted, source code viewable, free for personal use.">
 <link rel="canonical" href="https://nodvard.com/en/why-nodvard-deck.html">
 <link rel="alternate" hreflang="de" href="https://nodvard.com/warum-nodvard-deck.html">
@@ -12,15 +12,15 @@
 <meta name="theme-color" content="#0c1626">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
-<meta property="og:title" content="Why Nodvard Deck: who it is for and what it is not">
+<meta property="og:title" content="Why Nodvard Deck: homelab management over SSH without an agent">
 <meta property="og:description" content="Who Nodvard Deck is for, what it does differently and what it cannot do. Self-hosted, source code viewable, free for personal use.">
 <meta property="og:url" content="https://nodvard.com/en/why-nodvard-deck.html">
 <meta property="og:image" content="https://nodvard.com/assets/og/start-en.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Preview image: Why Nodvard Deck: who it is for and what it is not">
+<meta property="og:image:alt" content="Preview image: Nodvard Deck: Homelab dashboard for Proxmox and Docker">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Why Nodvard Deck: who it is for and what it is not">
+<meta name="twitter:title" content="Why Nodvard Deck: homelab management over SSH without an agent">
 <meta name="twitter:description" content="Who Nodvard Deck is for, what it does differently and what it cannot do. Self-hosted, source code viewable, free for personal use.">
 <meta name="twitter:image" content="https://nodvard.com/assets/og/start-en.jpg">
 <meta property="og:locale" content="en_US">
@@ -49,37 +49,37 @@
   </header>
 
   <div class="prose">
-    <h2>Who Deck is for</h2>
+    <h2 id="target-audience">Who Deck is for</h2>
     <p>For you, if you run a few servers at home and want to know how they are doing. That can be a Raspberry Pi, a Debian VM, a NAS or a few Docker hosts. You don’t need Proxmox, but Deck works with it if you have it.</p>
     <p>Deck itself runs as a container in your home network. From outside, a VPN is the way in, not the open internet. It costs nothing for personal use. The license is PolyForm Noncommercial, and anyone can read the source code. More in <a href="license.html">the license in plain words</a>.</p>
 
-    <h2>What Deck does differently</h2>
+    <h2 id="differences">What Deck does differently</h2>
     <ul>
       <li>Deck talks to your servers over SSH. No agent of its own runs there, and Deck’s container gets no Docker socket.</li>
       <li>Server health, Proxmox, Docker and backups sit side by side instead of spread across several interfaces.</li>
       <li>Before Deck changes anything, it asks, and afterwards every action is in the log. Things only happen without asking if you turn on automation, and for Shield’s quarantine, which is on by default.</li>
       <li>Credentials are stored encrypted in the vault.</li>
-      <li>You turn each module on or off on its own. You can write your own modules with the <a href="https://github.com/nodvard/deck/blob/main/docs/02-EXTENSION-API.md">documented SDK</a>.</li>
+      <li>You turn each module on or off on its own. You can write your own modules with the <a href="https://github.com/nodvard/deck/blob/main/docs/02-EXTENSION-API.md">documented SDK</a> (German).</li>
     </ul>
 
-    <h2>Do you need Deck, or is Dock enough?</h2>
+    <h2 id="deck-or-dock">Do you need Deck, or is Dock enough?</h2>
     <p>Dock is the same code with only the Docker part. If you only want to manage containers and stacks, it is enough.</p>
     <div class="table-wrap"><table class="vergleich">
       <thead><tr><th scope="col"></th><th scope="col">Nodvard Deck</th><th scope="col">Nodvard Dock</th></tr></thead>
-      <tbody><tr><th scope="row">Containers and stacks</th><td data-label="Nodvard Deck">yes</td><td data-label="Nodvard Dock">yes</td></tr><tr><th scope="row">Proxmox and Proxmox backups</th><td data-label="Nodvard Deck">yes</td><td data-label="Nodvard Dock">no</td></tr><tr><th scope="row">Shield: antivirus, updates, intrusion checks</th><td data-label="Nodvard Deck">yes</td><td data-label="Nodvard Dock">no</td></tr><tr><th scope="row">Apps, integrations and notifications</th><td data-label="Nodvard Deck">yes</td><td data-label="Nodvard Dock">no</td></tr><tr><th scope="row">Choosing modules</th><td data-label="Nodvard Deck">the assistant asks what you want to use</td><td data-label="Nodvard Dock">fixed modules, everything built in</td></tr><tr><th scope="row">One-click update</th><td data-label="Nodvard Deck">with the update helper, which you turn on on purpose</td><td data-label="Nodvard Dock">no, <code>docker compose pull &amp;&amp; docker compose up -d</code></td></tr></tbody>
+      <tbody><tr><th scope="row">Containers and stacks</th><td data-label="Nodvard Deck">yes</td><td data-label="Nodvard Dock">yes</td></tr><tr><th scope="row">Proxmox and Proxmox backups</th><td data-label="Nodvard Deck">yes</td><td data-label="Nodvard Dock">no</td></tr><tr><th scope="row">Shield: antivirus, updates, intrusion checks</th><td data-label="Nodvard Deck">yes</td><td data-label="Nodvard Dock">no</td></tr><tr><th scope="row">Apps, integrations and notifications</th><td data-label="Nodvard Deck">yes</td><td data-label="Nodvard Dock">no</td></tr><tr><th scope="row">Choosing modules</th><td data-label="Nodvard Deck">the assistant asks what you want to use</td><td data-label="Nodvard Dock">only the Docker module included</td></tr><tr><th scope="row">One-click update</th><td data-label="Nodvard Deck">with the update helper, which you turn on on purpose</td><td data-label="Nodvard Dock">no, <code>docker compose pull &amp;&amp; docker compose up -d</code></td></tr></tbody>
     </table></div>
     <p><a href="dock.html">More about Nodvard Dock</a></p>
 
-    <h2>Two evenings in the homelab</h2>
+    <h2 id="examples">Two evenings in the homelab</h2>
     <p>You open the overview after work. The backups say that one guest has no backup job at all. On the <a href="features.html#backups">Proxmox backups</a> page you create the missing job right in Deck.</p>
     <p>A new service can’t find its database because the two sit in different Docker networks. In the Networks tab you connect the container to the database’s network. If a container would end up with no network at all, the confirmation warns you first. More under <a href="features.html#docker">Docker</a>.</p>
 
-    <h2>What Deck is not</h2>
+    <h2 id="limitations">What Deck is not</h2>
     <ul>
       <li><strong>Not an installer:</strong> you set up Docker and your applications yourself.</li>
       <li><strong>Nothing without permissions:</strong> Deck needs SSH access. Some features need root rights or the docker group, which is practically just as powerful.</li>
       <li><strong>Not a shield:</strong> scans, audits and warnings help you check things. They don’t make a server secure and don’t catch every attack.</li>
-      <li><strong>A personal project in beta:</strong> Deck runs around the clock at my place. There is still no guaranteed uptime or round-the-clock support, and data formats can still change.</li>
+      <li><strong>A personal project in beta:</strong> Deck runs around the clock at my place. There is still no fixed availability or round-the-clock support, and data formats can still change.</li>
       <li><strong>Not in English yet:</strong> the interface is only in German so far.</li>
     </ul>
   </div>

@@ -56,7 +56,7 @@
   <div class="show">
     <figure><picture><img src="../assets/img/server-1040.webp" srcset="../assets/img/server-1040.webp 1040w, ../assets/img/server.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The page of a Proxmox node: access, CPU, RAM, uptime and the load history."></picture></figure>
     <div class="show-text">
-      <h2>Proxmox</h2>
+      <h2 id="proxmox">Proxmox</h2>
       <p>You start and stop nodes, VMs and LXC in Deck, and the console runs in your browser. Snapshots, hardware, storage and updates are shown for each guest, plus disk health, ZFS and temperature of the nodes. You connect Proxmox directly in the interface. For Docker in guests, SSH is added for each guest.</p>
       <a href="features.html#server">More about Proxmox</a>
     </div>
@@ -64,7 +64,7 @@
   <div class="show show-flip">
     <figure><picture><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="The Stacks tab: Compose projects of one server with status and buttons to edit, apply and update."></picture></figure>
     <div class="show-text">
-      <h2>Docker in your guests</h2>
+      <h2 id="docker-guests">Docker in your guests</h2>
       <p>If Docker runs in a VM or an LXC, Deck connects over SSH and shows you that guest’s containers and Compose stacks. If an update goes wrong, you go back to the old version. You edit stacks as text or in a form.</p>
       <a href="features.html#docker">More about Docker</a>
     </div>
@@ -72,14 +72,14 @@
   <div class="show">
     <figure><picture><img src="../assets/img/backups-1040.webp" srcset="../assets/img/backups-1040.webp 1040w, ../assets/img/backups.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The Proxmox backups page: a guest without a backup job, backup jobs with schedule and last run, one failed run."></picture></figure>
     <div class="show-text">
-      <h2>Keep an eye on Proxmox backups</h2>
+      <h2 id="backups">Keep an eye on Proxmox backups</h2>
       <p>Deck shows all backup jobs with their last run and existing backups. If a guest has no job or a run has failed, it says so at the top. Restoring works as a copy, and the original stays as it is.</p>
       <a href="features.html#backups">More about backups</a>
     </div>
   </div>
 
   <div class="prose">
-    <h2>Without Proxmox, too</h2>
+    <h2 id="without-proxmox">Without Proxmox, too</h2>
     <p>You don’t need Proxmox. If all you have is a Raspberry Pi, a NAS or a few Docker hosts, Deck simply shows those. You can still add Proxmox later.</p>
   </div>
 </div>

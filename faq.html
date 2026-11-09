@@ -50,16 +50,16 @@
 
   <div class="prose faq">
     <h2 id="kosten">Was kostet Nodvard Deck?</h2>
-    <p>Privat nichts. Du brauchst kein Konto bei Nodvard, und es gibt weder Abo noch Werbung. Willst du Deck in einer Firma nutzen, brauchst du eine Erlaubnis. Frag dafür einfach an unter <!--email_off--><a href="mailto:kontakt@nodvard.com">kontakt@nodvard.com</a><!--/email_off-->.</p>
+    <p>Privat nichts. Du brauchst kein Konto bei Nodvard, und es gibt weder Abo noch Werbung. Willst du Deck in einer Firma nutzen, brauchst du eine Erlaubnis. Mehr dazu steht unter <a href="lizenz.html">Lizenz</a>. Frag dafür einfach an unter <!--email_off--><a href="mailto:kontakt@nodvard.com">kontakt@nodvard.com</a><!--/email_off-->.</p>
 
     <h2 id="quellcode">Kann ich den Quellcode sehen?</h2>
-    <p>Ja, er liegt öffentlich auf GitHub. Deck steht unter der PolyForm Noncommercial License 1.0.0. Privat und für andere nicht-kommerzielle Zwecke darfst du es nutzen, den Code lesen und für dich anpassen. Für kommerzielle Nutzung brauchst du eine Erlaubnis.</p>
+    <p>Ja, er liegt öffentlich auf GitHub. Deck steht unter der PolyForm Noncommercial License 1.0.0. Privat und für andere nicht-kommerzielle Zwecke darfst du es nutzen, den Code lesen und für dich anpassen. Einzelheiten findest du auf der Seite <a href="lizenz.html">Lizenz</a>.</p>
 
     <h2 id="daten">Sendet Nodvard Deck Daten nach Hause?</h2>
     <p>Nein. Deck schickt von sich aus keine Nutzungsdaten an Nodvard. Von sich aus fragt es nur bei GitHub, ob es eine neue Version gibt. Das kannst du unter Einstellungen, System, Updates abschalten. Für Image-Updates fragt Deck bei der Registry deiner Images nach. Nachrichten an Telegram, Discord oder andere Dienste gehen nur raus, wenn du dafür einen Kanal einrichtest.</p>
 
     <h2 id="voraussetzungen">Was brauche ich?</h2>
-    <p>Einen Rechner mit Docker und Docker Compose, mit 64-Bit-ARM (arm64) oder x86-64. Im Leerlauf braucht Nodvard Deck rund 100 MB Arbeitsspeicher, das Image ist knapp 400 MB groß. Deine Server erreicht Deck per SSH. Auf den Servern läuft kein eigener Dienst und kein Agent. Für Aufgaben, die root brauchen, legt die Einrichtung kleine Hilfsskripte unter <code>/usr/local/lib/nodvard-deck</code> an, die Deck per sudo aufruft. <a href="https://github.com/nodvard/deck/blob/main/docs/11-ERST-EINRICHTUNG.md#f-root-rechte-ohne-passwort-und-gruppe-docker">Was jedes Hilfsskript darf</a>.</p>
+    <p>Einen Rechner mit Docker und Docker Compose, mit 64-Bit-ARM (arm64) oder x86-64. Im Leerlauf braucht Nodvard Deck rund 100 MB Arbeitsspeicher, das Image ist knapp 400 MB groß. Deine Server erreicht Deck per SSH, auch den Rechner, auf dem es selbst läuft. Auf den Servern läuft kein eigener Dienst und kein Agent. Für Aufgaben, die root brauchen, legt die Einrichtung kleine Hilfsskripte unter <code>/usr/local/lib/nodvard-deck</code> an, die Deck per sudo aufruft. <a href="https://github.com/nodvard/deck/blob/main/docs/11-ERST-EINRICHTUNG.md#f-root-rechte-ohne-passwort-und-gruppe-docker">Was jedes Hilfsskript darf</a>.</p>
 
     <h2 id="raspberry-pi">Läuft es auf dem Raspberry Pi?</h2>
     <p>Ja, auf einem Raspberry Pi 4 oder 5 mit 4 GB RAM und 64-Bit-System. SD-Karten gehen gern mal kaputt. Eine USB-SSD hält länger, und deine Sicherungen sollten nicht nur auf dem Pi liegen. Wie das geht, steht in der Anleitung <a href="sicherung-nas-nfs.html">Sicherungen auf ein NAS oder NFS</a>.</p>

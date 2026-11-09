@@ -54,37 +54,37 @@
   </figure>
 
   <div class="prose">
-    <h2>A page of tiles or server management?</h2>
+    <h2 id="differences">Difference from Homepage, Homarr, Heimdall and Dashy</h2>
     <p>Homepage, Homarr, Heimdall or Dashy are good at collecting links and a few numbers about your services. In Deck, the Apps page does that. For me, that alone wasn’t enough. I also wanted to see how my servers, VMs, containers and backups are doing, and step in right away: restart a container, apply an image update and roll it back if needed, or start a backup. Whatever you change is in the log afterwards.</p>
 
-    <h2>What the overview shows</h2>
+    <h2 id="overview">What the overview shows</h2>
     <p>Right at the top are five numbers: how many servers are online, how many containers are running, which backups had no run, how many notifications are unread and which actions are waiting for you. Below, Deck lists your servers, VMs and LXC with status and uptime.</p>
     <p>On the right is what you should take care of right now, such as an almost full disk or a failed backup. You can sort the widgets into groups, collapse them one by one and move them around in edit mode.</p>
 
-    <h2>Not just looking, also acting</h2>
+    <h2 id="taking-action">Not just looking, also acting</h2>
     <p>When a container hangs, you restart it right here. The same goes for starting a VM or applying pending updates. Before Deck changes anything, it asks you. What may run without asking is up to you, and afterwards every action is in the log.</p>
   </div>
 
   <div class="show">
     <figure><picture><img src="../assets/img/apps-1040.webp" srcset="../assets/img/apps-1040.webp 1040w, ../assets/img/apps.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="The Apps page: tiles for a router, Pi-hole, Home Assistant, a Synology NAS and monitoring, sorted into folders."></picture></figure>
     <div class="show-text">
-      <h2>A start page for your services</h2>
+      <h2 id="startpage">A start page for your services</h2>
       <p>Under Apps, every web interface in your network is a tile, sorted into folders. Deck finds containers with a web interface on your Docker servers on its own, and you add your own apps with an address and an icon.</p>
       <a href="features.html#apps">More about Apps</a>
     </div>
   </div>
 
   <div class="prose">
-    <h2>For beginners and for pros</h2>
+    <h2 id="beginners-and-pros">For beginners and for pros</h2>
     <ul>
       <li>You add a server in the interface, also with a username and password. You don’t need a terminal for it.</li>
-      <li>You connect Proxmox in one step with the password. For Docker in guests, terminal and antivirus, SSH is added for each server.</li>
+      <li>You connect Proxmox directly in the interface. For Docker in guests, terminal and antivirus, SSH is added for each server.</li>
       <li>For a first look there’s sample data, which you delete later.</li>
       <li>The defaults usually fit. More options are under “Advanced”.</li>
       <li>When something gets stuck, the message says what’s going on and what you can do now, instead of just an error code.</li>
     </ul>
 
-    <h2>What you need</h2>
+    <h2 id="requirements">What you need</h2>
     <p>A machine with Docker and Docker Compose, for example a Raspberry Pi 4 or 5 with a 64-bit system or an x86-64 machine. Idle, Deck uses about 100 MB of RAM. You don’t need Proxmox, a Pi, a NAS or a few Docker hosts work too. More in the <a href="faq.html">FAQ</a>.</p>
   </div>
 </div>
