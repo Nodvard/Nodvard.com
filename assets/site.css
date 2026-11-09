@@ -347,9 +347,9 @@ h1, h2, h3 { font-weight: 850; letter-spacing: -0.03em; }
 .install, .lang-note, details.compose { background: var(--side); }
 .feature figure img, .show img, .split img, figure.wide img, .feature picture img { border-color: var(--line-strong); }
 .steps > li::before { background: var(--surface); border-color: var(--line-strong); }
-.bleed .vard-mini { width: 132px; border: 0; border-radius: 0; background: none; z-index: 2; }
-@media (max-width: 700px) { .bleed .vard-mini { display: none; } .bleed.ansicht { margin-top: 48px; } }
-@media (min-width: 1000px) { .bleed .vard-mini { width: 220px; top: -196px; } }
+.bleed .vard-mini { width: 120px; top: -96px; border: 0; border-radius: 0; background: none; z-index: 2; }
+@media (max-width: 900px) { .bleed .vard-mini { display: none; } .bleed.ansicht { margin-top: 48px; } }
+@media (min-width: 1152px) { .bleed .vard-mini { width: 168px; top: -140px; } }
 
 @media (max-width: 640px) {
   .table-wrap { overflow: visible; }

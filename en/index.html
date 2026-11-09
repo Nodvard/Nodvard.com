@@ -36,7 +36,7 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
-    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="why-nodvard-deck.html">Why Deck</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
     <a class="lang" href="../" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a><a class="btn-top" href="get-started.html">Install</a>
   </div>
 </header>
@@ -85,7 +85,7 @@
 
     <div class="rack">
     <div class="show slot">
-      <figure><picture><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 380px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="The Stacks tab with sample data: imported Compose stacks with status, folder and buttons to edit, apply and update."></picture></figure>
+      <figure><picture><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 380px, 500px" width="2080" height="1072" loading="lazy" decoding="async" alt="The Stacks tab with sample data: imported Compose stacks with status, folder and buttons to edit, apply and update."></picture></figure>
       <div class="show-text">
         <h3>Docker with stacks <span class="beta beta-new">New</span></h3>
         <p>Here you see the containers from all your servers together. You edit stacks right in Deck, as text or in a form, or you pull them from a Git repository. You can create networks here too, and save your own Compose files as templates. If you don’t like an update, you go back to the old version. Simple stacks from Portainer come along too, and the volumes stay where they are.</p>
@@ -93,7 +93,7 @@
       </div>
     </div>
     <div class="show slot">
-      <figure><picture><img src="../assets/img/server-1040.webp" srcset="../assets/img/server-1040.webp 1040w, ../assets/img/server.webp 2080w" sizes="(min-width: 901px) 380px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The page of a Proxmox node: access, CPU, RAM, uptime and the load history."></picture></figure>
+      <figure><picture><img src="../assets/img/server-1040.webp" srcset="../assets/img/server-1040.webp 1040w, ../assets/img/server.webp 2080w" sizes="(min-width: 901px) 380px, 500px" width="2080" height="1472" loading="lazy" decoding="async" alt="The page of a Proxmox node: access, CPU, RAM, uptime and the load history."></picture></figure>
       <div class="show-text">
         <h3>Servers and Proxmox</h3>
         <p>Every server has its own page in Deck. It shows how busy the server is, which services are running and which updates are pending. You start and stop VMs and LXC on Proxmox right here, and the console opens in your browser. Without Proxmox it works just as well.</p>
@@ -102,7 +102,7 @@
       </div>
     </div>
     <div class="show slot">
-      <figure><picture><img src="../assets/img/shield-1040.webp" srcset="../assets/img/shield-1040.webp 1040w, ../assets/img/shield.webp 2080w" sizes="(min-width: 901px) 380px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="The Nodvard Shield overview: protection score, protected servers, open threats, quarantine and what needs attention."></picture></figure>
+      <figure><picture><img src="../assets/img/shield-1040.webp" srcset="../assets/img/shield-1040.webp 1040w, ../assets/img/shield.webp 2080w" sizes="(min-width: 901px) 380px, 500px" width="2080" height="1472" loading="lazy" decoding="async" alt="The Nodvard Shield overview: protection score, protected servers, open threats, quarantine and what needs attention."></picture></figure>
       <div class="show-text">
         <h3>Nodvard Shield</h3>
         <p>Shield keeps an eye on your Linux servers. It looks for malware with ClamAV, checks the settings with Lynis and flags SSH logins that don’t look like you. You also see which addresses Fail2ban has banned. By default, findings go straight to quarantine, where you can take them out again at any time. If you don’t want that, turn it off.</p>
@@ -164,7 +164,7 @@ volumes:
   nodvard_deck_data:
     name: nodvard-deck-data</code></pre>
     </details>
-    <p class="intro">Then open <code>http://&lt;your-server&gt;:8080</code> in your browser. You find the setup code with <code>docker compose logs nodvard-deck</code> (the line starts with “Einrichtungscode”). At the end, the assistant asks whether you want to look around with sample data first.</p>
+    <p class="intro">Then open <code>http://&lt;your-server&gt;:8080</code> in your browser. You find the setup code with <code>docker compose logs nodvard-deck</code> (the line starts with “Einrichtungscode”). You connect your servers over SSH, including the machine on which Deck itself runs. At the end, the assistant asks whether you want to look around with sample data first.</p>
     <p class="more"><a href="get-started.html">Other ways, including Portainer, Synology or Unraid</a>. <a href="backup-nas-nfs.html">Back up to a NAS</a>.</p>
   </div>
 </section>
