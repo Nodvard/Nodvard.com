@@ -29,7 +29,7 @@
 <link rel="preload" href="../assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab dashboard","operatingSystem":"Linux (Docker, arm64 and x86-64)","softwareVersion":"0.13.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.13.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/en/","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"en","author":{"@type":"Person","name":"Nico Benks"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab dashboard","operatingSystem":"Linux (Docker, arm64 and x86-64)","softwareVersion":"0.13.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.13.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/en/features.html","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"en","author":{"@type":"Person","name":"Nico Benks"}}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Skip to content</a>
@@ -43,7 +43,7 @@
 <main id="inhalt">
 <div class="wrap">
   <header class="page-head">
-    <h1>Features</h1>
+    <h1>Features of Nodvard Deck: Proxmox, Docker, Shield and backups</h1>
     <p class="lead">Nodvard Deck is in beta. Here is everything it does today. Modules marked Beta are newer and haven’t been tested as long as the rest.</p>
     <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. This website and the guides are in English.</p>
   </header>
@@ -183,7 +183,7 @@
         <li>Deck can create a separate SSH key for each server. The private part stays in the vault.</li>
         <li>Secret values in scripts are taken from the vault only when the script runs</li>
         <li>Each module can only reach the credentials it has been granted</li>
-        <li>Encrypted with Fernet (AES-128 in CBC mode with HMAC-SHA256). The key is kept in a file of its own in Deck’s data folder, never in the database.</li>
+        <li>Encrypted with Fernet (AES-128 in CBC mode with HMAC-SHA256). The key is stored separately from the database in its own file in Deck’s data folder, so keep access to the <code>/app/data</code> volume restricted on the host.</li>
       </ul>
       <p><a href="https://github.com/nodvard/deck/blob/main/SECURITY.md">Notes on running it safely</a>. The short version: don’t put Deck straight on the internet, and turn on two-factor for every account.</p>
     </div>

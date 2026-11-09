@@ -43,7 +43,7 @@
 <div class="wrap">
   <header class="page-head">
     <h1>Virenschutz für alle deine Linux-Server</h1>
-    <p class="lead">Nodvard Shield lässt ClamAV auf deinen Servern laufen und zeigt dir die Funde von allen Servern zusammen und sagt dir, was jetzt zu tun ist. Außerdem prüft es mit Lynis die Einstellungen, zeigt offene Sicherheitsupdates und meldet ungewöhnliche Logins. Shield gehört zu Nodvard Deck.</p>
+    <p class="lead">Nodvard Shield lässt ClamAV auf deinen Servern laufen, zeigt dir die Funde von allen Servern zusammen und sagt dir, was jetzt zu tun ist. Außerdem prüft es mit Lynis die Einstellungen, zeigt offene Sicherheitsupdates und meldet ungewöhnliche Logins. Shield gehört zu Nodvard Deck.</p>
     <div class="btns"><a class="btn btn-main" href="loslegen.html">Loslegen</a><a class="btn btn-alt" href="funktionen.html#shield">Shield im Überblick</a></div>
   </header>
 
@@ -56,7 +56,7 @@
     <h2 id="was-shield-macht">Was Shield macht</h2>
     <ul>
       <li><strong>Virenscan mit ClamAV</strong> als Schnellscan, Tiefenscan oder nach Zeitplan, für alle Server von einer Stelle aus.</li>
-      <li><strong>Echtzeit-Wächter</strong>, der neue und geänderte Dateien in typischen Ordnern wie <code>/tmp</code> oder <code>/home</code> regelmäßig prüft, standardmäßig alle 10 Minuten. Auf Wunsch schaltest du je Server auf Echtzeit um (ClamAV <code>clamonacc</code>), wenn genug Arbeitsspeicher da ist, denn <code>clamd</code> braucht dafür rund 1 GB.</li>
+      <li><strong>Wächter für neue Dateien</strong>, der neue und geänderte Dateien in typischen Ordnern wie <code>/tmp</code> oder <code>/home</code> regelmäßig prüft, standardmäßig alle 10 Minuten. Auf Wunsch schaltest du je Server auf echte Echtzeit-Prüfung um (ClamAV <code>clamonacc</code>), wenn genug Arbeitsspeicher da ist, denn <code>clamd</code> braucht dafür rund 1 GB.</li>
       <li><strong>Quarantäne:</strong> Funde verschiebt Shield standardmäßig sofort in die Quarantäne, und das lässt sich rückgängig machen. Schaltest du das aus, warten Funde auf deine Entscheidung.</li>
       <li><strong>Härtungs-Check</strong> mit Lynis, mit den Hinweisen in Klartext.</li>
       <li><strong>Update-Zentrale</strong> mit den offenen Sicherheitsupdates je Server.</li>
@@ -71,6 +71,7 @@
     <h2 id="voraussetzungen">Was du brauchst</h2>
     <p>Linux-Server, auf die Nodvard Deck per SSH kommt. Mit dem Hilfsskript oder sudo-Rechten sieht Shield am meisten. Ohne diese Rechte kann es zum Beispiel das SSH-Protokoll, Fail2ban und die Prozesse hinter offenen Ports nur zum Teil lesen. Wenn ClamAV, Lynis oder Fail2ban noch fehlen, installiert Shield sie per Knopf nach. Vorher fragt es dich.</p>
     <p>Funde und Warnungen landen in den <a href="funktionen.html#meldungen">Meldungen</a> und auf Wunsch per ntfy, Telegram, Discord oder anderen Kanälen auf deinem Handy.</p>
+    <p>Shield schützt deine Server, egal ob einzelne Rechner oder <a href="proxmox-docker-dashboard.html">Proxmox-Knoten mit Docker</a>. Den Überblick über alles behältst du im <a href="homelab-dashboard.html">Homelab-Dashboard</a>.</p>
   </div>
 </div>
 

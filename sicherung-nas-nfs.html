@@ -29,6 +29,7 @@
 <link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Nodvard Deck","item":"https://nodvard.com/"},{"@type":"ListItem","position":2,"name":"Sicherungen auf ein NAS oder NFS","item":"https://nodvard.com/sicherung-nas-nfs.html"}]}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -56,9 +57,9 @@
     <li><strong>Den Ordner vom NAS einhängen</strong>, und zwar auf dem Rechner, auf dem Deck läuft, zum Beispiel unter <code>/srv/backup/deck</code>. Bei NFS als Zeile in <code>/etc/fstab</code>:
       <div class="cmd">
         <div class="cmd-head"><span>/etc/fstab</span><span class="sr" role="status"></span><button type="button" data-done="Kopiert" hidden data-copy="cmd-fstab">Kopieren</button></div>
-        <pre><code id="cmd-fstab">nas:/volume1/backup/deck  /srv/backup/deck  nfs  defaults,_netdev,x-systemd.before=docker.service  0  0</code></pre>
+        <pre><code id="cmd-fstab">nas:/volume1/backup/deck  /srv/backup/deck  nfs  defaults,_netdev,nofail,x-systemd.mount-timeout=30s,x-systemd.before=docker.service  0  0</code></pre>
       </div>
-      <p>Das NFS muss eingehängt sein, bevor Docker startet. Sonst bindet Docker den leeren Ordner auf der eigenen Platte ein, und die Sicherungen landen dort statt auf dem NAS. <code>_netdev</code> sagt dem System, dass es ein Netzlaufwerk ist, <code>x-systemd.before=docker.service</code> lässt Docker darauf warten.</p>
+      <p>Das NFS muss eingehängt sein, bevor Docker startet. Sonst bindet Docker den leeren Ordner auf der eigenen Platte ein, und die Sicherungen landen dort statt auf dem NAS. <code>_netdev</code> sagt dem System, dass es ein Netzlaufwerk ist, <code>x-systemd.before=docker.service</code> lässt Docker darauf warten, und <code>nofail</code> mit <code>x-systemd.mount-timeout=30s</code> sorgt dafür, dass der Rechner trotzdem startet, falls das NAS mal aus ist.</p>
     </li>
     <li><strong>Den Ordner in den Container geben.</strong> In der <code>compose.yml</code> steht unter <code>volumes:</code> schon eine vorbereitete Zeile. Nimm das <code>#</code> davor weg und trag deinen Pfad ein:
       <div class="cmd">

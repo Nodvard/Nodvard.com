@@ -29,7 +29,7 @@
 <link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab-Dashboard","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.13.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.13.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab-Dashboard","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.13.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.13.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/funktionen.html","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -43,7 +43,7 @@
 <main id="inhalt">
 <div class="wrap">
   <header class="page-head">
-    <h1>Funktionen</h1>
+    <h1>Funktionen von Nodvard Deck: Proxmox, Docker, Shield und Backups</h1>
     <p class="lead">Nodvard Deck ist in der Beta. Hier steht alles, was Deck heute kann. Bereiche mit dem Hinweis Beta sind neuer und noch nicht so lange erprobt wie der Rest.</p>
   </header>
   <nav aria-label="Bereiche auf dieser Seite"><ul class="tags"><li><a href="#server">Server und Proxmox</a></li><li><a href="#docker">Docker</a></li><li><a href="#shield">Shield</a></li><li><a href="#backups">Backups</a></li><li><a href="#apps">Apps</a></li><li><a href="#integrationen">Integrationen</a></li><li><a href="#tresor">Tresor</a></li><li><a href="#freigaben">Freigaben</a></li><li><a href="#meldungen">Meldungen</a></li></ul></nav>
@@ -182,7 +182,7 @@
         <li>Auf Wunsch erzeugt Deck für jeden Server einen eigenen SSH-Schlüssel. Der geheime Teil bleibt im Tresor.</li>
         <li>Geheime Werte in Skripten holt Deck erst beim Ausführen aus dem Tresor</li>
         <li>Jedes Modul kommt nur an die Zugangsdaten, für die es freigegeben ist</li>
-        <li>Verschlüsselt mit Fernet (AES-128 im CBC-Modus mit HMAC-SHA256). Der Schlüssel liegt in einer eigenen Datei im Datenordner von Deck, nie in der Datenbank.</li>
+        <li>Verschlüsselt mit Fernet (AES-128 im CBC-Modus mit HMAC-SHA256). Der Schlüssel liegt getrennt von der Datenbank in einer eigenen Datei im Datenordner von Deck. Schütze deshalb auf dem Host den Zugriff auf das Volume <code>/app/data</code>.</li>
       </ul>
       <p><a href="https://github.com/nodvard/deck/blob/main/SECURITY.md">Hinweise zum sicheren Betrieb</a> (Englisch). Das Wichtigste vorweg: Stell Deck nicht direkt ins Internet, und schalte für jedes Konto Zwei-Faktor ein.</p>
     </div>

@@ -29,6 +29,7 @@
 <link rel="preload" href="../assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Nodvard Deck","item":"https://nodvard.com/en/"},{"@type":"ListItem","position":2,"name":"Back up to a NAS or NFS share","item":"https://nodvard.com/en/backup-nas-nfs.html"}]}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Skip to content</a>
@@ -57,9 +58,9 @@
     <li><strong>Mount the NAS folder</strong> on the machine that runs Deck, for example under <code>/srv/backup/deck</code>. For NFS, as a line in <code>/etc/fstab</code>:
       <div class="cmd">
         <div class="cmd-head"><span>/etc/fstab</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-fstab">Copy</button></div>
-        <pre><code id="cmd-fstab">nas:/volume1/backup/deck  /srv/backup/deck  nfs  defaults,_netdev,x-systemd.before=docker.service  0  0</code></pre>
+        <pre><code id="cmd-fstab">nas:/volume1/backup/deck  /srv/backup/deck  nfs  defaults,_netdev,nofail,x-systemd.mount-timeout=30s,x-systemd.before=docker.service  0  0</code></pre>
       </div>
-      <p>The NFS share must be mounted before Docker starts. Otherwise Docker mounts the empty folder on the local disk, and the backups end up there instead of on the NAS. <code>_netdev</code> tells the system that it is a network drive, <code>x-systemd.before=docker.service</code> makes Docker wait for it.</p>
+      <p>The NFS share must be mounted before Docker starts. Otherwise Docker mounts the empty folder on the local disk, and the backups end up there instead of on the NAS. <code>_netdev</code> tells the system that it is a network drive, <code>x-systemd.before=docker.service</code> makes Docker wait for it, and <code>nofail</code> with <code>x-systemd.mount-timeout=30s</code> ensures that the machine still boots if the NAS is ever offline.</p>
     </li>
     <li><strong>Give the folder to the container.</strong> Under <code>volumes:</code>, <code>compose.yml</code> already contains a prepared line. Remove the <code>#</code> in front of it and put in your path:
       <div class="cmd">

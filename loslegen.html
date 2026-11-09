@@ -29,6 +29,7 @@
 <link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Nodvard Deck","item":"https://nodvard.com/"},{"@type":"ListItem","position":2,"name":"Loslegen","item":"https://nodvard.com/loslegen.html"}]}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -82,20 +83,20 @@ volumes:
         <pre><code id="cmd-logs">docker compose logs nodvard-deck</code></pre>
       </div>
       <p>Läuft auf dem Rechner schon etwas auf Port 8080? Dann <a href="#port">stell den Port um</a>.</p></li>
-    <li><strong>Dem Assistenten folgen.</strong> Er führt dich durch dein Konto und den ersten Server. Wer erst mal nur schauen will, nimmt Beispieldaten und wirft sie später wieder raus.</li>
+    <li><strong>Dem Assistenten folgen.</strong> Er führt dich durch dein Konto und den ersten Server. Für deine Server brauchst du nur einen SSH-Zugang (Benutzer und Passwort oder Schlüssel), auch für den Rechner, auf dem Deck selbst läuft. Proxmox bindest du direkt in der Oberfläche an. Wer erst mal nur schauen will, nimmt Beispieldaten und wirft sie später wieder raus.</li>
   </ol>
 
   <div class="prose">
     <h2 id="port">Port schon belegt?</h2>
     <p>Leg neben die <code>compose.yml</code> eine Datei <code>.env</code> mit der Zeile <code>NODVARD_DECK_PORT=8081</code> und führe <code>docker compose up -d</code> noch einmal aus. Deck ist dann unter Port 8081 erreichbar.</p>
 
-    <h2>Aktualisieren</h2>
+    <h2 id="aktualisieren">Aktualisieren</h2>
     <p>Im selben Ordner <code>docker compose pull &amp;&amp; docker compose up -d</code>. Deine Daten bleiben erhalten. Vor jedem Update, das die Datenbank umbaut, legt Deck selbst eine Kopie an.</p>
 
-    <h2>Nach der Installation</h2>
-    <p>Als Erstes solltest du die Sicherung einrichten, am besten auf ein NAS: <a href="sicherung-nas-nfs.html">Sicherungen auf ein NAS oder NFS</a>. Was du zu Lizenz, Daten oder Raspberry Pi wissen willst, steht in den <a href="faq.html">häufigen Fragen</a>.</p>
+    <h2 id="nach-der-installation">Nach der Installation</h2>
+    <p>Als Erstes solltest du die Sicherung einrichten, am besten auf ein NAS: <a href="sicherung-nas-nfs.html">Sicherungen auf ein NAS oder NFS</a>. Du willst nur Docker-Container und Stacks verwalten, ohne Proxmox oder Backups? Dann reicht <a href="dock.html">Nodvard Dock</a>. Was du zu Lizenz, Daten oder Raspberry Pi wissen willst, steht in den <a href="faq.html">häufigen Fragen</a>.</p>
 
-    <h2>Andere Wege</h2>
+    <h2 id="andere-wege">Andere Wege</h2>
     <p>Jeder Weg ist im README Schritt für Schritt beschrieben:</p>
     <ul>
       <li>Portainer, aus dem Repository oder mit dem Web-Editor</li>

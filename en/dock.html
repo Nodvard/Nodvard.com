@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Portainer alternative: Nodvard Dock for Docker stacks</title>
-<meta name="description" content="Nodvard Dock manages containers and Compose stacks on several servers. Simple stacks from Portainer move over with a button, your volumes stay.">
+<meta name="description" content="Docker Compose web UI without an agent: Nodvard Dock manages containers and Compose stacks on several servers. Simple stacks from Portainer move over with a button, your volumes stay.">
 <link rel="canonical" href="https://nodvard.com/en/dock.html">
 <link rel="alternate" hreflang="de" href="https://nodvard.com/dock.html">
 <link rel="alternate" hreflang="en" href="https://nodvard.com/en/dock.html">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
 <meta property="og:title" content="Portainer alternative: Nodvard Dock for Docker stacks">
-<meta property="og:description" content="Nodvard Dock manages containers and Compose stacks on several servers. Simple stacks from Portainer move over with a button, your volumes stay.">
+<meta property="og:description" content="Docker Compose web UI without an agent: Nodvard Dock manages containers and Compose stacks on several servers. Simple stacks from Portainer move over with a button, your volumes stay.">
 <meta property="og:url" content="https://nodvard.com/en/dock.html">
 <meta property="og:image" content="https://nodvard.com/assets/og/dock-en.jpg">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <meta property="og:image:alt" content="Preview image: Portainer alternative: Nodvard Dock for Docker stacks">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Portainer alternative: Nodvard Dock for Docker stacks">
-<meta name="twitter:description" content="Nodvard Dock manages containers and Compose stacks on several servers. Simple stacks from Portainer move over with a button, your volumes stay.">
+<meta name="twitter:description" content="Docker Compose web UI without an agent: Nodvard Dock manages containers and Compose stacks on several servers. Simple stacks from Portainer move over with a button, your volumes stay.">
 <meta name="twitter:image" content="https://nodvard.com/assets/og/dock-en.jpg">
 <meta property="og:locale" content="en_US">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -65,6 +65,14 @@
     </div>
   </div>
 
+  <div class="split" style="margin-top: 48px;">
+    <div>
+      <h3 id="migration-video">The move on video</h3>
+      <p class="intro">In 33 seconds, you see how Dock imports stacks from Portainer and runs an update with rollback.</p>
+    </div>
+    <figure class="clip-box"><video controls muted playsinline preload="none" poster="../assets/clips/dock-umzug.webp" width="540" height="960" aria-label="Clip without sound: a stack moves from Portainer to Nodvard Dock, the volumes stay."><source src="../assets/clips/dock-umzug.mp4" type="video/mp4"></video><figcaption>The move as a clip, 33 seconds, no sound.</figcaption></figure>
+  </div>
+
   <div class="prose">
     <h2 id="features">What Dock does</h2>
     <ul>
@@ -91,7 +99,7 @@
     <p>All three manage containers with Compose. What differs is mostly how more servers are added and where the Compose files live.</p>
     <div class="table-wrap"><table class="vergleich">
       <thead><tr><th scope="col"></th><th scope="col">Nodvard Dock</th><th scope="col">Portainer CE</th><th scope="col">Dockge</th></tr></thead>
-      <tbody><tr><th scope="row">Further servers</th><td data-label="Nodvard Dock">over SSH, no agent</td><td data-label="Portainer CE">Portainer Agent or Edge Agent on each server</td><td data-label="Dockge">Dockge agent on each further server</td></tr><tr><th scope="row">Compose files</th><td data-label="Nodvard Dock">in a folder on the server (default <code>/opt/stacks</code>)</td><td data-label="Portainer CE">in Portainer’s data storage</td><td data-label="Dockge">in a folder on the server (default <code>/opt/stacks</code>)</td></tr><tr><th scope="row">Swarm and Kubernetes</th><td data-label="Nodvard Dock">no</td><td data-label="Portainer CE">yes</td><td data-label="Dockge">no</td></tr><tr><th scope="row">Moving from Portainer</th><td data-label="Nodvard Dock">one button per stack (for single Compose files)</td><td data-label="Portainer CE">not applicable</td><td data-label="Dockge">move the file into the folder by hand</td></tr><tr><th scope="row">License</th><td data-label="Nodvard Dock">PolyForm Noncommercial (source-available, free for personal use)</td><td data-label="Portainer CE">zlib</td><td data-label="Dockge">MIT</td></tr></tbody>
+      <tbody><tr><th scope="row">Further servers</th><td data-label="Nodvard Dock">over SSH, no agent</td><td data-label="Portainer CE">Portainer Agent or Edge Agent on each server</td><td data-label="Dockge">Dockge agent on each further server</td></tr><tr><th scope="row">Compose files</th><td data-label="Nodvard Dock">in a folder on the server (default <code>/opt/stacks</code>)</td><td data-label="Portainer CE">in Portainer’s data storage</td><td data-label="Dockge">in a folder on the server (default <code>/opt/stacks</code>)</td></tr><tr><th scope="row">Swarm and Kubernetes</th><td data-label="Nodvard Dock">no</td><td data-label="Portainer CE">yes</td><td data-label="Dockge">no</td></tr><tr><th scope="row">Moving from Portainer</th><td data-label="Nodvard Dock">one button per stack (for single Compose files)</td><td data-label="Portainer CE">not applicable</td><td data-label="Dockge">move the file into the folder by hand</td></tr><tr><th scope="row">Stacks from Git</th><td data-label="Nodvard Dock">yes, with preview and rollback</td><td data-label="Portainer CE">yes</td><td data-label="Dockge">no</td></tr><tr><th scope="row">Rollback and volume backup</th><td data-label="Nodvard Dock">yes</td><td data-label="Portainer CE">no</td><td data-label="Dockge">no</td></tr><tr><th scope="row">Interface language</th><td data-label="Nodvard Dock">German</td><td data-label="Portainer CE">English</td><td data-label="Dockge">multilingual</td></tr><tr><th scope="row">License</th><td data-label="Nodvard Dock">PolyForm Noncommercial (source-available, free for personal use)</td><td data-label="Portainer CE">zlib</td><td data-label="Dockge">MIT</td></tr></tbody>
     </table></div>
     <p class="note-small">As of October 2026, based on the documentation of <a href="https://docs.portainer.io/">Portainer</a> and <a href="https://github.com/louislam/dockge">Dockge</a>. If you need Swarm or Kubernetes, Portainer is the better fit.</p>
 
@@ -110,7 +118,7 @@ docker compose up -d</code></pre>
     </div>
     <details class="compose">
       <summary>What is in compose.yml?</summary>
-      <p>One container, one port, one volume for the data. No Docker socket, no special privileges. The complete file is <a href="https://github.com/nodvard/dock/blob/main/compose.yml">on GitHub</a>.</p>
+      <p>One container, one port, one volume for the data. No Docker socket, no special privileges; Dock connects to your servers (including the machine itself) later over SSH. The complete file is <a href="https://github.com/nodvard/dock/blob/main/compose.yml">on GitHub</a>.</p>
       <pre><code>name: nodvard-dock
 services:
   nodvard-dock:
@@ -121,18 +129,18 @@ services:
     volumes:
       - nodvard_dock_data:/app/data
       # Optional: a folder for backups, for example on a NAS
-      # - ./sicherungen:/backups
+      # - ./backup:/backups
     healthcheck: …
 volumes:
   nodvard_dock_data:
     name: nodvard-dock-data</code></pre>
     </details>
-    <p class="intro">Then open <code>http://&lt;your-server&gt;:8080</code>. <code>docker compose logs nodvard-dock</code> shows the setup code. If the port is taken, put a file <code>.env</code> next to <code>compose.yml</code> with <code>NODVARD_DOCK_PORT=8081</code>.</p>
+    <p class="intro">Then open <code>http://&lt;your-server&gt;:8080</code>. <code>docker compose logs nodvard-dock</code> shows the setup code (the line starts with “Einrichtungscode”). If the port is taken, put a file <code>.env</code> next to <code>compose.yml</code> with <code>NODVARD_DOCK_PORT=8081</code>.</p>
     <p class="intro">Updating: in the same folder, run <code>docker compose pull &amp;&amp; docker compose up -d</code>. Your data is kept. Everything else is in the <a href="https://github.com/nodvard/dock">nodvard/dock repository</a>.</p>
   </section>
 
   <div class="prose">
-    <h2>Dock or Deck?</h2>
+    <h2 id="dock-or-deck">Dock or Deck?</h2>
     <p>Nodvard Dock is just the container manager, as its own small image. <a href="./">Nodvard Deck</a> has the same Docker part and adds Proxmox, backups, Shield, apps and notifications on top. The code is the same, there’s just more or less of it inside. More in the <a href="faq.html">FAQ</a>.</p>
     <p class="note-small">Portainer is a trademark of its owner. Nodvard is not affiliated with it.</p>
   </div>
