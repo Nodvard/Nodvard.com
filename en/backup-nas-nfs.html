@@ -58,7 +58,7 @@
     <li><strong>Mount the NAS folder</strong> on the machine that runs Deck, for example under <code>/srv/backup/deck</code>. For NFS, as a line in <code>/etc/fstab</code>:
       <div class="cmd">
         <div class="cmd-head"><span>/etc/fstab</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-fstab">Copy</button></div>
-        <pre><code id="cmd-fstab">nas:/volume1/backup/deck  /srv/backup/deck  nfs  defaults,_netdev,nofail,x-systemd.mount-timeout=30s,x-systemd.before=docker.service  0  0</code></pre>
+        <pre><code id="cmd-fstab">nas:/volume1/backup/deck  /srv/backup/deck  nfs  defaults,_netdev,x-systemd.before=docker.service  0  0</code></pre>
       </div>
       <p>The NFS share must be mounted before Docker starts. Otherwise Docker mounts the empty folder on the local disk, and the backups end up there instead of on the NAS. <code>_netdev</code> tells the system that it is a network drive, <code>x-systemd.before=docker.service</code> makes Docker wait for it, and <code>nofail</code> with <code>x-systemd.mount-timeout=30s</code> ensures that the machine still boots if the NAS is ever offline.</p>
     </li>

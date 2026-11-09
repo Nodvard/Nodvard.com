@@ -68,7 +68,7 @@
   <div class="split" style="margin-top: 48px;">
     <div>
       <h3 id="migration-video">The move on video</h3>
-      <p class="intro">In 33 seconds, you see how Dock imports stacks from Portainer and runs an update with rollback.</p>
+      <p class="intro">In 33 seconds, you see how Dock imports stacks from Portainer.</p>
     </div>
     <figure class="clip-box"><video controls muted playsinline preload="none" poster="../assets/clips/dock-umzug.webp" width="540" height="960" aria-label="Clip without sound: a stack moves from Portainer to Nodvard Dock, the volumes stay."><source src="../assets/clips/dock-umzug.mp4" type="video/mp4"></video><figcaption>The move as a clip, 33 seconds, no sound.</figcaption></figure>
   </div>
@@ -118,7 +118,7 @@ docker compose up -d</code></pre>
     </div>
     <details class="compose">
       <summary>What is in compose.yml?</summary>
-      <p>One container, one port, one volume for the data. No Docker socket, no special privileges; Dock connects to your servers (including the machine itself) later over SSH. The complete file is <a href="https://github.com/nodvard/dock/blob/main/compose.yml">on GitHub</a>.</p>
+      <p>One container, one port, one volume for the data. No Docker socket, no special privileges; Dock connects to your servers later over SSH. The complete file is <a href="https://github.com/nodvard/dock/blob/main/compose.yml">on GitHub</a>.</p>
       <pre><code>name: nodvard-dock
 services:
   nodvard-dock:
@@ -129,7 +129,7 @@ services:
     volumes:
       - nodvard_dock_data:/app/data
       # Optional: a folder for backups, for example on a NAS
-      # - ./backup:/backups
+      # - ./sicherungen:/backups
     healthcheck: …
 volumes:
   nodvard_dock_data:
