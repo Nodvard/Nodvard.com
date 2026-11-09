@@ -29,7 +29,8 @@
 <link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab-Dashboard","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.13.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.13.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/funktionen.html","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab-Dashboard","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.13.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.13.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Nodvard Deck","item":"https://nodvard.com/"},{"@type":"ListItem","position":2,"name":"Funktionen","item":"https://nodvard.com/funktionen.html"}]}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -100,7 +101,7 @@
       <h2 id="h-shield">Nodvard Shield</h2>
       <p>Shield schaut regelmäßig auf deine Linux-Server und sagt dir, was es findet. Schadsoftware schiebt es ab Werk von selbst in die Quarantäne. Das lässt sich abschalten, dann entscheidest du jedes Mal selbst.</p>
       <ul class="points">
-        <li>Virenscan mit ClamAV als Schnellscan, Tiefenscan oder nach Zeitplan, mit Quarantäne</li>
+        <li>Virenscan mit ClamAV als Schnellscan, Tiefenscan oder nach Zeitplan, mit Quarantäne. Neue Dateien in typischen Ordnern wie <code>/tmp</code> oder <code>/home</code> prüft Shield standardmäßig alle 10 Minuten. Echte Echtzeit-Prüfung (<code>clamonacc</code>) braucht auf dem Server rund 1 GB RAM.</li>
         <li>Härtungs-Check mit Lynis</li>
         <li>Update-Zentrale mit den offenen Sicherheitsupdates je Server</li>
         <li>Einbruchschutz: ungewöhnliche SSH-Logins und offene Ports. Die von Fail2ban gesperrten Adressen je Server ansehen, entsperren oder eine Adresse von Hand sperren</li>
@@ -155,15 +156,15 @@
       <h2 id="h-integrationen">Integrationen</h2>
       <p>Deck holt sich Zustand und Zahlen aus deinen Diensten und zeigt sie als Kachel und auf einer eigenen Seite. Die meisten lesen nur und ändern nichts, das steht dabei. Bei Pi-hole und Nginx Proxy Manager gibt es auch Aktionen, die du freigibst. Nextcloud und ntfy laufen schon lange im Dauerbetrieb. Der Rest ist Beta, funktioniert also, ist aber noch nicht so lange erprobt.</p>
       <ul class="tags" aria-label="Integrationen">
-        <li>Uptime Kuma (nur lesend)</li>
-        <li>Home Assistant (nur lesend)</li>
-        <li>Plex (nur lesend)</li>
-        <li>Jellyfin (nur lesend)</li>
-        <li>qBittorrent (nur lesend)</li>
-        <li>Synology DSM (nur lesend)</li>
-        <li>Pi-hole</li>
-        <li>Nginx Proxy Manager</li>
-        <li>Vaultwarden (nur lesend)</li>
+        <li>Uptime Kuma (nur lesend, Beta)</li>
+        <li>Home Assistant (nur lesend, Beta)</li>
+        <li>Plex (nur lesend, Beta)</li>
+        <li>Jellyfin (nur lesend, Beta)</li>
+        <li>qBittorrent (nur lesend, Beta)</li>
+        <li>Synology DSM (nur lesend, Beta)</li>
+        <li>Pi-hole (Beta)</li>
+        <li>Nginx Proxy Manager (Beta)</li>
+        <li>Vaultwarden (nur lesend, Beta)</li>
         <li>Nextcloud</li>
         <li>ntfy</li>
       </ul>

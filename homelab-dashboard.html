@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Homelab-Dashboard: mehr als eine Kachel-Startseite</title>
-<meta name="description" content="Kachel-Startseite oder Server-Verwaltung? Was ein Homelab-Dashboard wie Nodvard Deck zusätzlich kann: Proxmox, Docker, Backups und Freigaben.">
+<meta name="description" content="Kachel-Startseite oder Server-Verwaltung? Mehr als Homepage, Homarr, Heimdall oder Dashy: Proxmox, Docker, Backups und Freigaben in einem Homelab-Dashboard.">
 <link rel="canonical" href="https://nodvard.com/homelab-dashboard.html">
 <link rel="alternate" hreflang="de" href="https://nodvard.com/homelab-dashboard.html">
 <link rel="alternate" hreflang="en" href="https://nodvard.com/en/homelab-dashboard.html">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
 <meta property="og:title" content="Homelab-Dashboard: mehr als eine Kachel-Startseite">
-<meta property="og:description" content="Kachel-Startseite oder Server-Verwaltung? Was ein Homelab-Dashboard wie Nodvard Deck zusätzlich kann: Proxmox, Docker, Backups und Freigaben.">
+<meta property="og:description" content="Kachel-Startseite oder Server-Verwaltung? Mehr als Homepage, Homarr, Heimdall oder Dashy: Proxmox, Docker, Backups und Freigaben in einem Homelab-Dashboard.">
 <meta property="og:url" content="https://nodvard.com/homelab-dashboard.html">
 <meta property="og:image" content="https://nodvard.com/assets/og/homelab-de.jpg">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <meta property="og:image:alt" content="Vorschaubild: Homelab-Dashboard: mehr als eine Kachel-Startseite">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Homelab-Dashboard: mehr als eine Kachel-Startseite">
-<meta name="twitter:description" content="Kachel-Startseite oder Server-Verwaltung? Was ein Homelab-Dashboard wie Nodvard Deck zusätzlich kann: Proxmox, Docker, Backups und Freigaben.">
+<meta name="twitter:description" content="Kachel-Startseite oder Server-Verwaltung? Mehr als Homepage, Homarr, Heimdall oder Dashy: Proxmox, Docker, Backups und Freigaben in einem Homelab-Dashboard.">
 <meta name="twitter:image" content="https://nodvard.com/assets/og/homelab-de.jpg">
 <meta property="og:locale" content="de_DE">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -29,6 +29,7 @@
 <link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Nodvard Deck","item":"https://nodvard.com/"},{"@type":"ListItem","position":2,"name":"Homelab-Dashboard","item":"https://nodvard.com/homelab-dashboard.html"}]}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -77,14 +78,14 @@
     <h2 id="einsteiger-profis">Für Einsteiger und für Profis</h2>
     <ul>
       <li>Einen Server trägst du in der Oberfläche per SSH ein, auch mit Benutzer und Passwort.</li>
-      <li>Proxmox bindest du direkt in der Oberfläche an. Für Docker in Gästen, Terminal und Virenschutz kommt je Server noch SSH dazu.</li>
+      <li>Proxmox bindest du direkt in der Oberfläche an. Für Docker in Gästen, Terminal und Virenschutz kommt je Server noch SSH dazu. Mehr dazu unter <a href="proxmox-docker-dashboard.html">Proxmox und Docker</a>.</li>
       <li>Zum Reinschauen gibt es Beispieldaten, die du später wieder löschst.</li>
       <li>Die Grundeinstellungen passen meistens. Mehr Optionen liegen unter „Erweitert“.</li>
       <li>Wenn etwas klemmt, steht in der Meldung, was los ist und was du jetzt tun kannst, statt nur einem Fehlercode.</li>
     </ul>
 
     <h2 id="voraussetzungen">Was du brauchst</h2>
-    <p>Einen Rechner mit Docker und Docker Compose, etwa einen Raspberry Pi 4 oder 5 mit 64-Bit-System oder einen x86-64-Rechner. Im Leerlauf braucht Deck rund 100 MB Arbeitsspeicher. Proxmox brauchst du nicht, ein Pi, ein NAS oder ein paar Docker-Hosts reichen auch. Mehr dazu in den <a href="faq.html">häufigen Fragen</a>.</p>
+    <p>Einen Rechner mit Docker und Docker Compose, etwa einen Raspberry Pi 4 oder 5 mit 64-Bit-System oder einen x86-64-Rechner. Im Leerlauf braucht Deck rund 100 MB Arbeitsspeicher. Proxmox brauchst du nicht, ein Pi, ein NAS oder ein paar Docker-Hosts reichen auch. Du willst nur Container verwalten? Dann schau dir <a href="dock.html">Nodvard Dock</a> an. Lies auch, <a href="warum-nodvard-deck.html">warum es Nodvard Deck gibt</a>. Mehr dazu in den <a href="faq.html">häufigen Fragen</a>.</p>
   </div>
 </div>
 
