@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Funktionen: Proxmox, Docker, Shield, Backups | Nodvard Deck</title>
-<meta name="description" content="Was Nodvard Deck kann: Server und Proxmox, Docker mit Stacks, Nodvard Shield, Backups, Apps, Integrationen, Tresor und Meldungen.">
+<meta name="description" content="Was Nodvard Deck im Homelab kann: Proxmox, Docker-Stacks, Backups, Shield, Apps, Integrationen, Tresor, Freigaben und Meldungen.">
 <link rel="canonical" href="https://nodvard.com/funktionen.html">
 <link rel="alternate" hreflang="de" href="https://nodvard.com/funktionen.html">
 <link rel="alternate" hreflang="en" href="https://nodvard.com/en/features.html">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nodvard Deck">
 <meta property="og:title" content="Funktionen: Proxmox, Docker, Shield, Backups | Nodvard Deck">
-<meta property="og:description" content="Was Nodvard Deck kann: Server und Proxmox, Docker mit Stacks, Nodvard Shield, Backups, Apps, Integrationen, Tresor und Meldungen.">
+<meta property="og:description" content="Was Nodvard Deck im Homelab kann: Proxmox, Docker-Stacks, Backups, Shield, Apps, Integrationen, Tresor, Freigaben und Meldungen.">
 <meta property="og:url" content="https://nodvard.com/funktionen.html">
 <meta property="og:image" content="https://nodvard.com/assets/og/funktionen-de.jpg">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <meta property="og:image:alt" content="Vorschaubild: Funktionen: Proxmox, Docker, Shield, Backups | Nodvard Deck">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Funktionen: Proxmox, Docker, Shield, Backups | Nodvard Deck">
-<meta name="twitter:description" content="Was Nodvard Deck kann: Server und Proxmox, Docker mit Stacks, Nodvard Shield, Backups, Apps, Integrationen, Tresor und Meldungen.">
+<meta name="twitter:description" content="Was Nodvard Deck im Homelab kann: Proxmox, Docker-Stacks, Backups, Shield, Apps, Integrationen, Tresor, Freigaben und Meldungen.">
 <meta name="twitter:image" content="https://nodvard.com/assets/og/funktionen-de.jpg">
 <meta property="og:locale" content="de_DE">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -80,12 +80,12 @@
         <li>Neue Stacks anlegen, auch aus Vorlagen für Uptime Kuma, Vaultwarden, Nginx Proxy Manager und Gitea</li>
         <li>Ganze Stacks aktualisieren und zurück zur vorigen Version (Rollback), auf Wunsch mit Sicherung der Volumes vorher</li>
         <li>Stacks direkt aus einem Git-Repository holen. Vorher zeigt Deck dir, welche Dateien neu sind oder sich ändern. Auf Wunsch sichert es die Volumes, und mit „Zurück zum Stand davor“ kommst du wieder zum alten Stand. Zugänge für private Repositorys liegen im Tresor. Auf Wunsch prüft Deck nach Zeitplan, ob es einen neuen Stand gibt, und schickt eine Nachricht.</li>
-        <li>Umzug einfacher Stacks aus Portainer. Deck nimmt Compose-Datei und Variablen mit, deine Volumes bleiben, wo sie sind</li>
+        <li>Umzug einfacher Stacks aus Portainer. Deck nimmt Compose-Datei und Variablen mit, deine Volumes bleiben, wo sie sind.</li>
         <li>Netze anlegen, auf Wunsch nur intern, und Container verbinden oder trennen</li>
         <li>Images per Name und Tag holen, private auch mit der Anmeldung unter Registries</li>
-        <li>Eigene Compose-Dateien als Vorlage speichern. Feste Passwörter und Tokens lehnt Deck dabei ab</li>
+        <li>Eigene Compose-Dateien als Vorlage speichern. Feste Passwörter und Tokens lehnt Deck dabei ab.</li>
         <li>Container nach Zustand, Name, CPU oder RAM sortieren</li>
-        <li><strong>Neu in 0.14:</strong> Der Reiter Images zeigt die Gesamtgröße aller Images und entfernt nach Rückfrage und Freigabe ungenutzte Images ohne Namen. Danach steht da, wie viele weg sind und wie viel Platz frei wurde</li>
+        <li><strong>Neu in 0.14:</strong> Der Reiter Images zeigt die Gesamtgröße aller Images und entfernt nach Rückfrage und Freigabe ungenutzte Images ohne Namen. Danach steht da, wie viele weg sind und wie viel Platz frei wurde.</li>
         <li>Volumes und Netze aufräumen</li>
       </ul>
       <p><a href="dock.html">Umstieg von Portainer</a></p>
@@ -104,7 +104,7 @@
         <li>Virenscan mit ClamAV als Schnellscan, Tiefenscan oder nach Zeitplan, mit Quarantäne. Neue Dateien in typischen Ordnern wie <code>/tmp</code> oder <code>/home</code> prüft Shield standardmäßig alle 10 Minuten. Echte Echtzeit-Prüfung (<code>clamonacc</code>) braucht auf dem Server rund 1 GB RAM.</li>
         <li>Härtungs-Check mit Lynis</li>
         <li>Update-Zentrale mit den offenen Sicherheitsupdates je Server</li>
-        <li>Einbruchschutz: ungewöhnliche SSH-Logins und offene Ports. Die von Fail2ban gesperrten Adressen je Server ansehen, entsperren oder eine Adresse von Hand sperren. <strong>Neu in 0.14:</strong> Fail2ban je Server einstellen, mit Sperrdauer, Fundzeit, Versuchen, Ausnahmen und ausgewählten Schutzregeln. Vor dem Aktivieren prüft Deck die Einstellung. Bestehende Server richtest du dafür einmal neu ein</li>
+        <li>Einbruchschutz: ungewöhnliche SSH-Logins und offene Ports. Die von Fail2ban gesperrten Adressen je Server ansehen, entsperren oder eine Adresse von Hand sperren. <strong>Neu in 0.14:</strong> Fail2ban je Server einstellen, mit Sperrdauer, Fundzeit, Versuchen, Ausnahmen und ausgewählten Schutzregeln. Vor dem Aktivieren prüft Deck die Einstellung. Bestehende Server richtest du dafür einmal neu ein.</li>
         <li>Datei-Wächter für wichtige Systemdateien</li>
         <li>Morgen-Briefing mit dem Stand der Nacht</li>
         <li><strong>Neu in 0.14:</strong> Wochenbericht mit zwölf Wochen Verlauf je Server (Updates, Virenscan, Fail2ban-Sperren und Lynis-Wert), dazu eine Kurzfassung über deine Meldungskanäle</li>
@@ -199,7 +199,7 @@
         <li>Benutzer mit Rollen und Rechten</li>
         <li>Anmeldung mit Zwei-Faktor-Code aus einer App</li>
         <li>Eine Bremse gegen Passwort-Raten bei der Anmeldung</li>
-        <li>Updates per Knopf gibt es nur für signiert freigegebene Versionen. Der Knopf braucht den Update-Helfer, den du mit einer eigenen Compose-Datei bewusst einschaltest</li>
+        <li>Updates per Knopf gibt es nur für signiert freigegebene Versionen. Der Knopf braucht den Update-Helfer, den du mit einer eigenen Compose-Datei bewusst einschaltest.</li>
         <li>Name, Logo und Farben von Deck kannst du selbst anpassen</li>
         <li>Bei einer neuen Version von Deck steht, was sie bringt, etwa ein Sicherheitsupdate oder Fehlerbehebungen</li>
       </ul>
