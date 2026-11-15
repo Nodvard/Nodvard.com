@@ -45,7 +45,7 @@
 <div class="wrap">
   <header class="page-head">
     <h1>Features of Nodvard Deck: Proxmox, Docker, Shield and backups</h1>
-    <p class="lead">Nodvard Deck is in beta. Here is everything it does today. Modules marked Beta are newer and haven’t been tested as long as the rest.</p>
+    <p class="lead">Nodvard Deck is a self-hosted homelab dashboard (beta, source code viewable, free for personal use). Here is everything it does today. Modules marked Beta are newer and haven’t been tested as long as the rest.</p>
     <p class="lang-note"><strong>Note:</strong> This website and the guides are in English. The app interface is German only for now.</p>
   </header>
   <nav aria-label="Sections on this page"><ul class="tags"><li><a href="#server">Servers and Proxmox</a></li><li><a href="#docker">Docker</a></li><li><a href="#shield">Shield</a></li><li><a href="#backups">Backups</a></li><li><a href="#apps">Apps</a></li><li><a href="#integrationen">Integrations</a></li><li><a href="#tresor">Vault</a></li><li><a href="#freigaben">Approvals</a></li><li><a href="#meldungen">Notifications</a></li></ul></nav>
@@ -61,7 +61,7 @@
         <li>Proxmox: start and stop nodes, VMs and LXC, console in the browser, snapshots, hardware and storage</li>
         <li>Disk health, ZFS and temperature of Proxmox nodes</li>
       </ul>
-      <p>You don’t need Proxmox. Deck is just as happy with a Raspberry Pi, a NAS or a few Docker hosts.</p>
+      <p>You don’t need Proxmox. Deck is just as happy with a Raspberry Pi, a NAS or a few Docker hosts. <a href="proxmox-docker-dashboard.html">Proxmox and Docker in one dashboard</a></p>
       <p><strong>What ends up on your servers:</strong> No agent and no service of its own. Deck comes in over SSH. For tasks that need root, the setup puts a few small helper scripts into <code>/usr/local/lib/nodvard-deck</code>. Deck calls them via sudo. Each one can only run its fixed commands and checks what it gets by itself. <a href="https://github.com/nodvard/deck/blob/main/docs/en/FIRST-SETUP.md#f-root-rights-without-a-password-and-the-docker-group">What each helper script may do</a></p>
     </div>
     <figure>
@@ -89,7 +89,7 @@
         <li><strong>New in 0.14:</strong> The Images tab shows the total size of all images and, after a confirmation and approval, removes unused images without a name. Afterwards it says how many are gone and how much space was freed.</li>
         <li>Clean up volumes and networks</li>
       </ul>
-      <p><a href="dock.html">Switching from Portainer</a></p>
+      <p>Only want to manage containers? You can get the Docker part on its own as <a href="dock.html">Nodvard Dock (with a move from Portainer)</a>.</p>
     </div>
     <figure>
       <picture><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 640px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="The Stacks tab in Nodvard Deck: two Compose stacks already imported from Portainer, with status, folder and buttons to edit, apply and update."></picture>

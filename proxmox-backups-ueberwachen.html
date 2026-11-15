@@ -43,7 +43,7 @@
 <div class="wrap">
   <header class="page-head">
     <h1>Proxmox-Backups überwachen</h1>
-    <p class="lead">Ein Backup-Job, der still scheitert, fällt oft erst auf, wenn du die Sicherung brauchst. Nodvard Deck zeigt dir alle Proxmox-Backups in einer Liste und meldet sich, wenn ein Lauf fehlschlägt oder eine Sicherung zu alt wird.</p>
+    <p class="lead">Ein Backup-Job, der still scheitert, fällt oft erst auf, wenn du die Sicherung brauchst. Nodvard Deck zeigt dir alle Proxmox-Backups in einer Liste und meldet sich, wenn ein Lauf fehlschlägt oder eine Sicherung zu alt wird. Du hostest Deck selbst, privat kostet es nichts.</p>
     <div class="btns"><a class="btn btn-main" href="#cta">Deck in drei Befehlen installieren</a><a class="btn btn-alt" href="#einrichten">Zur Einrichtung springen</a></div>
   </header>
 
@@ -101,6 +101,7 @@
 curl -fsSL -o compose.yml https://raw.githubusercontent.com/nodvard/deck/main/deploy/compose.standalone.yml
 docker compose up -d</code></pre>
     </div>
+    <p class="intro">Danach öffnest du <code>http://&lt;dein-server&gt;:8080</code> im Browser. Den Einrichtungscode zeigt <code>docker compose logs nodvard-deck</code>.</p>
     <div class="btns"><a class="btn btn-main" href="loslegen.html">Alle Wege zur Installation</a><a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Fragen auf Discord</a></div>
   </div>
 </section>

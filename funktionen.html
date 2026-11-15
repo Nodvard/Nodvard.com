@@ -45,7 +45,7 @@
 <div class="wrap">
   <header class="page-head">
     <h1>Funktionen von Nodvard Deck: Proxmox, Docker, Shield und Backups</h1>
-    <p class="lead">Nodvard Deck ist in der Beta. Hier steht alles, was Deck heute kann. Bereiche mit dem Hinweis Beta sind neuer und noch nicht so lange erprobt wie der Rest.</p>
+    <p class="lead">Nodvard Deck ist ein selbst gehostetes Homelab-Dashboard (Beta, Quelltext einsehbar, kostenlos für den privaten Gebrauch). Hier steht alles, was Deck heute kann. Bereiche mit dem Hinweis Beta sind neuer und noch nicht so lange erprobt wie der Rest.</p>
   </header>
   <nav aria-label="Bereiche auf dieser Seite"><ul class="tags"><li><a href="#server">Server und Proxmox</a></li><li><a href="#docker">Docker</a></li><li><a href="#shield">Shield</a></li><li><a href="#backups">Backups</a></li><li><a href="#apps">Apps</a></li><li><a href="#integrationen">Integrationen</a></li><li><a href="#tresor">Tresor</a></li><li><a href="#freigaben">Freigaben</a></li><li><a href="#meldungen">Meldungen</a></li></ul></nav>
 
@@ -60,7 +60,7 @@
         <li>Proxmox: Knoten, VMs und LXC starten und stoppen, Konsole im Browser, Snapshots, Hardware und Speicher</li>
         <li>Festplatten-Zustand, ZFS und Temperatur der Proxmox-Knoten</li>
       </ul>
-      <p>Proxmox brauchst du nicht. Deck kommt auch mit einem Raspberry Pi, einem NAS oder ein paar Docker-Hosts klar.</p>
+      <p>Proxmox brauchst du nicht. Deck kommt auch mit einem Raspberry Pi, einem NAS oder ein paar Docker-Hosts klar. <a href="proxmox-docker-dashboard.html">Proxmox und Docker in einem Dashboard</a></p>
       <p><strong>Was auf deinen Servern landet:</strong> Kein Agent und kein eigener Dienst, Deck kommt per SSH. Für Aufgaben, die root brauchen, legt die Einrichtung ein paar kleine Hilfsskripte unter <code>/usr/local/lib/nodvard-deck</code> an. Deck ruft sie per sudo auf. Jedes kann nur seine festen Befehle und prüft selbst, was es bekommt. <a href="https://github.com/nodvard/deck/blob/main/docs/11-ERST-EINRICHTUNG.md#f-root-rechte-ohne-passwort-und-gruppe-docker">Was jedes Hilfsskript darf</a></p>
     </div>
     <figure>
@@ -88,7 +88,7 @@
         <li><strong>Neu in 0.14:</strong> Der Reiter Images zeigt die Gesamtgröße aller Images und entfernt nach Rückfrage und Freigabe ungenutzte Images ohne Namen. Danach steht da, wie viele weg sind und wie viel Platz frei wurde.</li>
         <li>Volumes und Netze aufräumen</li>
       </ul>
-      <p><a href="dock.html">Umstieg von Portainer</a></p>
+      <p>Du willst nur Container verwalten? Den Docker-Teil gibt es einzeln als <a href="dock.html">Nodvard Dock (mit Umzug von Portainer)</a>.</p>
     </div>
     <figure>
       <picture><img src="assets/img/stacks-1040.webp" srcset="assets/img/stacks-1040.webp 1040w, assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 640px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="Der Reiter Stacks in Nodvard Deck: zwei bereits aus Portainer übernommene Compose-Stacks mit Zustand, Ordner und Knöpfen zum Bearbeiten, Anwenden und Aktualisieren."></picture>
