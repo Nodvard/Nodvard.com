@@ -33,7 +33,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Nodvard Deck","item":"https://nodvard.com/en/"},{"@type":"ListItem","position":2,"name":"Features","item":"https://nodvard.com/en/features.html"}]}</script>
 </head>
 <body>
-<a class="skip" href="#inhalt">Skip to content</a>
+<a class="skip" href="#content">Skip to content</a>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
@@ -41,7 +41,7 @@
     <a class="lang" href="../funktionen.html" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a><a class="btn-top" href="get-started.html">Install</a>
   </div>
 </header>
-<main id="inhalt">
+<main id="content">
 <div class="wrap">
   <header class="page-head">
     <h1>Features of Nodvard Deck: Proxmox, Docker, Shield and backups</h1>
@@ -80,15 +80,14 @@
         <li>Edit Compose files as text or in a form. Before saving, Docker Compose checks the file on the server.</li>
         <li>Create new stacks, also from templates for Uptime Kuma, Vaultwarden, Nginx Proxy Manager and Gitea</li>
         <li>Update whole stacks and go back to the previous version (rollback), with a backup of the volumes first if you like</li>
-        <li>Pull stacks straight from a Git repository. Before that, Deck shows you which files are new or would change. If you like, it backs up the volumes first, and “back to the state before” takes you back to the old state. Credentials for private repositories are stored in the vault.</li>
+        <li>Pull stacks straight from a Git repository. Before that, Deck shows you which files are new or would change. If you like, it backs up the volumes first, and “back to the state before” takes you back to the old state. Credentials for private repositories are stored in the vault. If you like, Deck checks on a schedule whether there is a new state and sends a message.</li>
         <li>Move simple stacks from Portainer. Deck takes the Compose file and variables along, and your volumes stay where they are</li>
         <li>Create networks, internal only if you like, and connect or disconnect containers</li>
         <li>Pull images by name and tag, private ones with the login under Registries</li>
         <li>Save your own Compose files as templates. Deck refuses fixed passwords and tokens in them</li>
-        <li>Check stacks from Git for a new state on a schedule, with a message</li>
-        <li>Sort containers by state, status, CPU or RAM</li>
+        <li>Sort containers by state, name, CPU or RAM</li>
         <li><strong>New in 0.14:</strong> The Images tab shows the total size of all images and, after a confirmation and approval, removes unused images without a name. Afterwards it says how many are gone and how much space was freed</li>
-        <li>Clean up images, volumes and networks</li>
+        <li>Clean up volumes and networks</li>
       </ul>
       <p><a href="dock.html">Switching from Portainer</a></p>
     </div>
@@ -199,7 +198,8 @@
         <li>Every action is written to the log</li>
         <li>Users with roles and permissions</li>
         <li>Sign-in with a two-factor code from an app</li>
-        <li>A brake against password guessing at sign-in, and one-click updates are only offered for versions released with a signature. The button needs the update helper, which you turn on on purpose with a Compose file of its own</li>
+        <li>A brake against password guessing at sign-in</li>
+        <li>One-click updates are only offered for versions released with a signature. The button needs the update helper, which you turn on on purpose with a Compose file of its own</li>
         <li>You can change Deck’s name, logo and colors yourself</li>
         <li>A new version of Deck tells you what it brings, such as a security update or bug fixes</li>
       </ul>

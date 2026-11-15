@@ -79,15 +79,14 @@
         <li>Compose-Dateien als Text oder im Formular bearbeiten. Vor dem Speichern prüft Docker Compose die Datei auf dem Server.</li>
         <li>Neue Stacks anlegen, auch aus Vorlagen für Uptime Kuma, Vaultwarden, Nginx Proxy Manager und Gitea</li>
         <li>Ganze Stacks aktualisieren und zurück zur vorigen Version (Rollback), auf Wunsch mit Sicherung der Volumes vorher</li>
-        <li>Stacks direkt aus einem Git-Repository holen. Vorher zeigt Deck dir, welche Dateien neu sind oder sich ändern. Auf Wunsch sichert es die Volumes, und mit „Zurück zum Stand davor“ kommst du wieder zum alten Stand. Zugänge für private Repositorys liegen im Tresor.</li>
+        <li>Stacks direkt aus einem Git-Repository holen. Vorher zeigt Deck dir, welche Dateien neu sind oder sich ändern. Auf Wunsch sichert es die Volumes, und mit „Zurück zum Stand davor“ kommst du wieder zum alten Stand. Zugänge für private Repositorys liegen im Tresor. Auf Wunsch prüft Deck nach Zeitplan, ob es einen neuen Stand gibt, und schickt eine Nachricht.</li>
         <li>Umzug einfacher Stacks aus Portainer. Deck nimmt Compose-Datei und Variablen mit, deine Volumes bleiben, wo sie sind</li>
         <li>Netze anlegen, auf Wunsch nur intern, und Container verbinden oder trennen</li>
         <li>Images per Name und Tag holen, private auch mit der Anmeldung unter Registries</li>
         <li>Eigene Compose-Dateien als Vorlage speichern. Feste Passwörter und Tokens lehnt Deck dabei ab</li>
-        <li>Stacks aus Git nach Zeitplan auf einen neuen Stand prüfen, mit Nachricht</li>
-        <li>Container nach Zustand, Status, CPU oder RAM sortieren</li>
+        <li>Container nach Zustand, Name, CPU oder RAM sortieren</li>
         <li><strong>Neu in 0.14:</strong> Der Reiter Images zeigt die Gesamtgröße aller Images und entfernt nach Rückfrage und Freigabe ungenutzte Images ohne Namen. Danach steht da, wie viele weg sind und wie viel Platz frei wurde</li>
-        <li>Images, Volumes und Netze aufräumen</li>
+        <li>Volumes und Netze aufräumen</li>
       </ul>
       <p><a href="dock.html">Umstieg von Portainer</a></p>
     </div>
@@ -130,6 +129,7 @@
         <li>Vor dem Update eines Stacks auf Wunsch die Docker-Volumes sichern</li>
         <li>Vor jedem Update, das die Datenbank umbaut, legt Deck eine Kopie an, dazu eine Sicherung zum Herunterladen und Wiederherstellen</li>
       </ul>
+      <p><a href="proxmox-backups-ueberwachen.html">Proxmox-Backups überwachen: Anleitung</a></p>
     </div>
     <figure>
       <picture><img src="assets/img/backups-1040.webp" srcset="assets/img/backups-1040.webp 1040w, assets/img/backups.webp 2080w" sizes="(min-width: 901px) 640px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Seite Proxmox-Backups: ein Gast ohne Backup-Job, die Backup-Jobs mit Zeitplan, letztem Lauf und vorhandenen Sicherungen, ein fehlgeschlagener Lauf."></picture>
@@ -198,7 +198,8 @@
         <li>Jede Aktion steht im Protokoll</li>
         <li>Benutzer mit Rollen und Rechten</li>
         <li>Anmeldung mit Zwei-Faktor-Code aus einer App</li>
-        <li>Eine Bremse gegen Passwort-Raten bei der Anmeldung, und Updates per Knopf gibt es nur noch für signiert freigegebene Versionen. Der Knopf braucht den Update-Helfer, den du mit einer eigenen Compose-Datei bewusst einschaltest</li>
+        <li>Eine Bremse gegen Passwort-Raten bei der Anmeldung</li>
+        <li>Updates per Knopf gibt es nur für signiert freigegebene Versionen. Der Knopf braucht den Update-Helfer, den du mit einer eigenen Compose-Datei bewusst einschaltest</li>
         <li>Name, Logo und Farben von Deck kannst du selbst anpassen</li>
         <li>Bei einer neuen Version von Deck steht, was sie bringt, etwa ein Sicherheitsupdate oder Fehlerbehebungen</li>
       </ul>

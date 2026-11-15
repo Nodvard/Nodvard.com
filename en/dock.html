@@ -32,7 +32,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Dock","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Docker management","operatingSystem":"Linux (Docker, arm64 and x86-64)","softwareVersion":"0.14.1","releaseNotes":"https://github.com/nodvard/dock/releases/tag/v0.14.1","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/en/dock.html","downloadUrl":"https://github.com/nodvard/dock","license":"https://github.com/nodvard/dock/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/stacks.webp","inLanguage":"en","author":{"@type":"Person","name":"Nico Benks"}}</script>
 </head>
 <body>
-<a class="skip" href="#inhalt">Skip to content</a>
+<a class="skip" href="#content">Skip to content</a>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
@@ -40,13 +40,14 @@
     <a class="lang" href="../dock.html" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a><a class="btn-top" href="get-started.html">Install</a>
   </div>
 </header>
-<main id="inhalt">
+<main id="content">
 <div class="wrap">
   <header class="page-head">
     <p class="kicker"><span class="beta">Beta</span> Nodvard Dock</p>
     <h1>The Portainer alternative for your homelab</h1>
     <p class="lead">Nodvard Dock manages containers and Compose stacks on your servers. You bring simple stacks over from Portainer with a button, and the volumes with your data stay where they are. You host Dock yourself, and it costs nothing for personal use.</p>
-    <div class="btns"><a class="btn btn-main" href="#install">Install</a><a class="btn btn-alt" href="https://github.com/nodvard/dock">On GitHub</a></div>
+    <div class="btns"><a class="btn btn-main" href="#install">Install</a><a class="btn btn-alt" href="https://github.com/nodvard/dock">View on GitHub</a></div>
+    <p class="trust">Source code viewable, free for personal use (PolyForm Noncommercial 1.0.0). No agent, just SSH. Compose files live in a folder on the server.</p>
     <p class="lang-note"><strong>Note:</strong> this website and the guides are in English. The app interface is German only for now.</p>
   </header>
 
@@ -74,12 +75,12 @@
     <ul>
       <li><strong>Containers</strong> of all servers on one page: status, start, stop, restart, delete stopped containers, console and details.</li>
       <li><strong>Logs</strong> with a time range, search and download.</li>
-      <li><strong>Stacks</strong>: edit them as text or in a form. Before saving, Docker Compose checks the file on the server, and recent versions stay in the history. You create new stacks in a folder on each server, also from templates for Uptime Kuma, Vaultwarden, Nginx Proxy Manager and Gitea.</li>
+      <li><strong>Stacks:</strong> Edit them as text or in a form. Before saving, Docker Compose checks the file on the server, and recent versions stay in the history. You create new stacks in a folder on each server, also from templates for Uptime Kuma, Vaultwarden, Nginx Proxy Manager and Gitea.</li>
       <li><strong>Stacks from Git:</strong> pull a state from a Git repository, see first what changes, and go back with “back to the state before”. If you like, Dock checks the repository for a new state on a schedule and sends you a message. Applying it still takes a click.</li>
       <li><strong>Your own templates:</strong> save a Compose file as a template for new stacks. Environment values never go along, and Dock refuses fixed passwords or tokens when saving, as far as it can spot them.</li>
       <li><strong>On your phone:</strong> stacks, images, volumes and networks show up as cards instead of cut-off tables. Since 0.14, stack cards show only the main buttons and a more menu.</li>
     </ul>
-    <h3>Moving, Git and updates</h3>
+    <h3>Updates, Git and backups</h3>
     <ul>
       <li><strong>Updates with a way back (rollback):</strong> the old image stays as a backup. If the new container does not start, it goes back on its own, except for databases. Whole stacks also get a “back to the previous version” button after an update.</li>
       <li><strong>Volume backups:</strong> before an update, Dock backs up the volumes if you like and checks that there is enough space. You restore them in the Stacks tab.</li>
@@ -91,7 +92,7 @@
       <li><strong>Networks:</strong> create networks, internal only if you like, and connect or disconnect containers. The confirmation warns you if a container would be left without a network.</li>
       <li><strong>Clean up images (new in 0.14):</strong> The Images tab shows the total size of all images and, after a confirmation and approval, cleans up unused images without a name. Afterwards it says how many are gone and how much space was freed.</li>
       <li><strong>Stopping a stack (new in 0.14):</strong> When you stop a stack, you choose whether the containers stay or are removed. The volumes stay.</li>
-      <li><strong>Images, volumes and networks</strong>: list and clean them up, and sort containers by state, name, CPU or RAM.</li>
+      <li><strong>Images, volumes and networks:</strong> List and clean them up, and sort containers by state, name, CPU or RAM.</li>
       <li><strong>Approval and log:</strong> before Dock changes anything, it asks. As the owner, you decide which actions may go through without asking, and the log shows everything afterwards.</li>
     </ul>
 
@@ -99,10 +100,10 @@
     <p>Dock talks to your Docker servers over SSH. You don’t have to install an agent there. Don’t want to give the account full Docker rights? Use the “operate only” mode. With it, Dock may only call one fixed helper script via sudo, and that script checks every call itself. <a href="https://github.com/nodvard/deck/blob/main/docs/en/FIRST-SETUP.md#f-root-rights-without-a-password-and-the-docker-group">What each helper script may do</a>.</p>
 
     
-    <h2 id="warum-jetzt">Portainer 3.0 without a Community Edition</h2>
+    <h2 id="why-now">Portainer 3.0 without a Community Edition</h2>
     <p>In September 2026, Portainer announced that Portainer 3.0 ships without a Community Edition. CE stays on 2.x and keeps getting patches and updates there, but not the 3.x changes. On 6 November, Portainer added that Portainer 3 is Kubernetes-first, not Kubernetes-only, and that no Docker or Podman features are being removed (<a href="https://www.portainer.io/blog/portainer-3-0-is-coming">Portainer blog</a>). If that has you looking for something new, you can take your stacks along to Nodvard Dock.</p>
 
-    <h2 id="vergleich">Dock, Portainer CE and Dockge compared</h2>
+    <h2 id="comparison">Dock, Portainer CE and Dockge compared</h2>
     <p>All three manage containers with Compose. What differs is mostly how more servers are added and where the Compose files live.</p>
     <div class="table-wrap"><table class="vergleich">
       <thead><tr><th scope="col"></th><th scope="col">Nodvard Dock</th><th scope="col">Portainer CE</th><th scope="col">Dockge</th></tr></thead>
@@ -148,7 +149,7 @@ volumes:
 
   <div class="prose">
     <h2 id="dock-or-deck">Dock or Deck?</h2>
-    <p>Nodvard Dock is just the container manager, as its own small image. <a href="./">Nodvard Deck</a> has the same Docker part and adds Proxmox, backups, Shield, apps and notifications on top. The code is the same, there’s just more or less of it inside. More in the <a href="faq.html">FAQ</a>.</p>
+    <p>Nodvard Dock is just the container manager, as its own small image. <a href="./">Nodvard Deck</a> has the same Docker part and adds Proxmox, backups, Shield, apps and notifications on top. The code is the same. Deck just includes more modules. More in the <a href="faq.html">FAQ</a>.</p>
     <p class="note-small">Portainer is a trademark of its owner. Nodvard is not affiliated with it.</p>
   </div>
 </div>

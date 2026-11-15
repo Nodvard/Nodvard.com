@@ -47,6 +47,7 @@
     <h1>Die Alternative zu Portainer für dein Homelab</h1>
     <p class="lead">Nodvard Dock verwaltet Container und Compose-Stacks auf deinen Servern. Einfache Stacks aus Portainer holst du per Knopf rüber, und die Volumes mit deinen Daten bleiben, wo sie sind. Du hostest Dock selbst, privat kostet es nichts.</p>
     <div class="btns"><a class="btn btn-main" href="#installieren">Installieren</a><a class="btn btn-alt" href="https://github.com/nodvard/dock">Auf GitHub ansehen</a></div>
+    <p class="trust">Quelltext einsehbar, privat kostenlos (PolyForm Noncommercial 1.0.0). Kein Agent, nur SSH. Compose-Dateien liegen im Ordner auf dem Server.</p>
   </header>
 
   <figure class="wide">
@@ -59,7 +60,7 @@
       <h2 id="umzug">Stacks aus Portainer per Knopf umziehen</h2>
       <p>Im Reiter Stacks hat jeder Stack, den Portainer angelegt hat, den Knopf „Von Portainer übernehmen“. Dock holt sich Compose-Datei und Variablen aus dem Speicher von Portainer, legt sie in einen eigenen Ordner und startet den Stack dort unter demselben Namen neu. Die Volumes mit deinen Daten bleiben.</p>
       <p>Wenn etwas nicht passt, zum Beispiel weil in der gespeicherten Datei andere Images stehen als in den laufenden Containern, lässt Dock den Stack in Ruhe und sagt dir, warum.</p>
-      <p>Der Umzug klappt für Stacks, die Portainer als eine Compose-Datei führt. Stacks aus Git, in mehreren Fassungen oder mit mehreren Dateien kann er noch nicht. Solange Portainer noch parallel läuft, lass den Stack dort einfach unberührt stehen. Klickst du in Portainer auf Löschen oder Rollout, entfernt Portainer sonst die laufenden Container oder überschreibt sie mit seiner alten Datei.</p>
+      <p>Der Umzug klappt für Stacks, die Portainer als eine Compose-Datei führt. Für Stacks aus Git, in mehreren Fassungen oder mit mehreren Dateien geht das noch nicht. Solange Portainer noch parallel läuft, lass den Stack dort einfach unberührt stehen. Klickst du in Portainer auf Löschen oder Rollout, entfernt Portainer sonst die laufenden Container oder überschreibt sie mit seiner alten Datei.</p>
     </div>
     <figure class="clip-box"><video controls muted playsinline preload="none" poster="assets/clips/dock-umzug.webp" width="540" height="960" aria-label="Clip ohne Ton: Ein Stack zieht von Portainer zu Nodvard Dock um, die Volumes bleiben."><source src="assets/clips/dock-umzug.mp4" type="video/mp4"></video><figcaption>Der Umzug als Clip, 33 Sekunden, ohne Ton.</figcaption></figure>
   </div>
@@ -78,7 +79,7 @@
       <li><strong>Eigene Vorlagen:</strong> Eine Compose-Datei als Vorlage für neue Stacks speichern. Umgebungswerte kommen nie mit, und feste Passwörter oder Tokens lehnt Dock beim Speichern ab, soweit es sie erkennt.</li>
       <li><strong>Am Handy:</strong> Stacks, Images, Volumes und Netze stehen als Karten statt als abgeschnittene Tabellen. Seit 0.14 zeigen Stack-Karten nur die wichtigsten Knöpfe und ein Mehr-Menü.</li>
     </ul>
-    <h3>Umzug, Git und Updates</h3>
+    <h3>Updates, Git und Sicherungen</h3>
     <ul>
       <li><strong>Update mit Rückweg (Rollback):</strong> Das alte Image bleibt als Sicherung. Startet der neue Container nicht, geht es von selbst zurück, außer bei Datenbanken. Auch für ganze Stacks gibt es nach einem Update den Knopf „Zurück zur vorigen Version“.</li>
       <li><strong>Volume-Sicherungen:</strong> Vor einem Update sichert Dock auf Wunsch die Volumes und prüft, ob genug Platz da ist. Im Reiter Stacks spielst du sie wieder zurück.</li>
