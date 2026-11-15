@@ -62,6 +62,12 @@
     <div class="ansicht-panel" id="v-uebersicht" role="tabpanel" aria-labelledby="t-uebersicht">
       <picture><img src="assets/img/uebersicht-1120.webp" srcset="assets/img/uebersicht-1120.webp 1120w, assets/img/uebersicht.webp 2560w" sizes="(min-width: 1152px) 1120px, 100vw" width="2560" height="1600" fetchpriority="high" alt="Die Übersicht von Nodvard Deck mit Beispieldaten: drei Server und sechs Gäste mit Auslastung, laufende Container, Backups, ungelesene Meldungen und eine Aktion, die auf Freigabe wartet."></picture>
     </div>
+    <div class="ansicht-panel" id="v-docker" role="tabpanel" aria-labelledby="t-docker" hidden>
+      <picture><img src="assets/img/docker-1040.webp" srcset="assets/img/docker-1040.webp 1040w, assets/img/docker.webp 2080w" sizes="(min-width: 1152px) 1040px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="Die Docker-Seite mit Beispieldaten: Container eines Servers mit Zustand und Knöpfen für Neustart, Stoppen, Konsole und Logs."></picture>
+    </div>
+    <div class="ansicht-panel" id="v-shield" role="tabpanel" aria-labelledby="t-shield" hidden>
+      <picture><img src="assets/img/shield-1040.webp" srcset="assets/img/shield-1040.webp 1040w, assets/img/shield.webp 2080w" sizes="(min-width: 1152px) 1040px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Übersicht von Nodvard Shield mit Beispieldaten: Schutzwert, geschützte Server, offene Funde und Quarantäne."></picture>
+    </div>
     <div class="ansicht-panel" id="v-backups" role="tabpanel" aria-labelledby="t-backups" hidden>
       <picture><img src="assets/img/backups-tab-1120.webp" srcset="assets/img/backups-tab-1120.webp 1120w, assets/img/backups-tab.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1300" loading="lazy" decoding="async" alt="Die Seite Proxmox-Backups mit Beispieldaten: ein Gast ohne Backup-Job, Jobs mit Zeitplan und letztem Lauf, ein fehlgeschlagener Lauf."></picture>
     </div>
@@ -70,12 +76,6 @@
     </div>
     <div class="ansicht-panel" id="v-apps" role="tabpanel" aria-labelledby="t-apps" hidden>
       <picture><img src="assets/img/apps-1040.webp" srcset="assets/img/apps-1040.webp 1040w, assets/img/apps.webp 2080w" sizes="(min-width: 1152px) 1040px, 100vw" width="2080" height="992" loading="lazy" decoding="async" alt="Die Seite Apps mit Beispieldaten: Kacheln für die Dienste im Netz, in Ordnern sortiert."></picture>
-    </div>
-    <div class="ansicht-panel" id="v-docker" role="tabpanel" aria-labelledby="t-docker" hidden>
-      <picture><img src="assets/img/docker-1040.webp" srcset="assets/img/docker-1040.webp 1040w, assets/img/docker.webp 2080w" sizes="(min-width: 1152px) 1040px, 100vw" width="2080" height="1152" loading="lazy" decoding="async" alt="Die Docker-Seite mit Beispieldaten: Container eines Servers mit Zustand und Knöpfen für Neustart, Stoppen, Konsole und Logs."></picture>
-    </div>
-    <div class="ansicht-panel" id="v-shield" role="tabpanel" aria-labelledby="t-shield" hidden>
-      <picture><img src="assets/img/shield-1040.webp" srcset="assets/img/shield-1040.webp 1040w, assets/img/shield.webp 2080w" sizes="(min-width: 1152px) 1040px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Übersicht von Nodvard Shield mit Beispieldaten: Schutzwert, geschützte Server, offene Funde und Quarantäne."></picture>
     </div>
   </div>
   <div class="wrap"><p class="caption">Alle Ansichten mit Beispieldaten. Deck ist noch Beta und läuft mit Docker auf einem Raspberry Pi 4 oder 5 oder auf jedem x86-64-Rechner.</p></div>
@@ -114,7 +114,7 @@
       </div>
     </div>
     <div class="list">
-      <div class="slot"><h4><a href="funktionen.html#backups">Backups</a></h4><p>Deck schaut nach, ob deine Proxmox-Backups gelaufen sind, und meldet sich, wenn eins fehlt oder schiefging. <a href="proxmox-backups-ueberwachen.html">So richtest du es ein</a></p></div>
+      <div class="slot"><h4><a href="funktionen.html#backups">Backups</a></h4><p>Deck schaut nach, ob deine Proxmox-Backups gelaufen sind, und meldet sich, wenn eins fehlt oder schiefging. <a href="proxmox-backups-ueberwachen.html">So richtest du es ein</a>.</p></div>
       <div class="slot"><h4><a href="funktionen.html#apps">Apps</a></h4><p>Kacheln für deine Dienste, damit du dir keine Adressen mehr merken musst. Container mit Weboberfläche findet Deck selbst.</p></div>
       <div class="slot slot-beta"><h4><a href="funktionen.html#integrationen">Integrationen</a></h4><p>Uptime Kuma, Home Assistant, Plex, Jellyfin, Synology und noch ein paar mehr bekommen eine Kachel in Deck. Viele davon sind noch Beta.</p></div>
       <div class="slot"><h4><a href="funktionen.html#tresor">Tresor</a></h4><p>Passwörter, API-Tokens und SSH-Schlüssel speichert Deck verschlüsselt. Auf Wunsch bekommt jeder Server seinen eigenen Schlüssel.</p></div>

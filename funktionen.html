@@ -60,8 +60,8 @@
         <li>Proxmox: Knoten, VMs und LXC starten und stoppen, Konsole im Browser, Snapshots, Hardware und Speicher</li>
         <li>Festplatten-Zustand, ZFS und Temperatur der Proxmox-Knoten</li>
       </ul>
-      <p>Proxmox brauchst du nicht. Deck kommt auch mit einem Raspberry Pi, einem NAS oder ein paar Docker-Hosts klar. <a href="proxmox-docker-dashboard.html">Proxmox und Docker in einem Dashboard</a></p>
-      <p><strong>Was auf deinen Servern landet:</strong> Kein Agent und kein eigener Dienst, Deck kommt per SSH. Für Aufgaben, die root brauchen, legt die Einrichtung ein paar kleine Hilfsskripte unter <code>/usr/local/lib/nodvard-deck</code> an. Deck ruft sie per sudo auf. Jedes kann nur seine festen Befehle und prüft selbst, was es bekommt. <a href="https://github.com/nodvard/deck/blob/main/docs/11-ERST-EINRICHTUNG.md#f-root-rechte-ohne-passwort-und-gruppe-docker">Was jedes Hilfsskript darf</a></p>
+      <p>Proxmox brauchst du nicht. Deck kommt auch mit einem Raspberry Pi, einem NAS oder ein paar Docker-Hosts klar. <a href="proxmox-docker-dashboard.html">Proxmox und Docker in einem Dashboard</a>.</p>
+      <p><strong>Was auf deinen Servern landet:</strong> Kein Agent und kein eigener Dienst, Deck kommt per SSH. Für Aufgaben, die root brauchen, legt die Einrichtung ein paar kleine Hilfsskripte unter <code>/usr/local/lib/nodvard-deck</code> an. Deck ruft sie per sudo auf. Jedes kann nur seine festen Befehle und prüft selbst, was es bekommt. <a href="https://github.com/nodvard/deck/blob/main/docs/11-ERST-EINRICHTUNG.md#f-root-rechte-ohne-passwort-und-gruppe-docker">Was jedes Hilfsskript darf</a>.</p>
     </div>
     <figure>
       <picture><img src="assets/img/server-1040.webp" srcset="assets/img/server-1040.webp 1040w, assets/img/server.webp 2080w" sizes="(min-width: 901px) 640px, 100vw" width="2080" height="1472" loading="lazy" decoding="async" alt="Die Seite eines Proxmox-Knotens in Nodvard Deck: Zugang, CPU, RAM, Laufzeit und der Verlauf der Auslastung."></picture>

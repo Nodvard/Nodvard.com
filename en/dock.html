@@ -143,7 +143,7 @@ volumes:
   nodvard_dock_data:
     name: nodvard-dock-data</code></pre>
     </details>
-    <p class="intro">Then open <code>http://&lt;your-server&gt;:8080</code>. <code>docker compose logs nodvard-dock</code> shows the setup code (the line starts with “Einrichtungscode”). If the port is taken, put a file <code>.env</code> next to <code>compose.yml</code> with <code>NODVARD_DOCK_PORT=8081</code>.</p>
+    <p class="intro">Then open <code>http://&lt;your-server&gt;:8080</code> in your browser. Run <code>docker compose logs nodvard-dock</code> to get your setup code (look for the line starting with “Einrichtungscode”). If the port is taken, put a file <code>.env</code> next to <code>compose.yml</code> with <code>NODVARD_DOCK_PORT=8081</code>.</p>
     <p class="intro">Updating: in the same folder, run <code>docker compose pull &amp;&amp; docker compose up -d</code>. Your data is kept. Everything else is in the <a href="https://github.com/nodvard/dock">nodvard/dock repository</a>.</p>
   </section>
 
