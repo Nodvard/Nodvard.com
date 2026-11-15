@@ -73,7 +73,7 @@
     <h2 id="features">What Dock does</h2>
     <h3>Containers and stacks day to day</h3>
     <ul>
-      <li><strong>Containers</strong> of all servers on one page: status, start, stop, restart, delete stopped containers, console and details.</li>
+      <li><strong>Containers</strong> of all servers on one page: status, start, stop, restart, delete stopped containers, console, details and sorting by state, name, CPU or RAM.</li>
       <li><strong>Logs</strong> with a time range, search and download.</li>
       <li><strong>Stacks:</strong> Edit them as text or in a form. Before saving, Docker Compose checks the file on the server, and recent versions stay in the history. You create new stacks in a folder on each server, also from templates for Uptime Kuma, Vaultwarden, Nginx Proxy Manager and Gitea.</li>
       <li><strong>Stacks from Git:</strong> Pull a version from a Git repository, see what changes first, and go back with “Zurück zum Stand davor” (back to the previous state). If you like, Dock checks the repository for updates on a schedule and sends you a message. Applying it still takes a click.</li>
@@ -92,7 +92,7 @@
       <li><strong>Networks:</strong> Create networks, internal only if you like, and connect or disconnect containers. The confirmation warns you if a container would be left without a network.</li>
       <li><strong>Clean up images (new in 0.14):</strong> The Images tab shows the total size of all images and, after a confirmation and approval, cleans up unused images without a name. Afterwards it says how many are gone and how much space was freed.</li>
       <li><strong>Stopping a stack (new in 0.14):</strong> When you stop a stack, you choose whether the containers stay or are removed. The volumes stay.</li>
-      <li><strong>Images, volumes and networks:</strong> List and clean them up, and sort containers by state, name, CPU or RAM.</li>
+      <li><strong>Volumes and networks:</strong> List and clean them up.</li>
       <li><strong>Approval and log:</strong> Before Dock changes anything, it asks. As the owner, you decide which actions may go through without asking, and the log shows everything afterwards.</li>
     </ul>
 
@@ -112,7 +112,7 @@
     <p class="note-small">The table reflects the state of October 2026, based on the documentation of <a href="https://docs.portainer.io/">Portainer</a> and <a href="https://github.com/louislam/dockge">Dockge</a>. If you need Swarm or Kubernetes, Portainer is the better fit.</p>
 
     <h2 id="limitations">What Dock does not do</h2>
-    <p>Dock is meant for Docker and Docker Compose on individual servers. It can’t do Swarm or Kubernetes. The interface is only in German so far. And Dock is still in beta, so let us know if something’s off. Discord is the quickest way: <a href="https://discord.gg/gTTs7qMabt">discord.gg/gTTs7qMabt</a>.</p>
+    <p>Dock is meant for Docker and Docker Compose on individual servers. It can’t do Swarm or Kubernetes. The interface is only in German so far. And Dock is still in beta, so let me know if something’s off, quickest on <a href="https://discord.gg/gTTs7qMabt">Discord</a>.</p>
   </div>
 
   <section class="install" id="install" aria-labelledby="h-install">

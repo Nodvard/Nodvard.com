@@ -79,14 +79,15 @@
         <li>Compose-Dateien als Text oder im Formular bearbeiten. Vor dem Speichern prüft Docker Compose die Datei auf dem Server.</li>
         <li>Neue Stacks anlegen, auch aus Vorlagen für Uptime Kuma, Vaultwarden, Nginx Proxy Manager und Gitea</li>
         <li>Ganze Stacks aktualisieren und zurück zur vorigen Version (Rollback), auf Wunsch mit Sicherung der Volumes vorher</li>
-        <li>Stacks direkt aus einem Git-Repository holen. Vorher zeigt Deck dir, welche Dateien neu sind oder sich ändern. Auf Wunsch sichert es die Volumes, und mit „Zurück zum Stand davor“ kommst du wieder zum alten Stand. Zugänge für private Repositorys liegen im Tresor. Auf Wunsch prüft Deck nach Zeitplan, ob es einen neuen Stand gibt, und schickt eine Nachricht.</li>
+        <li>Stacks direkt aus einem Git-Repository holen. Vorher zeigt Deck dir, welche Dateien neu sind oder sich ändern. Die Volumes lassen sich vorher sichern, und mit „Zurück zum Stand davor“ kommst du wieder zum alten Stand. Zugänge für private Repositorys liegen im Tresor. Auf Wunsch prüft Deck nach Zeitplan, ob es einen neuen Stand gibt, und schickt eine Nachricht.</li>
         <li>Umzug einfacher Stacks aus Portainer. Deck nimmt Compose-Datei und Variablen mit, deine Volumes bleiben, wo sie sind.</li>
-        <li>Netze anlegen, auf Wunsch nur intern, und Container verbinden oder trennen</li>
+        <li>Netze anlegen, wahlweise nur intern, und Container verbinden oder trennen</li>
         <li>Images per Name und Tag holen, private auch mit der Anmeldung unter Registries</li>
         <li>Eigene Compose-Dateien als Vorlage speichern. Feste Passwörter und Tokens lehnt Deck dabei ab.</li>
         <li>Container nach Zustand, Name, CPU oder RAM sortieren</li>
         <li><strong>Neu in 0.14:</strong> Der Reiter Images zeigt die Gesamtgröße aller Images und entfernt nach Rückfrage und Freigabe ungenutzte Images ohne Namen. Danach steht da, wie viele weg sind und wie viel Platz frei wurde.</li>
         <li>Volumes und Netze aufräumen</li>
+        <li><strong>Neu in 0.14:</strong> Beim Stoppen eines Stacks wählst du, ob die Container bleiben oder entfernt werden. Die Volumes bleiben.</li>
       </ul>
       <p>Du willst nur Container verwalten? Den Docker-Teil gibt es einzeln als <a href="dock.html">Nodvard Dock (mit Umzug von Portainer)</a>.</p>
     </div>

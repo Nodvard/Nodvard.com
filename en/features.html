@@ -80,14 +80,15 @@
         <li>Edit Compose files as text or in a form. Before saving, Docker Compose checks the file on the server.</li>
         <li>Create new stacks, also from templates for Uptime Kuma, Vaultwarden, Nginx Proxy Manager and Gitea</li>
         <li>Update whole stacks and go back to the previous version (rollback), with a backup of the volumes first if you like</li>
-        <li>Pull stacks straight from a Git repository. Before that, Deck shows you which files are new or would change. If you like, it backs up the volumes first, and “Zurück zum Stand davor” (back to the previous state) takes you back to the old state. Credentials for private repositories are stored in the vault. If you like, Deck checks on a schedule whether there is a new state and sends a message.</li>
+        <li>Pull stacks straight from a Git repository. Before that, Deck shows you which files are new or would change. The volumes can be backed up first, and “Zurück zum Stand davor” (back to the previous state) takes you back to the old state. Credentials for private repositories are stored in the vault. If you like, Deck checks on a schedule whether there is a new state and sends a message.</li>
         <li>Move simple stacks from Portainer. Deck takes the Compose file and variables along, and your volumes stay where they are.</li>
-        <li>Create networks, internal only if you like, and connect or disconnect containers</li>
+        <li>Create networks, optionally internal only, and connect or disconnect containers</li>
         <li>Pull images by name and tag, private ones with the login under Registries</li>
         <li>Save your own Compose files as templates. Deck refuses fixed passwords and tokens in them.</li>
         <li>Sort containers by state, name, CPU or RAM</li>
         <li><strong>New in 0.14:</strong> The Images tab shows the total size of all images and, after a confirmation and approval, removes unused images without a name. Afterwards it says how many are gone and how much space was freed.</li>
         <li>Clean up volumes and networks</li>
+        <li><strong>New in 0.14:</strong> When you stop a stack, you choose whether the containers stay or are removed. The volumes stay.</li>
       </ul>
       <p>Only want to manage containers? You can get the Docker part on its own as <a href="dock.html">Nodvard Dock (with a move from Portainer)</a>.</p>
     </div>

@@ -74,7 +74,7 @@
       <li>Schalte das Modul Proxmox-Backups ein.</li>
       <li>Öffne die Seite Proxmox und wähle „Mit Passwort verbinden“. Dafür brauchst du Admin-Rechte in Deck.</li>
       <li>Gib die Adresse deines Proxmox ein und vergleiche den Fingerabdruck des Zertifikats mit dem in Proxmox.</li>
-      <li>Trag Benutzer und Passwort eines Proxmox-Administrators ein, meist <code>root@pam</code>. Wähle bei „Was darf Nodvard Deck?“ „Nur ansehen“ oder „Ansehen und steuern“ und lass „Auch Proxmox-Backups verbinden“ an.</li>
+      <li>Trag Benutzer und Passwort eines Proxmox-Administrators ein, meist <code>root@pam</code>. Wähle bei „Was darf Nodvard Deck?“ zwischen „Nur ansehen“ und „Ansehen und steuern“ und lass „Auch Proxmox-Backups verbinden“ an.</li>
     </ol>
     <p>Das Passwort braucht Deck nur für diese eine Anmeldung. Danach legt es in Proxmox einen eigenen Benutzer mit API-Token für die Backups an und vergisst das Passwort. Wählst du „Nur ansehen“, kann Deck nur lesen. Wie das genau läuft und welche Rechte der Zugang bekommt, steht in der <a href="https://github.com/nodvard/deck/blob/main/docs/10-PROXMOX-TOKEN.md">Anleitung zum Proxmox-Token</a>.</p>
 

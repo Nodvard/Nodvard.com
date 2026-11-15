@@ -48,13 +48,13 @@
     <h1>A cockpit for your whole homelab.</h1>
     <p class="hero-sub">Homelab dashboard for Proxmox and Docker</p>
     <p class="lead">Servers, Docker, Proxmox, updates and backups in one place. You host Nodvard Deck yourself, and it is free for personal use.</p>
-    <p class="lang-note"><strong>Note:</strong> This website and the guides are in English. The app interface is German only for now.</p>
     <div class="btns">
       <a class="btn btn-main" href="#install">Install in three commands</a>
       <a class="btn btn-alt" href="https://github.com/nodvard/deck">View on GitHub</a>
       <a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Join Discord</a>
     </div>
     <p class="trust">Source code viewable, free for personal use (PolyForm Noncommercial 1.0.0). No agent, just SSH and small helper scripts. About 100 MB of RAM at idle.</p>
+    <p class="lang-note"><strong>Note:</strong> This website and the guides are in English. The app interface is German only for now.</p>
     <p class="note">Just want to look around? Sample data is included. You can delete it later.</p>
   </div>
   <div class="bleed ansicht" data-ansicht>
@@ -92,7 +92,7 @@
       <figure><picture><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 380px, 100vw" width="2080" height="1072" loading="lazy" decoding="async" alt="The Stacks tab with sample data: imported Compose stacks with status, folder and buttons to edit, apply and update."></picture></figure>
       <div class="show-text">
         <h3>Docker with stacks <span class="beta beta-new">New</span></h3>
-        <p>Here you see the containers from all your servers together. You edit stacks right in Deck, as text or in a form, or you pull them from a Git repository. You can create networks here too, and save your own Compose files as templates. If you don’t like an update, you go back to the old version. You also clean up unused images after confirmation. You can also move simple stacks over from Portainer, and the volumes stay where they are.</p>
+        <p>Here you see the containers from all your servers together. You edit stacks right in Deck, as text or in a form, or you pull them from a Git repository. You can create networks here too, and save your own Compose files as templates. If you don’t like an update, you go back to the old version. Unused images are cleaned up after confirmation. Simple stacks move over from Portainer, and the volumes stay where they are.</p>
         <a href="features.html#docker">More about Docker</a>
       </div>
     </div>
@@ -142,7 +142,7 @@
 <section class="section" id="install" aria-labelledby="install-h">
   <div class="wrap">
     <h2 id="install-h">Install in three commands</h2>
-    <p class="intro">All you need is a machine with Docker and Docker Compose, such as a Raspberry Pi 4 or 5 or any x86-64 machine. You don’t build anything. The ready-made image comes from GitHub.</p>
+    <p class="intro">All you need is a machine with Docker and Docker Compose, such as a Raspberry Pi 4 or 5 with a 64-bit system or any x86-64 machine. You don’t build anything. The ready-made image comes from GitHub.</p>
     <div class="cmd">
       <div class="cmd-head"><span>In a terminal, with Docker Compose</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-start">Copy</button></div>
       <pre><code id="cmd-start">mkdir ~/nodvard-deck &amp;&amp; cd ~/nodvard-deck
