@@ -29,7 +29,7 @@
 <link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab-Dashboard","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.13.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.13.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab-Dashboard","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.14.1","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.14.1","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Nodvard Deck","item":"https://nodvard.com/"},{"@type":"ListItem","position":2,"name":"Funktionen","item":"https://nodvard.com/funktionen.html"}]}</script>
 </head>
 <body>
@@ -81,11 +81,12 @@
         <li>Ganze Stacks aktualisieren und zurück zur vorigen Version (Rollback), auf Wunsch mit Sicherung der Volumes vorher</li>
         <li>Stacks direkt aus einem Git-Repository holen. Vorher zeigt Deck dir, welche Dateien neu sind oder sich ändern. Auf Wunsch sichert es die Volumes, und mit „Zurück zum Stand davor“ kommst du wieder zum alten Stand. Zugänge für private Repositorys liegen im Tresor.</li>
         <li>Umzug einfacher Stacks aus Portainer. Deck nimmt Compose-Datei und Variablen mit, deine Volumes bleiben, wo sie sind</li>
-        <li><strong>Neu in 0.13:</strong> Netze anlegen, auf Wunsch nur intern, und Container verbinden oder trennen</li>
-        <li><strong>Neu in 0.13:</strong> Images per Name und Tag holen, private auch mit der Anmeldung unter Registries</li>
-        <li><strong>Neu in 0.13:</strong> Eigene Compose-Dateien als Vorlage speichern. Feste Passwörter und Tokens lehnt Deck dabei ab</li>
-        <li><strong>Neu in 0.13:</strong> Stacks aus Git nach Zeitplan auf einen neuen Stand prüfen, mit Nachricht</li>
+        <li>Netze anlegen, auf Wunsch nur intern, und Container verbinden oder trennen</li>
+        <li>Images per Name und Tag holen, private auch mit der Anmeldung unter Registries</li>
+        <li>Eigene Compose-Dateien als Vorlage speichern. Feste Passwörter und Tokens lehnt Deck dabei ab</li>
+        <li>Stacks aus Git nach Zeitplan auf einen neuen Stand prüfen, mit Nachricht</li>
         <li>Container nach Zustand, Status, CPU oder RAM sortieren</li>
+        <li><strong>Neu in 0.14:</strong> Der Reiter Images zeigt die Gesamtgröße aller Images und entfernt nach Rückfrage und Freigabe ungenutzte Images ohne Namen. Danach steht da, wie viele weg sind und wie viel Platz frei wurde</li>
         <li>Images, Volumes und Netze aufräumen</li>
       </ul>
       <p><a href="dock.html">Umstieg von Portainer</a></p>
@@ -104,9 +105,10 @@
         <li>Virenscan mit ClamAV als Schnellscan, Tiefenscan oder nach Zeitplan, mit Quarantäne. Neue Dateien in typischen Ordnern wie <code>/tmp</code> oder <code>/home</code> prüft Shield standardmäßig alle 10 Minuten. Echte Echtzeit-Prüfung (<code>clamonacc</code>) braucht auf dem Server rund 1 GB RAM.</li>
         <li>Härtungs-Check mit Lynis</li>
         <li>Update-Zentrale mit den offenen Sicherheitsupdates je Server</li>
-        <li>Einbruchschutz: ungewöhnliche SSH-Logins und offene Ports. Die von Fail2ban gesperrten Adressen je Server ansehen, entsperren oder eine Adresse von Hand sperren</li>
+        <li>Einbruchschutz: ungewöhnliche SSH-Logins und offene Ports. Die von Fail2ban gesperrten Adressen je Server ansehen, entsperren oder eine Adresse von Hand sperren. <strong>Neu in 0.14:</strong> Fail2ban je Server einstellen, mit Sperrdauer, Fundzeit, Versuchen, Ausnahmen und ausgewählten Schutzregeln. Vor dem Aktivieren prüft Deck die Einstellung. Bestehende Server richtest du dafür einmal neu ein</li>
         <li>Datei-Wächter für wichtige Systemdateien</li>
         <li>Morgen-Briefing mit dem Stand der Nacht</li>
+        <li><strong>Neu in 0.14:</strong> Wochenbericht mit zwölf Wochen Verlauf je Server (Updates, Virenscan, Fail2ban-Sperren und Lynis-Wert), dazu eine Kurzfassung über deine Meldungskanäle</li>
       </ul>
       <p>ClamAV, Lynis oder Fail2ban fehlen noch? Dann installiert Shield sie per Knopf, sobald du es freigibst. Mit dem Hilfsskript oder sudo-Rechten auf dem Server sieht Shield am meisten.</p>
       <p><a href="linux-virenschutz.html">Virenschutz für Linux-Server</a></p>
@@ -198,7 +200,7 @@
         <li>Anmeldung mit Zwei-Faktor-Code aus einer App</li>
         <li>Eine Bremse gegen Passwort-Raten bei der Anmeldung, und Updates per Knopf gibt es nur noch für signiert freigegebene Versionen. Der Knopf braucht den Update-Helfer, den du mit einer eigenen Compose-Datei bewusst einschaltest</li>
         <li>Name, Logo und Farben von Deck kannst du selbst anpassen</li>
-        <li><strong>Neu in 0.13:</strong> Bei einer neuen Version von Deck steht, was sie bringt, etwa ein Sicherheitsupdate oder Fehlerbehebungen</li>
+        <li>Bei einer neuen Version von Deck steht, was sie bringt, etwa ein Sicherheitsupdate oder Fehlerbehebungen</li>
       </ul>
     </div>
   </section>
@@ -212,7 +214,7 @@
         <li>Push aufs Handy über ntfy, Telegram, Discord, Gotify, Pushover, Matrix, Slack, Mattermost oder eine eigene Apprise-API</li>
         <li>Für jeden Kanal eine eigene Mindest-Stufe</li>
         <li>Deck lässt sich als App auf den Startbildschirm des Handys legen</li>
-        <li><strong>Neu in 0.13:</strong> Am Handy stehen Listen als Karten statt als abgeschnittene Tabellen, etwa bei Docker, Shield und den Meldungen</li>
+        <li>Am Handy stehen Listen als Karten statt als abgeschnittene Tabellen, jetzt auch bei Übersicht, Proxmox, Synology, Sicherungen, Registries, Shield-Paketen, Inventar und Dokumenten</li>
       </ul>
     </div>
     <figure>
@@ -233,7 +235,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a></div>
-    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="warum-nodvard-deck.html">Warum Nodvard Deck</a></li><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
+    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li><li><a href="https://x.com/Nodvard">X</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="warum-nodvard-deck.html">Warum Nodvard Deck</a></li><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
   </div>
 </footer>
 </body>

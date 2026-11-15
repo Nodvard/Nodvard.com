@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Virenschutz für Linux-Server zentral | Nodvard Deck</title>
+<title>ClamAV-Virenschutz für Linux-Server zentral | Nodvard Deck</title>
 <meta name="description" content="Nodvard Shield scannt deine Linux-Server mit ClamAV, zeigt dir Funde und Quarantäne von allen Servern zusammen und prüft Härtung, Updates und Logins.">
 <link rel="canonical" href="https://nodvard.com/linux-virenschutz.html">
 <link rel="alternate" hreflang="de" href="https://nodvard.com/linux-virenschutz.html">
@@ -12,15 +12,15 @@
 <meta name="theme-color" content="#0c1626">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
-<meta property="og:title" content="Virenschutz für Linux-Server zentral | Nodvard Deck">
+<meta property="og:title" content="ClamAV-Virenschutz für Linux-Server zentral | Nodvard Deck">
 <meta property="og:description" content="Nodvard Shield scannt deine Linux-Server mit ClamAV, zeigt dir Funde und Quarantäne von allen Servern zusammen und prüft Härtung, Updates und Logins.">
 <meta property="og:url" content="https://nodvard.com/linux-virenschutz.html">
 <meta property="og:image" content="https://nodvard.com/assets/og/virenschutz-de.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Vorschaubild: Virenschutz für Linux-Server zentral | Nodvard Deck">
+<meta property="og:image:alt" content="Vorschaubild: ClamAV-Virenschutz für Linux-Server zentral | Nodvard Deck">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Virenschutz für Linux-Server zentral | Nodvard Deck">
+<meta name="twitter:title" content="ClamAV-Virenschutz für Linux-Server zentral | Nodvard Deck">
 <meta name="twitter:description" content="Nodvard Shield scannt deine Linux-Server mit ClamAV, zeigt dir Funde und Quarantäne von allen Servern zusammen und prüft Härtung, Updates und Logins.">
 <meta name="twitter:image" content="https://nodvard.com/assets/og/virenschutz-de.jpg">
 <meta property="og:locale" content="de_DE">
@@ -61,9 +61,10 @@
       <li><strong>Quarantäne:</strong> Funde verschiebt Shield standardmäßig sofort in die Quarantäne, und das lässt sich rückgängig machen. Schaltest du das aus, warten Funde auf deine Entscheidung.</li>
       <li><strong>Härtungs-Check</strong> mit Lynis, mit den Hinweisen in Klartext.</li>
       <li><strong>Update-Zentrale</strong> mit den offenen Sicherheitsupdates je Server.</li>
-      <li><strong>Einbruchschutz:</strong> ungewöhnliche SSH-Logins und neue offene Ports. Seit 0.12 siehst du die von Fail2ban gesperrten Adressen je Server, entsperrst sie oder sperrst eine Adresse von Hand. Für Programme wie einen Spieleserver trägst du eigene Portbereiche ein.</li>
+      <li><strong>Einbruchschutz:</strong> ungewöhnliche SSH-Logins und neue offene Ports. Die von Fail2ban gesperrten Adressen siehst du je Server, du entsperrst sie oder sperrst eine Adresse von Hand. Seit 0.14 stellst du Fail2ban je Server ein: Sperrdauer, Fundzeit, Versuche, Ausnahmen und Schutzregeln. Bestehende Server richtest du dafür einmal neu ein. Für Programme wie einen Spieleserver trägst du eigene Portbereiche ein.</li>
       <li><strong>Datei-Wächter</strong> für wichtige Systemdateien.</li>
       <li><strong>Morgen-Briefing</strong> mit dem Stand der Nacht, auf Wunsch aufs Handy.</li>
+      <li><strong>Wochenbericht</strong> mit zwölf Wochen Verlauf je Server: Updates, Virenscan, Fail2ban-Sperren und Lynis-Wert. Eine Kurzfassung geht über deine Meldungskanäle.</li>
     </ul>
 
     <h2 id="grenzen">Was Shield nicht verspricht</h2>
@@ -87,7 +88,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a></div>
-    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="warum-nodvard-deck.html">Warum Nodvard Deck</a></li><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
+    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li><li><a href="https://x.com/Nodvard">X</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="warum-nodvard-deck.html">Warum Nodvard Deck</a></li><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
   </div>
 </footer>
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Central antivirus for Linux servers | Nodvard Deck</title>
+<title>Central ClamAV antivirus for Linux servers | Nodvard Deck</title>
 <meta name="description" content="Nodvard Shield scans your Linux servers with ClamAV, shows you findings and quarantine from all servers together and checks hardening, updates and logins.">
 <link rel="canonical" href="https://nodvard.com/en/linux-antivirus.html">
 <link rel="alternate" hreflang="de" href="https://nodvard.com/linux-virenschutz.html">
@@ -12,15 +12,15 @@
 <meta name="theme-color" content="#0c1626">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nodvard Deck">
-<meta property="og:title" content="Central antivirus for Linux servers | Nodvard Deck">
+<meta property="og:title" content="Central ClamAV antivirus for Linux servers | Nodvard Deck">
 <meta property="og:description" content="Nodvard Shield scans your Linux servers with ClamAV, shows you findings and quarantine from all servers together and checks hardening, updates and logins.">
 <meta property="og:url" content="https://nodvard.com/en/linux-antivirus.html">
 <meta property="og:image" content="https://nodvard.com/assets/og/virenschutz-en.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Preview image: Central antivirus for Linux servers | Nodvard Deck">
+<meta property="og:image:alt" content="Preview image: Central ClamAV antivirus for Linux servers | Nodvard Deck">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Central antivirus for Linux servers | Nodvard Deck">
+<meta name="twitter:title" content="Central ClamAV antivirus for Linux servers | Nodvard Deck">
 <meta name="twitter:description" content="Nodvard Shield scans your Linux servers with ClamAV, shows you findings and quarantine from all servers together and checks hardening, updates and logins.">
 <meta name="twitter:image" content="https://nodvard.com/assets/og/virenschutz-en.jpg">
 <meta property="og:locale" content="en_US">
@@ -62,9 +62,10 @@
       <li><strong>Quarantine:</strong> by default, Shield moves findings to quarantine right away, and that can be undone. If you turn this off, findings wait for your decision.</li>
       <li><strong>Hardening check</strong> with Lynis, with the hints in plain words.</li>
       <li><strong>Update center</strong> with the pending security updates for each server.</li>
-      <li><strong>Intrusion checks:</strong> unusual SSH logins and newly opened ports. Since 0.12 you see the addresses Fail2ban has banned on each server, unban them or ban an address by hand. For programs such as a game server, you add port ranges of your own.</li>
+      <li><strong>Intrusion checks:</strong> unusual SSH logins and newly opened ports. You see the addresses Fail2ban has banned on each server, unban them or ban an address by hand. Since 0.14 you set up Fail2ban per server: ban time, find time, retries, exceptions and jails. For this, you set up existing servers once more. For programs such as a game server, you add port ranges of your own.</li>
       <li><strong>File watcher</strong> for important system files.</li>
       <li><strong>Morning briefing</strong> with what happened overnight, sent to your phone if you like.</li>
+      <li><strong>Weekly report</strong> with twelve weeks of history per server: updates, virus scan, Fail2ban bans and the Lynis score. A short summary goes over your notification channels.</li>
     </ul>
 
     <h2 id="limitations">What Shield does not promise</h2>
@@ -88,7 +89,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a></div>
-    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="why-nodvard-deck.html">Why Nodvard Deck</a></li><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
+    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li><li><a href="https://x.com/Nodvard">X</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="why-nodvard-deck.html">Why Nodvard Deck</a></li><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
   </div>
 </footer>
 

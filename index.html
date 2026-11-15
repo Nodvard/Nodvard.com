@@ -29,7 +29,8 @@
 <link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab-Dashboard","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.13.0","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.13.0","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nodvard Deck","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Homelab-Dashboard","operatingSystem":"Linux (Docker, arm64 und x86-64)","softwareVersion":"0.14.1","releaseNotes":"https://github.com/nodvard/deck/releases/tag/v0.14.1","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://nodvard.com/","downloadUrl":"https://github.com/nodvard/deck","license":"https://github.com/nodvard/deck/blob/main/LICENSE","screenshot":"https://nodvard.com/assets/img/uebersicht.webp","inLanguage":"de","author":{"@type":"Person","name":"Nico Benks"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nodvard.com/#organization","name":"Nodvard","url":"https://nodvard.com/","logo":"https://nodvard.com/assets/apple-touch-icon.png","sameAs":["https://github.com/nodvard","https://discord.gg/gTTs7qMabt","https://x.com/Nodvard"]},{"@type":"WebSite","@id":"https://nodvard.com/#website","url":"https://nodvard.com/","name":"Nodvard Deck","inLanguage":"de","publisher":{"@id":"https://nodvard.com/#organization"}}]}</script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -43,8 +44,9 @@
 <main id="inhalt">
 <section class="hero">
   <div class="wrap">
-    <a class="news" href="funktionen.html#docker"><span class="news-tag">Neu in 0.13</span><span>Docker-Netze, eigene Stack-Vorlagen und Karten am Handy</span></a>
+    <a class="news" href="funktionen.html#docker"><span class="news-tag">Neu in 0.14</span><span>Fail2ban je Server, Shield-Wochenbericht und Images aufräumen</span></a>
     <h1>Ein Cockpit fürs ganze Homelab.</h1>
+    <p class="hero-sub">Homelab-Dashboard für Proxmox und Docker</p>
     <p class="lead">Server, Docker, Proxmox, Updates und Sicherungen an einem Ort. Nodvard Deck installierst du selbst, und privat zahlst du nichts.</p>
     <div class="btns">
       <a class="btn btn-main" href="#install">In drei Befehlen installieren</a>
@@ -81,7 +83,7 @@
 <section class="section" aria-labelledby="kann">
   <div class="wrap">
     <h2 id="kann">Was Nodvard Deck kann</h2>
-    <p class="intro">Bevor Deck etwas an deinen Servern ändert, fragt es dich. Ausnahmen sind eine Automatik, die du selbst einschaltest, und die Quarantäne von Shield, die ab Werk an ist und sich abschalten lässt. Lies, <a href="warum-nodvard-deck.html">warum es Nodvard Deck gibt</a>.</p>
+    <p class="intro">Bevor Deck etwas an deinen Servern ändert, fragt es dich. Ausnahmen sind eine Automatik, die du selbst einschaltest, und die Quarantäne von Shield, die ab Werk an ist und sich abschalten lässt. Lies, <a href="warum-nodvard-deck.html">warum es Nodvard Deck gibt</a>. Wie die Übersicht aussieht, steht unter <a href="homelab-dashboard.html">Homelab-Dashboard</a>.</p>
 
     <div class="rack">
     <div class="show slot">
@@ -164,7 +166,7 @@ volumes:
   nodvard_deck_data:
     name: nodvard-deck-data</code></pre>
     </details>
-    <p class="intro">Danach öffnest du <code>http://&lt;dein-server&gt;:8080</code> im Browser. Den Einrichtungscode findest du mit <code>docker compose logs nodvard-deck</code>. Deine Server bindest du per SSH an. Zum Schluss fragt dich der Assistent, ob du dich erst mal mit Beispieldaten umsehen willst.</p>
+    <p class="intro">Danach öffnest du <code>http://&lt;dein-server&gt;:8080</code> im Browser. Den Einrichtungscode findest du mit <code>docker compose logs nodvard-deck</code>. Deine Server bindest du per SSH an. Zum Schluss fragt dich der Assistent, ob du dich erst mal mit Beispieldaten umsehen willst. Fragen zu Kosten, Daten und Voraussetzungen beantworten die <a href="faq.html">häufigen Fragen</a>.</p>
     <p class="more"><a href="loslegen.html">Andere Wege, auch mit Portainer, Synology oder Unraid</a>. <a href="sicherung-nas-nfs.html">Sicherung auf ein NAS einrichten</a>.</p>
   </div>
 </section>
@@ -186,8 +188,8 @@ volumes:
 <section class="section" aria-labelledby="leute">
   <div class="wrap">
     <h2 id="leute">Fragen, Ideen, Fehler</h2>
-    <p class="intro">Wenn du eine Frage hast, komm auf Discord. Fehler und Ideen kannst du als Issue auf GitHub anlegen. Ich nutze Deck selbst, bei mir läuft es rund um die Uhr im Homelab.</p>
-    <p class="intro">Zu jeder Version gibt es auf <a href="https://github.com/nodvard/deck/releases">GitHub</a> ein Änderungsprotokoll, zum Beispiel <a href="https://github.com/nodvard/deck/releases/tag/v0.13.0">das zu Version 0.13</a>. Eine Sicherheitslücke meldest du bitte vertraulich über die <a href="https://github.com/nodvard/deck/blob/main/SECURITY.md">Sicherheits-Richtlinie</a>.</p>
+    <p class="intro">Wenn du eine Frage hast, komm auf Discord. Fehler und Ideen kannst du als Issue auf GitHub anlegen. Ich nutze Deck selbst, bei mir läuft es rund um die Uhr im Homelab. Mehr zum Mitmachen steht auf der <a href="community.html">Community-Seite</a>.</p>
+    <p class="intro">Zu jeder Version gibt es auf <a href="https://github.com/nodvard/deck/releases">GitHub</a> ein Änderungsprotokoll, zum Beispiel <a href="https://github.com/nodvard/deck/releases/tag/v0.14.1">das zu Version 0.14</a>. Eine Sicherheitslücke meldest du bitte vertraulich über die <a href="https://github.com/nodvard/deck/blob/main/SECURITY.md">Sicherheits-Richtlinie</a>.</p>
     <div class="btns">
       <a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Discord</a>
       <a class="btn btn-alt" href="https://github.com/nodvard/deck">GitHub</a>
@@ -199,7 +201,7 @@ volumes:
 <footer class="foot">
   <div class="wrap">
     <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a></div>
-    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="warum-nodvard-deck.html">Warum Nodvard Deck</a></li><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
+    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li><li><a href="https://x.com/Nodvard">X</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="warum-nodvard-deck.html">Warum Nodvard Deck</a></li><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
   </div>
 </footer>
 <script src="assets/copy.js" defer></script>
