@@ -43,12 +43,12 @@
 <div class="wrap">
   <header class="page-head">
     <h1>Proxmox-Backups überwachen</h1>
-    <p class="lead">Ein Backup-Job, der still ausfällt, fällt oft erst auf, wenn du die Sicherung brauchst. Nodvard Deck zeigt dir alle Proxmox-Backups in einer Liste und meldet sich, wenn ein Lauf fehlschlägt oder eine Sicherung zu alt wird.</p>
-    <div class="btns"><a class="btn btn-main" href="loslegen.html">Loslegen</a><a class="btn btn-alt" href="funktionen.html#backups">Alle Funktionen zu Backups</a></div>
+    <p class="lead">Ein Backup-Job, der still scheitert, fällt oft erst auf, wenn du die Sicherung brauchst. Nodvard Deck zeigt dir alle Proxmox-Backups in einer Liste und meldet sich, wenn ein Lauf fehlschlägt oder eine Sicherung zu alt wird.</p>
+    <div class="btns"><a class="btn btn-main" href="loslegen.html">Deck in drei Befehlen installieren</a><a class="btn btn-alt" href="#einrichten">Zur Einrichtung springen</a></div>
   </header>
 
   <figure class="wide">
-    <picture><source media="(max-width: 600px)" srcset="assets/img/backups-handy.webp" width="1100" height="1000"><img src="assets/img/backups-1040.webp" srcset="assets/img/backups-1040.webp 1040w, assets/img/backups.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1300" fetchpriority="high" alt="Die Seite Proxmox-Backups mit Beispieldaten: ein Gast ohne Backup-Job, Jobs mit Zeitplan und letztem Lauf, ein fehlgeschlagener Lauf."></picture>
+    <picture><source media="(max-width: 600px)" srcset="assets/img/backups-handy.webp" width="1100" height="1000"><img src="assets/img/backups-1040.webp" srcset="assets/img/backups-1040.webp 1040w, assets/img/backups.webp 2080w" sizes="(min-width: 1152px) 1040px, 100vw" width="2080" height="1300" fetchpriority="high" alt="Die Seite Proxmox-Backups mit Beispieldaten: ein Gast ohne Backup-Job, Jobs mit Zeitplan und letztem Lauf, ein fehlgeschlagener Lauf."></picture>
     <figcaption>Die Seite Proxmox-Backups mit Beispieldaten. Gäste ohne Job und fehlgeschlagene Läufe stehen oben.</figcaption>
   </figure>
 
@@ -59,6 +59,7 @@
       <li>Die vorhandenen Sicherungen je Gast.</li>
       <li>Gäste, die in keinem Job stecken, und fehlgeschlagene Läufe. Beides steht oben.</li>
     </ul>
+    <p>Deck fragt die Jobs und Sicherungen über die Proxmox-API deines Proxmox-VE-Servers ab.</p>
 
     <h2>Wann sich Deck meldet</h2>
     <ul>
@@ -68,7 +69,7 @@
     </ul>
     <p>Die Meldungen kommen in Deck an und auf Wunsch aufs Handy, über ntfy, Telegram, Discord oder einen der anderen Kanäle. In einem Wartungsfenster landen sie nur im Verlauf, ohne Push.</p>
 
-    <h2>So richtest du es ein</h2>
+    <h2 id="einrichten">So richtest du es ein</h2>
     <ol>
       <li>Schalte das Modul Proxmox-Backups ein.</li>
       <li>Öffne die Seite Proxmox und wähle „Mit Passwort verbinden“. Dafür brauchst du Admin-Rechte in Deck.</li>
@@ -93,8 +94,14 @@
 <section class="section cta" aria-labelledby="cta">
   <div class="wrap">
     <h2 id="cta">Probier es mit Beispieldaten aus</h2>
-    <p class="intro">Installiert ist Deck in drei Befehlen, und die Beispieldaten zeigen dir alles, bevor deine eigenen Server dazukommen.</p>
-    <div class="btns"><a class="btn btn-main" href="loslegen.html">Loslegen</a><a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Fragen auf Discord</a></div>
+    <p class="intro">Installiert ist Deck in drei Befehlen, und die Beispieldaten zeigen dir alles, bevor deine eigenen Server dazukommen. Quelltext einsehbar, kostenlos für den privaten Gebrauch.</p>
+    <div class="cmd">
+      <div class="cmd-head"><span>Im Terminal, mit Docker Compose</span><span class="sr" role="status"></span><button type="button" data-done="Kopiert" hidden data-copy="cmd-start">Kopieren</button></div>
+      <pre><code id="cmd-start">mkdir ~/nodvard-deck &amp;&amp; cd ~/nodvard-deck
+curl -fsSL -o compose.yml https://raw.githubusercontent.com/nodvard/deck/main/deploy/compose.standalone.yml
+docker compose up -d</code></pre>
+    </div>
+    <div class="btns"><a class="btn btn-main" href="loslegen.html">Alle Wege zur Installation</a><a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Fragen auf Discord</a></div>
   </div>
 </section>
 </main>

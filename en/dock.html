@@ -47,49 +47,51 @@
     <h1>The Portainer alternative for your homelab</h1>
     <p class="lead">Nodvard Dock manages containers and Compose stacks on your servers. You bring simple stacks over from Portainer with a button, and the volumes with your data stay where they are. You host Dock yourself, and it costs nothing for personal use.</p>
     <div class="btns"><a class="btn btn-main" href="#install">Install</a><a class="btn btn-alt" href="https://github.com/nodvard/dock">On GitHub</a></div>
-    <p class="lang-note"><strong>Good to know:</strong> the web interface of Nodvard Deck and Nodvard Dock is German only for now. This website and the guides are in English.</p>
+    <p class="lang-note"><strong>Note:</strong> this website and the guides are in English. The app interface is German only for now.</p>
   </header>
 
-  <div class="prose">
-    <h2 id="why-now">Portainer 3.0 without Community Edition: what it means for your homelab</h2>
-    <p>In September 2026, Portainer announced that Portainer 3.0 ships without a Community Edition. CE stays on 2.x and keeps getting patches and updates there, but not the 3.x changes. On 6 November, Portainer added that Portainer 3 is Kubernetes-first, not Kubernetes-only, and that no Docker or Podman features are being removed (<a href="https://www.portainer.io/blog/portainer-3-0-is-coming">Portainer blog</a>). If that has you looking for something new, you can take your stacks along to Nodvard Dock.</p>
-  </div>
+  <figure class="wide">
+    <picture><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1072" fetchpriority="high" alt="The Stacks tab with sample data: two Compose stacks already imported from Portainer, with status, path /opt/stacks and buttons to edit, apply and update."></picture>
+    <figcaption>The Stacks tab with sample data.</figcaption>
+  </figure>
 
-  <div class="show">
-    <figure><picture><img src="../assets/img/stacks-1040.webp" srcset="../assets/img/stacks-1040.webp 1040w, ../assets/img/stacks.webp 2080w" sizes="(min-width: 901px) 620px, 100vw" width="2080" height="1072" fetchpriority="high" alt="The Stacks tab with sample data: two Compose stacks already imported from Portainer, with status, path /opt/stacks and buttons to edit, apply and update."></picture></figure>
+  <div class="split umzug">
     <div class="show-text">
       <h2 id="migration">Move Portainer stacks with a button</h2>
       <p>In the Stacks tab, every stack created by Portainer has a button to move it over. Dock grabs the Compose file and variables from Portainer’s storage, puts them in a folder of their own and starts the stack there again under the same name. The volumes with your data stay.</p>
       <p>When something doesn’t fit, for example because the stored file lists other images than the running containers, Dock leaves the stack alone and tells you why.</p>
       <p>The move works for stacks that Portainer keeps as a single Compose file. Stacks from Git, in several versions or with several files are not supported yet. As long as Portainer is still running in parallel, leave the stack untouched there. If you click delete or rollout in Portainer, Portainer removes the running containers or overwrites them with its old file.</p>
     </div>
-  </div>
-
-  <div class="split" style="margin-top: 48px;">
-    <div>
-      <h3 id="migration-video">The move on video</h3>
-      <p class="intro">In 33 seconds, you see how Dock imports stacks from Portainer.</p>
-    </div>
     <figure class="clip-box"><video controls muted playsinline preload="none" poster="../assets/clips/dock-umzug.webp" width="540" height="960" aria-label="Clip without sound: a stack moves from Portainer to Nodvard Dock, the volumes stay."><source src="../assets/clips/dock-umzug.mp4" type="video/mp4"></video><figcaption>The move as a clip, 33 seconds, no sound.</figcaption></figure>
   </div>
 
+
+
+
   <div class="prose">
     <h2 id="features">What Dock does</h2>
+    <h3>Containers and stacks day to day</h3>
     <ul>
       <li><strong>Containers</strong> of all servers on one page: status, start, stop, restart, delete stopped containers, console and details.</li>
       <li><strong>Logs</strong> with a time range, search and download.</li>
       <li><strong>Stacks</strong>: edit them as text or in a form. Before saving, Docker Compose checks the file on the server, and recent versions stay in the history. You create new stacks in a folder on each server, also from templates for Uptime Kuma, Vaultwarden, Nginx Proxy Manager and Gitea.</li>
-      <li><strong>Updates with a way back (rollback):</strong> the old image stays as a backup. If the new container does not start, it goes back on its own, except for databases. Whole stacks also get a “back to the previous version” button after an update.</li>
       <li><strong>Stacks from Git:</strong> pull a state from a Git repository, see first what changes, and go back with “back to the state before”. If you like, Dock checks the repository for a new state on a schedule and sends you a message. Applying it still takes a click.</li>
+      <li><strong>Your own templates:</strong> save a Compose file as a template for new stacks. Environment values never go along, and Dock refuses fixed passwords or tokens when saving, as far as it can spot them.</li>
+      <li><strong>On your phone:</strong> stacks, images, volumes and networks show up as cards instead of cut-off tables. Since 0.14, stack cards show only the main buttons and a more menu.</li>
+    </ul>
+    <h3>Moving, Git and updates</h3>
+    <ul>
+      <li><strong>Updates with a way back (rollback):</strong> the old image stays as a backup. If the new container does not start, it goes back on its own, except for databases. Whole stacks also get a “back to the previous version” button after an update.</li>
       <li><strong>Volume backups:</strong> before an update, Dock backs up the volumes if you like and checks that there is enough space. You restore them in the Stacks tab.</li>
       <li><strong>Private registries</strong> such as ghcr.io go into the settings, and the password or token is stored in the vault.</li>
-      <li><strong>Networks:</strong> create networks, internal only if you like, and connect or disconnect containers. The confirmation warns you if a container would be left without a network.</li>
       <li><strong>Pull an image:</strong> download an image by name and tag, private ones with the login under Registries. If it fails, you see why.</li>
-      <li><strong>Your own templates:</strong> save a Compose file as a template for new stacks. Environment values never go along, and Dock refuses fixed passwords or tokens when saving, as far as it can spot them.</li>
+    </ul>
+    <h3>Cleanup and control</h3>
+    <ul>
+      <li><strong>Networks:</strong> create networks, internal only if you like, and connect or disconnect containers. The confirmation warns you if a container would be left without a network.</li>
       <li><strong>Clean up images (new in 0.14):</strong> The Images tab shows the total size of all images and, after a confirmation and approval, cleans up unused images without a name. Afterwards it says how many are gone and how much space was freed.</li>
       <li><strong>Stopping a stack (new in 0.14):</strong> When you stop a stack, you choose whether the containers stay or are removed. The volumes stay.</li>
       <li><strong>Images, volumes and networks</strong>: list and clean them up, and sort containers by state, name, CPU or RAM.</li>
-      <li><strong>On your phone:</strong> stacks, images, volumes and networks show up as cards instead of cut-off tables. Since 0.14, stack cards show only the main buttons and a more menu.</li>
       <li><strong>Approval and log:</strong> before Dock changes anything, it asks. As the owner, you decide which actions may go through without asking, and the log shows everything afterwards.</li>
     </ul>
 
@@ -97,13 +99,16 @@
     <p>Dock talks to your Docker servers over SSH. You don’t have to install an agent there. Don’t want to give the account full Docker rights? Use the “operate only” mode. With it, Dock may only call one fixed helper script via sudo, and that script checks every call itself. <a href="https://github.com/nodvard/deck/blob/main/docs/en/FIRST-SETUP.md#f-root-rights-without-a-password-and-the-docker-group">What each helper script may do</a>.</p>
 
     
+    <h2 id="warum-jetzt">Portainer 3.0 without a Community Edition</h2>
+    <p>In September 2026, Portainer announced that Portainer 3.0 ships without a Community Edition. CE stays on 2.x and keeps getting patches and updates there, but not the 3.x changes. On 6 November, Portainer added that Portainer 3 is Kubernetes-first, not Kubernetes-only, and that no Docker or Podman features are being removed (<a href="https://www.portainer.io/blog/portainer-3-0-is-coming">Portainer blog</a>). If that has you looking for something new, you can take your stacks along to Nodvard Dock.</p>
+
     <h2 id="vergleich">Dock, Portainer CE and Dockge compared</h2>
     <p>All three manage containers with Compose. What differs is mostly how more servers are added and where the Compose files live.</p>
     <div class="table-wrap"><table class="vergleich">
       <thead><tr><th scope="col"></th><th scope="col">Nodvard Dock</th><th scope="col">Portainer CE</th><th scope="col">Dockge</th></tr></thead>
-      <tbody><tr><th scope="row">Further servers</th><td data-label="Nodvard Dock">over SSH, no agent</td><td data-label="Portainer CE">Portainer Agent or Edge Agent on each server</td><td data-label="Dockge">Dockge agent on each further server</td></tr><tr><th scope="row">Compose files</th><td data-label="Nodvard Dock">in a folder on the server (default <code>/opt/stacks</code>)</td><td data-label="Portainer CE">in Portainer’s data storage</td><td data-label="Dockge">in a folder on the server (default <code>/opt/stacks</code>)</td></tr><tr><th scope="row">Swarm and Kubernetes</th><td data-label="Nodvard Dock">no</td><td data-label="Portainer CE">yes</td><td data-label="Dockge">no</td></tr><tr><th scope="row">Moving from Portainer</th><td data-label="Nodvard Dock">one button per stack (for single Compose files)</td><td data-label="Portainer CE">not applicable</td><td data-label="Dockge">move the file into the folder by hand</td></tr><tr><th scope="row">License</th><td data-label="Nodvard Dock">PolyForm Noncommercial (source-available, free for personal use)</td><td data-label="Portainer CE">zlib</td><td data-label="Dockge">MIT</td></tr></tbody>
+      <tbody><tr><th scope="row">Further servers</th><td data-label="Nodvard Dock">over SSH, no agent</td><td data-label="Portainer CE">Portainer Agent or Edge Agent on each server</td><td data-label="Dockge">Dockge agent on each further server</td></tr><tr><th scope="row">Compose files</th><td data-label="Nodvard Dock">in a folder on the server (default <code>/opt/stacks</code>)</td><td data-label="Portainer CE">in Portainer’s data storage</td><td data-label="Dockge">in a folder on the server (default <code>/opt/stacks</code>)</td></tr><tr><th scope="row">Swarm and Kubernetes</th><td data-label="Nodvard Dock">no</td><td data-label="Portainer CE">yes</td><td data-label="Dockge">no</td></tr><tr><th scope="row">Moving from Portainer</th><td data-label="Nodvard Dock">one button per stack (for single Compose files)</td><td data-label="Portainer CE">not applicable</td><td data-label="Dockge">move the file into the folder by hand</td></tr><tr><th scope="row">License</th><td data-label="Nodvard Dock">PolyForm Noncommercial (source code viewable, free for personal use)</td><td data-label="Portainer CE">zlib</td><td data-label="Dockge">MIT</td></tr></tbody>
     </table></div>
-    <p class="note-small">As of October 2026, based on the documentation of <a href="https://docs.portainer.io/">Portainer</a> and <a href="https://github.com/louislam/dockge">Dockge</a>. If you need Swarm or Kubernetes, Portainer is the better fit.</p>
+    <p class="note-small">The table reflects the state of October 2026, based on the documentation of <a href="https://docs.portainer.io/">Portainer</a> and <a href="https://github.com/louislam/dockge">Dockge</a>. If you need Swarm or Kubernetes, Portainer is the better fit.</p>
 
     <h2 id="limitations">What Dock does not do</h2>
     <p>Dock is meant for Docker and Docker Compose on individual servers. It can’t do Swarm or Kubernetes. The interface is only in German so far. And Dock is still in beta, so let us know if something’s off. Discord is the quickest way: <a href="https://discord.gg/gTTs7qMabt">discord.gg/gTTs7qMabt</a>.</p>
