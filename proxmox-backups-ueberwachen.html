@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proxmox-Backups überwachen mit Nodvard Deck</title>
+<meta name="description" content="So siehst du in Nodvard Deck, ob deine Proxmox-Backups laufen: Gäste ohne Backup-Job, fehlgeschlagene Läufe und zu alte Sicherungen, dazu Meldungen auf dein Handy.">
+<link rel="canonical" href="https://nodvard.com/proxmox-backups-ueberwachen.html">
+<link rel="alternate" hreflang="de" href="https://nodvard.com/proxmox-backups-ueberwachen.html">
+<link rel="alternate" hreflang="x-default" href="https://nodvard.com/proxmox-backups-ueberwachen.html">
+<meta name="theme-color" content="#0c1626">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nodvard Deck">
+<meta property="og:title" content="Proxmox-Backups überwachen mit Nodvard Deck">
+<meta property="og:description" content="So siehst du in Nodvard Deck, ob deine Proxmox-Backups laufen: Gäste ohne Backup-Job, fehlgeschlagene Läufe und zu alte Sicherungen, dazu Meldungen auf dein Handy.">
+<meta property="og:url" content="https://nodvard.com/proxmox-backups-ueberwachen.html">
+<meta property="og:image" content="https://nodvard.com/assets/og/start-de.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Vorschaubild: Proxmox-Backups überwachen mit Nodvard Deck">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Proxmox-Backups überwachen mit Nodvard Deck">
+<meta name="twitter:description" content="So siehst du in Nodvard Deck, ob deine Proxmox-Backups laufen: Gäste ohne Backup-Job, fehlgeschlagene Läufe und zu alte Sicherungen, dazu Meldungen auf dein Handy.">
+<meta name="twitter:image" content="https://nodvard.com/assets/og/start-de.jpg">
+<meta property="og:locale" content="de_DE">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Nodvard Deck","item":"https://nodvard.com/"},{"@type":"ListItem","position":2,"name":"Proxmox-Backups überwachen","item":"https://nodvard.com/proxmox-backups-ueberwachen.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
+    <nav aria-label="Hauptmenü"><ul class="nav"><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Dock</a></li><li><a href="warum-nodvard-deck.html">Warum Deck</a></li><li><a href="loslegen.html">Loslegen</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+    <a class="lang" href="en/" hreflang="en" lang="en" title="Read the English start page">English</a><a class="btn-top" href="loslegen.html">Installieren</a>
+  </div>
+</header>
+<main id="inhalt">
+<div class="wrap">
+  <header class="page-head">
+    <h1>Proxmox-Backups überwachen</h1>
+    <p class="lead">Ein Backup-Job, der still ausfällt, fällt oft erst auf, wenn du die Sicherung brauchst. Nodvard Deck zeigt dir alle Proxmox-Backups in einer Liste und meldet sich, wenn ein Lauf fehlschlägt oder eine Sicherung zu alt wird.</p>
+    <div class="btns"><a class="btn btn-main" href="loslegen.html">Loslegen</a><a class="btn btn-alt" href="funktionen.html#backups">Alle Funktionen zu Backups</a></div>
+  </header>
+
+  <figure class="wide">
+    <picture><source media="(max-width: 600px)" srcset="assets/img/backups-handy.webp" width="1100" height="1000"><img src="assets/img/backups-1040.webp" srcset="assets/img/backups-1040.webp 1040w, assets/img/backups.webp 2080w" sizes="(min-width: 1152px) 1120px, 100vw" width="2080" height="1300" fetchpriority="high" alt="Die Seite Proxmox-Backups mit Beispieldaten: ein Gast ohne Backup-Job, Jobs mit Zeitplan und letztem Lauf, ein fehlgeschlagener Lauf."></picture>
+    <figcaption>Die Seite Proxmox-Backups mit Beispieldaten. Gäste ohne Job und fehlgeschlagene Läufe stehen oben.</figcaption>
+  </figure>
+
+  <div class="prose">
+    <h2>Was Deck zeigt</h2>
+    <ul>
+      <li>Alle Backup-Jobs deiner Proxmox-Server mit Zeitplan und letztem Lauf.</li>
+      <li>Die vorhandenen Sicherungen je Gast.</li>
+      <li>Gäste, die in keinem Job stecken, und fehlgeschlagene Läufe. Beides steht oben.</li>
+    </ul>
+
+    <h2>Wann sich Deck meldet</h2>
+    <ul>
+      <li><strong>Lauf fehlgeschlagen:</strong> Du bekommst eine Meldung, und eine weitere, sobald es wieder klappt. Gemeldet wird nur, wenn sich etwas ändert, nicht bei jeder Prüfung.</li>
+      <li><strong>Backup zu alt:</strong> Ist die letzte erfolgreiche Sicherung einer VM oder eines Containers älter als eine Frist, meldet Deck es einmal. Die Frist stellst du ein, ab Werk sind es 3 Tage. Läuft ein Job seltener, gilt der Abstand aus seinem Zeitplan. So fällt auch auf, wenn nichts fehlschlägt, weil der Job gelöscht oder abgeschaltet ist.</li>
+      <li><strong>Test-VMs:</strong> Für VMs und Container, die nie gemeldet werden sollen, trägst du eine Ausnahme ein.</li>
+    </ul>
+    <p>Die Meldungen kommen in Deck an und auf Wunsch aufs Handy, über ntfy, Telegram, Discord oder einen der anderen Kanäle. In einem Wartungsfenster landen sie nur im Verlauf, ohne Push.</p>
+
+    <h2>So richtest du es ein</h2>
+    <ol>
+      <li>Schalte das Modul Proxmox-Backups ein.</li>
+      <li>Öffne die Seite Proxmox und wähle „Mit Passwort verbinden“. Dafür brauchst du Admin-Rechte in Deck.</li>
+      <li>Gib die Adresse deines Proxmox ein und vergleiche den Fingerabdruck des Zertifikats mit dem in Proxmox.</li>
+      <li>Trag Benutzer und Passwort eines Proxmox-Administrators ein, meist <code>root@pam</code>, und lass „Auch Proxmox-Backups verbinden“ an.</li>
+    </ol>
+    <p>Das Passwort braucht Deck nur für diese eine Anmeldung. Danach legt es in Proxmox einen eigenen Benutzer mit API-Token für die Backups an und vergisst das Passwort. Wählst du „Nur ansehen“, kann Deck nur lesen. Wie das genau läuft und welche Rechte der Zugang bekommt, steht in der <a href="https://github.com/nodvard/deck/blob/main/docs/10-PROXMOX-TOKEN.md">Anleitung zum Proxmox-Token</a>.</p>
+
+    <h2>Was du von Deck aus tun kannst</h2>
+    <p>Mit „Ansehen und steuern“ startest du ein Backup sofort oder versuchst einen Lauf erneut. Du legst Backup-Jobs an und änderst sie. Und du stellst eine Sicherung als Kopie wieder her, das Original bleibt dabei unberührt. Jede dieser Aktionen läuft über eine Freigabe und steht im Protokoll.</p>
+
+    <h2>Was Deck nicht macht</h2>
+    <ul>
+      <li>Deck sichert deine VMs und Container nicht selbst. Die Sicherungen macht Proxmox, Deck zeigt, ob sie laufen.</li>
+      <li>Eine Sicherung im selben Speicher wie das Original schützt nicht vor dem Ausfall dieses Speichers. Und ein Backup, das du nie zurückgespielt hast, ist ungetestet. Probier die Wiederherstellung als Kopie einmal aus.</li>
+    </ul>
+
+    <h2>Weiterlesen</h2>
+    <p>Mehr zu Proxmox und Docker in Deck steht unter <a href="proxmox-docker-dashboard.html">Proxmox und Docker in einem Dashboard</a>. Wie du Deck selbst sicherst, erklärt die Anleitung <a href="sicherung-nas-nfs.html">Sicherungen auf ein NAS oder NFS</a>.</p>
+  </div>
+</div>
+<section class="section cta" aria-labelledby="cta">
+  <div class="wrap">
+    <h2 id="cta">Probier es mit Beispieldaten aus</h2>
+    <p class="intro">Installiert ist Deck in drei Befehlen, und die Beispieldaten zeigen dir alles, bevor deine eigenen Server dazukommen.</p>
+    <div class="btns"><a class="btn btn-main" href="loslegen.html">Loslegen</a><a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Fragen auf Discord</a></div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, zur Startseite"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a></div>
+    <nav class="foot-cols" aria-label="Weitere Seiten"><div><p class="foot-h">Produkt</p><ul><li><a href="funktionen.html">Funktionen</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="loslegen.html">Loslegen</a></li></ul></div><div><p class="foot-h">Mitmachen</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li><li><a href="https://x.com/Nodvard">X</a></li><li><a href="https://www.youtube.com/@Nodvard">YouTube</a></li></ul></div><div><p class="foot-h">Rechtliches</p><ul><li><a href="lizenz.html">Lizenz</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div><div><p class="foot-h">Wissen</p><ul><li><a href="warum-nodvard-deck.html">Warum Nodvard Deck</a></li><li><a href="homelab-dashboard.html">Homelab-Dashboard</a></li><li><a href="proxmox-backups-ueberwachen.html">Proxmox-Backups überwachen</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox und Docker</a></li><li><a href="linux-virenschutz.html">Virenschutz für Linux</a></li><li><a href="faq.html">Häufige Fragen</a></li><li><a href="sicherung-nas-nfs.html">Sicherung auf ein NAS</a></li></ul></div></nav>
+  </div>
+</footer>
+
+</body>
+</html>
