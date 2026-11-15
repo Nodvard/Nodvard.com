@@ -80,7 +80,7 @@
         <li>Edit Compose files as text or in a form. Before saving, Docker Compose checks the file on the server.</li>
         <li>Create new stacks, also from templates for Uptime Kuma, Vaultwarden, Nginx Proxy Manager and Gitea</li>
         <li>Update whole stacks and go back to the previous version (rollback), with a backup of the volumes first if you like</li>
-        <li>Pull stacks straight from a Git repository. Before that, Deck shows you which files are new or would change. If you like, it backs up the volumes first, and “back to the state before” takes you back to the old state. Credentials for private repositories are stored in the vault. If you like, Deck checks on a schedule whether there is a new state and sends a message.</li>
+        <li>Pull stacks straight from a Git repository. Before that, Deck shows you which files are new or would change. If you like, it backs up the volumes first, and “Zurück zum Stand davor” (back to the previous state) takes you back to the old state. Credentials for private repositories are stored in the vault. If you like, Deck checks on a schedule whether there is a new state and sends a message.</li>
         <li>Move simple stacks from Portainer. Deck takes the Compose file and variables along, and your volumes stay where they are.</li>
         <li>Create networks, internal only if you like, and connect or disconnect containers</li>
         <li>Pull images by name and tag, private ones with the login under Registries</li>
@@ -171,7 +171,13 @@
         <li>ntfy</li>
       </ul>
       <h3 class="sub">Extra modules, if you need them</h3>
-      <p>They’re all off by default, so nothing is in the way that you don’t need. You turn them on one by one: scripts for one or many servers, also on a schedule, a place for documents with text recognition and full-text search, an inventory that reminds you before a warranty ends, and game servers (beta).</p>
+      <p>They’re all off by default, so nothing is in the way that you don’t need. You turn them on one by one:</p>
+      <ul class="points">
+        <li><strong>Scripts</strong> for one or many servers, also on a schedule</li>
+        <li><strong>Documents:</strong> A place for documents with text recognition and full-text search</li>
+        <li><strong>Inventory</strong> with a reminder before a warranty ends</li>
+        <li><strong>Game servers</strong> (beta)</li>
+      </ul>
     </div>
   </section>
 
@@ -215,7 +221,7 @@
         <li>Push to your phone via ntfy, Telegram, Discord, Gotify, Pushover, Matrix, Slack, Mattermost or your own Apprise API</li>
         <li>A minimum level for each channel</li>
         <li>Deck can be added to your phone’s home screen as an app</li>
-        <li>New in 0.14: on your phone, lists show up as cards instead of cut-off tables, now also in the overview, Proxmox, Synology, backups, registries, Shield packages, inventory and documents</li>
+        <li>New in 0.14: on your phone, lists show up as cards instead of cut-off tables</li>
       </ul>
     </div>
     <figure>

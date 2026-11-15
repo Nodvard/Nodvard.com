@@ -59,11 +59,11 @@
   <div class="split umzug">
     <div class="show-text">
       <h2 id="migration">Move Portainer stacks with a button</h2>
-      <p>In the Stacks tab, every stack created by Portainer has a button to move it over. Dock grabs the Compose file and variables from Portainer’s storage, puts them in a folder of their own and starts the stack there again under the same name. The volumes with your data stay.</p>
+      <p>In the Stacks tab, every stack created by Portainer has the button “Von Portainer übernehmen” (move over from Portainer). Dock grabs the Compose file and variables from Portainer’s storage, puts them in a folder of their own and starts the stack there again under the same name. The volumes with your data stay.</p>
       <p>When something doesn’t fit, for example because the stored file lists other images than the running containers, Dock leaves the stack alone and tells you why.</p>
       <p>The move works for stacks that Portainer keeps as a single Compose file. Stacks from Git, in several versions or with several files are not supported yet. As long as Portainer is still running in parallel, leave the stack untouched there. If you click delete or rollout in Portainer, Portainer removes the running containers or overwrites them with its old file.</p>
     </div>
-    <figure class="clip-box"><video controls muted playsinline preload="none" poster="../assets/clips/dock-umzug.webp" width="540" height="960" aria-label="Clip without sound: a stack moves from Portainer to Nodvard Dock, the volumes stay."><source src="../assets/clips/dock-umzug.mp4" type="video/mp4"></video><figcaption>The move as a clip, 33 seconds, no sound.</figcaption></figure>
+    <figure class="clip-box"><video controls muted playsinline preload="none" poster="../assets/clips/dock-umzug.webp" width="540" height="960" aria-label="Clip without sound: a stack moves from Portainer to Nodvard Dock, the volumes stay."><source src="../assets/clips/dock-umzug.mp4" type="video/mp4"></video><figcaption>33-second clip of moving a stack from Portainer. The clip is in German, no sound.</figcaption></figure>
   </div>
 
 
@@ -76,13 +76,13 @@
       <li><strong>Containers</strong> of all servers on one page: status, start, stop, restart, delete stopped containers, console and details.</li>
       <li><strong>Logs</strong> with a time range, search and download.</li>
       <li><strong>Stacks:</strong> Edit them as text or in a form. Before saving, Docker Compose checks the file on the server, and recent versions stay in the history. You create new stacks in a folder on each server, also from templates for Uptime Kuma, Vaultwarden, Nginx Proxy Manager and Gitea.</li>
-      <li><strong>Stacks from Git:</strong> Pull a version from a Git repository, see what changes first, and go back with “back to the previous version”. If you like, Dock checks the repository for updates on a schedule and sends you a message. Applying it still takes a click.</li>
+      <li><strong>Stacks from Git:</strong> Pull a version from a Git repository, see what changes first, and go back with “Zurück zum Stand davor” (back to the previous state). If you like, Dock checks the repository for updates on a schedule and sends you a message. Applying it still takes a click.</li>
       <li><strong>Your own templates:</strong> Save a Compose file as a template for new stacks. Environment variables are never included, and Dock refuses hard-coded passwords or tokens when saving, as far as it can spot them.</li>
-      <li><strong>On your phone:</strong> Stacks, images, volumes and networks show up as cards instead of cut-off tables. Since 0.14, stack cards show only the main buttons and a “More” menu.</li>
+      <li><strong>On your phone:</strong> Stacks, images, volumes and networks show up as cards instead of cut-off tables. Since 0.14, stack cards show only the main buttons and a “Mehr” (More) menu.</li>
     </ul>
     <h3>Updates, Git and backups</h3>
     <ul>
-      <li><strong>Updates with a way back (rollback):</strong> The old image stays as a backup. If the new container does not start, it goes back on its own, except for databases. Whole stacks also get a “back to the previous version” button after an update.</li>
+      <li><strong>Updates with a way back (rollback):</strong> The old image stays as a backup. If the new container does not start, it goes back on its own, except for databases. Whole stacks also get a “Zurück zur vorigen Version” (back to the previous version) button after an update.</li>
       <li><strong>Volume backups:</strong> Before an update, Dock backs up the volumes if you like and checks that there is enough space. You restore them in the Stacks tab.</li>
       <li><strong>Private registries</strong> such as ghcr.io go into the settings, and the password or token is stored in the vault.</li>
       <li><strong>Pull an image:</strong> Download an image by name and tag, private ones with the login under Registries. If it fails, you see why.</li>
@@ -97,7 +97,7 @@
     </ul>
 
     <h2 id="agentless">Several servers, no agent</h2>
-    <p>Dock talks to your Docker servers over SSH. You don’t have to install an agent there. Don’t want to give the account full Docker rights? Use the “operate only” mode. With it, Dock may only call one fixed helper script via sudo, and that script checks every call itself. <a href="https://github.com/nodvard/deck/blob/main/docs/en/FIRST-SETUP.md#f-root-rights-without-a-password-and-the-docker-group">What each helper script may do</a>.</p>
+    <p>Dock talks to your Docker servers over SSH. You don’t have to install an agent there. Don’t want to give the account full Docker rights? Use the “Nur bedienen” (operate only) mode. With it, Dock may only call one fixed helper script via sudo, and that script checks every call itself. <a href="https://github.com/nodvard/deck/blob/main/docs/en/FIRST-SETUP.md#f-root-rights-without-a-password-and-the-docker-group">What the helper script may do</a>.</p>
 
     
     <h2 id="why-now">Portainer 3.0 without a Community Edition</h2>
@@ -149,7 +149,7 @@ volumes:
 
   <div class="prose">
     <h2 id="dock-or-deck">Dock or Deck?</h2>
-    <p>Nodvard Dock is just the container manager, as its own small image. <a href="./">Nodvard Deck</a> has the same Docker part and adds Proxmox, backups, Shield, apps and notifications on top. The code is the same. Deck just includes more modules. More in the <a href="faq.html">FAQ</a>.</p>
+    <p>Nodvard Dock is just the container manager, as its own small image. <a href="./">Nodvard Deck</a> has the same Docker part and adds <a href="features.html">Proxmox, backups, Shield, apps and notifications</a> on top. The code is the same. Deck just includes more modules. More in the <a href="faq.html">FAQ</a>.</p>
     <p class="note-small">Portainer is a trademark of its owner. Nodvard is not affiliated with it.</p>
   </div>
 </div>
