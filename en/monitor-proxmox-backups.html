@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Monitor Proxmox backups with Nodvard Deck</title>
+<meta name="description" content="See in Nodvard Deck whether your Proxmox backups run: guests without a backup job, failed runs and backups that are too old, with notifications on your phone.">
+<link rel="canonical" href="https://nodvard.com/en/monitor-proxmox-backups.html">
+<link rel="alternate" hreflang="de" href="https://nodvard.com/proxmox-backups-ueberwachen.html">
+<link rel="alternate" hreflang="en" href="https://nodvard.com/en/monitor-proxmox-backups.html">
+<link rel="alternate" hreflang="x-default" href="https://nodvard.com/proxmox-backups-ueberwachen.html">
+<meta name="theme-color" content="#0c1626">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nodvard Deck">
+<meta property="og:title" content="Monitor Proxmox backups with Nodvard Deck">
+<meta property="og:description" content="See in Nodvard Deck whether your Proxmox backups run: guests without a backup job, failed runs and backups that are too old, with notifications on your phone.">
+<meta property="og:url" content="https://nodvard.com/en/monitor-proxmox-backups.html">
+<meta property="og:image" content="https://nodvard.com/assets/og/start-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Preview image: Monitor Proxmox backups with Nodvard Deck">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Monitor Proxmox backups with Nodvard Deck">
+<meta name="twitter:description" content="See in Nodvard Deck whether your Proxmox backups run: guests without a backup job, failed runs and backups that are too old, with notifications on your phone.">
+<meta name="twitter:image" content="https://nodvard.com/assets/og/start-en.jpg">
+<meta property="og:locale" content="en_US">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Nodvard Deck","item":"https://nodvard.com/en/"},{"@type":"ListItem","position":2,"name":"Monitor Proxmox backups","item":"https://nodvard.com/en/monitor-proxmox-backups.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
+    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="why-nodvard-deck.html">Why Deck</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+    <a class="lang" href="../proxmox-backups-ueberwachen.html" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a><a class="btn-top" href="get-started.html">Install</a>
+  </div>
+</header>
+<main id="content">
+<div class="wrap">
+  <header class="page-head">
+    <h1>Monitor Proxmox backups</h1>
+    <p class="lead">A backup job that fails quietly is often only noticed when you need the backup. Nodvard Deck shows all your Proxmox backups in one list and tells you when a run fails or a backup gets too old. You host Deck yourself (beta, source code viewable, free for personal use).</p>
+    <p class="lang-note"><strong>Note:</strong> This website and the guides are in English. The app interface is German only for now.</p>
+    <div class="btns"><a class="btn btn-main" href="#cta">Install Deck in three commands</a><a class="btn btn-alt" href="#setup">Jump to the setup</a></div>
+  </header>
+
+  <figure class="wide">
+    <picture><source media="(max-width: 600px)" srcset="../assets/img/backups-handy.webp" width="1100" height="1000"><img src="../assets/img/backups-1040.webp" srcset="../assets/img/backups-1040.webp 1040w, ../assets/img/backups.webp 2080w" sizes="(min-width: 1152px) 1040px, 100vw" width="2080" height="1300" fetchpriority="high" alt="The Proxmox backups page with sample data: a guest without a backup job, jobs with schedule and last run, a failed run."></picture>
+    <figcaption>The Proxmox-Backups page with sample data, in German. Guests without a job and failed runs are at the top.</figcaption>
+  </figure>
+
+  <div class="prose">
+    <h2>What Deck shows</h2>
+    <ul>
+      <li>All backup jobs of your Proxmox servers with schedule and last run.</li>
+      <li>The existing backups for each guest.</li>
+      <li>Guests that are in no job, and failed runs. Both are at the top.</li>
+    </ul>
+    <p>Deck asks for the jobs and backups through the API of your Proxmox VE server.</p>
+
+    <h2>When Deck tells you</h2>
+    <ul>
+      <li><strong>Run failed:</strong> You get a message, and another one as soon as it works again. Deck only reports when something changes, not at every check.</li>
+      <li><strong>Backup too old:</strong> If the last successful backup of a VM or container is older than a limit, Deck tells you once. You set the limit, the default is 3 days. If a job runs less often, the gap from its schedule applies. This also catches the case where nothing fails because the job was deleted or switched off.</li>
+      <li><strong>Test VMs:</strong> For VMs and containers that should never be reported, you add an exception.</li>
+    </ul>
+    <p>Messages arrive in Deck and, if you like, on your phone through ntfy, Telegram, Discord or one of the other channels. During a maintenance window they only go to the history, without a push.</p>
+
+    <h2 id="setup">How to set it up</h2>
+    <ol>
+      <li>Turn on the Proxmox-Backups module.</li>
+      <li>Open the Proxmox page and choose “Mit Passwort verbinden” (connect with password). This needs admin rights in Deck.</li>
+      <li>Enter the address of your Proxmox and compare the certificate fingerprint with the one in Proxmox.</li>
+      <li>Enter the user and password of a Proxmox administrator, usually <code>root@pam</code>. Under “Was darf Nodvard Deck?” (what may Nodvard Deck do?) choose between “Nur ansehen” (view only) and “Ansehen und steuern” (view and control), and leave “Auch Proxmox-Backups verbinden” (also connect Proxmox backups) on.</li>
+    </ol>
+    <p>Deck only needs the password for this one login. Afterwards it creates a user of its own with an API token for the backups in Proxmox and forgets the password. If you choose “Nur ansehen” (view only), Deck can only read. How this works in detail and which rights the access gets is described in the <a href="https://github.com/nodvard/deck/blob/main/docs/en/PROXMOX-TOKEN.md">guide to the Proxmox token</a>.</p>
+
+    <h2>What you can do from Deck</h2>
+    <p>With “Ansehen und steuern” (view and control) you start a backup right away or retry a run. You create backup jobs and change them. And you restore a backup as a copy, the original stays untouched. Each of these actions goes through an approval and is written to the log.</p>
+
+    <h2>What Deck does not do</h2>
+    <ul>
+      <li>Deck does not back up your VMs and containers itself. Proxmox makes the backups, Deck shows whether they run.</li>
+      <li>A backup in the same storage as the original does not protect you if that storage fails. And a backup you never restored is untested. Try restoring as a copy once.</li>
+    </ul>
+
+    <h2>Read on</h2>
+    <p>More about Proxmox and Docker in Deck is on <a href="proxmox-docker-dashboard.html">Proxmox and Docker in one dashboard</a>. All backup features are listed under <a href="features.html#backups">Features</a>. How to back up Deck itself is in the guide <a href="backup-nas-nfs.html">Backups to a NAS or NFS</a>.</p>
+  </div>
+</div>
+<section class="section cta" aria-labelledby="cta">
+  <div class="wrap">
+    <h2 id="cta">Try it with sample data</h2>
+    <p class="intro">Deck installs with three commands, and the sample data shows you everything before your own servers come in. Source code viewable, free for personal use.</p>
+    <div class="cmd">
+      <div class="cmd-head"><span>In a terminal, with Docker Compose</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-start">Copy</button></div>
+      <pre><code id="cmd-start">mkdir ~/nodvard-deck &amp;&amp; cd ~/nodvard-deck
+curl -fsSL -o compose.yml https://raw.githubusercontent.com/nodvard/deck/main/deploy/compose.standalone.yml
+docker compose up -d</code></pre>
+    </div>
+    <p class="intro">Then open <code>http://&lt;your-server&gt;:8080</code> in your browser. Run <code>docker compose logs nodvard-deck</code> to get your setup code (look for the line starting with “Einrichtungscode”).</p>
+    <div class="btns"><a class="btn btn-main" href="get-started.html">All ways to install</a><a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Ask on Discord</a></div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a></div>
+    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li><li><a href="https://x.com/Nodvard">X</a></li><li><a href="https://www.youtube.com/@Nodvard">YouTube</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="why-nodvard-deck.html">Why Nodvard Deck</a></li><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
+  </div>
+</footer>
+
+<script src="../assets/copy.js" defer></script>
+</body>
+</html>
