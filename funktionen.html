@@ -107,6 +107,9 @@
         <li>Virenscan mit ClamAV als Schnellscan, Tiefenscan oder nach Zeitplan, mit Quarantäne. Neue Dateien in typischen Ordnern wie <code>/tmp</code> oder <code>/home</code> prüft Shield standardmäßig alle 10 Minuten. Echte Echtzeit-Prüfung (<code>clamonacc</code>) braucht auf dem Server rund 1 GB RAM.</li>
         <li><strong>Neu in 0.14.3:</strong> Sitzen ab 10 offene Funde im selben Ordner, bietet der Reiter Quarantäne an, den Ordner von Scans auszunehmen und die Funde darin zu schließen. Die Ausnahme gilt für alle Server und du bestätigst sie gesondert. Systemordner lassen sich so nicht ausnehmen.</li>
         <li>Härtungs-Check mit Lynis</li>
+        <li><strong>Neu in 0.14:</strong> SSH-Härtung per Knopf. Ein Server wird auf reine Schlüssel-Anmeldung umgestellt, die Anmeldung mit Passwort ist danach aus. Bleibt die Bestätigung aus, nimmt der Server die Änderung nach 60 Sekunden selbst zurück, und Deck warnt, wenn es sich selbst aussperren würde. Dafür muss Deck sich mit einem SSH-Schlüssel anmelden. Die Aktion läuft über die Freigabe mit hoher Risikostufe und steht im Protokoll</li>
+        <li><strong>Neu in 0.14:</strong> CVE-Abgleich je Server. Die installierten Pakete werden lokal mit öffentlichen Sicherheitsmeldungen von Debian, Ubuntu und Red Hat abgeglichen, Fedora über Bodhi. Du siehst Schwere und behobene Version, ein Link führt zur Update-Zentrale. Der Abgleich spielt keine Updates ein, und ein fehlgeschlagener oder nicht unterstützter Abgleich heißt nicht, dass nichts offen ist. Paketnamen und Versionen gehen nicht an die Datenquellen</li>
+        <li><strong>Neu in 0.14:</strong> Außenprüfung vom Rechner mit Deck aus, nicht aus dem Internet. Deck prüft kurz häufige Ports und bekannte Dienste, warnt vor neu offenen Ports und vor bald ablaufenden oder selbst signierten HTTPS-Zertifikaten und schwachen TLS-Protokollen. Sie liest nur, läuft nach Zeitplan und lässt sich abschalten. UDP und die übrigen TCP-Ports prüft sie nicht</li>
         <li>Update-Zentrale mit den offenen Sicherheitsupdates je Server</li>
         <li>Einbruchschutz: ungewöhnliche SSH-Logins und offene Ports. Die von Fail2ban gesperrten Adressen je Server ansehen, entsperren oder eine Adresse von Hand sperren. <strong>Neu in 0.14:</strong> Fail2ban je Server einstellen, mit Sperrdauer, Fundzeit, Versuchen, Ausnahmen und ausgewählten Schutzregeln. Vor dem Aktivieren prüft Deck die Einstellung. Bestehende Server richtest du dafür einmal neu ein.</li>
         <li>Datei-Wächter für wichtige Systemdateien</li>
@@ -235,6 +238,20 @@
   </section>
 
 </div>
+<section class="section" aria-labelledby="h-more">
+  <div class="wrap">
+    <h2 id="h-more">Weiterlesen</h2>
+    <ul class="points">
+      <li><a href="proxmox-docker-dashboard.html">Proxmox und Docker in einem Dashboard</a></li>
+      <li><a href="docker-auf-proxmox.html">Docker auf Proxmox verwalten: VM oder LXC</a></li>
+      <li><a href="pihole-synology-docker.html">Pi-hole auf Synology im Docker-Container im Blick behalten</a></li>
+      <li><a href="proxmox-backups-ueberwachen.html">Proxmox-Backups überwachen</a></li><li><a href="docker-auf-proxmox.html">Docker auf Proxmox</a></li><li><a href="pihole-synology-docker.html">Pi-hole auf Synology</a></li>
+      <li><a href="linux-virenschutz.html">Virenschutz für Linux-Server mit ClamAV</a></li>
+      <li><a href="homelab-dashboard.html">Homelab-Dashboard: mehr als eine Seite mit Kacheln</a></li>
+      <li><a href="warum-nodvard-deck.html">Warum Nodvard Deck</a>, <a href="lizenz.html">die Lizenz</a> und die <a href="community.html">Community</a></li>
+    </ul>
+  </div>
+</section>
 <section class="section cta" aria-labelledby="cta">
   <div class="wrap">
     <h2 id="cta">Probier es mit Beispieldaten aus</h2>

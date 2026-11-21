@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pi-hole on Synology in Docker: set it up and keep an eye on it</title>
+<meta name="description" content="Run Pi-hole as a Docker project on a Synology NAS, with a Compose example, and then watch Pi-hole, storage, disks and Hyper Backup in Nodvard Deck.">
+<link rel="canonical" href="https://nodvard.com/en/pihole-synology-docker.html">
+<link rel="alternate" hreflang="de" href="https://nodvard.com/pihole-synology-docker.html">
+<link rel="alternate" hreflang="en" href="https://nodvard.com/en/pihole-synology-docker.html">
+<link rel="alternate" hreflang="x-default" href="https://nodvard.com/pihole-synology-docker.html">
+<meta name="theme-color" content="#0c1626">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nodvard Deck">
+<meta property="og:title" content="Pi-hole on Synology in Docker: set it up and keep an eye on it">
+<meta property="og:description" content="Run Pi-hole as a Docker project on a Synology NAS, with a Compose example, and then watch Pi-hole, storage, disks and Hyper Backup in Nodvard Deck.">
+<meta property="og:url" content="https://nodvard.com/en/pihole-synology-docker.html">
+<meta property="og:image" content="https://nodvard.com/assets/og/start-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Preview image: Pi-hole on Synology in Docker: set it up and keep an eye on it">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pi-hole on Synology in Docker: set it up and keep an eye on it">
+<meta name="twitter:description" content="Run Pi-hole as a Docker project on a Synology NAS, with a Compose example, and then watch Pi-hole, storage, disks and Hyper Backup in Nodvard Deck.">
+<meta name="twitter:image" content="https://nodvard.com/assets/og/start-en.jpg">
+<meta property="og:locale" content="en_US">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Nodvard Deck","item":"https://nodvard.com/en/"},{"@type":"ListItem","position":2,"name":"Pi-hole on Synology","item":"https://nodvard.com/en/pihole-synology-docker.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
+    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="why-nodvard-deck.html">Why Deck</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+    <a class="lang" href="../pihole-synology-docker.html" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a><a class="btn-top" href="get-started.html">Install</a>
+  </div>
+</header>
+<main id="content">
+<div class="wrap">
+  <header class="page-head">
+    <h1>Pi-hole on Synology in a Docker container</h1>
+    <p class="lead">Pi-hole runs well in Docker, also on a Synology NAS. Here is a Compose example based on the official Pi-hole guide, and how to keep an eye on Pi-hole and the NAS in one place afterwards.</p>
+    <p class="lang-note"><strong>Note:</strong> This website and the guides are in English. The app interface is German only for now.</p>
+  </header>
+  <div class="prose">
+    <h2>Starting Pi-hole with Compose</h2>
+    <p>The official guide at <a href="https://docs.pi-hole.net/docker/">docs.pi-hole.net/docker</a> shows the Compose file. The example here follows it, with a different port for the web interface. Adjust the password and the time zone.</p>
+    <div class="cmd">
+      <div class="cmd-head"><span>compose.yml for Pi-hole</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-pihole">Copy</button></div>
+      <pre><code id="cmd-pihole">services:
+  pihole:
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8081:80/tcp"
+    environment:
+      TZ: "Europe/Berlin"
+      FTLCONF_webserver_api_password: "hier-ein-eigenes-passwort"
+      FTLCONF_dns_listeningMode: "ALL"
+    volumes:
+      - ./etc-pihole:/etc/pihole
+    restart: unless-stopped</code></pre>
+    </div>
+    <ul>
+      <li><strong>Port 53</strong> is the DNS port. It must be free on your NAS, otherwise Pi-hole does not start.</li>
+      <li><strong>Web interface:</strong> In the example it is on port 8081. Use a different port if that one is taken.</li>
+      <li><strong>Listening mode ALL:</strong> The Pi-hole guide asks for it when Docker uses its default bridge network.</li>
+      <li><strong>The <code>etc-pihole</code> folder</strong> holds the database and the settings. It belongs in your backup.</li>
+    </ul>
+    <p>How you start the file on your NAS depends on your DSM version. The Synology help explains how to run Docker projects with Container Manager. After that, enter the address of the NAS as the DNS server in your router or on individual devices.</p>
+
+    <h2>What you want to keep an eye on</h2>
+    <p>A Pi-hole that is down is noticed all over the house, because no page loads anymore. On top of that come the usual worries about a NAS: free space, the state of the disks, whether the backups run and whether a DSM update is due.</p>
+
+    <h2>With Nodvard Deck: both in one place</h2>
+    <p>Deck has a module for each, and both are still beta.</p>
+    <ul>
+      <li><strong>Pi-hole</strong> shows queries, the share of blocked queries, the state of blocking, the most active devices and how current the blocklists are. You can pause blocking, update lists and allow or block domains. This goes through an approval. Pi-hole version 6 and later is supported. The password is kept in Deck’s encrypted vault.</li>
+      <li><strong>Synology DSM</strong> shows model, DSM version, load, temperature, storage pools, volumes, disks, the Hyper Backup tasks and whether a DSM update is available. The module only reads and changes nothing on the NAS. It works with DSM 7.1 to 7.4.</li>
+    </ul>
+    <p>For Synology you create a DSM account of its own. DSM only hands out storage, load, updates and Hyper Backup to accounts in the “administrators” group, so give it a long password of its own. Deck cannot use an account with two-factor sign-in. If DSM has a self-signed certificate, you enter its fingerprint or allow it for your own network. All steps are in the <a href="https://github.com/nodvard/deck/blob/main/docs/en/SYNOLOGY-DSM.md">guide to Synology DSM</a>.</p>
+    <p>Both modules tell you when something is wrong, on your phone if you like. More about notifications and the other modules is in the <a href="features.html#integrationen">feature overview</a>. Questions about Deck itself are answered in the <a href="faq.html">FAQ</a>. The interface is German only for now.</p>
+  </div>
+</div>
+<section class="section cta" aria-labelledby="cta">
+  <div class="wrap">
+    <h2 id="cta">Try it with sample data</h2>
+    <p class="intro">Deck installs with three commands, and the sample data shows you everything before your own servers come in. Source code viewable, free for personal use.</p>
+    <div class="cmd">
+      <div class="cmd-head"><span>In a terminal, with Docker Compose</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-start">Copy</button></div>
+      <pre><code id="cmd-start">mkdir ~/nodvard-deck &amp;&amp; cd ~/nodvard-deck
+curl -fsSL -o compose.yml https://raw.githubusercontent.com/nodvard/deck/main/deploy/compose.standalone.yml
+docker compose up -d</code></pre>
+    </div>
+    <p class="intro">Then open <code>http://&lt;your-server&gt;:8080</code> in your browser. Run <code>docker compose logs nodvard-deck</code> to get your setup code (look for the line starting with “Einrichtungscode”).</p>
+    <div class="btns"><a class="btn btn-main" href="get-started.html">All ways to install</a><a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Ask on Discord</a></div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a></div>
+    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li><li><a href="https://x.com/Nodvard">X</a></li><li><a href="https://www.youtube.com/@Nodvard">YouTube</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="why-nodvard-deck.html">Why Nodvard Deck</a></li><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
+  </div>
+</footer>
+
+<script src="../assets/copy.js" defer></script>
+</body>
+</html>

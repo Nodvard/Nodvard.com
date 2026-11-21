@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Docker on Proxmox: VM or LXC, and how to keep an eye on everything</title>
+<meta name="description" content="Where Docker runs on Proxmox, what the Proxmox documentation says about VMs and LXC, and how to manage containers, stacks and backups in one place.">
+<link rel="canonical" href="https://nodvard.com/en/docker-on-proxmox.html">
+<link rel="alternate" hreflang="de" href="https://nodvard.com/docker-auf-proxmox.html">
+<link rel="alternate" hreflang="en" href="https://nodvard.com/en/docker-on-proxmox.html">
+<link rel="alternate" hreflang="x-default" href="https://nodvard.com/docker-auf-proxmox.html">
+<meta name="theme-color" content="#0c1626">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nodvard Deck">
+<meta property="og:title" content="Docker on Proxmox: VM or LXC, and how to keep an eye on everything">
+<meta property="og:description" content="Where Docker runs on Proxmox, what the Proxmox documentation says about VMs and LXC, and how to manage containers, stacks and backups in one place.">
+<meta property="og:url" content="https://nodvard.com/en/docker-on-proxmox.html">
+<meta property="og:image" content="https://nodvard.com/assets/og/start-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Preview image: Docker on Proxmox: VM or LXC, and how to keep an eye on everything">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Docker on Proxmox: VM or LXC, and how to keep an eye on everything">
+<meta name="twitter:description" content="Where Docker runs on Proxmox, what the Proxmox documentation says about VMs and LXC, and how to manage containers, stacks and backups in one place.">
+<meta name="twitter:image" content="https://nodvard.com/assets/og/start-en.jpg">
+<meta property="og:locale" content="en_US">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Nodvard Deck","item":"https://nodvard.com/en/"},{"@type":"ListItem","position":2,"name":"Docker on Proxmox","item":"https://nodvard.com/en/docker-on-proxmox.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a>
+    <nav aria-label="Main menu"><ul class="nav"><li><a href="features.html">Features</a></li><li><a href="dock.html">Dock</a></li><li><a href="why-nodvard-deck.html">Why Deck</a></li><li><a href="get-started.html">Get started</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+    <a class="lang" href="../docker-auf-proxmox.html" hreflang="de" lang="de" title="Diese Seite auf Deutsch lesen">Deutsch</a><a class="btn-top" href="get-started.html">Install</a>
+  </div>
+</header>
+<main id="content">
+<div class="wrap">
+  <header class="page-head">
+    <h1>Managing Docker on Proxmox</h1>
+    <p class="lead">Proxmox VE does not ship with Docker. You install it yourself, and the question is where: in a VM or in an LXC container. Here is what the Proxmox documentation says, how to set it up, and how to keep an eye on containers, stacks and backups afterwards.</p>
+    <p class="lang-note"><strong>Note:</strong> This website and the guides are in English. The app interface is German only for now.</p>
+  </header>
+  <div class="prose">
+    <h2>VM or LXC?</h2>
+    <p>The Proxmox documentation calls nesting containers inside a QEMU VM a recommended practice when you need strong isolation. Application containers in the style of Docker inside LXC are described there as a technology preview. An LXC is lighter but shares the kernel of the Proxmox host. A VM has its own kernel and separates Docker more cleanly from the host.</p>
+    <p>To get started, create a small Debian or Ubuntu VM and run Docker in it. If you choose LXC, read the notes in the <a href="https://pve.proxmox.com/pve-docs/chapter-pct.html">Proxmox documentation on containers</a> first.</p>
+
+    <h2>Setting up Docker in the VM</h2>
+    <ol>
+      <li>Create the VM and install a Linux. Give it enough space for the images and volumes of your containers.</li>
+      <li>Install Docker and the Compose plugin following the <a href="https://docs.docker.com/engine/install/">Docker installation guide</a>.</li>
+      <li>Give every stack its own folder with a <code>compose.yml</code>. That way each stack is easy to find, back up and move.</li>
+      <li>Add the VM to a Proxmox backup job. A backup of the whole VM then also contains its Compose files and volumes.</li>
+    </ol>
+
+    <h2>How to manage containers</h2>
+    <p>On the command line you use <code>docker compose</code>. If you want a web interface, there are several tools: Portainer and Dockge need their own agent on every additional server, while Nodvard Dock and Nodvard Deck reach your servers over SSH without an agent. A comparison is on the <a href="dock.html#comparison">Nodvard Dock</a> page.</p>
+
+    <h2>With Nodvard Deck: Proxmox and Docker in one place</h2>
+    <ul>
+      <li>The Proxmox page shows nodes, VMs and LXC with their load. You start and stop guests, open the console in the browser, take snapshots and change the hardware.</li>
+      <li>You add the Docker VM as a server over SSH, even with just a username and password. After that you see its containers and stacks, edit Compose files and update images, with a way back if the new image does not start.</li>
+      <li>The Proxmox-Backups module shows guests that are in no backup job. That way you notice if the Docker VM has no backup. How this works is described in <a href="monitor-proxmox-backups.html">Monitor Proxmox backups</a>.</li>
+      <li>Changes go through an approval: Deck proposes, you confirm.</li>
+    </ul>
+    <p>Deck does not install Docker or your applications for you, and it is in beta. The interface is German only for now. More is on <a href="proxmox-docker-dashboard.html">Proxmox and Docker in one dashboard</a> and in the <a href="features.html">feature overview</a>.</p>
+  </div>
+</div>
+<section class="section cta" aria-labelledby="cta">
+  <div class="wrap">
+    <h2 id="cta">Try it with sample data</h2>
+    <p class="intro">Deck installs with three commands, and the sample data shows you everything before your own servers come in. Source code viewable, free for personal use.</p>
+    <div class="cmd">
+      <div class="cmd-head"><span>In a terminal, with Docker Compose</span><span class="sr" role="status"></span><button type="button" data-done="Copied" hidden data-copy="cmd-start">Copy</button></div>
+      <pre><code id="cmd-start">mkdir ~/nodvard-deck &amp;&amp; cd ~/nodvard-deck
+curl -fsSL -o compose.yml https://raw.githubusercontent.com/nodvard/deck/main/deploy/compose.standalone.yml
+docker compose up -d</code></pre>
+    </div>
+    <p class="intro">Then open <code>http://&lt;your-server&gt;:8080</code> in your browser. Run <code>docker compose logs nodvard-deck</code> to get your setup code (look for the line starting with “Einrichtungscode”).</p>
+    <div class="btns"><a class="btn btn-main" href="get-started.html">All ways to install</a><a class="btn btn-alt" href="https://discord.gg/gTTs7qMabt">Ask on Discord</a></div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><a class="brand" href="./" aria-label="Nodvard Deck, home page"><svg viewBox="336 327 408 425" aria-hidden="true" focusable="false"><rect x="336" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/><polygon points="455,352 471,352 625,577 625,727 608,727 455,502" fill="#38bdf8"/><rect x="625" y="327" width="119" height="425" rx="24" fill="#0ea5e9"/></svg><span>Nodvard Deck</span></a></div>
+    <nav class="foot-cols" aria-label="More pages"><div><p class="foot-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="dock.html">Nodvard Dock</a></li><li><a href="get-started.html">Get started</a></li></ul></div><div><p class="foot-h">Get involved</p><ul><li><a href="community.html">Community</a></li><li><a href="https://discord.gg/gTTs7qMabt">Discord</a></li><li><a href="https://github.com/nodvard/deck">GitHub</a></li><li><a href="https://x.com/Nodvard">X</a></li><li><a href="https://www.youtube.com/@Nodvard">YouTube</a></li></ul></div><div><p class="foot-h">Legal</p><ul><li><a href="license.html">License</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="imprint.html">Imprint</a></li></ul></div><div><p class="foot-h">Learn</p><ul><li><a href="why-nodvard-deck.html">Why Nodvard Deck</a></li><li><a href="homelab-dashboard.html">Homelab dashboard</a></li><li><a href="proxmox-docker-dashboard.html">Proxmox and Docker</a></li><li><a href="linux-antivirus.html">Linux antivirus</a></li><li><a href="faq.html">FAQ</a></li><li><a href="backup-nas-nfs.html">Backup to a NAS</a></li></ul></div></nav>
+  </div>
+</footer>
+
+<script src="../assets/copy.js" defer></script>
+</body>
+</html>
