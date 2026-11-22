@@ -62,14 +62,14 @@
     </ol>
 
     <h2>Wie du Container verwaltest</h2>
-    <p>Auf der Kommandozeile geht es mit <code>docker compose</code>. Willst du es in einer Weboberfläche, gibt es mehrere Werkzeuge: Portainer und Dockge brauchen auf jedem weiteren Server einen eigenen Agent, Nodvard Dock und Nodvard Deck gehen ohne Agent per SSH an die Server. Eine Gegenüberstellung steht auf der Seite <a href="dock.html#vergleich">Nodvard Dock</a>.</p>
+    <p>Auf der Kommandozeile geht es mit <code>docker compose</code>. Willst du es in einer Weboberfläche, gibt es mehrere Werkzeuge: Portainer und Dockge binden weitere Server in der Regel über einen eigenen Agent an, Nodvard Dock und Nodvard Deck gehen ohne Agent per SSH an die Server. Eine Gegenüberstellung steht auf der Seite <a href="dock.html#vergleich">Nodvard Dock</a>.</p>
 
     <h2>Mit Nodvard Deck: Proxmox und Docker an einem Ort</h2>
     <ul>
       <li>Die Proxmox-Seite zeigt Knoten, VMs und LXC mit Auslastung. Du startest und stoppst Gäste, öffnest die Konsole im Browser, legst Snapshots an und änderst die Hardware.</li>
       <li>Die Docker-VM trägst du als Server per SSH ein, auch nur mit Benutzer und Passwort. Danach siehst du ihre Container und Stacks, bearbeitest Compose-Dateien und aktualisierst Images, mit einem Rückweg, falls das neue Image nicht startet.</li>
       <li>Das Modul Proxmox-Backups zeigt Gäste, die in keinem Backup-Job stecken. So fällt auf, wenn die Docker-VM keine Sicherung hat. Wie das geht, steht in <a href="proxmox-backups-ueberwachen.html">Proxmox-Backups überwachen</a>.</li>
-      <li>Änderungen laufen über eine Freigabe: Deck schlägt vor, du bestätigst.</li>
+      <li>Was etwas verändert, startest du selbst oder gibst es unter „Aktionen“ frei. Ausnahmen sind eine Automatik, die du selbst einschaltest, und die Quarantäne von Shield, die ab Werk an ist und sich abschalten lässt.</li>
     </ul>
     <p>Deck installiert weder Docker noch deine Anwendungen für dich, und es ist Beta. Die Oberfläche gibt es bisher nur auf Deutsch. Mehr dazu steht unter <a href="proxmox-docker-dashboard.html">Proxmox und Docker in einem Dashboard</a> und in der <a href="funktionen.html">Funktionsübersicht</a>.</p>
   </div>

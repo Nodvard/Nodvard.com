@@ -61,14 +61,14 @@
     </ol>
 
     <h2>How to manage containers</h2>
-    <p>On the command line you use <code>docker compose</code>. If you want a web interface, there are several tools: Portainer and Dockge need their own agent on every additional server, while Nodvard Dock and Nodvard Deck reach your servers over SSH without an agent. A comparison is on the <a href="dock.html#comparison">Nodvard Dock</a> page.</p>
+    <p>On the command line you use <code>docker compose</code>. If you want a web interface, there are several tools: Portainer and Dockge usually connect additional servers through an agent of their own, while Nodvard Dock and Nodvard Deck reach your servers over SSH without an agent. A comparison is on the <a href="dock.html#comparison">Nodvard Dock</a> page.</p>
 
     <h2>With Nodvard Deck: Proxmox and Docker in one place</h2>
     <ul>
       <li>The Proxmox page shows nodes, VMs and LXC with their load. You start and stop guests, open the console in the browser, take snapshots and change the hardware.</li>
       <li>You add the Docker VM as a server over SSH, even with just a username and password. After that you see its containers and stacks, edit Compose files and update images, with a way back if the new image does not start.</li>
       <li>The Proxmox-Backups module shows guests that are in no backup job. That way you notice if the Docker VM has no backup. How this works is described in <a href="monitor-proxmox-backups.html">Monitor Proxmox backups</a>.</li>
-      <li>Changes go through an approval: Deck proposes, you confirm.</li>
+      <li>Whatever changes something, you either start it yourself or approve it under “Aktionen” (actions). Exceptions are an automation you turn on yourself and the quarantine of Shield, which is on by default and can be turned off.</li>
     </ul>
     <p>Deck does not install Docker or your applications for you, and it is in beta. The interface is German only for now. More is on <a href="proxmox-docker-dashboard.html">Proxmox and Docker in one dashboard</a> and in the <a href="features.html">feature overview</a>.</p>
   </div>
