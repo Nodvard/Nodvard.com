@@ -396,11 +396,3 @@ h1, h2, h3 { font-weight: 850; letter-spacing: -0.03em; }
 /* Vard sitzt auf der Oberkante des Deck-Bildes, unabhängig von der Höhe der Reiterzeile */
 .ansicht-stage { position: relative; }
 .bleed .vard-mini { top: auto; bottom: calc(100% - 16px); }
-
-/* Kopfzeile zwischen 701 und 1000 px: Menü in eigene Zeile, Knopf bleibt neben der Sprache */
-@media (min-width: 701px) and (max-width: 1000px) {
-  .top .wrap { gap: 4px 18px; padding-block: 12px 6px; }
-  .top nav { order: 3; width: 100%; }
-  .nav { gap: 0 18px; }
-}
-@media (max-width: 700px) { .hero .btns .btn { justify-content: center; text-align: center; } }
